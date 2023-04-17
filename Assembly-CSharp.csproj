@@ -59,7 +59,8 @@
     <Compile Include="Assets\Scripts\CardSO.cs" />
     <Compile Include="Assets\Scripts\CardData.cs" />
     <Compile Include="Assets\PlayerControlAsset.cs" />
-    <Compile Include="Assets\Scripts\TableState.cs" />
+    <Compile Include="Assets\Scripts\CameraViewState.cs" />
+    <Compile Include="Assets\Scripts\Deck.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
