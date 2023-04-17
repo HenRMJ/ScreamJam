@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5143073221588229379}
   - component: {fileID: 5143073221588229380}
   m_Layer: 0
-  m_Name: Cost Text
+  m_Name: BloodText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0189, y: -0.03685}
+  m_AnchoredPosition: {x: -0.00000009872, y: -0.03685}
   m_SizeDelta: {x: 2.02277, y: 1.10957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5143073221588229379
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 5143073222210246624}
   - component: {fileID: 5143073222210246639}
   m_Layer: 0
-  m_Name: Test2
+  m_Name: Test Spell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,12 +182,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7194ee3baa6dcb4ea407f055cd14dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: f82c663b12a783c43bbafcf48d741d1b, type: 2}
+  card: {fileID: 11400000, guid: 34b0d46da98055042a0d00e8ea7d5ae3, type: 2}
   nameField: {fileID: 5143073223490784169}
   descriptionField: {fileID: 5143073223156389917}
-  healthField: {fileID: 5143073223304526144}
-  costField: {fileID: 5143073221588229380}
-  damageField: {fileID: 5143073223387905476}
+  defenseField: {fileID: 5143073223304526144}
+  bloodCostField: {fileID: 5143073221588229380}
+  attackField: {fileID: 5143073223387905476}
   cardMeshRenderer: {fileID: 5809160254841068263}
 --- !u!1 &5143073222868699542
 GameObject:
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 5143073223304526159}
   - component: {fileID: 5143073223304526144}
   m_Layer: 0
-  m_Name: Health Text
+  m_Name: Defense Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000000094995, y: -0.03685}
+  m_AnchoredPosition: {x: 0.0185, y: -0.03685}
   m_SizeDelta: {x: 2.02277, y: 1.10957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5143073223304526159
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 5143073223387905475}
   - component: {fileID: 5143073223387905476}
   m_Layer: 0
-  m_Name: Damage Text
+  m_Name: Attack Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.019, y: -0.03685}
+  m_AnchoredPosition: {x: -0.018900016, y: -0.03685}
   m_SizeDelta: {x: 2.02277, y: 1.10957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5143073223387905475

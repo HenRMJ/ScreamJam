@@ -10,27 +10,41 @@ public class CardData : MonoBehaviour
     [Header("Card Fields")]
     [SerializeField] private TextMeshProUGUI nameField;
     [SerializeField] private TextMeshProUGUI descriptionField;
-    [SerializeField] private TextMeshProUGUI healthField;
-    [SerializeField] private TextMeshProUGUI costField;
-    [SerializeField] private TextMeshProUGUI damageField;
+    [SerializeField] private TextMeshProUGUI defenseField;
+    [SerializeField] private TextMeshProUGUI bloodCostField;
+    [SerializeField] private TextMeshProUGUI attackField;
     [SerializeField] private MeshRenderer cardMeshRenderer;
-    
 
-    private int health;
-    private int cost;
-    private int damage;
+    private CardType cardType;
+    private int bloodCost;
+    private int defense;
+    private int attack;
+    
 
     private void Start()
     {
-        health = card.GetHealth();
-        cost = card.GetCost();
-        damage = card.GetDamage();
+        cardType = card.GetCardType();
+        bloodCost = card.GetBloodCost();
 
-        nameField.text = card.GetName();
-        descriptionField.text = card.GetDescription();
-        healthField.text = health.ToString();
-        costField.text = cost.ToString();
-        damageField.text = damage.ToString();
+
         cardMeshRenderer.material = card.GetCardImage();
+        nameField.text = card.GetName();
+
+        descriptionField.text = card.GetDescription();
+        bloodCostField.text = bloodCost.ToString();
+        
+
+        if (cardType == CardType.Monster)
+        {
+            attack = card.GetAttack();
+            defense = card.GetDefense();
+
+            attackField.text = attack.ToString();
+            defenseField.text = defense.ToString();
+        } else
+        {
+            attackField.gameObject.SetActive(false);
+            defenseField.gameObject.SetActive(false);
+        }
     }
 }
