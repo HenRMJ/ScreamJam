@@ -56,8 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Henry\CardSO.cs" />
-    <Compile Include="Assets\Henry\CardData.cs" />
+    <Compile Include="Assets\Scripts\CardSO.cs" />
+    <Compile Include="Assets\Scripts\CardData.cs" />
+    <Compile Include="Assets\Henry\PlayerControlAsset.cs" />
+    <Compile Include="Assets\Henry\TableState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

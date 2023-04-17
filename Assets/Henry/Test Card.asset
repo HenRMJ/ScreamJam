@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
   m_Name: Test Card
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 2100000, guid: 400b6a95674a862488427fe4907f743d, type: 2}
   description: This is how many lines I could possibly have but right now it's still
     expanding but we'll see how many lines I can get
   cost: 20
   damage: 100
-  health: 100
+  health: 139
