@@ -19,7 +19,6 @@ public class CameraViewState : MonoBehaviour
     private PlayerControlAsset controller;
     private State currentState;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         controller = new PlayerControlAsset();
@@ -29,8 +28,11 @@ public class CameraViewState : MonoBehaviour
     private void Start()
     {
         controller.Table.CameraSwitch.started += OnCameraSwitchStarted;
+
         ResetVirtualCameras();
+        
         virtualCameras[1].Priority = 5;
+        
         currentState = State.Board;
     }
 

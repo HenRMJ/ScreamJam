@@ -15,6 +15,7 @@ public class Deck : MonoBehaviour
 
     private void Start()
     {
+        Destroy(transform.GetChild(0).gameObject);
         ShuffleCards();
         CreateCards();
     }
