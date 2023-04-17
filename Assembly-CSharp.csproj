@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CardSO.cs" />
     <Compile Include="Assets\Scripts\CardData.cs" />
-    <Compile Include="Assets\Henry\PlayerControlAsset.cs" />
+    <Compile Include="Assets\PlayerControlAsset.cs" />
     <Compile Include="Assets\Scripts\TableState.cs" />
   </ItemGroup>
   <ItemGroup>
