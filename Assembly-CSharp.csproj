@@ -59,7 +59,7 @@
     <Compile Include="Assets\Scripts\CardSO.cs" />
     <Compile Include="Assets\Scripts\CardData.cs" />
     <Compile Include="Assets\Henry\PlayerControlAsset.cs" />
-    <Compile Include="Assets\Henry\TableState.cs" />
+    <Compile Include="Assets\Scripts\TableState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
