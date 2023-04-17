@@ -21,7 +21,9 @@ public class CardSO : ScriptableObject
     private int attack;
     private int defense;
 
+    #region Editor
 #if UNITY_EDITOR
+
     [CustomEditor(typeof(CardSO))]
     public class CardStatEditor : Editor
     {
@@ -56,6 +58,7 @@ public class CardSO : ScriptableObject
     }
 
 #endif
+    #endregion
 
     public string GetName() => name;
     public Material GetCardImage() => cardImage;

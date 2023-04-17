@@ -16,10 +16,12 @@ public class CardData : MonoBehaviour
     [SerializeField] private MeshRenderer cardMeshRenderer;
 
     private CardType cardType;
-    private int bloodCost;
-    private int defense;
-    private int attack;
-    
+    private int bloodCost, defense, attack;
+
+    private Quaternion rotationalValue;
+    private Vector3 targetPoint;
+
+    private const float SPEED = 5f;
 
     private void Start()
     {
@@ -46,5 +48,28 @@ public class CardData : MonoBehaviour
             attackField.gameObject.SetActive(false);
             defenseField.gameObject.SetActive(false);
         }
+
+        targetPoint = transform.position;
+        rotationalValue = transform.rotation;
+    }
+
+    private void Update()
+    {
+        MoveCard();
+    }
+
+    // Might want to move these methods into a different class Move Card and Move To Point
+    private void MoveCard()
+    {
+        if (transform.position == targetPoint && transform.rotation == rotationalValue) return;
+
+        transform.position = Vector3.Lerp(transform.position, targetPoint, Time.deltaTime * SPEED);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotationalValue, Time.deltaTime * SPEED);
+    }
+
+    public void MoveToPoint(Vector3 pointToMoveTo, Quaternion rotation)
+    {
+        targetPoint = pointToMoveTo;
+        rotationalValue = rotation;
     }
 }
