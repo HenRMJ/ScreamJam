@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5143073221588229381}
   - component: {fileID: 5143073221588229379}
   - component: {fileID: 5143073221588229380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BloodText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5143073222210246624}
   - component: {fileID: 5143073222210246639}
-  m_Layer: 0
+  - component: {fileID: -441010001770083006}
+  m_Layer: 6
   m_Name: Test Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,6 +190,19 @@ MonoBehaviour:
   bloodCostField: {fileID: 5143073221588229380}
   attackField: {fileID: 5143073223387905476}
   cardMeshRenderer: {fileID: 5809160254841068263}
+--- !u!65 &-441010001770083006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143073222210246625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06422508, y: 0.089654446, z: 0.0019491315}
+  m_Center: {x: -0.000057175756, y: 0, z: 0.00011640787}
 --- !u!1 &5143073222868699542
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +215,7 @@ GameObject:
   - component: {fileID: 5143073222868699538}
   - component: {fileID: 5143073222868699539}
   - component: {fileID: 5143073222868699540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +319,7 @@ GameObject:
   - component: {fileID: 5143073223156389918}
   - component: {fileID: 5143073223156389916}
   - component: {fileID: 5143073223156389917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Description Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +455,7 @@ GameObject:
   - component: {fileID: 5143073223304526145}
   - component: {fileID: 5143073223304526159}
   - component: {fileID: 5143073223304526144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Defense Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +592,7 @@ GameObject:
   - component: {fileID: 5143073223387905477}
   - component: {fileID: 5143073223387905475}
   - component: {fileID: 5143073223387905476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attack Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +729,7 @@ GameObject:
   - component: {fileID: 5143073223490784170}
   - component: {fileID: 5143073223490784168}
   - component: {fileID: 5143073223490784169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,6 +919,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1653c6afd6424574780f71c82ab14fc6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1653c6afd6424574780f71c82ab14fc6, type: 3}

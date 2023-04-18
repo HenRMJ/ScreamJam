@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
-    [SerializeField] private List<Transform> cardsInHand;
     [SerializeField] private Transform minPosition, maxPosition;
-    
+
+    private List<Transform> cardsInHand = new List<Transform>();
     private List<Vector3> cardPositions = new List<Vector3>();
 
     // assigning this in the start method but probably best to assign it in the inspector when everything is parented under player
@@ -52,8 +52,21 @@ public class HandController : MonoBehaviour
 
         for (int i = 0; i < cardsInHand.Count; i++)
         {
+            CardData cardData = cardsInHand[i].GetComponent<CardData>();
+
             cardPositions.Add(minPosition.position + (distanceBetweenPoints * i));
-            cardsInHand[i].GetComponent<CardData>().MoveToPoint(cardPositions[i], minPosition.rotation);
+            cardData.MoveToPoint(cardPositions[i], minPosition.rotation);
+            cardData.PositionInHand = i;
         }
+    }
+
+    public Vector3 GetPositionInHand(int i)
+    {
+        return cardPositions[i];
+    }
+
+    public Quaternion GetRotationInHand()
+    {
+        return minPosition.rotation;
     }
 }

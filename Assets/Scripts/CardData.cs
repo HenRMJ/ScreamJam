@@ -5,6 +5,11 @@ using TMPro;
 
 public class CardData : MonoBehaviour
 {
+    private static bool viewing;
+
+    public bool InHand { get; set; }
+    public int PositionInHand { get; set; }
+
     [SerializeField] private CardSO card;
 
     [Header("Card Fields")]
@@ -20,11 +25,14 @@ public class CardData : MonoBehaviour
 
     private Quaternion rotationalValue;
     private Vector3 targetPoint;
+    private HandController handController;
 
     private const float SPEED = 5f;
 
     private void Start()
     {
+        handController = FindAnyObjectByType<HandController>();
+
         cardType = card.GetCardType();
         bloodCost = card.GetBloodCost();
 
@@ -51,10 +59,13 @@ public class CardData : MonoBehaviour
 
         targetPoint = transform.position;
         rotationalValue = transform.rotation;
+
+        InHand = false;
     }
 
     private void Update()
     {
+        HoverCard();
         MoveCard();
     }
 
@@ -71,5 +82,29 @@ public class CardData : MonoBehaviour
     {
         targetPoint = pointToMoveTo;
         rotationalValue = rotation;
+    }
+
+    private void HoverCard()
+    {
+        if (!InHand) return;
+        if (Utils.GetCardObjectUnderCursor() == null)
+        {
+            viewing = false;
+            MoveToPoint(handController.GetPositionInHand(PositionInHand), handController.GetRotationInHand());
+
+            return;
+        }
+
+        Transform cardTransform = Utils.GetCardObjectUnderCursor().transform;
+
+        if (cardTransform == transform && !viewing)
+        {
+            viewing = true;
+            Transform hoverPoint = Camera.main.transform.GetChild(0).transform;
+
+            MoveToPoint(hoverPoint.position, hoverPoint.rotation);
+        }
+
+        
     }
 }
