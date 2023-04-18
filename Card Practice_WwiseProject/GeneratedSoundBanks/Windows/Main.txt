@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2532576662	TakeCard			\Default Work Unit\CardsAction\TakeCard	
+	3086228169	BringUp_Card			\Default Work Unit\CardsAction\BringUp_Card	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	36572938	Card pick up 1	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 1_68A7B5CD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\TakeCard\Card pick up 1		59336
+	92613697	Card pick up 2	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 2_385ADA72.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\TakeCard\Card pick up 2		105616
+	142744935	Card select 2	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_1BA439C4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\BringUp_Card\Card select 2		29716
+	308182294	Card select 2_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_690E6A63.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\BringUp_Card\Card select 2_01		34344
+	821937752	BringUp1	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 1_8795DCEB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\BringUp_Card\BringUp1		49156
+	1014652624	Card pick up 2_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 2_7031A55C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\TakeCard\Card pick up 2_01		55632
+

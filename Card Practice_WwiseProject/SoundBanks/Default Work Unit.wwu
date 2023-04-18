@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{022C51F2-71BB-488C-91F5-1F55F1BA7A87}" SchemaVersion="110">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{022C51F2-71BB-488C-91F5-1F55F1BA7A87}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{022C51F2-71BB-488C-91F5-1F55F1BA7A87}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{4364E8C3-C3B9-40AD-91C1-3D7B0C2867C8}">
+					<ObjectInclusionList>
+						<ObjectRef Name="BringUp_Card" ID="{56A21327-6008-40A4-9F66-14FBD7000050}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="TakeCard" ID="{C33E5667-E046-48C1-8F83-AAA6CEF6E9C3}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>

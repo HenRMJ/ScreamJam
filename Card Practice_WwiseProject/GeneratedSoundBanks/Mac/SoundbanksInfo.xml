@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../..</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<ProjectRoot>../../</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac/</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F56A610C-C7C4-F874-B68B-7ADDF94EBB7A}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{76E14A63-51CC-64CC-9C00-F570645EDD7D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -22,6 +22,52 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E9E1BA78-0432-0D6E-BF40-11EE04BAB488}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="36572938" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card pick up 1.wav</ShortName>
+					<CachePath>SFX/Card pick up 1_68A7B5CD.wem</CachePath>
+				</File>
+				<File Id="92613697" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card pick up 2.wav</ShortName>
+					<CachePath>SFX/Card pick up 2_385ADA72.wem</CachePath>
+				</File>
+				<File Id="142744935" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_1BA439C4.wem</CachePath>
+				</File>
+				<File Id="308182294" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_690E6A63.wem</CachePath>
+				</File>
+				<File Id="821937752" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 1.wav</ShortName>
+					<CachePath>SFX/Card select 1_8795DCEB.wem</CachePath>
+				</File>
+				<File Id="1014652624" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card pick up 2.wav</ShortName>
+					<CachePath>SFX/Card pick up 2_7031A55C.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3086228169" Name="BringUp_Card" DurationType="OneShot" DurationMin="0.13893262" DurationMax="0.47727004">
+					<MediaRefs>
+						<MediaRef Id="142744935"/>
+						<MediaRef Id="308182294"/>
+						<MediaRef Id="821937752"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2532576662" Name="TakeCard" DurationType="OneShot" DurationMin="0.2218538" DurationMax="0.81244785">
+					<MediaRefs>
+						<MediaRef Id="36572938"/>
+						<MediaRef Id="92613697"/>
+						<MediaRef Id="1014652624"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 	</SoundBanks>
-	<FileHash>{85FB997E-979E-429B-B6F1-CF88BB808457}</FileHash>
+	<FileHash>{DDC95E29-1ADB-675E-6716-260D945638BF}</FileHash>
 </SoundBanksInfo>
