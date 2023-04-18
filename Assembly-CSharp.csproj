@@ -56,28 +56,28 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CardSO.cs" />
-    <Compile Include="Assets\Scripts\CardData.cs" />
-    <Compile Include="Assets\PlayerControlAsset.cs" />
-    <Compile Include="Assets\Scripts\CameraViewState.cs" />
-    <Compile Include="Assets\Scripts\Deck.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\PlayerState\BasePlayerState.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\CardSlot.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\PlayerState\DrawState.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\GameState\GameSetupState.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\PlayerState\WaitingState.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\PlayerState\PlayerStateMachine.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\GameState\GameStateMachine.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\GameState\StartRoundState.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\PlayerState\DecisionState.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\State.cs" />
     <Compile Include="Assets\Scripts\StateMachine\GameState\BaseGameState.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerState\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\GameState\GameSetupState.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\GameState\GameStateMachine.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\State.cs" />
+    <Compile Include="Assets\Scripts\CardSO.cs" />
     <Compile Include="Assets\Scripts\CardType.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\GameState\StartRoundState.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerState\DrawState.cs" />
     <Compile Include="Assets\Scripts\HandController.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerState\DecisionState.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerState\WaitingState.cs" />
+    <Compile Include="Assets\Scripts\CameraViewState.cs" />
+    <Compile Include="Assets\Scripts\Deck.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\CardData.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\CardSlot.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerState\BasePlayerState.cs" />
+    <Compile Include="Assets\PlayerControlAsset.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
