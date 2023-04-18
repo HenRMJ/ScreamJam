@@ -18,8 +18,7 @@ public class CardSO : ScriptableObject
     [Header("Base Card Stats")]
     [SerializeField] private int bloodCost;
 
-    private int attack;
-    private int defense;
+    [SerializeField, HideInInspector] private int attack, defense;
 
     #region Editor
 #if UNITY_EDITOR
