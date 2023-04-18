@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Test Monster
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 400b6a95674a862488427fe4907f743d, type: 2}
-  description: This is how many lines I could possibly have but right now it's still
-    expanding but we'll see how many lines I can get
+  description: This is a test monster that show how far I can write in this description
+    box thing and see how it looks on the actual card.
   cardType: 0
-  bloodCost: 2
+  bloodCost: 25
+  attack: 3
+  defense: 3

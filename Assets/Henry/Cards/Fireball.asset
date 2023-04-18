@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 400b6a95674a862488427fe4907f743d, type: 2}
-  description: This casts a fireball in an area
+  description: 'This is a fireball
+
+'
   cardType: 1
-  bloodCost: 1
+  bloodCost: 20
+  attack: 0
+  defense: 0

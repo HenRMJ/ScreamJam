@@ -190,6 +190,8 @@ MonoBehaviour:
   bloodCostField: {fileID: 5143073221588229380}
   attackField: {fileID: 5143073223387905476}
   cardMeshRenderer: {fileID: 5809160254841068263}
+  speed: 5
+  hoverOffset: {x: 0, y: 0.04, z: 0.04}
 --- !u!65 &-5935286169467110996
 BoxCollider:
   m_ObjectHideFlags: 0

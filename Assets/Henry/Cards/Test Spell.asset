@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Test Spell
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 400b6a95674a862488427fe4907f743d, type: 2}
-  description: This is how many times i can write and this is a spell card as well.
-    Hopefully we can code whatever this does
+  description: This is a test spell that should show how this card works and it has
+    some sort of special effect. We'll see how it does it.
   cardType: 1
-  bloodCost: 3
+  bloodCost: 0
+  attack: 0
+  defense: 0

@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 5143073222210246639}
   - component: {fileID: -5935286169467110996}
   m_Layer: 6
-  m_Name: Default Card
+  m_Name: Demon Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,6 +190,8 @@ MonoBehaviour:
   bloodCostField: {fileID: 5143073221588229380}
   attackField: {fileID: 5143073223387905476}
   cardMeshRenderer: {fileID: 5809160254841068263}
+  speed: 5
+  hoverOffset: {x: 0, y: 0.04, z: 0.04}
 --- !u!65 &-5935286169467110996
 BoxCollider:
   m_ObjectHideFlags: 0
