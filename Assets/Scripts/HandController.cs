@@ -29,22 +29,28 @@ public class HandController : MonoBehaviour
             AddCardToHand();
         }
 
-        UnselectCard();
+        ClickToUnselectCard();
         SelectCard();
     }
 
     private void SelectCard()
     {
-        if (cardIsSelected) return;
-
         GameObject cursorCard = Utils.GetCardObjectUnderCursor();
 
         if (cursorCard == null) return;
+        
 
         // replace logic with input system and probably makes more sense to have it in the state machine
         if (Input.GetMouseButtonUp(0))
         {
+            if (cardIsSelected && cursorCard.transform != selectedCard)
+            {
+                UnselectCard();
+            }
+
             CardData cardData = cursorCard.GetComponent<CardData>();
+
+            if (cardData.InDeck) return;
 
             cardIsSelected = true;
             cardData.InHand = false;
@@ -59,7 +65,7 @@ public class HandController : MonoBehaviour
         }
     }
 
-    private void UnselectCard()
+    private void ClickToUnselectCard()
     {
         if (!cardIsSelected) return;
 
@@ -71,13 +77,18 @@ public class HandController : MonoBehaviour
         // replace logic in state machine with new input system
         if (Input.GetMouseButtonDown(0))
         {
-            CardData cardData = cursorCard.GetComponent<CardData>();
-
-            cardData.InHand = true;
-            cardIsSelected = false;
-
-            ReturnCardToHand(selectedCard);
+            UnselectCard();
         }
+    }
+
+    private void UnselectCard()
+    {
+        CardData cardData = selectedCard.GetComponent<CardData>();
+
+        cardData.InHand = true;
+        cardIsSelected = false;
+
+        ReturnCardToHand(selectedCard);
     }
 
     public void AddCardToHand()

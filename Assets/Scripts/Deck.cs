@@ -55,8 +55,11 @@ public class Deck : MonoBehaviour
             return null;
         }
         Transform cardToDeal = instantiatedCardList[0];
+        CardData cardData = cardToDeal.GetComponent<CardData>();
+
         cardToDeal.parent = null;
-        cardToDeal.GetComponent<CardData>().InHand = true;
+        cardData.InHand = true;
+        cardData.InDeck = false;
         instantiatedCardList.RemoveAt(0);
         return cardToDeal;
     }

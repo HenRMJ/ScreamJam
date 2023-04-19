@@ -6,6 +6,7 @@ using TMPro;
 public class CardData : MonoBehaviour
 {
     public bool InHand { get; set; }
+    public bool InDeck { get; set; }
     public int PositionInHand { get; set; }
 
     [SerializeField] private CardSO card;
@@ -61,6 +62,7 @@ public class CardData : MonoBehaviour
         rotationalValue = transform.rotation;
 
         InHand = false;
+        InDeck = true;
     }
 
     private void Update()
