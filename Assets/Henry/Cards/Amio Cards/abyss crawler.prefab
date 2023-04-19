@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 5143073222210246639}
   - component: {fileID: -5935286169467110996}
   m_Layer: 6
-  m_Name: Default Card
+  m_Name: abyss crawler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7194ee3baa6dcb4ea407f055cd14dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: f82c663b12a783c43bbafcf48d741d1b, type: 2}
+  card: {fileID: 11400000, guid: e9a76b787354bb34396074a41d71b515, type: 2}
   nameField: {fileID: 5143073223490784169}
   descriptionField: {fileID: 5143073223156389917}
   defenseField: {fileID: 5143073223304526144}

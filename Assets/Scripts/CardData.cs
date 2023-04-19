@@ -109,7 +109,5 @@ public class CardData : MonoBehaviour
         {
             MoveToPoint(handController.GetPositionInHand(PositionInHand), handController.GetRotationInHand());
         }
-
-        
     }
 }
