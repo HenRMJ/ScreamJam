@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: f2512c02bb718c4891f51f55f1ba7a87
     GuidInternal: 
-    m_lastTime: -8585199371297659214
-    List: []
+    m_lastTime: -8585197745987793005
+    List:
+    - name: Main
+      guid: c3e86443b9c3ad4091c13d7b0c2867c8
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f2512c02bb718c4891f51f55f1ba7a87
+      - ElementName: Main
+        ObjectType: 7
+        guid: c3e86443b9c3ad4091c13d7b0c2867c8
+      Path: SoundBanks/Default Work Unit/Main
   EventWwu:
   - PhysicalPath: Events/Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,65 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: 010016284d7bf54eb506d1c4474fb2cc
     GuidInternal: 
-    m_lastTime: -8585199371297697019
-    List: []
+    m_lastTime: -8585197745987813283
+    List:
+    - name: BringUp_Card
+      guid: 2713a2560860a4409f6614fbd7000050
+      id: 3086228169
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: CardsAction
+        ObjectType: 4
+        guid: 930fe50be23101439fe30732b66ad1a6
+      - ElementName: BringUp_Card
+        ObjectType: 3
+        guid: 2713a2560860a4409f6614fbd7000050
+      Path: Events/Default Work Unit/CardsAction/BringUp_Card
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: CardsAction
+      guid: 930fe50be23101439fe30732b66ad1a6
+      id: 2582662204
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: CardsAction
+        ObjectType: 4
+        guid: 930fe50be23101439fe30732b66ad1a6
+      Path: Events/Default Work Unit/CardsAction
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: TakeCard
+      guid: 67563ec346e0c1488f83aaa6cef6e9c3
+      id: 2532576662
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: CardsAction
+        ObjectType: 4
+        guid: 930fe50be23101439fe30732b66ad1a6
+      - ElementName: TakeCard
+        ObjectType: 3
+        guid: 67563ec346e0c1488f83aaa6cef6e9c3
+      Path: Events/Default Work Unit/CardsAction/TakeCard
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:
@@ -140,7 +211,7 @@ MonoBehaviour:
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
-  AutoSyncSelection: 1
+  AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
   CurrentPluginConfig: 
