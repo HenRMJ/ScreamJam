@@ -31,7 +31,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{0EFBEE71-1BC8-EEEE-73B1-AFC3A379A8CD}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{4DE8384F-A0C6-8E6A-B181-52E7406DC68A}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -41,7 +41,7 @@
 				</File>
 				<File Id="59545459" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player Actions\SitDown_MoveCam.wav</ShortName>
-					<CachePath>SFX/Player Actions/SitDown_MoveCam_C89DEF8F.wem</CachePath>
+					<CachePath>SFX/Player Actions/SitDown_MoveCam_0B888D81.wem</CachePath>
 				</File>
 				<File Id="92613697" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card pick up 2.wav</ShortName>
@@ -49,7 +49,7 @@
 				</File>
 				<File Id="129977347" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(1).wav</ShortName>
-					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(1)_13477E9D.wem</CachePath>
+					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(1)_05BD6B98.wem</CachePath>
 				</File>
 				<File Id="142744935" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card select 2.wav</ShortName>
@@ -57,19 +57,19 @@
 				</File>
 				<File Id="151984888" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Sacrifice Monster\SacrificeMonster.wav</ShortName>
-					<CachePath>SFX/Monster/Sacrifice Monster/SacrificeMonster_C18167DF.wem</CachePath>
+					<CachePath>SFX/Monster/Sacrifice Monster/SacrificeMonster_0DF3D938.wem</CachePath>
 				</File>
 				<File Id="171967242" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player Actions\StandUp_MoveCam.wav</ShortName>
-					<CachePath>SFX/Player Actions/StandUp_MoveCam_583CE10E.wem</CachePath>
+					<CachePath>SFX/Player Actions/StandUp_MoveCam_302412BB.wem</CachePath>
 				</File>
 				<File Id="233008782" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player Actions\SitDown_MoveCam.wav</ShortName>
-					<CachePath>SFX/Player Actions/SitDown_MoveCam_8896E47A.wem</CachePath>
+					<CachePath>SFX/Player Actions/SitDown_MoveCam_411EDDCF.wem</CachePath>
 				</File>
 				<File Id="268972359" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player Actions\StandUp_MoveCam.wav</ShortName>
-					<CachePath>SFX/Player Actions/StandUp_MoveCam_ABF7300E.wem</CachePath>
+					<CachePath>SFX/Player Actions/StandUp_MoveCam_2DEE1A77.wem</CachePath>
 				</File>
 				<File Id="295442611" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card destroyed 2.wav</ShortName>
@@ -81,15 +81,15 @@
 				</File>
 				<File Id="338831760" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Monster Attack\MonsterAttacks.wav</ShortName>
-					<CachePath>SFX/Monster/Monster Attack/MonsterAttacks_90F08264.wem</CachePath>
+					<CachePath>SFX/Monster/Monster Attack/MonsterAttacks_86A0DF03.wem</CachePath>
 				</File>
 				<File Id="378248156" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(1).wav</ShortName>
-					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(1)_03E9A94E.wem</CachePath>
+					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(1)_A3535CA7.wem</CachePath>
 				</File>
 				<File Id="451891224" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonHighTier(1).wav</ShortName>
-					<CachePath>SFX/Monster/Summon Monster/SummonHighTier(1)_EFAB1BBB.wem</CachePath>
+					<CachePath>SFX/Monster/Summon Monster/SummonHighTier(1)_4AF0EC65.wem</CachePath>
 				</File>
 				<File Id="473816395" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DestroyedCard_Demo.wav</ShortName>
@@ -97,7 +97,7 @@
 				</File>
 				<File Id="484249041" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Monster Attack\MonsterAttacks.wav</ShortName>
-					<CachePath>SFX/Monster/Monster Attack/MonsterAttacks_A282513C.wem</CachePath>
+					<CachePath>SFX/Monster/Monster Attack/MonsterAttacks_2A38CCC8.wem</CachePath>
 				</File>
 				<File Id="487488024" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card destroyed 1.wav</ShortName>
@@ -105,7 +105,7 @@
 				</File>
 				<File Id="609024853" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(2).wav</ShortName>
-					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(2)_8ADE8EE2.wem</CachePath>
+					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(2)_2BA9FD99.wem</CachePath>
 				</File>
 				<File Id="649903395" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DemocinSouls_Ambience.wav</ShortName>
@@ -113,15 +113,15 @@
 				</File>
 				<File Id="689212934" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(3).wav</ShortName>
-					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(3)_3F7847DC.wem</CachePath>
+					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(3)_D16AE548.wem</CachePath>
 				</File>
 				<File Id="701180529" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonHighTier(1).wav</ShortName>
-					<CachePath>SFX/Monster/Summon Monster/SummonHighTier(1)_687621A4.wem</CachePath>
+					<CachePath>SFX/Monster/Summon Monster/SummonHighTier(1)_FFCED87F.wem</CachePath>
 				</File>
 				<File Id="795711129" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Monster Attack\MonsterAttacks.wav</ShortName>
-					<CachePath>SFX/Monster/Monster Attack/MonsterAttacks_812A4EAA.wem</CachePath>
+					<CachePath>SFX/Monster/Monster Attack/MonsterAttacks_62B86AB2.wem</CachePath>
 				</File>
 				<File Id="821937752" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card select 1.wav</ShortName>
@@ -133,7 +133,7 @@
 				</File>
 				<File Id="941496553" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Sacrifice Monster\SacrificeMonster.wav</ShortName>
-					<CachePath>SFX/Monster/Sacrifice Monster/SacrificeMonster_D4CD2328.wem</CachePath>
+					<CachePath>SFX/Monster/Sacrifice Monster/SacrificeMonster_A6A104D0.wem</CachePath>
 				</File>
 				<File Id="970406506" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LowDark_Ambience.wav</ShortName>
@@ -141,7 +141,7 @@
 				</File>
 				<File Id="1000506025" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(2).wav</ShortName>
-					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(2)_1258D1F3.wem</CachePath>
+					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(2)_BAA02B28.wem</CachePath>
 				</File>
 				<File Id="1014652624" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card pick up 2.wav</ShortName>
@@ -149,7 +149,7 @@
 				</File>
 				<File Id="1034474329" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(3).wav</ShortName>
-					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(3)_61ED28AB.wem</CachePath>
+					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(3)_D0320C5D.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -237,5 +237,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0C464186-7D0C-8398-335F-C5AB5BCCFB88}</FileHash>
+	<FileHash>{44D646E9-7347-C462-5A1C-25574193F969}</FileHash>
 </SoundBanksInfo>
