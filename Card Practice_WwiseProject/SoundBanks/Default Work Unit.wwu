@@ -6,7 +6,18 @@
 				<SoundBank Name="Main" ID="{4364E8C3-C3B9-40AD-91C1-3D7B0C2867C8}">
 					<ObjectInclusionList>
 						<ObjectRef Name="BringUp_Card" ID="{56A21327-6008-40A4-9F66-14FBD7000050}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="DemonicSouls_Amb" ID="{8A83C212-26D0-4234-8F55-37A899195502}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="StandUp" ID="{0826DA2F-532A-4358-B3B3-B57A19A2D24C}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="OldRoom_Amb" ID="{359A3B29-9F6B-4741-B0F7-8E4D9159C606}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Sum_LowMon" ID="{F5740378-D093-4858-8F95-306E7BEF1670}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TakeCard" ID="{C33E5667-E046-48C1-8F83-AAA6CEF6E9C3}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="LowDark_Amb" ID="{0E38A94F-C98C-4985-BA33-513961D67107}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Sum_MedMon" ID="{AC23A0BB-9841-4A03-BCA0-8F655353DE8E}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MonsterAttack" ID="{035E02CF-045A-4A90-8552-BC8F50E23FB2}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SacrificeMonster" ID="{34CDD051-D38A-4DB4-B77E-9BEA4AE50DC0}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SitDown" ID="{4AF30879-3B86-4E30-9A64-6FB7E23DE860}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Sum_HighMon" ID="{4990B579-B639-4E66-9BD7-057B4ED39841}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="DestroyedCard" ID="{EE254002-8336-4F1D-8630-238A385898B4}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

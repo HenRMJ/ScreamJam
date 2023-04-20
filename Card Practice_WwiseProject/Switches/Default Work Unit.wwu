@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{A68A882A-2657-4621-B707-9D7EB65A00E1}" SchemaVersion="110">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{A68A882A-2657-4621-B707-9D7EB65A00E1}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{A68A882A-2657-4621-B707-9D7EB65A00E1}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="TierMonster" ID="{4569B671-443E-465F-B778-DC996F05CDCA}">
+					<ChildrenList>
+						<Switch Name="High" ID="{8D34A76F-28CA-4798-BC64-EF7BAF174916}"/>
+						<Switch Name="Medium" ID="{CAF60422-8188-42E8-9B50-58E1F29219C4}"/>
+						<Switch Name="Low" ID="{A2064296-2FCF-46A9-AC4B-72052187C561}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>
