@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,15 +8,16 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     private float _padding = 0f;
     [SerializeField]
-    private GameObject _cardSlotPrefab;
+    private GameObject _cardSlotPrefab = null;
 
     // _cardSlotDimensions defaults to 0,0 for the first slot, then changes to
     // the _cardSlotPrefab's Collider dimensions for the remaining slots
     private Vector2 _cardSlotDimensions = new Vector2(0, 0);
-    private GameObject[] _cardSlots;
+    private GameObject[,] _cardSlots;
 
     private void Start()
     {
+        _cardSlots = new GameObject[_gridDimensions.x, _gridDimensions.y];
         Build(_cardSlotPrefab, _gridDimensions, _padding);
     }
 
@@ -63,8 +63,24 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < dimensions.y; y++)
             {
-                InstantiateOnGrid(cardSlot, new Vector2Int(x, y), Quaternion.identity);
+                GameObject instantiatedCard = InstantiateOnGrid(cardSlot, new Vector2Int(x, y), Quaternion.identity);
+                _cardSlots[x,y] = instantiatedCard;
             }
         }
+        Debug.Log(CardAt(-1, 1));
+    }
+
+    public GameObject CardAt(int x, int y)
+    {
+        return CardAt(new Vector2Int(x,y));
+    }
+
+    public GameObject CardAt(Vector2Int coordinates)
+    {
+        if ((coordinates.x < 0 || coordinates.x >= _gridDimensions.x)
+            || (coordinates.x < 0 || coordinates.x >= _gridDimensions.x))
+            return null;
+
+        return _cardSlots[coordinates.x, coordinates.y];
     }
 }
