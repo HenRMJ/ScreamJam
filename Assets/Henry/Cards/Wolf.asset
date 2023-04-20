@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
   m_Name: Wolf
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 2100000, guid: 400b6a95674a862488427fe4907f743d, type: 2}
-  description: Wow Grr I am wolf
+  cardImage: {fileID: 2100000, guid: d8ca06ebd239a9840884baa3d9c87867, type: 2}
+  description: Grr. I am wolf. Grr
   cardType: 0
-  bloodCost: 5
+  bloodCost: 100
+  attack: 100
+  defense: 500

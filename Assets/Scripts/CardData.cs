@@ -5,9 +5,8 @@ using TMPro;
 
 public class CardData : MonoBehaviour
 {
-    private static bool viewing;
-
     public bool InHand { get; set; }
+    public bool InDeck { get; set; }
     public int PositionInHand { get; set; }
 
     [SerializeField] private CardSO card;
@@ -20,14 +19,16 @@ public class CardData : MonoBehaviour
     [SerializeField] private TextMeshProUGUI attackField;
     [SerializeField] private MeshRenderer cardMeshRenderer;
 
+    [Header("Card Movement Values")]
+    [SerializeField] private float speed;
+    [SerializeField] private Vector3 hoverOffset;
+
     private CardType cardType;
     private int bloodCost, defense, attack;
 
     private Quaternion rotationalValue;
     private Vector3 targetPoint;
     private HandController handController;
-
-    private const float SPEED = 5f;
 
     private void Start()
     {
@@ -61,6 +62,7 @@ public class CardData : MonoBehaviour
         rotationalValue = transform.rotation;
 
         InHand = false;
+        InDeck = true;
     }
 
     private void Update()
@@ -74,8 +76,8 @@ public class CardData : MonoBehaviour
     {
         if (transform.position == targetPoint && transform.rotation == rotationalValue) return;
 
-        transform.position = Vector3.Lerp(transform.position, targetPoint, Time.deltaTime * SPEED);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotationalValue, Time.deltaTime * SPEED);
+        transform.position = Vector3.Lerp(transform.position, targetPoint, Time.deltaTime * speed);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotationalValue, Time.deltaTime * speed);
     }
 
     public void MoveToPoint(Vector3 pointToMoveTo, Quaternion rotation)
@@ -87,9 +89,10 @@ public class CardData : MonoBehaviour
     private void HoverCard()
     {
         if (!InHand) return;
+
+        // Resets card position if no card is being hovered
         if (Utils.GetCardObjectUnderCursor() == null)
         {
-            viewing = false;
             MoveToPoint(handController.GetPositionInHand(PositionInHand), handController.GetRotationInHand());
 
             return;
@@ -97,14 +100,16 @@ public class CardData : MonoBehaviour
 
         Transform cardTransform = Utils.GetCardObjectUnderCursor().transform;
 
-        if (cardTransform == transform && !viewing)
+        // if the card is being hovered it raises the position, else, it resets the position
+        if (cardTransform == transform)
         {
-            viewing = true;
-            Transform hoverPoint = Camera.main.transform.GetChild(0).transform;
+            Vector3 hoverPoint = handController.GetPositionInHand(PositionInHand) + hoverOffset;
+            Quaternion hoverRotation = Camera.main.transform.rotation;
 
-            MoveToPoint(hoverPoint.position, hoverPoint.rotation);
+            MoveToPoint(hoverPoint, hoverRotation);
+        } else
+        {
+            MoveToPoint(handController.GetPositionInHand(PositionInHand), handController.GetRotationInHand());
         }
-
-        
     }
 }

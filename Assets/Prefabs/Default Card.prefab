@@ -70,8 +70,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc, type: 2}
+  m_sharedMaterial: {fileID: 748790162378319076, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -190,6 +191,8 @@ MonoBehaviour:
   bloodCostField: {fileID: 5143073221588229380}
   attackField: {fileID: 5143073223387905476}
   cardMeshRenderer: {fileID: 5809160254841068263}
+  speed: 5
+  hoverOffset: {x: 0, y: 0.04, z: 0.04}
 --- !u!65 &-5935286169467110996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -377,8 +380,9 @@ MonoBehaviour:
   m_text: This is going to be the description of the text. The abilities and info
     about the card should go here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc, type: 2}
+  m_sharedMaterial: {fileID: 748790162378319076, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -514,8 +518,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc, type: 2}
+  m_sharedMaterial: {fileID: 748790162378319076, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -651,8 +656,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc, type: 2}
+  m_sharedMaterial: {fileID: 748790162378319076, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -786,8 +792,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc, type: 2}
+  m_sharedMaterial: {fileID: 748790162378319076, guid: 9ae43d1a7b2be9045bc26f0a0b1806bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

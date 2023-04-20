@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Human
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 400b6a95674a862488427fe4907f743d, type: 2}
-  description: I am fighting person right now
+  description: I am human!
   cardType: 0
-  bloodCost: 2
+  bloodCost: 50
+  attack: 5
+  defense: 5

@@ -9,12 +9,16 @@ public class HandController : MonoBehaviour
     private List<Transform> cardsInHand = new List<Transform>();
     private List<Vector3> cardPositions = new List<Vector3>();
 
+    private bool cardIsSelected;
+    private Transform selectedCard;
+
     // assigning this in the start method but probably best to assign it in the inspector when everything is parented under player
     private Deck deck;
 
     private void Start()
     {
         deck = FindAnyObjectByType<Deck>();
+        cardIsSelected = false;
     }
 
     private void Update()
@@ -24,6 +28,67 @@ public class HandController : MonoBehaviour
         {
             AddCardToHand();
         }
+
+        ClickToUnselectCard();
+        SelectCard();
+    }
+
+    private void SelectCard()
+    {
+        GameObject cursorCard = Utils.GetCardObjectUnderCursor();
+
+        if (cursorCard == null) return;
+        
+
+        // replace logic with input system and probably makes more sense to have it in the state machine
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (cardIsSelected && cursorCard.transform != selectedCard)
+            {
+                UnselectCard();
+            }
+
+            CardData cardData = cursorCard.GetComponent<CardData>();
+
+            if (cardData.InDeck) return;
+
+            cardIsSelected = true;
+            cardData.InHand = false;
+            
+            selectedCard = cursorCard.transform;
+            cardsInHand.Remove(selectedCard);
+
+            Transform selectedTransform = Camera.main.transform.GetChild(0);
+
+            cardData.MoveToPoint(selectedTransform.position, selectedTransform.rotation);
+            SetCardPositionsInHand();
+        }
+    }
+
+    private void ClickToUnselectCard()
+    {
+        if (!cardIsSelected) return;
+
+        GameObject cursorCard = Utils.GetCardObjectUnderCursor();
+
+        if (cursorCard == null) return;
+        if (cursorCard.transform != selectedCard) return;
+
+        // replace logic in state machine with new input system
+        if (Input.GetMouseButtonDown(0))
+        {
+            UnselectCard();
+        }
+    }
+
+    private void UnselectCard()
+    {
+        CardData cardData = selectedCard.GetComponent<CardData>();
+
+        cardData.InHand = true;
+        cardIsSelected = false;
+
+        ReturnCardToHand(selectedCard);
     }
 
     public void AddCardToHand()
@@ -34,6 +99,18 @@ public class HandController : MonoBehaviour
 
         cardToAdd.parent = transform;
         cardsInHand.Add(cardToAdd);
+        SetCardPositionsInHand();
+    }
+
+    private void ReturnCardToHand(Transform cardToReturn)
+    {
+        if (cardToReturn == null)
+        {
+            Debug.LogWarning("There is no card returning to the hand");
+            return;
+        }
+
+        cardsInHand.Add(cardToReturn);
         SetCardPositionsInHand();
     }
 
@@ -60,13 +137,18 @@ public class HandController : MonoBehaviour
         }
     }
 
-    public Vector3 GetPositionInHand(int i)
+    public Transform GetSelectedCard()
     {
-        return cardPositions[i];
+        if (!cardIsSelected)
+        {
+            Debug.LogWarning("There is no card selected");
+            return null;
+        }
+
+        selectedCard.parent = null;
+        return selectedCard;
     }
 
-    public Quaternion GetRotationInHand()
-    {
-        return minPosition.rotation;
-    }
+    public Vector3 GetPositionInHand(int i) => cardPositions[i];
+    public Quaternion GetRotationInHand() => minPosition.rotation;
 }
