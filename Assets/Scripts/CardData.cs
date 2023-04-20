@@ -7,7 +7,10 @@ public class CardData : MonoBehaviour
 {
     public bool InHand { get; set; }
     public bool InDeck { get; set; }
+    public bool InPlay { get; set; }
     public int PositionInHand { get; set; }
+    public CardType Type { get; private set;}
+    public CardGroup Group { get; private set; }
 
     [SerializeField] private CardSO card;
 
@@ -23,29 +26,36 @@ public class CardData : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Vector3 hoverOffset;
 
-    private CardType cardType;
     private int bloodCost, defense, attack;
 
     private Quaternion rotationalValue;
     private Vector3 targetPoint;
-    private HandController handController;
+    private Hand hand;
 
-    private void Start()
+
+    private void Awake()
     {
-        handController = FindAnyObjectByType<HandController>();
-
-        cardType = card.GetCardType();
+        foreach(Hand hand in FindObjectsOfType<Hand>())
+        {
+            if (hand.BelongsToPlayer)
+            {
+                this.hand = hand;
+            }
+        }
+        
+        // Assinging CardData
+        Type = card.GetCardType();
         bloodCost = card.GetBloodCost();
+        Group = card.GetCardGroup();
 
-
+        // Assigning Visuals
         cardMeshRenderer.material = card.GetCardImage();
         nameField.text = card.GetName();
-
         descriptionField.text = card.GetDescription();
         bloodCostField.text = bloodCost.ToString();
-        
 
-        if (cardType == CardType.Monster)
+        // Checking if Card is a monster to assign attack and defense
+        if (Type == CardType.Monster)
         {
             attack = card.GetAttack();
             defense = card.GetDefense();
@@ -63,6 +73,7 @@ public class CardData : MonoBehaviour
 
         InHand = false;
         InDeck = true;
+        InPlay = false;
     }
 
     private void Update()
@@ -93,7 +104,7 @@ public class CardData : MonoBehaviour
         // Resets card position if no card is being hovered
         if (Utils.GetCardObjectUnderCursor() == null)
         {
-            MoveToPoint(handController.GetPositionInHand(PositionInHand), handController.GetRotationInHand());
+            MoveToPoint(hand.GetPositionInHand(PositionInHand), hand.GetRotationInHand());
 
             return;
         }
@@ -103,13 +114,13 @@ public class CardData : MonoBehaviour
         // if the card is being hovered it raises the position, else, it resets the position
         if (cardTransform == transform)
         {
-            Vector3 hoverPoint = handController.GetPositionInHand(PositionInHand) + hoverOffset;
+            Vector3 hoverPoint = hand.GetPositionInHand(PositionInHand) + hoverOffset;
             Quaternion hoverRotation = Camera.main.transform.rotation;
 
             MoveToPoint(hoverPoint, hoverRotation);
         } else
         {
-            MoveToPoint(handController.GetPositionInHand(PositionInHand), handController.GetRotationInHand());
+            MoveToPoint(hand.GetPositionInHand(PositionInHand), hand.GetRotationInHand());
         }
     }
 }

@@ -19,7 +19,7 @@ public class DrawState : BasePlayerState
         {
             if (ClickedDeck())
             {
-                Debug.Log("DECK CLICKED");
+                Utils.PlayerDrawACard();
                 stateMachine.SwitchState(new DecisionState(stateMachine, player));
             }
         }
@@ -35,7 +35,12 @@ public class DrawState : BasePlayerState
         GameObject clicked = Utils.GetCardObjectUnderCursor();
         if (clicked != null)
         {
-            return clicked.name == "Deck";
+            if(clicked.TryGetComponent<CardData>(out CardData cardData))
+            {
+                return cardData.InDeck;
+            }
+
+            return false;
         }
         return false;
     }

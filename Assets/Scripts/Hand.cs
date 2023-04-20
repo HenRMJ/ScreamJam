@@ -1,45 +1,36 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandController : MonoBehaviour
+public class Hand : MonoBehaviour
 {
+    public event EventHandler OnCardSelected;
+    public event EventHandler OnCardUnselected;
+
     [SerializeField] private Transform minPosition, maxPosition;
+    [SerializeField] private bool belongsToPlayer;
+    [SerializeField] private Deck deck;
+
+    public bool BelongsToPlayer { get; private set; }
 
     private List<Transform> cardsInHand = new List<Transform>();
     private List<Vector3> cardPositions = new List<Vector3>();
 
     private bool cardIsSelected;
-    private Transform selectedCard;
+    private Transform selectedCard;    
 
-    // assigning this in the start method but probably best to assign it in the inspector when everything is parented under player
-    private Deck deck;
-
-    private void Start()
+    private void Awake()
     {
-        deck = FindAnyObjectByType<Deck>();
+        BelongsToPlayer = belongsToPlayer;
         cardIsSelected = false;
     }
 
-    private void Update()
-    {
-        // just for testing. This deals the card from the deck to the player's hand but this can be done in a state class on click with the deck
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            AddCardToHand();
-        }
-
-        ClickToUnselectCard();
-        SelectCard();
-    }
-
-    private void SelectCard()
+    public void SelectCard()
     {
         GameObject cursorCard = Utils.GetCardObjectUnderCursor();
 
         if (cursorCard == null) return;
         
-
         // replace logic with input system and probably makes more sense to have it in the state machine
         if (Input.GetMouseButtonUp(0))
         {
@@ -51,6 +42,7 @@ public class HandController : MonoBehaviour
             CardData cardData = cursorCard.GetComponent<CardData>();
 
             if (cardData.InDeck) return;
+            if (cardData.InPlay) return;
 
             cardIsSelected = true;
             cardData.InHand = false;
@@ -62,10 +54,11 @@ public class HandController : MonoBehaviour
 
             cardData.MoveToPoint(selectedTransform.position, selectedTransform.rotation);
             SetCardPositionsInHand();
+            OnCardSelected?.Invoke(this, EventArgs.Empty);
         }
     }
 
-    private void ClickToUnselectCard()
+    public void ClickToUnselectCard()
     {
         if (!cardIsSelected) return;
 
@@ -87,6 +80,7 @@ public class HandController : MonoBehaviour
 
         cardData.InHand = true;
         cardIsSelected = false;
+        OnCardUnselected?.Invoke(this, EventArgs.Empty);
 
         ReturnCardToHand(selectedCard);
     }
@@ -137,6 +131,34 @@ public class HandController : MonoBehaviour
         }
     }
 
+    public void PlaceCard()
+    {
+        if (!cardIsSelected) return;
+
+        Transform cursorTransform = Utils.GetTransformUnderCursor();
+
+        if (cursorTransform == null) return;
+        if (!cursorTransform.TryGetComponent(out CardSlot cardSlot)) return;
+        if (cardSlot.Card != null) return;
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            selectedCard.parent = null;
+
+            CardData cardData = selectedCard.GetComponent<CardData>();
+            cardData.InHand = false;
+            cardData.InDeck = false;
+            cardData.InPlay = true;
+
+            cardData.MoveToPoint(cursorTransform.position, cursorTransform.rotation);
+
+            cardSlot.Card = selectedCard;
+            selectedCard = null;
+            cardIsSelected = false;
+            OnCardUnselected?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
     public Transform GetSelectedCard()
     {
         if (!cardIsSelected)
@@ -148,7 +170,6 @@ public class HandController : MonoBehaviour
         selectedCard.parent = null;
         return selectedCard;
     }
-
     public Vector3 GetPositionInHand(int i) => cardPositions[i];
     public Quaternion GetRotationInHand() => minPosition.rotation;
 }

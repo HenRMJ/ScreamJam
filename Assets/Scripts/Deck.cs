@@ -60,6 +60,7 @@ public class Deck : MonoBehaviour
         cardToDeal.parent = null;
         cardData.InHand = true;
         cardData.InDeck = false;
+        Debug.Log(cardData.name +" " + cardData.InDeck);
         instantiatedCardList.RemoveAt(0);
         return cardToDeal;
     }

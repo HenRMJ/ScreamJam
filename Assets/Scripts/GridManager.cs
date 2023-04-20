@@ -67,7 +67,6 @@ public class GridManager : MonoBehaviour
                 _cardSlots[x,y] = instantiatedCard;
             }
         }
-        Debug.Log(CardAt(-1, 1));
     }
 
     public GameObject CardAt(int x, int y)
@@ -83,4 +82,6 @@ public class GridManager : MonoBehaviour
 
         return _cardSlots[coordinates.x, coordinates.y];
     }
+
+    public Vector2Int GetGridDimensions() => _gridDimensions;
 }

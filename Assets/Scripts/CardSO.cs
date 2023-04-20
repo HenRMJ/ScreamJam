@@ -14,6 +14,7 @@ public class CardSO : ScriptableObject
     [SerializeField] private Material cardImage;
     [TextArea(2, 5)] [SerializeField] private string description;
     [SerializeField] private CardType cardType;
+    [SerializeField] private CardGroup cardGroup;
 
     [Header("Base Card Stats")]
     [SerializeField] private int bloodCost;
@@ -66,4 +67,5 @@ public class CardSO : ScriptableObject
     public int GetAttack() => attack;
     public int GetDefense() => defense;
     public CardType GetCardType() => cardType;
+    public CardGroup GetCardGroup() => cardGroup;
 }
