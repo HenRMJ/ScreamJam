@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="110">
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\States\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1682021342" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Queries\Factory Queries.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Presets\Factory Spatial Audio.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Presets\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Metadata\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Events\Default Work Unit.wwu" DateLow="1682021341" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Effects\Factory Effects.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1682021341" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Card Practice_WwiseProject.wproj" DateLow="1682021341" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1681647107" DateHigh="0"/>
+	<ValidationCacheItem File="E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1682021341" DateHigh="0"/>
 	<ValidationCacheItem File="E:\Repos\Unity3D\Card Practice_WwiseIntegrationTemp\Card Practice_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1681644818" DateHigh="0"/>
 	<ValidationCacheItem File="E:\Repos\Unity3D\Card Practice_WwiseIntegrationTemp\Card Practice_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1681644818" DateHigh="0"/>
 	<ValidationCacheItem File="E:\Repos\Unity3D\Card Practice_WwiseIntegrationTemp\Card Practice_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1681644818" DateHigh="0"/>

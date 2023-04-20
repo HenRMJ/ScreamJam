@@ -25,16 +25,6 @@ public class DecisionState : BasePlayerState
         Debug.Log($"BEGIN DecisionState for '{player}'");
     }
 
-    private bool ClickedHand()
-    {
-        GameObject clicked = Utils.GetCardObjectUnderCursor();
-        if (clicked != null)
-        {
-            return clicked.transform.parent.name == "Hand";
-        }
-        return false;
-    }
-
     private void AssignPlayerHand()
     {
         foreach (Hand hand in Utils.GetHands())
