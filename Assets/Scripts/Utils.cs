@@ -23,4 +23,11 @@ public static class Utils
             return null;
         }
     }
+
+    public static Vector3 GetMousePosition()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(ray, out RaycastHit raycastHit);
+        return raycastHit.point;
+    }
 }

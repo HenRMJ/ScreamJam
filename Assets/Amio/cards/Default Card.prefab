@@ -163,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5143073222210246625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.556, z: 0}
+  m_LocalPosition: {x: -0.78, y: 0, z: 1.8199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -190,6 +190,8 @@ MonoBehaviour:
   bloodCostField: {fileID: 5143073221588229380}
   attackField: {fileID: 5143073223387905476}
   cardMeshRenderer: {fileID: 5809160254841068263}
+  speed: 0
+  hoverOffset: {x: 0, y: 0, z: 0}
 --- !u!65 &-5935286169467110996
 BoxCollider:
   m_ObjectHideFlags: 0
