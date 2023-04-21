@@ -6,6 +6,7 @@ public class Hand : MonoBehaviour
 {
     public event EventHandler OnCardSelected;
     public event EventHandler OnCardUnselected;
+    public event EventHandler OnCardSummoned;
 
     [SerializeField] private Transform minPosition, maxPosition;
     [SerializeField] private bool belongsToPlayer;
@@ -151,6 +152,12 @@ public class Hand : MonoBehaviour
         {
             CardData cardData = selectedCard.GetComponent<CardData>();
 
+            if (cardData.Type == CardType.Monster && !player.CanSummon)
+            {
+                Debug.Log("You already summoned a monster this turn");
+                return;
+            }
+
             if (cardSlot.Card != null)
             {
                 UpdateCardsToSacrifice();
@@ -199,6 +206,7 @@ public class Hand : MonoBehaviour
             selectedCard = null;
             cardIsSelected = false;
 
+            OnCardSummoned?.Invoke(this, EventArgs.Empty);
             OnCardUnselected?.Invoke(this, EventArgs.Empty);
         }
     }
