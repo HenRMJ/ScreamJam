@@ -101,7 +101,6 @@ public class CardData : MonoBehaviour
     private void MoveCard()
     {
         if (transform.position == targetPoint && transform.rotation == rotationalValue) return;
-
         transform.position = Vector3.Lerp(transform.position, targetPoint, Time.deltaTime * speed);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotationalValue, Time.deltaTime * speed);
     }
@@ -132,6 +131,11 @@ public class CardData : MonoBehaviour
             Vector3 hoverPoint = hand.GetPositionInHand(PositionInHand) + hoverOffset;
             Quaternion hoverRotation = Camera.main.transform.rotation;
 
+            if (targetPoint != hoverPoint)
+            {
+                AkSoundEngine.PostEvent("BringUp_Card", gameObject);
+            }
+            
             MoveToPoint(hoverPoint, hoverRotation);
         } else
         {

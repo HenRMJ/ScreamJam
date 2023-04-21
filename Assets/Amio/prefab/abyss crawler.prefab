@@ -185,11 +185,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: e9a76b787354bb34396074a41d71b515, type: 2}
   nameField: {fileID: 5143073223490784169}
-  descriptionField: {fileID: 5143073223156389917}
+  loreField: {fileID: 0}
   defenseField: {fileID: 5143073223304526144}
   bloodCostField: {fileID: 5143073221588229380}
   attackField: {fileID: 5143073223387905476}
   cardMeshRenderer: {fileID: 5809160254841068263}
+  speed: 5
+  hoverOffset: {x: 0, y: 0, z: 0}
 --- !u!65 &-5935286169467110996
 BoxCollider:
   m_ObjectHideFlags: 0

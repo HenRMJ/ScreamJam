@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../../</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Mac/</SourceFilesRoot>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
@@ -31,7 +31,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{4DE8384F-A0C6-8E6A-B181-52E7406DC68A}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3EFA0E78-96DF-E4CC-3A18-A4E3A57BB70F}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -109,7 +109,7 @@
 				</File>
 				<File Id="649903395" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DemocinSouls_Ambience.wav</ShortName>
-					<CachePath>SFX/DemocinSouls_Ambience_10C4C929.wem</CachePath>
+					<CachePath>SFX/DemocinSouls_Ambience_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="689212934" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(3).wav</ShortName>
@@ -160,7 +160,7 @@
 						<MediaRef Id="821937752"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1070976599" Name="DemonicSouls_Amb" DurationType="OneShot" DurationMin="63.973145" DurationMax="63.973145">
+				<Event Id="1070976599" Name="DemonicSouls_Amb" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="649903395"/>
 					</MediaRefs>
@@ -237,5 +237,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{44D646E9-7347-C462-5A1C-25574193F969}</FileHash>
+	<FileHash>{B32F973D-0817-0905-308E-057038F016C6}</FileHash>
 </SoundBanksInfo>

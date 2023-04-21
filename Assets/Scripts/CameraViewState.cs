@@ -53,6 +53,7 @@ public class CameraViewState : MonoBehaviour
                 {
                     virtualCameras[0].Priority = 5;
                     currentState = State.Top;
+                    AkSoundEngine.PostEvent("StandUp", gameObject);
                 }
                 else
                 {
@@ -72,6 +73,7 @@ public class CameraViewState : MonoBehaviour
                 {
                     virtualCameras[1].Priority = 5;
                     currentState = State.Board;
+                    AkSoundEngine.PostEvent("SitDown", gameObject);
                 }
                 break;
         }

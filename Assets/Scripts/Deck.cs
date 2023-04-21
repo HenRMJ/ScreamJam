@@ -62,6 +62,7 @@ public class Deck : MonoBehaviour
         cardData.InDeck = false;
 
         instantiatedCardList.RemoveAt(0);
+        AkSoundEngine.PostEvent("TakeCard", gameObject);
         return cardToDeal;
     }
 }
