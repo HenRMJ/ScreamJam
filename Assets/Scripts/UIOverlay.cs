@@ -29,6 +29,22 @@ public class UIOverlay : MonoBehaviour
 
     private void UpdateCardUI()
     {
-        descriptionUI.SetActive(Utils.GetCardObjectUnderCursor() != null);
+        GameObject card = Utils.GetCardObjectUnderCursor();
+
+        if (card == null)
+        {
+            descriptionUI.SetActive(false);
+            return;
+        }
+
+        CardData cardData = card.GetComponent<CardData>();
+
+        if (cardData.InDeck)
+        {
+            descriptionUI.SetActive(false);
+            return;
+        }
+
+        descriptionUI.SetActive(true);
     }
 }
