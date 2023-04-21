@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: abysscrawler
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: f320699a2000ce14cae2df8750c7b163, type: 2}
-  description: 
+  loreBlurb: Quick Blurb
+  UIDescription: This card has several different properties. This is what this can
+    do
   cardType: 0
+  cardGroup: 0
   bloodCost: 0
+  attack: 0
+  defense: 0

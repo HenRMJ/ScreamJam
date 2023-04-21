@@ -24,10 +24,10 @@ public class UIOverlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckIfCardIsHovering();
+        UpdateCardUI();
     }
 
-    private void CheckIfCardIsHovering()
+    private void UpdateCardUI()
     {
         descriptionUI.SetActive(Utils.GetCardObjectUnderCursor() != null);
     }

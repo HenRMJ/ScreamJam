@@ -11,6 +11,7 @@ public class CardData : MonoBehaviour
     public bool InHand { get; set; }
     public bool InDeck { get; set; }
     public bool InPlay { get; set; }
+    public bool canMove { get; set; }
     public int PositionInHand { get; set; }
     public CardType Type { get; private set;}
     public CardGroup Group { get; private set; }
@@ -83,6 +84,11 @@ public class CardData : MonoBehaviour
         InPlay = false;
     }
 
+    private void Start()
+    {
+        StartRoundState.OnStartRound += StartRoundState_OnStartRound;
+    }    
+
     private void Update()
     {
         HoverInfo();
@@ -144,5 +150,11 @@ public class CardData : MonoBehaviour
         OnAnyCardHover?.Invoke(this, EventArgs.Empty);
     }
 
+    private void StartRoundState_OnStartRound(object sender, EventArgs e)
+    {
+        canMove = true;
+    }
+
     public string GetCardUIDescription() => UIDescription;
+    public int GetBloodCost() => bloodCost;
 }

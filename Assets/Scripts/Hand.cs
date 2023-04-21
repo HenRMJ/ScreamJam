@@ -10,11 +10,13 @@ public class Hand : MonoBehaviour
     [SerializeField] private Transform minPosition, maxPosition;
     [SerializeField] private bool belongsToPlayer;
     [SerializeField] private Deck deck;
+    [SerializeField] private Player player;
 
     public bool BelongsToPlayer { get; private set; }
 
     private List<Transform> cardsInHand = new List<Transform>();
     private List<Vector3> cardPositions = new List<Vector3>();
+    private List<GameObject> cardsToSacrifice = new List<GameObject>();
 
     private bool cardIsSelected;
     private Transform selectedCard;    
@@ -36,6 +38,7 @@ public class Hand : MonoBehaviour
         {
             if (cardIsSelected && cursorCard.transform != selectedCard)
             {
+                if (cursorCard.GetComponent<CardData>().InPlay) return;
                 UnselectCard();
             }
 
@@ -70,6 +73,7 @@ public class Hand : MonoBehaviour
         // replace logic in state machine with new input system
         if (Input.GetMouseButtonDown(0))
         {
+            if (cursorCard.GetComponent<CardData>().InPlay) return;
             UnselectCard();
         }
     }
@@ -80,7 +84,9 @@ public class Hand : MonoBehaviour
 
         cardData.InHand = true;
         cardIsSelected = false;
+
         OnCardUnselected?.Invoke(this, EventArgs.Empty);
+        cardsToSacrifice.Clear();
 
         ReturnCardToHand(selectedCard);
     }
@@ -139,13 +145,48 @@ public class Hand : MonoBehaviour
 
         if (cursorTransform == null) return;
         if (!cursorTransform.TryGetComponent(out CardSlot cardSlot)) return;
-        if (cardSlot.Card != null) return;
+              
         
         if (Input.GetMouseButtonDown(0))
         {
+            CardData cardData = selectedCard.GetComponent<CardData>();
+
+            if (cardSlot.Card != null)
+            {
+                UpdateCardsToSacrifice();
+                return;
+            }
+
+            // This checks if we can summon a card with our sacrifices, and if we can it updates the card slots
+            // and the updates the player health, and destorys the cards, if not it just returns
+            if (player.TrySummonCard(cardData.GetBloodCost() - CalculateSacrificedBlood()))
+            {
+                CardSlot[] cardSlots = FindObjectsOfType<CardSlot>();
+
+                foreach (CardSlot cardSlotToUpdate in cardSlots)
+                {
+                    if (cardSlotToUpdate.Card == null) continue;
+
+                    if (cardsToSacrifice.Contains(cardSlotToUpdate.Card.gameObject))
+                    {
+                        cardSlotToUpdate.Card = null;
+                    }
+                }
+
+                foreach (GameObject card in cardsToSacrifice)
+                {
+                    Debug.Log(card.name);
+                    Destroy(card);
+                }
+                cardsToSacrifice.Clear();
+            } else
+            {
+                Debug.Log("Not enough blood to summon card");
+                return;
+            }
+
             selectedCard.parent = null;
 
-            CardData cardData = selectedCard.GetComponent<CardData>();
             cardData.InHand = false;
             cardData.InDeck = false;
             cardData.InPlay = true;
@@ -155,8 +196,43 @@ public class Hand : MonoBehaviour
             cardSlot.Card = selectedCard;
             selectedCard = null;
             cardIsSelected = false;
+
             OnCardUnselected?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    private void UpdateCardsToSacrifice()
+    {
+        if (!cardIsSelected) return;
+
+        GameObject cursorCard = Utils.GetCardObjectUnderCursor();
+        
+        if (cursorCard == null) return;
+
+        CardData cardData = cursorCard.GetComponent<CardData>();
+
+        if (!cardData.InPlay) return;
+
+        if (cardsToSacrifice.Contains(cursorCard))
+        {
+            cardsToSacrifice.Remove(cursorCard);
+        }
+        else
+        {
+            cardsToSacrifice.Add(cursorCard);
+        }
+    }
+
+    private int CalculateSacrificedBlood()
+    {
+        int sacrificeAmount = 0;
+
+        foreach (GameObject card in cardsToSacrifice)
+        {
+            sacrificeAmount += card.GetComponent<CardData>().GetBloodCost();
+        }
+
+        return sacrificeAmount;
     }
 
     public Transform GetSelectedCard()

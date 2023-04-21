@@ -6,6 +6,8 @@ using UnityEngine;
 /// </summary>
 public class Player : MonoBehaviour
 {
+    [SerializeField] private int blood;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +18,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool TrySummonCard(int cost)
+    {
+        if (cost >= blood) return false;
+        if (cost <= 0) return true;
+
+        blood -= cost;
+        return true;
     }
 }

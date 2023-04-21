@@ -15,7 +15,7 @@ public class GridManager : MonoBehaviour
     private Vector2 _cardSlotDimensions = new Vector2(0, 0);
     private GameObject[,] _cardSlots;
 
-    private void Start()
+    private void Awake()
     {
         _cardSlots = new GameObject[_gridDimensions.x, _gridDimensions.y];
         Build(_cardSlotPrefab, _gridDimensions, _padding);
@@ -78,6 +78,10 @@ public class GridManager : MonoBehaviour
     {
         if ((coordinates.x < 0 || coordinates.x >= _gridDimensions.x)
             || (coordinates.x < 0 || coordinates.x >= _gridDimensions.x))
+            return null;
+
+        if ((coordinates.y < 0 || coordinates.y >= _gridDimensions.y)
+            || (coordinates.y < 0 || coordinates.y >= _gridDimensions.y))
             return null;
 
         return _cardSlots[coordinates.x, coordinates.y];

@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CardSlot : MonoBehaviour
 {
     public Transform Card { get; set; }
+
+    private List<GameObject> validMovePositions = new List<GameObject>();
 
     private Hand playerHand;
     private GridManager gridManager;
@@ -39,6 +42,102 @@ public class CardSlot : MonoBehaviour
         playerHand.OnCardUnselected += PlayerHand_OnCardsUnselected;
     }
 
+    private void Update()
+    {
+        ShowValidMovePositions();
+    }
+
+    private void ShowValidMovePositions()
+    {
+        if (Card == null) return;
+        if (Utils.GetTransformUnderCursor() != transform) return;
+        
+        if (Input.GetMouseButtonUp(1))
+        {
+            CardData cardData = Card.GetComponent<CardData>();
+            if (!cardData.canMove) return;
+
+            switch (cardData.Group)
+            {
+                case CardGroup.A:
+                    if (gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y + 1) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y + 1));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y + 1) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y + 1));
+                    }
+
+                    break;
+                default:
+                    if (gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1));
+                    }
+
+                    if (gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1) != null)
+                    {
+                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1));
+                    }
+                    break;
+            }
+
+            foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+            {
+                cardSlot.UpdateVisualAndCollider(false);
+            }
+
+            foreach (GameObject cardSlotObject in validMovePositions)
+            {
+                cardSlotObject.GetComponent<CardSlot>().UpdateVisualAndCollider(true);
+            }
+        }
+
+        
+    }
+
     private void PlayerHand_OnCardsUnselected(object sender, EventArgs e)
     {
         UpdateVisualAndCollider(true);
@@ -70,7 +169,7 @@ public class CardSlot : MonoBehaviour
     }
 
     // can replace with meshrenderer with an animation or material swap
-    private void UpdateVisualAndCollider(bool updateValue)
+    public void UpdateVisualAndCollider(bool updateValue)
     {
         gameObject.GetComponent<MeshRenderer>().enabled = updateValue;
         gameObject.GetComponent<BoxCollider>().enabled = updateValue;

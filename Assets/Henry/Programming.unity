@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50e05e5a71d762498d480b0b992b6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: 1
 --- !u!114 &118358436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +463,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250096986}
-  m_LocalRotation: {x: 0.3131757, y: -0.00000001634082, z: 0.00000000538862, w: 0.9496952}
+  m_LocalRotation: {x: 0.3131757, y: 0.00000001634082, z: -0.00000000538862, w: 0.9496952}
   m_LocalPosition: {x: 0.2426, y: 0.3637, z: -0.2984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -818,7 +819,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507163746}
-  m_LocalRotation: {x: 0.70090926, y: 0.000005014434, z: -0.00000492767, w: 0.7132505}
+  m_LocalRotation: {x: 0.70090926, y: 0.000005021533, z: -0.0000049346463, w: 0.7132505}
   m_LocalPosition: {x: 0, y: 0.13, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1048,7 +1049,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560507256}
-  m_LocalRotation: {x: 0.4964775, y: -0.000000029871995, z: 0.000000017085167, w: 0.8680496}
+  m_LocalRotation: {x: 0.4964775, y: 0.00000002987197, z: -0.000000017085153, w: 0.8680496}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1125,7 +1126,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682640366}
-  m_LocalRotation: {x: 0.3131757, y: -0.00000001634082, z: 0.00000000538862, w: 0.9496952}
+  m_LocalRotation: {x: 0.3131757, y: 0.00000001634082, z: -0.00000000538862, w: 0.9496952}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1990,6 +1991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1201254260}
   - component: {fileID: 1201254261}
+  - component: {fileID: 1201254262}
   m_Layer: 0
   m_Name: Play Area
   m_TagString: Untagged
@@ -2028,6 +2030,18 @@ MonoBehaviour:
   _padding: 0.1
   _cardSlotPrefab: {fileID: 4509322986070951165, guid: 38a1f18330b5cd94ebfb626c7ee55c2c,
     type: 3}
+--- !u!114 &1201254262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201254258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af0899e01189824f8a2e3ce800c80d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1222185475 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1189b3c7b0a4a99419bc4382e31dd946,
@@ -3524,6 +3538,7 @@ MonoBehaviour:
   maxPosition: {fileID: 1768262713}
   belongsToPlayer: 1
   deck: {fileID: 825727915}
+  player: {fileID: 118358435}
 --- !u!4 &1979597312
 Transform:
   m_ObjectHideFlags: 0

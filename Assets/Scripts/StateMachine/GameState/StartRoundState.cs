@@ -1,7 +1,10 @@
 using UnityEngine;
+using System;
 
 public class StartRoundState : BaseGameState
 {
+    public static event EventHandler OnStartRound;
+
     public StartRoundState(GameStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
@@ -14,6 +17,7 @@ public class StartRoundState : BaseGameState
         PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
         Player player = playerObject.GetComponent<Player>();
         playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
+        OnStartRound?.Invoke(this, EventArgs.Empty);
     }
 
     public override void Tick()

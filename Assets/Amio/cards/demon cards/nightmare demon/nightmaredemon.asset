@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: nightmaredemon
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 324b581823f55894b918023727968130, type: 2}
-  description: 
-  cardType: 0
+  loreBlurb: 
+  UIDescription: 
+  cardType: 1
+  cardGroup: 0
   bloodCost: 0
+  attack: 0
+  defense: 0
