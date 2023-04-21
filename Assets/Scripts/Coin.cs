@@ -7,6 +7,7 @@ public class Coin : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Hand playerHand;
+    [SerializeField] private Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -15,9 +16,16 @@ public class Coin : MonoBehaviour
         playerHand.OnCardSummoned += PlayerHand_OnCardSummoned;
     }
 
-    private void PlayerHand_OnCardSummoned(object sender, EventArgs e)
+    private void PlayerHand_OnCardSummoned(object sender, Transform e)
     {
-        animator.SetBool("CanSummon", false);
+        bool canSummon = true;
+
+        if (e.GetComponent<CardData>().Type == CardType.Monster)
+        {
+            canSummon = false;
+        }
+
+        animator.SetBool("CanSummon", canSummon);
     }
 
     private void StartRoundState_OnStartRound(object sender, EventArgs e)

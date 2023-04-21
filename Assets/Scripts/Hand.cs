@@ -6,7 +6,7 @@ public class Hand : MonoBehaviour
 {
     public event EventHandler OnCardSelected;
     public event EventHandler OnCardUnselected;
-    public event EventHandler OnCardSummoned;
+    public event EventHandler<Transform> OnCardSummoned;
 
     [SerializeField] private Transform minPosition, maxPosition;
     [SerializeField] private bool belongsToPlayer;
@@ -203,10 +203,13 @@ public class Hand : MonoBehaviour
             cardData.MoveToPoint(cursorTransform.position, cursorTransform.rotation);
 
             cardSlot.Card = selectedCard;
+
+            OnCardSummoned?.Invoke(this, selectedCard);
+
             selectedCard = null;
             cardIsSelected = false;
 
-            OnCardSummoned?.Invoke(this, EventArgs.Empty);
+            
             OnCardUnselected?.Invoke(this, EventArgs.Empty);
         }
     }

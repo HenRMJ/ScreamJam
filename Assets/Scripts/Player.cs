@@ -24,15 +24,16 @@ public class Player : MonoBehaviour
         CanSummon = true;
     }
 
-    private void PlayerHand_OnCardSummoned(object sender, EventArgs e)
+    private void PlayerHand_OnCardSummoned(object sender, Transform e)
     {
-        CanSummon = false;
-    }
+        bool canSummon = true;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (e.GetComponent<CardData>().Type == CardType.Monster)
+        {
+            canSummon = false;
+        }
+
+        CanSummon = canSummon;
     }
 
     public bool TrySummonCard(int cost)
