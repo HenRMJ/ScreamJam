@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CardSlot : MonoBehaviour
 {
+    private static Transform selectedCard;
+
     public Transform Card { get; set; }
     public bool CanPlace { get; private set; }
+    public bool CanMove { get; private set; }
 
     private List<GameObject> validMovePositions = new List<GameObject>();
 
@@ -44,6 +47,28 @@ public class CardSlot : MonoBehaviour
     private void Update()
     {
         ShowValidMovePositions();
+        MoveSelectedCardToValidPosition();
+    }
+
+    private void MoveSelectedCardToValidPosition()
+    {
+        if (selectedCard == null) return;
+        if (validMovePositions.Count == 0) return;
+
+        Transform cardSlotTransformToMoveTo = Utils.GetTransformUnderCursor();
+
+        if (!validMovePositions.Contains(cardSlotTransformToMoveTo.gameObject)) return;
+        if (Card != selectedCard) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Card = null;
+            CardSlot cardSlot = cardSlotTransformToMoveTo.GetComponent<CardSlot>();
+            cardSlot.Card = selectedCard;
+            CardData cardData = cardSlot.Card.GetComponent<CardData>();
+            cardData.CanMove = false;
+            cardData.MoveToPoint(cardSlotTransformToMoveTo.position, cardSlotTransformToMoveTo.rotation);
+        }
     }
 
     private void ShowValidMovePositions()
@@ -54,7 +79,10 @@ public class CardSlot : MonoBehaviour
         if (Input.GetMouseButtonUp(1))
         {
             CardData cardData = Card.GetComponent<CardData>();
-            if (!cardData.canMove) return;
+
+            if (!cardData.CanMove) return;
+
+            selectedCard = Card;
 
             switch (cardData.Group)
             {
@@ -126,25 +154,41 @@ public class CardSlot : MonoBehaviour
             foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
             {
                 cardSlot.UpdateVisuals(false);
+                CanMove = false;
                 Debug.Log(FindObjectsOfType<CardSlot>().Length);
             }
 
             foreach (GameObject cardSlotObject in validMovePositions)
             {
-                cardSlotObject.GetComponent<CardSlot>().UpdateVisuals(true);
-            }
-        }
+                CardSlot cardSlot = cardSlotObject.GetComponent<CardSlot>();
 
-        
+                if (cardSlot.Card == null)
+                {
+                    CanMove = true;
+                    cardSlot.UpdateVisuals(true);
+                } else
+                {
+                    CanMove = false;
+                    cardSlot.UpdateVisuals(false);
+                }
+
+                
+            }
+        }        
     }
 
     private void PlayerHand_OnCardsUnselected(object sender, EventArgs e)
     {
         UpdateVisuals(true);
+        validMovePositions.Clear();
+        selectedCard = null;
     }
 
     private void PlayerHand_OnCardSelected(object hand, EventArgs e)
     {
+        selectedCard = null;
+        validMovePositions.Clear();
+
         CardData cardData = playerHand.GetSelectedCard().GetComponent<CardData>();
 
         CanPlace = false;

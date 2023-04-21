@@ -191,6 +191,7 @@ public class Hand : MonoBehaviour
             cardData.InHand = false;
             cardData.InDeck = false;
             cardData.InPlay = true;
+            cardData.CanMove = false;
 
             cardData.MoveToPoint(cursorTransform.position, cursorTransform.rotation);
 

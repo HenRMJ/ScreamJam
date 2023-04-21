@@ -11,7 +11,7 @@ public class CardData : MonoBehaviour
     public bool InHand { get; set; }
     public bool InDeck { get; set; }
     public bool InPlay { get; set; }
-    public bool canMove { get; set; }
+    public bool CanMove { get; set; }
     public int PositionInHand { get; set; }
     public CardType Type { get; private set;}
     public CardGroup Group { get; private set; }
@@ -82,6 +82,7 @@ public class CardData : MonoBehaviour
         InHand = false;
         InDeck = true;
         InPlay = false;
+        CanMove = false;
     }
 
     private void Start()
@@ -152,7 +153,7 @@ public class CardData : MonoBehaviour
 
     private void StartRoundState_OnStartRound(object sender, EventArgs e)
     {
-        canMove = true;
+        CanMove = true;
     }
 
     public string GetCardUIDescription() => UIDescription;
