@@ -16,6 +16,7 @@ public class CardSlot : MonoBehaviour
     private GridManager gridManager;
 
     private Vector2Int cardSlotPosition;
+    private bool inDecisionState;
 
     private void Start()
     {
@@ -40,12 +41,17 @@ public class CardSlot : MonoBehaviour
             }
         }
 
+        inDecisionState = false;
+
         playerHand.OnCardSelected += PlayerHand_OnCardSelected;
         playerHand.OnCardUnselected += PlayerHand_OnCardsUnselected;
+        DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
+        DecisionState.OnExitDecisionState += DecisionState_OnExitDecisionState;
     }
 
     private void Update()
     {
+        if (!inDecisionState) return;
         ShowValidMovePositions();
         MoveSelectedCardToValidPosition();
     }
@@ -223,5 +229,15 @@ public class CardSlot : MonoBehaviour
     public void UpdateVisuals(bool updateValue)
     {
         gameObject.GetComponent<MeshRenderer>().enabled = updateValue;
+    }
+
+    private void DecisionState_OnEnterDecisionState(object sender, EventArgs e)
+    {
+        inDecisionState = true;
+    }
+
+    private void DecisionState_OnExitDecisionState(object sender, EventArgs e)
+    {
+        inDecisionState = false;
     }
 }

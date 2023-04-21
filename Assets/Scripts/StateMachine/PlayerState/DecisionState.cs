@@ -1,7 +1,11 @@
 using UnityEngine;
+using System;
 
 public class DecisionState : BasePlayerState
 {
+    public static event EventHandler OnEnterDecisionState;
+    public static event EventHandler OnExitDecisionState;
+
     public DecisionState(PlayerStateMachine stateMachine, Player player) : base(stateMachine, player) { }
 
     Hand playerHand;
@@ -9,6 +13,7 @@ public class DecisionState : BasePlayerState
     public override void Enter()
     {
         Debug.Log($"BEGIN DecisionState for '{player}'");
+        OnEnterDecisionState?.Invoke(this, EventArgs.Empty);
         AssignPlayerHand();
     }
 
@@ -22,6 +27,7 @@ public class DecisionState : BasePlayerState
 
     public override void Exit()
     {
+        OnExitDecisionState?.Invoke(this, EventArgs.Empty);
         Debug.Log($"BEGIN DecisionState for '{player}'");
     }
 
