@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\BasePlayerState.cs" />
     <Compile Include="Assets\PlayerControlAsset.cs" />
     <Compile Include="Assets\Scripts\UIOverlay.cs" />
+    <Compile Include="Assets\Scripts\Coin.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

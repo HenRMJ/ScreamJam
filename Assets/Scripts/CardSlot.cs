@@ -68,6 +68,13 @@ public class CardSlot : MonoBehaviour
             CardData cardData = cardSlot.Card.GetComponent<CardData>();
             cardData.CanMove = false;
             cardData.MoveToPoint(cardSlotTransformToMoveTo.position, cardSlotTransformToMoveTo.rotation);
+
+            validMovePositions.Clear();
+            selectedCard = null;
+            foreach (CardSlot cardSlotInScene in FindObjectsOfType<CardSlot>())
+            {
+                cardSlotInScene.UpdateVisuals(true);
+            }
         }
     }
 
