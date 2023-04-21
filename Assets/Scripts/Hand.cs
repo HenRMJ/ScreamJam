@@ -157,6 +157,8 @@ public class Hand : MonoBehaviour
                 return;
             }
 
+            if (!cardSlot.CanPlace) return;
+
             // This checks if we can summon a card with our sacrifices, and if we can it updates the card slots
             // and the updates the player health, and destorys the cards, if not it just returns
             if (player.TrySummonCard(cardData.GetBloodCost() - CalculateSacrificedBlood()))
@@ -175,7 +177,6 @@ public class Hand : MonoBehaviour
 
                 foreach (GameObject card in cardsToSacrifice)
                 {
-                    Debug.Log(card.name);
                     Destroy(card);
                 }
                 cardsToSacrifice.Clear();

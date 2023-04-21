@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardSlot : MonoBehaviour
 {
     public Transform Card { get; set; }
+    public bool CanPlace { get; private set; }
 
     private List<GameObject> validMovePositions = new List<GameObject>();
 
@@ -12,8 +13,6 @@ public class CardSlot : MonoBehaviour
     private GridManager gridManager;
 
     private Vector2Int cardSlotPosition;
-
-    private bool canPlace;
 
     private void Start()
     {
@@ -126,12 +125,13 @@ public class CardSlot : MonoBehaviour
 
             foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
             {
-                cardSlot.UpdateVisualAndCollider(false);
+                cardSlot.UpdateVisuals(false);
+                Debug.Log(FindObjectsOfType<CardSlot>().Length);
             }
 
             foreach (GameObject cardSlotObject in validMovePositions)
             {
-                cardSlotObject.GetComponent<CardSlot>().UpdateVisualAndCollider(true);
+                cardSlotObject.GetComponent<CardSlot>().UpdateVisuals(true);
             }
         }
 
@@ -140,38 +140,37 @@ public class CardSlot : MonoBehaviour
 
     private void PlayerHand_OnCardsUnselected(object sender, EventArgs e)
     {
-        UpdateVisualAndCollider(true);
+        UpdateVisuals(true);
     }
 
     private void PlayerHand_OnCardSelected(object hand, EventArgs e)
     {
         CardData cardData = playerHand.GetSelectedCard().GetComponent<CardData>();
 
-        canPlace = false;
+        CanPlace = false;
 
         switch (cardData.Group)
         {
             case CardGroup.C:
                 if (cardSlotPosition.y == 0)
                 {
-                    canPlace = true;
+                    CanPlace = true;
                 }
                 break;
             default:
                 if (cardSlotPosition.y == 0 || cardSlotPosition.y == 1)
                 {
-                    canPlace = true;
+                    CanPlace = true;
                 }
                 break;
         }
 
-        UpdateVisualAndCollider(canPlace);
+        UpdateVisuals(CanPlace);
     }
 
     // can replace with meshrenderer with an animation or material swap
-    public void UpdateVisualAndCollider(bool updateValue)
+    public void UpdateVisuals(bool updateValue)
     {
         gameObject.GetComponent<MeshRenderer>().enabled = updateValue;
-        gameObject.GetComponent<BoxCollider>().enabled = updateValue;
     }
 }
