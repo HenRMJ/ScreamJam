@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 
 public class CardData : MonoBehaviour
 {
+    public static event EventHandler OnAnyCardHover;
+
     public bool InHand { get; set; }
     public bool InDeck { get; set; }
     public bool InPlay { get; set; }
@@ -16,7 +19,7 @@ public class CardData : MonoBehaviour
 
     [Header("Card Fields")]
     [SerializeField] private TextMeshProUGUI nameField;
-    [SerializeField] private TextMeshProUGUI descriptionField;
+    [SerializeField] private TextMeshProUGUI loreField;
     [SerializeField] private TextMeshProUGUI defenseField;
     [SerializeField] private TextMeshProUGUI bloodCostField;
     [SerializeField] private TextMeshProUGUI attackField;
@@ -27,6 +30,7 @@ public class CardData : MonoBehaviour
     [SerializeField] private Vector3 hoverOffset;
 
     private int bloodCost, defense, attack;
+    private string cardName, UIDescription, loreBlurb;
 
     private Quaternion rotationalValue;
     private Vector3 targetPoint;
@@ -47,11 +51,14 @@ public class CardData : MonoBehaviour
         Type = card.GetCardType();
         bloodCost = card.GetBloodCost();
         Group = card.GetCardGroup();
+        cardName = card.GetName();
+        UIDescription = card.GetUIDescription();
+        loreBlurb = card.GetLoreBlurb();
 
         // Assigning Visuals
         cardMeshRenderer.material = card.GetCardImage();
-        nameField.text = card.GetName();
-        descriptionField.text = card.GetDescription();
+        nameField.text = cardName;
+        loreField.text = loreBlurb;
         bloodCostField.text = bloodCost.ToString();
 
         // Checking if Card is a monster to assign attack and defense
@@ -78,6 +85,7 @@ public class CardData : MonoBehaviour
 
     private void Update()
     {
+        HoverInfo();
         HoverCard();
         MoveCard();
     }
@@ -123,4 +131,18 @@ public class CardData : MonoBehaviour
             MoveToPoint(hand.GetPositionInHand(PositionInHand), hand.GetRotationInHand());
         }
     }
+
+    private void HoverInfo()
+    {
+        if (InDeck) return;
+
+        GameObject cursorCard = Utils.GetCardObjectUnderCursor();
+
+        if (cursorCard == null) return;
+        if (gameObject != cursorCard) return;
+
+        OnAnyCardHover?.Invoke(this, EventArgs.Empty);
+    }
+
+    public string GetCardUIDescription() => UIDescription;
 }

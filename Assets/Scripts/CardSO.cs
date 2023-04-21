@@ -12,7 +12,8 @@ using UnityEditor;
 public class CardSO : ScriptableObject
 {
     [SerializeField] private Material cardImage;
-    [TextArea(2, 5)] [SerializeField] private string description;
+    [TextArea(2, 5)] [SerializeField] private string loreBlurb;
+    [TextArea(2, 5)] [SerializeField] private string UIDescription;
     [SerializeField] private CardType cardType;
     [SerializeField] private CardGroup cardGroup;
 
@@ -62,7 +63,8 @@ public class CardSO : ScriptableObject
 
     public string GetName() => name;
     public Material GetCardImage() => cardImage;
-    public string GetDescription() => description;
+    public string GetLoreBlurb() => loreBlurb;
+    public string GetUIDescription() => UIDescription;
     public int GetBloodCost() => bloodCost;
     public int GetAttack() => attack;
     public int GetDefense() => defense;

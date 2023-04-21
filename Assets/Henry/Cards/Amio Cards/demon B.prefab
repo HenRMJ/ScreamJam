@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: b31d8c00df1666e438a3f2b795b8a9f0, type: 2}
   nameField: {fileID: 5143073223490784169}
-  descriptionField: {fileID: 5143073223156389917}
+  loreField: {fileID: 5143073223156389917}
   defenseField: {fileID: 5143073223304526144}
   bloodCostField: {fileID: 5143073221588229380}
   attackField: {fileID: 5143073223387905476}

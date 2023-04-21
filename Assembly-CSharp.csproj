@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\testing.cs" />
     <Compile Include="Assets\Scripts\GridPosition.cs" />
     <Compile Include="Assets\Scripts\GridManager.cs" />
+    <Compile Include="Assets\Scripts\UIOverlay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
