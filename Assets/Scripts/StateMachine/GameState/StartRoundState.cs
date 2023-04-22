@@ -17,11 +17,19 @@ public class StartRoundState : BaseGameState
         PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
         Player player = playerObject.GetComponent<Player>();
         playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
+
+        TurnSystem.Instance.IsPlayersTurn = !TurnSystem.Instance.IsPlayersTurn;
+
         OnStartRound?.Invoke(this, EventArgs.Empty);
     }
 
     public override void Tick()
     {
+        if (!TurnSystem.Instance.IsPlayersTurn) return;
+        if (Bell.Instance.CheckIfClickBell())
+        {
+            stateMachine.SwitchState(new AttackState(stateMachine));
+        }
     }
 
     public override void Exit()

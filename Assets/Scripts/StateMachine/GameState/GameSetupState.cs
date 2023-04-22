@@ -13,6 +13,7 @@ public class GameSetupState : BaseGameState
     public override void Enter()
     {
         Debug.Log("BEGIN GAME SETUP");
+        TurnSystem.Instance.IsPlayersTurn = false;
         stateMachine.StartCoroutine(SleepAndStartGame());
         stateMachine.StartCoroutine(DealStartingCards(.5f));
         stateMachine.StartCoroutine(DealStartingCards(1f));

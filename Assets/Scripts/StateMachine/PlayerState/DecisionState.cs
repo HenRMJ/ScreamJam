@@ -23,6 +23,10 @@ public class DecisionState : BasePlayerState
         playerHand.ClickToUnselectCard();
         playerHand.SelectCard();
         playerHand.PlaceCard();
+        if (Bell.Instance.CheckIfClickBell())
+        {
+            stateMachine.SwitchState(new WaitingState(stateMachine, player));
+        }
     }
 
     public override void Exit()

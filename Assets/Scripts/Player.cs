@@ -44,4 +44,9 @@ public class Player : MonoBehaviour
         blood -= cost;
         return true;
     }
+
+    public void DealDamage(int damage)
+    {
+        blood -= damage;
+    }
 }

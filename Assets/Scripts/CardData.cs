@@ -29,6 +29,7 @@ public class CardData : MonoBehaviour
     [Header("Card Movement Values")]
     [SerializeField] private float speed;
     [SerializeField] private Vector3 hoverOffset;
+    [SerializeField] private bool belongsToPlayer;
 
     private int bloodCost, defense, attack;
     private string cardName, UIDescription, loreBlurb;
@@ -42,7 +43,10 @@ public class CardData : MonoBehaviour
     {
         foreach(Hand hand in FindObjectsOfType<Hand>())
         {
-            if (hand.BelongsToPlayer)
+            if (hand.BelongsToPlayer && belongsToPlayer)
+            {
+                this.hand = hand;
+            } else if (!hand.BelongsToPlayer)
             {
                 this.hand = hand;
             }
@@ -160,6 +164,9 @@ public class CardData : MonoBehaviour
         CanMove = true;
     }
 
+    public int GetAttackDamage() => attack;
+    public int GetDefenseValue() => defense;
+    public bool BelongsToPlayer() => belongsToPlayer;
     public string GetCardUIDescription() => UIDescription;
     public int GetBloodCost() => bloodCost;
 }

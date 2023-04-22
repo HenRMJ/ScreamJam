@@ -184,8 +184,6 @@ public class CardSlot : MonoBehaviour
                     CanMove = false;
                     cardSlot.UpdateVisuals(false);
                 }
-
-                
             }
         }        
     }
@@ -225,6 +223,17 @@ public class CardSlot : MonoBehaviour
         UpdateVisuals(CanPlace);
     }
 
+    public bool CardBelongsToPlayer()
+    {
+        if (Card == null)
+        {
+            Debug.LogWarning("If this is occuring, you are not checking if the card exists. Check if card exists before calling this method");
+            return false;
+        }
+
+        return Card.GetComponent<CardData>().BelongsToPlayer();
+    }
+
     // can replace with meshrenderer with an animation or material swap
     public void UpdateVisuals(bool updateValue)
     {
@@ -240,4 +249,6 @@ public class CardSlot : MonoBehaviour
     {
         inDecisionState = false;
     }
+
+    public Vector2Int GetCardSlotPosition() => cardSlotPosition;
 }
