@@ -56,11 +56,11 @@ public class StartRoundState : BaseGameState
         Utils.EnemyDrawACard();
 
         Debug.Log("Enemy draw, wait for move cards");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.4f);
 
         Enemy.Instance.MoveCardsForward();
         Debug.Log("Enemy moved, wait for TryToSelect");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1.5f);
 
         Transform selectedCard = Enemy.Instance.TryToSetSelectedCard();
         Debug.Log("Enemy selected, wait for attack");
@@ -70,7 +70,7 @@ public class StartRoundState : BaseGameState
             Enemy.Instance.TryPlaceCard();
         }
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3f);
         PlayArea.Instance.AllCardsAttack(false);
         Debug.Log("enemey done");
 

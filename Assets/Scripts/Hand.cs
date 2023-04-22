@@ -191,7 +191,7 @@ public class Hand : MonoBehaviour
                 return;
             }
 
-            if (cardSlot.Card != null && cardData.Type == CardType.Monster)
+            if (cardSlot.Card != null && cardSlot.CardBelongsToPlayer())
             {
                 UpdateCardsToSacrifice();
                 return;
