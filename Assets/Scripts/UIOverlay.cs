@@ -6,13 +6,16 @@ using System;
 
 public class UIOverlay : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI cardDescription, overlay;
+    [SerializeField] private TextMeshProUGUI cardDescription, overlay, smallOverlay;
     [SerializeField] private Animator animator;
 
     [SerializeField] private GameObject descriptionUI;
 
-
     [SerializeField] private string draw, decision, attack;
+    [SerializeField] [TextArea(3,8)]
+    private string drawS, decisionS, attackS;
+
+    private bool overlayOn;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +23,15 @@ public class UIOverlay : MonoBehaviour
         CardData.OnAnyCardHover += CardData_OnAnyCardHover;
         DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
         DrawState.OnEnterDrawState += DrawState_OnEnterDrawState;
+        smallOverlay.text = string.Empty;
+        overlayOn = true;
+        smallOverlay.gameObject.SetActive(overlayOn);
     }
 
     private void DrawState_OnEnterDrawState(object sender, EventArgs e)
     {
         overlay.text = draw;
+        smallOverlay.text = drawS;
         animator.SetTrigger("newState");
     }
 
@@ -33,10 +40,12 @@ public class UIOverlay : MonoBehaviour
         if (TurnSystem.Instance.AttackedThisRound)
         {
             overlay.text = attack;
+            smallOverlay.text = attackS;
         }
         else
         {
             overlay.text = decision;
+            smallOverlay.text = decisionS;
         }
 
         animator.SetTrigger("newState");
@@ -73,5 +82,11 @@ public class UIOverlay : MonoBehaviour
         }
 
         descriptionUI.SetActive(true);
+    }
+
+    public void ToggleText()
+    {
+        overlayOn = !overlayOn;
+        smallOverlay.gameObject.SetActive(overlayOn);
     }
 }

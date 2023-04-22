@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CardSlot : MonoBehaviour
 {
+    public static event EventHandler OnCanBePlaced;
+
     private static Transform selectedCard;
 
     public Transform Card { get; set; }
@@ -43,10 +45,43 @@ public class CardSlot : MonoBehaviour
 
         inDecisionState = false;
 
+        StartRoundState.OnEnemySelectedCard += StartRoundState_OnEnemySelectedCard;
         playerHand.OnCardSelected += PlayerHand_OnCardSelected;
         playerHand.OnCardUnselected += PlayerHand_OnCardsUnselected;
         DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
         DecisionState.OnExitDecisionState += DecisionState_OnExitDecisionState;
+    }
+
+    private void StartRoundState_OnEnemySelectedCard(object sender, EventArgs e)
+    {
+        selectedCard = null;
+        validMovePositions.Clear();
+
+        CardData cardData = Enemy.Instance.GetHand().GetSelectedCard().GetComponent<CardData>();
+
+        CanPlace = false;
+
+        switch (cardData.Group)
+        {
+            case CardGroup.C:
+                if (cardSlotPosition.y == 3)
+                {
+                    if (Card == null)
+                    {
+                        OnCanBePlaced?.Invoke(this, EventArgs.Empty);
+                    }
+                }
+                break;
+            default:
+                if (cardSlotPosition.y == 3 || cardSlotPosition.y == 2)
+                {
+                    if (Card == null)
+                    {
+                        OnCanBePlaced?.Invoke(this, EventArgs.Empty);
+                    }
+                }
+                break;
+        }
     }
 
     private void Update()

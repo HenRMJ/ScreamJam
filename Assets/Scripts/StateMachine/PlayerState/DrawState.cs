@@ -41,6 +41,8 @@ public class DrawState : BasePlayerState
         {
             if(clicked.TryGetComponent<CardData>(out CardData cardData))
             {
+                if (!cardData.BelongsToPlayer()) return false;
+
                 return cardData.InDeck;
             }
 

@@ -4,6 +4,7 @@ using System;
 public class StartRoundState : BaseGameState
 {
     public static event EventHandler OnStartRound;
+    public static event EventHandler OnEnemySelectedCard;
 
     public StartRoundState(GameStateMachine stateMachine) : base(stateMachine) { }
 
@@ -39,6 +40,14 @@ public class StartRoundState : BaseGameState
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
             PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
             Player player = playerObject.GetComponent<Player>();
+
+            Utils.EnemyDrawACard();
+            if (Enemy.Instance.TryToSetSelectedCard())
+            {
+                OnEnemySelectedCard?.Invoke(this, EventArgs.Empty);
+                Enemy.Instance.TryPlaceCard();
+            }
+
             playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
         }
         

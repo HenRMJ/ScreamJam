@@ -79,7 +79,7 @@ public class Hand : MonoBehaviour
         }
     }
 
-    private void UnselectCard()
+    public void UnselectCard()
     {
         CardData cardData = selectedCard.GetComponent<CardData>();
 
@@ -260,6 +260,18 @@ public class Hand : MonoBehaviour
         selectedCard.parent = null;
         return selectedCard;
     }
+
+    public void SetIsCardSelected(bool isCardSelected)
+    {
+        cardIsSelected = isCardSelected;
+    }
+
+    public void SetSelectedCard(Transform card)
+    {
+        selectedCard = card;
+    }
+
+    public List<Transform> GetCardsInHand() => cardsInHand;
     public Vector3 GetPositionInHand(int i) => cardPositions[i];
     public Quaternion GetRotationInHand() => minPosition.rotation;
 }
