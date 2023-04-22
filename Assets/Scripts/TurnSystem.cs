@@ -6,6 +6,7 @@ public class TurnSystem : MonoBehaviour
 {
     public static TurnSystem Instance;
     public bool IsPlayersTurn { get; set; }
+    public bool AttackedThisRound { get; set; }
 
     private void Awake()
     {

@@ -25,6 +25,13 @@ public class DecisionState : BasePlayerState
         playerHand.PlaceCard();
         if (Bell.Instance.CheckIfClickBell())
         {
+            if (TurnSystem.Instance.AttackedThisRound)
+            {
+                GameStateMachine gameState = GameObject.FindObjectOfType<GameStateMachine>();
+                
+                gameState.SwitchState(new StartRoundState(gameState));
+            }
+
             stateMachine.SwitchState(new WaitingState(stateMachine, player));
         }
     }

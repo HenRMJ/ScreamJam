@@ -92,9 +92,12 @@ public class PlayArea : MonoBehaviour
 
                         CardSlot defaultSlotToAttack = defaultAttackingPosition.GetComponent<CardSlot>();
 
+                        if (defaultSlotToAttack.Card == null) continue;
                         if (defaultSlotToAttack.CardBelongsToPlayer()) continue;
 
                         CardData defaultDefendingCard = defaultSlotToAttack.Card.GetComponent<CardData>();
+
+                        Debug.Log(defaultDefendingCard);
                         if (cardData.GetAttackDamage() >= defaultDefendingCard.GetDefenseValue())
                         {
                             defaultSlotToAttack.Card = null;
@@ -173,6 +176,7 @@ public class PlayArea : MonoBehaviour
 
                         CardSlot defaultSlotToAttack = defaultAttackingPosition.GetComponent<CardSlot>();
 
+                        if (defaultSlotToAttack.Card == null) continue;
                         if (!defaultSlotToAttack.CardBelongsToPlayer()) continue;
 
                         CardData defaultDefendingCard = defaultSlotToAttack.Card.GetComponent<CardData>();

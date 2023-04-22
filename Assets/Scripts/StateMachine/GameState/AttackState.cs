@@ -9,20 +9,25 @@ public class AttackState : BaseGameState
     public override void Enter()
     {
         PlayArea.Instance.AllCardsAttack(TurnSystem.Instance.IsPlayersTurn);
-        if (TurnSystem.Instance.IsPlayersTurn)
-        {
 
-        }
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
+        Player player = playerObject.GetComponent<Player>();
+
+        TurnSystem.Instance.AttackedThisRound = true;
+        
+        playerStateMachine.SwitchState(new DecisionState(playerStateMachine, player));
+
     }
 
     public override void Tick()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Exit attack state");
     }
 
     
