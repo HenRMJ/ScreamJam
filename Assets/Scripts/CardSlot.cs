@@ -12,6 +12,8 @@ public class CardSlot : MonoBehaviour
     public bool CanPlace { get; private set; }
     public bool CanMove { get; private set; }
 
+    [SerializeField] private Animator animator;
+
     private List<GameObject> validMovePositions = new List<GameObject>();
 
     private Hand playerHand;
@@ -289,7 +291,7 @@ public class CardSlot : MonoBehaviour
     // can replace with meshrenderer with an animation or material swap
     public void UpdateVisuals(bool updateValue)
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = updateValue;
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = updateValue;
     }
 
     private void DecisionState_OnEnterDecisionState(object sender, EventArgs e)
@@ -302,5 +304,9 @@ public class CardSlot : MonoBehaviour
         inDecisionState = false;
     }
 
+    public void UpdateSacrificeVisual(bool isMarked)
+    {
+        animator.SetBool("isMarked", isMarked);
+    }
     public Vector2Int GetCardSlotPosition() => cardSlotPosition;
 }

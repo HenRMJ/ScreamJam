@@ -77,4 +77,6 @@ public class Player : MonoBehaviour
     {
         blood += healAmount;
     }
+
+    public int GetBlood() => blood;
 }

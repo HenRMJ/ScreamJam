@@ -28,6 +28,24 @@ public class Hand : MonoBehaviour
         cardIsSelected = false;
     }
 
+    private void Update()
+    {
+        if (cardsToSacrifice.Count == 0) return;
+        foreach (GameObject card in cardsToSacrifice)
+        {
+            foreach(CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+            {
+                if (cardSlot.Card == card.transform)
+                {
+                    cardSlot.UpdateSacrificeVisual(true);
+                } else
+                {
+                    cardSlot.UpdateSacrificeVisual(false);
+                }
+            }
+        }
+    }
+
     public void SelectCard()
     {
         GameObject cursorCard = Utils.GetCardObjectUnderCursor();
