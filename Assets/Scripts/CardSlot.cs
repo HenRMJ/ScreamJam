@@ -52,12 +52,12 @@ public class CardSlot : MonoBehaviour
         DecisionState.OnExitDecisionState += DecisionState_OnExitDecisionState;
     }
 
-    private void StartRoundState_OnEnemySelectedCard(object sender, EventArgs e)
+    private void StartRoundState_OnEnemySelectedCard(object sender, Transform e)
     {
         selectedCard = null;
         validMovePositions.Clear();
 
-        CardData cardData = Enemy.Instance.GetHand().GetSelectedCard().GetComponent<CardData>();
+        CardData cardData = e.GetComponent<CardData>();
 
         CanPlace = false;
 

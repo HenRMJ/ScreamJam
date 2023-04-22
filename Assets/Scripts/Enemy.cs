@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Hand hand;
 
     private List<CardSlot> possiblePlacements = new List<CardSlot>();
+    private Transform selectedCard;
 
     public int Blood { get; set; }
 
@@ -47,7 +48,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public bool TryToSetSelectedCard()
+    public Transform TryToSetSelectedCard()
     {
         int highestBloodCost = 0;
         Transform cardToSelect = null;
@@ -57,21 +58,21 @@ public class Enemy : MonoBehaviour
             CardData cardData = card.GetComponent<CardData>();
             int cardBloodCost = cardData.GetBloodCost();
 
-            if (cardBloodCost > highestBloodCost && cardBloodCost < Blood)
+            if (cardBloodCost >= highestBloodCost && cardBloodCost <= Blood)
             {
                 cardToSelect = card;
                 highestBloodCost = cardBloodCost;
             }
         }
 
-        if (cardToSelect == null) return false;
-        hand.SetSelectedCard(cardToSelect);
-        return true;
+        if (cardToSelect == null) return null;
+        selectedCard = cardToSelect;
+        return cardToSelect;
     }
 
     public void TryPlaceCard()
     {
-        Debug.Log(possiblePlacements);
+        Debug.Log(possiblePlacements.Count);
         if (possiblePlacements.Count == 0)
         {
             hand.UnselectCard();
@@ -81,10 +82,14 @@ public class Enemy : MonoBehaviour
         System.Random random = new System.Random();
         int i = random.Next(possiblePlacements.Count);
 
+        Debug.Log(i);
+
         CardSlot randomCardSlot = possiblePlacements[i];
 
-        Transform selectedCard = hand.GetSelectedCard();
-        CardData cardData = selectedCard.GetComponent<CardData>();
+        Transform cardToSelect = selectedCard;
+        CardData cardData = cardToSelect.GetComponent<CardData>();
+
+        hand.GetCardsInHand().Remove(selectedCard);
 
         selectedCard.parent = null;
 
@@ -99,6 +104,7 @@ public class Enemy : MonoBehaviour
         hand.SetSelectedCard(null);
         hand.SetIsCardSelected(false);
         possiblePlacements.Clear();
+        selectedCard = null;
     }
 
     public Hand GetHand() => hand;

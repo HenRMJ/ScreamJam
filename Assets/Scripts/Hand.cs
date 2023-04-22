@@ -268,6 +268,7 @@ public class Hand : MonoBehaviour
 
     public void SetSelectedCard(Transform card)
     {
+        Debug.Log(card);
         selectedCard = card;
     }
 

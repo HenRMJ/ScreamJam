@@ -68,6 +68,7 @@ public class PlayArea : MonoBehaviour
                             }
                         }
 
+                        if (slotToAttack.Card == null) continue;
                         if (slotToAttack.CardBelongsToPlayer()) continue;
 
                         CardData defendingCard = slotToAttack.Card.GetComponent<CardData>();
@@ -152,6 +153,7 @@ public class PlayArea : MonoBehaviour
                             }
                         }
 
+                        if (slotToAttack.Card == null) continue;
                         if (!slotToAttack.CardBelongsToPlayer()) continue;
 
                         CardData defendingCard = slotToAttack.Card.GetComponent<CardData>();

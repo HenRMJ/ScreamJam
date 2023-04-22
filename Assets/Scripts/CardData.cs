@@ -118,6 +118,7 @@ public class CardData : MonoBehaviour
     private void HoverCard()
     {
         if (!InHand) return;
+        if (!belongsToPlayer) return;
 
         // Resets card position if no card is being hovered
         if (Utils.GetCardObjectUnderCursor() == null)
