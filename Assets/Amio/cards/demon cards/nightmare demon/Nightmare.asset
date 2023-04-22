@@ -10,9 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: hand demon
+  m_Name: Nightmare
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 2100000, guid: 258c5c1190d00ab4cae0a9a4df96f9b6, type: 2}
-  description: 
+  cardImage: {fileID: 2100000, guid: 324b581823f55894b918023727968130, type: 2}
+  loreBlurb: In your dreams
+  UIDescription: 'ATK: 10
+
+    DEF: 10
+
+
+    It wasn''t a dream...'
   cardType: 0
-  bloodCost: 0
+  cardGroup: 0
+  bloodCost: 150
+  attack: 10
+  defense: 10

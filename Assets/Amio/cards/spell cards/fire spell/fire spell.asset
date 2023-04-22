@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: fire spell
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 2bea548b43471614c8d8d0b6cf4e44df, type: 2}
-  description: 
+  loreBlurb: Burn them all
+  UIDescription: Instantly destory any enemy on the field
   cardType: 1
-  bloodCost: 0
+  cardGroup: 0
+  bloodCost: 80
+  attack: 0
+  defense: 0

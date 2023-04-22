@@ -7,12 +7,24 @@ using UnityEngine;
 /// </summary>
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     public static event EventHandler OnPlayerDied;
 
     public bool CanSummon { get; private set; }
 
     [SerializeField] private int blood;
     [SerializeField] private Hand playerHand;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Debug.LogError("A player already exists in the scene");
+            return;
+        }
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: demon king
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 51291a60c76fd1947a808475f853c837, type: 2}
-  description: 
+  loreBlurb: All hail
+  UIDescription: 'ATK: 12
+
+    DEF: 11
+
+
+    Something about a king idk...'
   cardType: 0
   cardGroup: 2
-  bloodCost: 0
-  attack: 0
-  defense: 0
+  bloodCost: 200
+  attack: 12
+  defense: 11

@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
             CardData cardData = card.GetComponent<CardData>();
             int cardBloodCost = cardData.GetBloodCost();
 
-            if (cardBloodCost >= highestBloodCost && cardBloodCost <= Blood)
+            if (cardBloodCost > highestBloodCost && cardBloodCost < Blood)
             {
                 cardToSelect = card;
                 highestBloodCost = cardBloodCost;
@@ -75,6 +75,7 @@ public class Enemy : MonoBehaviour
         if (possiblePlacements.Count == 0)
         {
             hand.UnselectCard();
+            selectedCard = null;
             return;
         }
 
@@ -94,6 +95,8 @@ public class Enemy : MonoBehaviour
         cardData.InDeck = false;
         cardData.InPlay = true;
         cardData.CanMove = false;
+
+        Blood -= cardData.GetBloodCost();
 
         cardData.MoveToPoint(randomCardSlot.transform.position, randomCardSlot.transform.rotation);
         randomCardSlot.Card = selectedCard;

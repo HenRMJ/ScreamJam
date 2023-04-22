@@ -10,9 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: demon A
+  m_Name: Arms of Despair
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 2100000, guid: 48bf7684d0c986641aaf513708995b23, type: 2}
-  description: 
+  cardImage: {fileID: 2100000, guid: 258c5c1190d00ab4cae0a9a4df96f9b6, type: 2}
+  loreBlurb: Dragged to hell
+  UIDescription: 'ATK: 4
+
+    DEF: 4
+
+
+    Pull your enemies to the same low...'
   cardType: 0
-  bloodCost: 0
+  cardGroup: 1
+  bloodCost: 75
+  attack: 4
+  defense: 4

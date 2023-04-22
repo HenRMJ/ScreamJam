@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: nightmaredemon
+  m_Name: Forgotten
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 2100000, guid: 324b581823f55894b918023727968130, type: 2}
-  loreBlurb: 
-  UIDescription: 
-  cardType: 1
+  cardImage: {fileID: 2100000, guid: 48bf7684d0c986641aaf513708995b23, type: 2}
+  loreBlurb: Forever Suffering
+  UIDescription: 'ATK: 3
+
+    DEF: 3
+
+
+    The Forgotten Demon is ... '
+  cardType: 0
   cardGroup: 0
-  bloodCost: 0
-  attack: 0
-  defense: 0
+  bloodCost: 30
+  attack: 3
+  defense: 3

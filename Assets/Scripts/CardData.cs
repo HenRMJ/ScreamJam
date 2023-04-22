@@ -101,6 +101,14 @@ public class CardData : MonoBehaviour
         MoveCard();
     }
 
+    private void OnDestroy()
+    {
+        if (belongsToPlayer)
+        {
+            Player.Instance.Heal(Mathf.RoundToInt(bloodCost / 2));
+        }
+    }
+
     // Might want to move these methods into a different class Move Card and Move To Point
     private void MoveCard()
     {

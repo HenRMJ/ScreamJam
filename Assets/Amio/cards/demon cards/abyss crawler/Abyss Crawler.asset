@@ -10,9 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: demonb
+  m_Name: Abyss Crawler
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 2100000, guid: 24be3390c48da464f9ff3610d4d0c887, type: 2}
-  description: 
+  cardImage: {fileID: 2100000, guid: f320699a2000ce14cae2df8750c7b163, type: 2}
+  loreBlurb: Lurking in the shadows
+  UIDescription: 'ATK: 6
+
+    DEF: 5
+
+
+    The Abyss Crawler prays on...'
   cardType: 0
-  bloodCost: 0
+  cardGroup: 0
+  bloodCost: 75
+  attack: 6
+  defense: 5
