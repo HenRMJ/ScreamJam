@@ -168,7 +168,6 @@ public class CardSlot : MonoBehaviour
             {
                 cardSlot.UpdateVisuals(false);
                 CanMove = false;
-                Debug.Log(FindObjectsOfType<CardSlot>().Length);
             }
 
             foreach (GameObject cardSlotObject in validMovePositions)

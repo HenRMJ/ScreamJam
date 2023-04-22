@@ -225,6 +225,7 @@ public class Hand : MonoBehaviour
         CardData cardData = cursorCard.GetComponent<CardData>();
 
         if (!cardData.InPlay) return;
+        if (!cardData.BelongsToPlayer()) return;
 
         if (cardsToSacrifice.Contains(cursorCard))
         {
