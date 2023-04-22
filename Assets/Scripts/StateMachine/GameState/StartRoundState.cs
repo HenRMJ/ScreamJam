@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class StartRoundState : BaseGameState
 {
@@ -7,6 +8,9 @@ public class StartRoundState : BaseGameState
     public static event EventHandler<Transform> OnEnemySelectedCard;
 
     public StartRoundState(GameStateMachine stateMachine) : base(stateMachine) { }
+
+    private bool isEnemysTurn = false;
+
 
     public override void Enter()
     {
@@ -34,28 +38,47 @@ public class StartRoundState : BaseGameState
             {
                 stateMachine.SwitchState(new AttackState(stateMachine));
             }
-        } else
-        {
-            stateMachine.SwitchState(new StartRoundState(stateMachine));
-            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-            PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
-            Player player = playerObject.GetComponent<Player>();
-
-            Utils.EnemyDrawACard();
-            Enemy.Instance.MoveCardsForward();
-
-            Transform selectedCard = Enemy.Instance.TryToSetSelectedCard();
-            if (selectedCard != null)
-            {
-                OnEnemySelectedCard?.Invoke(this, selectedCard);
-                Enemy.Instance.TryPlaceCard();
-            }
-
-            PlayArea.Instance.AllCardsAttack(false);
-
-            playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
         }
-        
+        else if (!isEnemysTurn)
+        {
+            isEnemysTurn = true;
+            stateMachine.StartCoroutine(EnemyActions());
+        }
+
+    }
+
+    private IEnumerator EnemyActions()
+    {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
+        Player player = playerObject.GetComponent<Player>();
+
+        Utils.EnemyDrawACard();
+
+        Debug.Log("Enemy draw, wait for move cards");
+        yield return new WaitForSeconds(2f);
+
+        Enemy.Instance.MoveCardsForward();
+        Debug.Log("Enemy moved, wait for TryToSelect");
+        yield return new WaitForSeconds(5);
+
+        Transform selectedCard = Enemy.Instance.TryToSetSelectedCard();
+        Debug.Log("Enemy selected, wait for attack");
+        if (selectedCard != null)
+        {
+            OnEnemySelectedCard?.Invoke(this, selectedCard);
+            Enemy.Instance.TryPlaceCard();
+        }
+
+        yield return new WaitForSeconds(5);
+        PlayArea.Instance.AllCardsAttack(false);
+        Debug.Log("enemey done");
+
+        stateMachine.SwitchState(new StartRoundState(stateMachine));
+        playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
+
+        isEnemysTurn = false;
+        yield return null;
     }
 
     public override void Exit()
