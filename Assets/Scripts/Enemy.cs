@@ -72,7 +72,6 @@ public class Enemy : MonoBehaviour
 
     public void TryPlaceCard()
     {
-        Debug.Log(possiblePlacements.Count);
         if (possiblePlacements.Count == 0)
         {
             hand.UnselectCard();
@@ -81,8 +80,6 @@ public class Enemy : MonoBehaviour
 
         System.Random random = new System.Random();
         int i = random.Next(possiblePlacements.Count);
-
-        Debug.Log(i);
 
         CardSlot randomCardSlot = possiblePlacements[i];
 
@@ -105,6 +102,95 @@ public class Enemy : MonoBehaviour
         hand.SetIsCardSelected(false);
         possiblePlacements.Clear();
         selectedCard = null;
+    }
+
+    public void MoveCardsForward()
+    {
+        GridManager gridManager = FindObjectOfType<GridManager>();
+
+        foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+        {
+            if (cardSlot.Card == null) continue;
+            if (cardSlot.CardBelongsToPlayer()) continue;
+
+            CardData cardData = cardSlot.Card.GetComponent<CardData>();
+
+            if (!cardData.CanMove) continue;
+
+            Vector2Int cardSlotPosition = cardSlot.GetCardSlotPosition();
+            List<CardSlot> possiblePositions = new List<CardSlot>();
+
+            switch (cardData.Group)
+            {
+                case CardGroup.A:
+                    GameObject leftObject = gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1);
+
+                    if (leftObject != null)
+                    {
+                        CardSlot leftSlot = leftObject.GetComponent<CardSlot>();
+
+                        if (leftSlot.Card == null)
+                        {
+                            possiblePositions.Add(leftSlot);
+                        }
+                    }
+
+                    GameObject centerObject = gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
+
+                    if (centerObject != null)
+                    {
+                        CardSlot centerSlot = centerObject.GetComponent<CardSlot>();
+
+                        if (centerSlot.Card == null)
+                        {
+                            possiblePositions.Add(centerSlot);
+                        }
+                    }
+
+                    GameObject rightObject = gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1);
+
+                    if (centerObject != null)
+                    {
+                        CardSlot rightSlot = rightObject.GetComponent<CardSlot>();
+
+                        if (rightSlot.Card == null)
+                        {
+                            possiblePositions.Add(rightSlot);
+                        }
+                    }
+
+                    if (possiblePositions.Count == 0) continue;
+
+                    System.Random random = new System.Random();
+                    int i = random.Next(possiblePositions.Count);
+
+                    CardSlot movePosition = possiblePositions[i];
+
+                    cardData.MoveToPoint(movePosition.transform.position, movePosition.transform.rotation);
+                    cardData.CanMove = false;
+
+                    movePosition.Card = cardSlot.Card;
+
+                    cardSlot.Card = null;
+                    break;
+                default:
+                    GameObject checkSlotObject = gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
+
+                    if (checkSlotObject == null) continue;
+
+                    CardSlot slot = checkSlotObject.GetComponent<CardSlot>();
+
+                    if (slot.Card != null) continue;
+
+                    cardData.MoveToPoint(slot.transform.position, slot.transform.rotation);
+                    cardData.CanMove = false;
+
+                    slot.Card = cardSlot.Card;
+
+                    cardSlot.Card = null;
+                    break;
+            }
+        }
     }
 
     public Hand GetHand() => hand;

@@ -42,12 +42,16 @@ public class StartRoundState : BaseGameState
             Player player = playerObject.GetComponent<Player>();
 
             Utils.EnemyDrawACard();
+            Enemy.Instance.MoveCardsForward();
+
             Transform selectedCard = Enemy.Instance.TryToSetSelectedCard();
             if (selectedCard != null)
             {
                 OnEnemySelectedCard?.Invoke(this, selectedCard);
                 Enemy.Instance.TryPlaceCard();
             }
+
+            PlayArea.Instance.AllCardsAttack(false);
 
             playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
         }

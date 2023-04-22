@@ -60,4 +60,9 @@ public class Player : MonoBehaviour
     {
         blood -= damage;
     }
+
+    public void Heal(int healAmount)
+    {
+        blood += healAmount;
+    }
 }
