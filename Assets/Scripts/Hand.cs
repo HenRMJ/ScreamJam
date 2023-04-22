@@ -30,15 +30,30 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-        if (cardsToSacrifice.Count == 0) return;
+        UpdateSacrificeVisuals();
+    }
+
+    private void UpdateSacrificeVisuals()
+    {
+        if (cardsToSacrifice.Count == 0)
+        {
+            foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+            {
+                cardSlot.UpdateSacrificeVisual(false);
+            }
+
+            return;
+        }
+
         foreach (GameObject card in cardsToSacrifice)
         {
-            foreach(CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+            foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
             {
                 if (cardSlot.Card == card.transform)
                 {
                     cardSlot.UpdateSacrificeVisual(true);
-                } else
+                }
+                else
                 {
                     cardSlot.UpdateSacrificeVisual(false);
                 }
