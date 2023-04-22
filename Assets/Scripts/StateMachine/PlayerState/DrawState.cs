@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 /// <summary>
 /// Class <c>DrawState</c> represents the game when either player is drawing a card.
@@ -6,10 +7,13 @@ using UnityEngine;
 /// </summary>
 public class DrawState : BasePlayerState
 {
+    public static event EventHandler OnEnterDrawState;
+
     public DrawState(PlayerStateMachine stateMachine, Player player) : base(stateMachine, player) { }
 
     public override void Enter()
     {
+        OnEnterDrawState?.Invoke(this, EventArgs.Empty);
         Debug.Log($"BEGIN DrawState for '{player}'");
     }
 

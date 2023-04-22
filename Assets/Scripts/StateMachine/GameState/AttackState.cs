@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AttackState : BaseGameState
 {
+    public static event EventHandler OnAttackStateStarted;
+
     public AttackState(GameStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
@@ -15,7 +18,9 @@ public class AttackState : BaseGameState
         Player player = playerObject.GetComponent<Player>();
 
         TurnSystem.Instance.AttackedThisRound = true;
-        
+
+        OnAttackStateStarted?.Invoke(this, EventArgs.Empty);
+
         playerStateMachine.SwitchState(new DecisionState(playerStateMachine, player));
 
     }

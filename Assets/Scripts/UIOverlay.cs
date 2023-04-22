@@ -6,13 +6,40 @@ using System;
 
 public class UIOverlay : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI cardDescription;
+    [SerializeField] private TextMeshProUGUI cardDescription, overlay;
+    [SerializeField] private Animator animator;
+
     [SerializeField] private GameObject descriptionUI;
+
+
+    [SerializeField] private string draw, decision, attack;
 
     // Start is called before the first frame update
     void Start()
     {
         CardData.OnAnyCardHover += CardData_OnAnyCardHover;
+        DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
+        DrawState.OnEnterDrawState += DrawState_OnEnterDrawState;
+    }
+
+    private void DrawState_OnEnterDrawState(object sender, EventArgs e)
+    {
+        overlay.text = draw;
+        animator.SetTrigger("newState");
+    }
+
+    private void DecisionState_OnEnterDecisionState(object sender, EventArgs e)
+    {
+        if (TurnSystem.Instance.AttackedThisRound)
+        {
+            overlay.text = attack;
+        }
+        else
+        {
+            overlay.text = decision;
+        }
+
+        animator.SetTrigger("newState");
     }
 
     private void CardData_OnAnyCardHover(object sender, EventArgs e)

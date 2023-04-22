@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class Player : MonoBehaviour
 {
+    public static event EventHandler OnPlayerDied;
+
     public bool CanSummon { get; private set; }
 
     [SerializeField] private int blood;
@@ -17,6 +19,15 @@ public class Player : MonoBehaviour
     {
         playerHand.OnCardSummoned += PlayerHand_OnCardSummoned;
         StartRoundState.OnStartRound += StartRoundState_OnStartRound;
+        AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
+    }
+
+    private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
+    {
+        if (blood <= 0)
+        {
+            OnPlayerDied?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void StartRoundState_OnStartRound(object sender, EventArgs e)
