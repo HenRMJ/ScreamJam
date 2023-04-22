@@ -103,9 +103,36 @@ public class CardData : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (Type == CardType.Spell) return;
+
+        int rowDiedOn = 0;
+
+        foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+        {
+            if (cardSlot.Card == transform)
+            {
+                rowDiedOn = cardSlot.GetCardSlotPosition().y;
+            }
+        }
+
         if (belongsToPlayer)
         {
-            Player.Instance.Heal(Mathf.RoundToInt(bloodCost / 2));
+            if (rowDiedOn == 0 || rowDiedOn == 1)
+            {
+                Player.Instance.Heal(bloodCost);
+            } else
+            {
+                Player.Instance.Heal(Mathf.RoundToInt(bloodCost / 2));
+            }
+        } else
+        {
+            if (rowDiedOn == 2 || rowDiedOn == 3)
+            {
+                Enemy.Instance.Heal(bloodCost);
+            } else
+            {
+                Enemy.Instance.Heal(Mathf.RoundToInt(bloodCost / 2));
+            }
         }
     }
 
@@ -173,6 +200,10 @@ public class CardData : MonoBehaviour
         CanMove = true;
     }
 
+    public void SetBloodCost(int newBloodCost)
+    {
+        bloodCost = newBloodCost;
+    }
     public int GetAttackDamage() => attack;
     public int GetDefenseValue() => defense;
     public bool BelongsToPlayer() => belongsToPlayer;

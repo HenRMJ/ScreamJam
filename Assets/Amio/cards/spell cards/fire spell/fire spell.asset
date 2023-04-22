@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 2bea548b43471614c8d8d0b6cf4e44df, type: 2}
   loreBlurb: Burn them all
-  UIDescription: Instantly destory any enemy on the field
+  UIDescription: Instantly destory any enemy on the field without returning blood
+    to its summoner
   cardType: 1
   cardGroup: 0
   bloodCost: 80

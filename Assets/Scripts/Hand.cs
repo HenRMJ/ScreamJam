@@ -158,7 +158,7 @@ public class Hand : MonoBehaviour
                 return;
             }
 
-            if (cardSlot.Card != null)
+            if (cardSlot.Card != null && cardData.Type == CardType.Monster)
             {
                 UpdateCardsToSacrifice();
                 return;
@@ -193,22 +193,28 @@ public class Hand : MonoBehaviour
                 return;
             }
 
-            selectedCard.parent = null;
-
-            cardData.InHand = false;
-            cardData.InDeck = false;
-            cardData.InPlay = true;
-            cardData.CanMove = false;
-
-            cardData.MoveToPoint(cursorTransform.position, cursorTransform.rotation);
-
-            cardSlot.Card = selectedCard;
-
             OnCardSummoned?.Invoke(this, selectedCard);
+
+            if (cardData.Type == CardType.Monster)
+            {
+                selectedCard.parent = null;
+
+                cardData.InHand = false;
+                cardData.InDeck = false;
+                cardData.InPlay = true;
+                cardData.CanMove = false;
+
+                cardData.MoveToPoint(cursorTransform.position, cursorTransform.rotation);
+
+                cardSlot.Card = selectedCard;
+            } else
+            {
+                
+                cardData.GetComponent<SpellAction>().CastSpell(cardSlot);
+            }       
 
             selectedCard = null;
             cardIsSelected = false;
-
             
             OnCardUnselected?.Invoke(this, EventArgs.Empty);
         }

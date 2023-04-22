@@ -152,7 +152,7 @@ public class Enemy : MonoBehaviour
 
                     GameObject rightObject = gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1);
 
-                    if (centerObject != null)
+                    if (rightObject != null)
                     {
                         CardSlot rightSlot = rightObject.GetComponent<CardSlot>();
 
@@ -196,5 +196,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void Heal(int healAmount)
+    {
+        Blood += healAmount;
+    }
     public Hand GetHand() => hand;
 }

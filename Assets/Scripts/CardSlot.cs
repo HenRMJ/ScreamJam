@@ -205,6 +205,8 @@ public class CardSlot : MonoBehaviour
                 CanMove = false;
             }
 
+            List<GameObject> invalidMovPositionsAfterCheck = new List<GameObject>();
+
             foreach (GameObject cardSlotObject in validMovePositions)
             {
                 CardSlot cardSlot = cardSlotObject.GetComponent<CardSlot>();
@@ -215,9 +217,15 @@ public class CardSlot : MonoBehaviour
                     cardSlot.UpdateVisuals(true);
                 } else
                 {
+                    invalidMovPositionsAfterCheck.Add(cardSlotObject);
                     CanMove = false;
                     cardSlot.UpdateVisuals(false);
                 }
+            }
+
+            foreach (GameObject invalidPosition in invalidMovPositionsAfterCheck)
+            {
+                validMovePositions.Remove(invalidPosition);
             }
         }        
     }
@@ -238,21 +246,31 @@ public class CardSlot : MonoBehaviour
 
         CanPlace = false;
 
-        switch (cardData.Group)
+        if (cardData.Type == CardType.Monster)
         {
-            case CardGroup.C:
-                if (cardSlotPosition.y == 0)
-                {
-                    CanPlace = true;
-                }
-                break;
-            default:
-                if (cardSlotPosition.y == 0 || cardSlotPosition.y == 1)
-                {
-                    CanPlace = true;
-                }
-                break;
+            switch (cardData.Group)
+            {
+                case CardGroup.C:
+                    if (cardSlotPosition.y == 0)
+                    {
+                        CanPlace = true;
+                    }
+                    break;
+                default:
+                    if (cardSlotPosition.y == 0 || cardSlotPosition.y == 1)
+                    {
+                        CanPlace = true;
+                    }
+                    break;
+            }
+        } else
+        {
+            if (Card != null && !CardBelongsToPlayer())
+            {
+                CanPlace = true;
+            }
         }
+        
 
         UpdateVisuals(CanPlace);
     }
