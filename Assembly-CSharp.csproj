@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\SpellAction.cs" />
     <Compile Include="Assets\Scripts\FireSpell.cs" />
+    <Compile Include="Assets\Scripts\PlaySummonSound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

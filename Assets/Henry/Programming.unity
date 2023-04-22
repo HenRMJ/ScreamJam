@@ -1222,7 +1222,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507163746}
-  m_LocalRotation: {x: 0.70090926, y: 0.0000053981344, z: -0.0000053047315, w: 0.7132505}
+  m_LocalRotation: {x: 0.70090926, y: 0.00000544166, z: -0.0000053475037, w: 0.7132505}
   m_LocalPosition: {x: 0, y: 0.49999994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1452,7 +1452,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560507256}
-  m_LocalRotation: {x: 0.4964775, y: 0.00000002987197, z: -0.000000017085153, w: 0.8680496}
+  m_LocalRotation: {x: 0.4964775, y: -0.000000029871995, z: 0.000000017085167, w: 0.8680496}
   m_LocalPosition: {x: 0, y: 0.36999995, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2671,6 +2671,9 @@ GameObject:
   - component: {fileID: 1201254260}
   - component: {fileID: 1201254261}
   - component: {fileID: 1201254262}
+  - component: {fileID: 1201254265}
+  - component: {fileID: 1201254264}
+  - component: {fileID: 1201254263}
   m_Layer: 0
   m_Name: Play Area
   m_TagString: Untagged
@@ -2721,6 +2724,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af0899e01189824f8a2e3ce800c80d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1201254263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201254258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c764e7293a4604c8994c716efee356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 77941d5cddbebb942a8dc515d088ac81,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &1201254264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201254258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0160269617453aa47acfec813af12485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: 
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d5e3359d4a06f0d4ca74c44014442938,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+  MultiPositionType: 1
+  multiPositionTypeLabel: 0
+  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
+  LargeModePositions: []
+  multiPositionArray: []
+--- !u!114 &1201254265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201254258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f919ed76eb7dd40931f83d5b2fb5e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!4 &1222185475 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1189b3c7b0a4a99419bc4382e31dd946,
@@ -5001,31 +5086,31 @@ PrefabInstance:
         type: 3}
       propertyPath: deckList.Array.data[4]
       value: 
-      objectReference: {fileID: 5143073222210246624, guid: 5cde0f8f418cb4345873834d42eb509d,
+      objectReference: {fileID: 5143073222210246624, guid: 43e496efa8992b240a1d9bf3beba41fe,
         type: 3}
     - target: {fileID: 427146311227804117, guid: 1d05d39a3b3a9a44ea616e9b83dadd5e,
         type: 3}
       propertyPath: deckList.Array.data[5]
       value: 
-      objectReference: {fileID: 5143073222210246624, guid: 43e496efa8992b240a1d9bf3beba41fe,
+      objectReference: {fileID: 5143073222210246624, guid: 2988dd40cdacd7c41884a453225ba8fb,
         type: 3}
     - target: {fileID: 427146311227804117, guid: 1d05d39a3b3a9a44ea616e9b83dadd5e,
         type: 3}
       propertyPath: deckList.Array.data[6]
       value: 
-      objectReference: {fileID: 5143073222210246624, guid: 2988dd40cdacd7c41884a453225ba8fb,
+      objectReference: {fileID: 5143073222210246624, guid: 4aef9860047f1a84dab166089b9343c0,
         type: 3}
     - target: {fileID: 427146311227804117, guid: 1d05d39a3b3a9a44ea616e9b83dadd5e,
         type: 3}
       propertyPath: deckList.Array.data[7]
       value: 
-      objectReference: {fileID: 5143073222210246624, guid: 4aef9860047f1a84dab166089b9343c0,
+      objectReference: {fileID: 5143073222210246624, guid: 470847a5414c0ab4fb26f4fcb231228a,
         type: 3}
     - target: {fileID: 427146311227804117, guid: 1d05d39a3b3a9a44ea616e9b83dadd5e,
         type: 3}
       propertyPath: deckList.Array.data[8]
       value: 
-      objectReference: {fileID: 5143073222210246624, guid: 470847a5414c0ab4fb26f4fcb231228a,
+      objectReference: {fileID: 5143073222210246624, guid: 5cde0f8f418cb4345873834d42eb509d,
         type: 3}
     - target: {fileID: 427146311227804117, guid: 1d05d39a3b3a9a44ea616e9b83dadd5e,
         type: 3}

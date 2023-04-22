@@ -12,3 +12,11 @@ public enum CardGroup
     B,
     C
 }
+
+[System.Serializable]
+public enum SummonSound
+{
+    Low,
+    Medium,
+    High
+}

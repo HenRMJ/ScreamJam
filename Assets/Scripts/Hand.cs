@@ -35,30 +35,23 @@ public class Hand : MonoBehaviour
 
     private void UpdateSacrificeVisuals()
     {
-        if (cardsToSacrifice.Count == 0)
+        foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
         {
-            foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
-            {
-                cardSlot.UpdateSacrificeVisual(false);
-            }
+            cardSlot.UpdateSacrificeVisual(false);
 
-            return;
-        }
-
-        foreach (GameObject card in cardsToSacrifice)
-        {
-            foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+            foreach (GameObject card in cardsToSacrifice)
             {
-                if (cardSlot.Card == card.transform)
+                if (cardSlot.Card == null) continue;
+
+                if (cardsToSacrifice.Contains(cardSlot.Card.gameObject))
                 {
                     cardSlot.UpdateSacrificeVisual(true);
                 }
-                else
-                {
-                    cardSlot.UpdateSacrificeVisual(false);
-                }
             }
         }
+
+
+
     }
 
     public void SelectCard()
@@ -217,6 +210,7 @@ public class Hand : MonoBehaviour
 
                 foreach (GameObject card in cardsToSacrifice)
                 {
+                    AkSoundEngine.PostEvent("SacrificeMonster", gameObject);
                     Destroy(card);
                 }
                 cardsToSacrifice.Clear();

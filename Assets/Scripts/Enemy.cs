@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public static Enemy Instance;
 
     public static event EventHandler OnEnemyDied;
+    public static event EventHandler<Transform> OnEnemySummonedCard;
 
     [SerializeField] private int blood;
     [SerializeField] private Hand hand;
@@ -88,6 +89,7 @@ public class Enemy : MonoBehaviour
         CardData cardData = cardToSelect.GetComponent<CardData>();
 
         hand.GetCardsInHand().Remove(selectedCard);
+        OnEnemySummonedCard?.Invoke(this, selectedCard);
 
         selectedCard.parent = null;
 

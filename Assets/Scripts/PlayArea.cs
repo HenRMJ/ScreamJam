@@ -64,6 +64,7 @@ public class PlayArea : MonoBehaviour
                             if (cardData.GetAttackDamage() >= secondDefendingCard.GetDefenseValue())
                             {
                                 secondSlotToAttack.Card = null;
+                                AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                                 Destroy(secondDefendingCard.gameObject);
                             }
                         }
@@ -76,6 +77,7 @@ public class PlayArea : MonoBehaviour
                         if (cardData.GetAttackDamage() >= defendingCard.GetDefenseValue())
                         {
                             slotToAttack.Card = null;
+                            AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                             Destroy(defendingCard.gameObject);
                         }
 
@@ -102,6 +104,7 @@ public class PlayArea : MonoBehaviour
                         if (cardData.GetAttackDamage() >= defaultDefendingCard.GetDefenseValue())
                         {
                             defaultSlotToAttack.Card = null;
+                            AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                             Destroy(defaultDefendingCard.gameObject);
                         }
 
@@ -149,6 +152,7 @@ public class PlayArea : MonoBehaviour
                             if (cardData.GetAttackDamage() >= secondDefendingCard.GetDefenseValue())
                             {
                                 secondSlotToAttack.Card = null;
+                                AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                                 Destroy(secondDefendingCard.gameObject);
                             }
                         }
@@ -161,6 +165,7 @@ public class PlayArea : MonoBehaviour
                         if (cardData.GetAttackDamage() >= defendingCard.GetDefenseValue())
                         {
                             slotToAttack.Card = null;
+                            AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                             Destroy(defendingCard.gameObject);
                         }
 
@@ -185,6 +190,7 @@ public class PlayArea : MonoBehaviour
                         if (cardData.GetAttackDamage() >= defaultDefendingCard.GetDefenseValue())
                         {
                             defaultSlotToAttack.Card = null;
+                            AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                             Destroy(defaultDefendingCard.gameObject);
                         }
 
