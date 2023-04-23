@@ -6,6 +6,8 @@ public class PlayArea : MonoBehaviour
 {
     public static PlayArea Instance;
 
+    [SerializeField] private int avatarMultipilier = 10;
+
     private void Awake()
     {
         if (Instance != null)
@@ -37,7 +39,7 @@ public class PlayArea : MonoBehaviour
                         if (attackingPosition == null)
                         {
                             Enemy enemy = FindObjectOfType<Enemy>();
-                            enemy.Blood -= cardData.GetAttackDamage();
+                            enemy.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
                             continue;
                         }
 
@@ -50,7 +52,7 @@ public class PlayArea : MonoBehaviour
                             if (attackingSecondPosition == null)
                             {
                                 Enemy enemy = FindObjectOfType<Enemy>();
-                                enemy.Blood -= cardData.GetAttackDamage();
+                                enemy.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
                                 continue;
                             }
 
@@ -89,7 +91,7 @@ public class PlayArea : MonoBehaviour
                         if (defaultAttackingPosition == null)
                         {
                             Enemy enemy = FindObjectOfType<Enemy>();
-                            enemy.Blood -= cardData.GetAttackDamage();
+                            enemy.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
                             continue;
                         }
 
@@ -125,7 +127,7 @@ public class PlayArea : MonoBehaviour
                         if (attackingPosition == null)
                         {
                             Player player = FindObjectOfType<Player>();
-                            player.DealDamage(cardData.GetAttackDamage());
+                            player.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                             continue;
                         }
 
@@ -138,7 +140,7 @@ public class PlayArea : MonoBehaviour
                             if (attackingSecondPosition == null)
                             {
                                 Player player = FindObjectOfType<Player>();
-                                player.DealDamage(cardData.GetAttackDamage());
+                                player.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                                 continue;
                             }
 
@@ -177,7 +179,7 @@ public class PlayArea : MonoBehaviour
                         if (defaultAttackingPosition == null)
                         {
                             Player player = FindObjectOfType<Player>();
-                            player.DealDamage(cardData.GetAttackDamage());
+                            player.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                             continue;
                         }
 

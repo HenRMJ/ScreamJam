@@ -1,110 +1,46 @@
 Event	ID	Name			Wwise Object Path	Notes
-	240574514	SacrificeMonster			\Default Work Unit\Game\Monster\SacrificeMonster	
-	375975348	OldRoom_Amb			\Default Work Unit\Game\Amb\OldRoom_Amb	
-	661726771	SelectCard			\Default Work Unit\Game\CardsAction\SelectCard	
-	756322111	TurnBell			\Default Work Unit\Game\TurnBell	
-	825349568	Cursor_UI			\Default Work Unit\UI\Cursor_UI	
-	1070976599	DemonicSouls_Amb			\Default Work Unit\Game\Amb\DemonicSouls_Amb	
-	1182648364	BloodPaySmall			\Default Work Unit\Game\Blood\BloodPaySmall	
-	1239384689	Sum_HighMon			\Default Work Unit\Game\Monster\Sum_HighMon	
-	1342735877	Sum_LowMon			\Default Work Unit\Game\Monster\Sum_LowMon	
-	1544529046	Select_UI			\Default Work Unit\UI\Select_UI	
-	1621666556	MusicPlaylist			\Default Work Unit\MusicPlaylist	
-	1989784103	BloodPayHigh			\Default Work Unit\Game\Blood\BloodPayHigh	
-	2214540784	LowDark_Amb			\Default Work Unit\Game\Amb\LowDark_Amb	
-	2247027028	BloodSteal			\Default Work Unit\Game\Blood\BloodSteal	
-	2423923635	SitDown			\Default Work Unit\Game\PlayerCam\SitDown	
-	2480850349	FireSpell			\Default Work Unit\Game\Spell\FireSpell	
-	2532576662	TakeCard			\Default Work Unit\Game\CardsAction\TakeCard	
-	2621508965	MonsterAttack			\Default Work Unit\Game\Monster\MonsterAttack	
-	3045277323	BloodPayMed			\Default Work Unit\Game\Blood\BloodPayMed	
-	3086228169	BringUp_Card			\Default Work Unit\Game\CardsAction\BringUp_Card	
-	3128224948	DestroyedCard			\Default Work Unit\Game\CardsAction\DestroyedCard	
-	3748817017	CurseSpell			\Default Work Unit\Game\Spell\CurseSpell	
-	3957306573	Sum_MedMon			\Default Work Unit\Game\Monster\Sum_MedMon	
-	4066104100	StandUp			\Default Work Unit\Game\PlayerCam\StandUp	
+	240574514	SacrificeMonster			\Default Work Unit\Monster\SacrificeMonster	
+	375975348	OldRoom_Amb			\Default Work Unit\Amb\OldRoom_Amb	
+	1070976599	DemonicSouls_Amb			\Default Work Unit\Amb\DemonicSouls_Amb	
+	1239384689	Sum_HighMon			\Default Work Unit\Monster\Sum_HighMon	
+	1342735877	Sum_LowMon			\Default Work Unit\Monster\Sum_LowMon	
+	2214540784	LowDark_Amb			\Default Work Unit\Amb\LowDark_Amb	
+	2423923635	SitDown			\Default Work Unit\PlayerCam\SitDown	
+	2532576662	TakeCard			\Default Work Unit\CardsAction\TakeCard	
+	2621508965	MonsterAttack			\Default Work Unit\Monster\MonsterAttack	
+	3086228169	BringUp_Card			\Default Work Unit\CardsAction\BringUp_Card	
+	3128224948	DestroyedCard			\Default Work Unit\CardsAction\DestroyedCard	
+	3957306573	Sum_MedMon			\Default Work Unit\Monster\Sum_MedMon	
+	4066104100	StandUp			\Default Work Unit\PlayerCam\StandUp	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	22382650	BloodPay(large BC)_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(large BC)_742223F3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPayLarge_BC\BloodPay(large BC)_01		301956
-	32091729	Turn bell bass_03	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell bass_333D8149.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Bass\Turn bell bass_03		426960
-	36572938	Card pick up 1	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 1_4C46F25B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\TakeCard\Card pick up 1		4769
-	58517975	BloodPay(large BC)_03	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(large BC)_301B3E7A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPayLarge_BC\BloodPay(large BC)_03		298232
-	59545459	SitDown_MoveCam	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Player Actions\SitDown_MoveCam_509E464B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\PlayerCam\SitDown_Move\SitDown_MoveCam		21313
-	92613697	Card pick up 2	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 2_FCA9724D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\TakeCard\Card pick up 2		8457
-	94219726	ambience 4 demo	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\ambience 4 demo_3D1D1BA5.wem		\Interactive Music Hierarchy\Default Work Unit\MusicPlaylist\ambience 4 demo\ambience 4 demo		256807
-	129977347	SummonLowTier(1)	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(1)_05BD6B98.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_LowTier\SummonLowTier(1)		473848
-	133412951	BloodPay(large BC)	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(large BC)_FC9CC961.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPayLarge_BC\BloodPay(large BC)		311276
-	142744935	Card select 2	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_8686925A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\BringUp_Card\Card select 2		3124
-	151984888	SacrificeMonster_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Sacrifice Monster\SacrificeMonster_0DF3D938.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\SacrificeMonster\SacrificeMonster_01		580348
-	171967242	StandUp_MoveCam_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Player Actions\StandUp_MoveCam_E5810748.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\PlayerCam\SitDown_Move\StandUp_MoveCam_01		18364
-	201598599	BloodPay(small BC)	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(small BC)_F43BAA73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPaySmall_BC\BloodPay(small BC)		202736
-	209642485	BloodPay(medium BC)_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(medium BC)_AC358093.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPayMed_BC\BloodPay(medium BC)_02		233016
-	212078781	Card select 2_03	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_F9091CC5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\BringUp_Card\Card select 2_03		3450
-	215757308	Card pick up 1_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 1_64ED94F4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\TakeCard\Card pick up 1_01		5180
-	233008782	StandUp_MoveCam1	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Player Actions\SitDown_MoveCam_DDBF6C8D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\PlayerCam\StandUp_Move\StandUp_MoveCam1		18093
-	243310774	Turn bell second_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell second_BABEA6C6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Second\Turn bell second_02		422164
-	266479886	UI select	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\UI select_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI select		88296
-	268972359	StandUp_MoveCam	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Player Actions\StandUp_MoveCam_BF744F99.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\PlayerCam\StandUp_Move\StandUp_MoveCam		13638
-	280488761	ambience demo	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\ambience demo_3D1D1BA5.wem		\Interactive Music Hierarchy\Default Work Unit\MusicPlaylist\ambience demo\ambience demo		783853
-	291684520	BringUp1_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 1_271A17D8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\BringUp_Card\BringUp1_02		3696
-	295442611	Card destroyed 2	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card destroyed 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\DestroyedCard\Card destroyed 2		427736
-	298277095	Turn bell second	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell second_9F533FBA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Second\Turn bell second		261492
-	298400608	BloodSteal_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodSteal_7BDDE6C3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodSteal\BloodSteal_01		300096
-	308182294	Card select 2_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_BBC9281D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\BringUp_Card\Card select 2_01		3191
-	321438215	BloodPay(small BC)_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(small BC)_9341E891.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPaySmall_BC\BloodPay(small BC)_02		211120
-	338097806	ambience 3 demo	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\ambience 3 demo_3D1D1BA5.wem		\Interactive Music Hierarchy\Default Work Unit\MusicPlaylist\ambience 3 demo\ambience 3 demo		1931763
-	338831760	MonsterAttacks_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Monster Attack\MonsterAttacks_86A0DF03.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Monster Attacks\MonsterAttacks_01		366448
-	354520501	Turn bell bass_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell bass_810D91E0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Bass\Turn bell bass_02		465332
-	354782194	Turn bell bass	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell bass_760CC7D3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Bass\Turn bell bass		419768
-	356769695	BloodPay(large BC)_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(large BC)_A8AB7CC3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPayLarge_BC\BloodPay(large BC)_02		311272
-	367547339	Card select 2	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_27C415C8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\CardSelect\Card select 2		3199
-	378248156	SummonLowTier(1)_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(1)_A3535CA7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_LowTier\SummonLowTier(1)_01		357036
-	404020608	BloodPay(medium BC)_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(medium BC)_41A11FAE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPayMed_BC\BloodPay(medium BC)_01		238604
-	418636416	MonsterAttack3	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\MonsterAttack3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Monster Attacks\MonsterAttack3		291936
-	426855837	ambience 2 demo	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\ambience 2 demo_3D1D1BA5.wem		\Interactive Music Hierarchy\Default Work Unit\MusicPlaylist\ambience 2 demo\ambience 2 demo		760614
-	436450789	Fire spell	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Fire spell_8EF51634.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Spells\FireSpell\Fire spell		382688
-	445220065	BloodPay(medium BC)_03	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(medium BC)_062C3EBA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPayMed_BC\BloodPay(medium BC)_03		210652
-	451891224	SummonHighTier(1)	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonHighTier(1)_4AF0EC65.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_MediumTier\SummonHighTier(1)		575396
-	463413971	Select card	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Select card_C1F52A07.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\CardSelect\Select card		13583
-	473816395	DestroyedCard_Demo	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\DestroyedCard_Demo_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\DestroyedCard\DestroyedCard_Demo		269172
-	484249041	MonsterAttacks	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Monster Attack\MonsterAttacks_2A38CCC8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Monster Attacks\MonsterAttacks		315460
-	487488024	Card destroyed 1	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card destroyed 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\DestroyedCard\Card destroyed 1		427736
-	488408749	Card select 2_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_AEF297FA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\CardSelect\Card select 2_02		3498
-	530207154	UI cursor pointed	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\UI cursor pointed_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI cursor pointed		88296
-	544521637	Summon_HighTier	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Summon_HighTier_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_HighTier\Summon_HighTier		731232
-	567972532	Card pick up 2_03	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 2_AEEC6546.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\TakeCard\Card pick up 2_03		6048
-	584150056	Turn bell main_03	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell main_0939041C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Main\Turn bell main_03		410176
-	604648292	BloodSteal	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodSteal_5371C59D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodSteal\BloodSteal		338292
-	609024853	SummonLowTier(2)	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(2)_2BA9FD99.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_MediumTier\SummonLowTier(2)		539384
-	611058163	Card pick up 2_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 2_3B5B7225.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\TakeCard\Card pick up 2_02		4742
-	619755231	Fire spell_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Fire spell_1CEB8EAB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Spells\FireSpell\Fire spell_01		848056
-	625544849	Turn bell bass_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell bass_4216CA55.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Bass\Turn bell bass_01		402980
-	643964148	Turn bell second_03	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell second_98AD3523.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Second\Turn bell second_03		407776
-	646554944	Turn bell main	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell main_7A682679.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Main\Turn bell main		414972
-	648962544	Summon_MedTier	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Summon_MedTier_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_MediumTier\Summon_MedTier		451924
-	649903395	DemocinSouls_Ambience	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\DemocinSouls_Ambience_976FE25D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Ambience\DemocinSouls_Ambience		9606988
-	687178340	BringUp1_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 1_A063F64B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\BringUp_Card\BringUp1_01		3704
-	689212934	SummonLowTier(3)	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(3)_D16AE548.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_LowTier\SummonLowTier(3)		732100
-	701180529	SummonHighTier(1)_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonHighTier(1)_FFCED87F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_HighTier\SummonHighTier(1)_01		807344
-	741293925	BloodPay(medium BC)	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(medium BC)_317B17CE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPayMed_BC\BloodPay(medium BC)		208792
-	769592479	StandUp_Cam	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\StandUp_Cam_C1F52A07.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\PlayerCam\StandUp_Move\StandUp_Cam		15570
-	771061622	Card pick up 1_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 1_7C75721E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\TakeCard\Card pick up 1_02		5516
-	795711129	MonsterAttacks_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Monster Attack\MonsterAttacks_62B86AB2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Monster Attacks\MonsterAttacks_02		277692
-	809561874	Summon_HighTier2	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Summon_HighTier2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_HighTier\Summon_HighTier2		471136
-	813365427	Card select 2_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_EFBE9E92.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\CardSelect\Card select 2_01		3486
-	821937752	BringUp1	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 1_09B5F1FF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\BringUp_Card\BringUp1		4889
-	865769301	SitDown_Cam	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\SitDown_Cam_C1F52A07.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\PlayerCam\SitDown_Move\SitDown_Cam		10177
-	892866634	Turn bell main_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell main_F88B90A4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Main\Turn bell main_02		386192
-	901736929	Turn bell main_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell main_06328946.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Main\Turn bell main_01		388588
-	905863384	OldRoom_Ambience	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\OldRoom_Ambience_8DCBB2DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Ambience\OldRoom_Ambience		12343788
-	908710416	MonsterAttack2	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\MonsterAttack2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Monster Attacks\MonsterAttack2		323680
-	914198253	Card select 2_02	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_7C0203C8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\BringUp_Card\Card select 2_02		4068
-	931871420	BloodPay(small BC)_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\BloodPay(small BC)_382FD905.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Blood\BloodPaySmall_BC\BloodPay(small BC)_01		208324
-	941496553	SacrificeMonster	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Sacrifice Monster\SacrificeMonster_A6A104D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\SacrificeMonster\SacrificeMonster		668192
-	949659338	SacrificeMonster3	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\SacrificeMonster3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\SacrificeMonster\SacrificeMonster3		778336
-	970406506	LowDark_Ambience	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\LowDark_Ambience_CD66D258.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Ambience\LowDark_Ambience		11271340
-	1000506025	SummonLowTier(2)_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(2)_BAA02B28.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_MediumTier\SummonLowTier(2)_01		844124
-	1014652624	Card pick up 2_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 2_82613583.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\Cards\TakeCard\Card pick up 2_01		5086
-	1034474329	SummonLowTier(3)_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(3)_D0320C5D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\MonsterActions\Sum_LowTier\SummonLowTier(3)_01		679972
-	1060779738	Turn bell second_01	Z:\Applications\Unity\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Turn bell second_AFDECCD9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\TurnBell\Second\Turn bell second_01		359812
+	36572938	Card pick up 1	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 1_C293128D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\TakeCard\Card pick up 1		59336
+	59545459	SitDown_MoveCam	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Player Actions\SitDown_MoveCam_0B888D81.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCam\SitDown_Move\SitDown_MoveCam		270788
+	92613697	Card pick up 2	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 2_37AC0D93.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\TakeCard\Card pick up 2		105616
+	129977347	SummonLowTier(1)	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(1)_05BD6B98.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Sum_LowTier\SummonLowTier(1)		473848
+	142744935	Card select 2	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_A1F117B0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\BringUp_Card\Card select 2		29716
+	151984888	SacrificeMonster_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Sacrifice Monster\SacrificeMonster_0DF3D938.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\SacrificeMonster\SacrificeMonster_01		580348
+	171967242	StandUp_MoveCam_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Player Actions\StandUp_MoveCam_302412BB.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCam\StandUp_Move\StandUp_MoveCam_01		137304
+	233008782	SitDown_MoveCam_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Player Actions\SitDown_MoveCam_411EDDCF.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCam\SitDown_Move\SitDown_MoveCam_01		263268
+	268972359	StandUp_MoveCam	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Player Actions\StandUp_MoveCam_2DEE1A77.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerCam\StandUp_Move\StandUp_MoveCam		197448
+	295442611	Card destroyed 2	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card destroyed 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\DestroyedCard\Card destroyed 2		427736
+	308182294	Card select 2_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 2_AF06AC2B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\BringUp_Card\Card select 2_01		34344
+	338831760	MonsterAttacks_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Monster Attack\MonsterAttacks_86A0DF03.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Monster Attacks\MonsterAttacks_01		366448
+	378248156	SummonLowTier(1)_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(1)_A3535CA7.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Sum_LowTier\SummonLowTier(1)_01		357036
+	451891224	SummonHighTier(1)	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonHighTier(1)_4AF0EC65.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Sum_HighTier\SummonHighTier(1)		575396
+	473816395	DestroyedCard_Demo	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\DestroyedCard_Demo_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\DestroyedCard\DestroyedCard_Demo		269172
+	484249041	MonsterAttacks	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Monster Attack\MonsterAttacks_2A38CCC8.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Monster Attacks\MonsterAttacks		315460
+	487488024	Card destroyed 1	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card destroyed 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\DestroyedCard\Card destroyed 1		427736
+	609024853	SummonLowTier(2)	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(2)_2BA9FD99.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Sum_LowTier\SummonLowTier(2)		539384
+	649903395	DemocinSouls_Ambience	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\DemocinSouls_Ambience_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\DemocinSouls_Ambience		12282940
+	689212934	SummonLowTier(3)	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(3)_D16AE548.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Sum_MediumTier\SummonLowTier(3)		732100
+	701180529	SummonHighTier(1)_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonHighTier(1)_FFCED87F.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Sum_HighTier\SummonHighTier(1)_01		807344
+	795711129	MonsterAttacks_02	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Monster Attack\MonsterAttacks_62B86AB2.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Monster Attacks\MonsterAttacks_02		277692
+	821937752	BringUp1	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card select 1_BC988D79.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\BringUp_Card\BringUp1		49156
+	905863384	OldRoom_Ambience	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\OldRoom_Ambience_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\OldRoom_Ambience		12862192
+	941496553	SacrificeMonster	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Sacrifice Monster\SacrificeMonster_A6A104D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\SacrificeMonster\SacrificeMonster		668192
+	970406506	LowDark_Ambience	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\LowDark_Ambience_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\LowDark_Ambience		12572396
+	1000506025	SummonLowTier(2)_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(2)_BAA02B28.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Sum_LowTier\SummonLowTier(2)_01		844124
+	1014652624	Card pick up 2_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Card pick up 2_9779EEF9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cards\TakeCard\Card pick up 2_01		55632
+	1034474329	SummonLowTier(3)_01	E:\Repos\Unity3D\ScreamJamCard\ScreamJam\Card Practice_WwiseProject\.cache\Windows\SFX\Monster\Summon Monster\SummonLowTier(3)_D0320C5D.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterActions\Sum_MediumTier\SummonLowTier(3)_01		679972
 

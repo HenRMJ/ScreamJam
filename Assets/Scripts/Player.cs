@@ -70,6 +70,7 @@ public class Player : MonoBehaviour
         if (cost <= 0) return true;
 
         blood -= cost;
+        StartCoroutine(UpdateBloodLevel());
         return true;
     }
 

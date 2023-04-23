@@ -16,6 +16,9 @@ public class Enemy : MonoBehaviour
     private List<CardSlot> possiblePlacements = new List<CardSlot>();
     private Transform selectedCard;
 
+    [SerializeField] private Transform bloodLevel = null;
+    private int startingBlood;
+
     public int Blood { get; set; }
 
     private void Awake()
@@ -34,6 +37,7 @@ public class Enemy : MonoBehaviour
     {
         AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
         CardSlot.OnCanBePlaced += CardSlot_OnCanBePlaced;
+        startingBlood = Blood;
     }
 
     private void CardSlot_OnCanBePlaced(object sender, EventArgs e)
@@ -43,7 +47,7 @@ public class Enemy : MonoBehaviour
 
     private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
     {
-        if (blood <= 0)
+        if (Blood <= 0)
         {
             OnEnemyDied?.Invoke(this, EventArgs.Empty);
         }
@@ -99,6 +103,7 @@ public class Enemy : MonoBehaviour
         cardData.CanMove = false;
 
         Blood -= cardData.GetBloodCost();
+        StartCoroutine(UpdateBloodLevel());
 
         cardData.MoveToPoint(randomCardSlot.transform.position, randomCardSlot.transform.rotation);
         randomCardSlot.Card = selectedCard;
@@ -201,6 +206,26 @@ public class Enemy : MonoBehaviour
     public void Heal(int healAmount)
     {
         Blood += healAmount;
+        StartCoroutine(UpdateBloodLevel());
     }
+    private IEnumerator UpdateBloodLevel()
+    {
+        float t = 0f;
+        float speed = 1f;
+
+        Vector3 startingBloodLevel = bloodLevel.localScale;
+        float newBloodPercent = (float)Blood / (float)startingBlood;
+        Vector3 finalBloodLevel = new Vector3(1, newBloodPercent, 1);
+        while (t < 1)
+        {
+            t += Time.deltaTime / speed;
+            if (t > 1) { t = 1; }
+
+            bloodLevel.localScale = Vector3.Lerp(startingBloodLevel, finalBloodLevel, t);
+            yield return new WaitForEndOfFrame();
+        }
+        yield return null;
+    }
+
     public Hand GetHand() => hand;
 }

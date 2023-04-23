@@ -30,6 +30,7 @@ public class UIOverlay : MonoBehaviour
 
     private void DrawState_OnEnterDrawState(object sender, EventArgs e)
     {
+        if (TurnSystem.Instance.IsPlayersTurn) return;
         overlay.text = draw;
         smallOverlay.text = drawS;
         animator.SetTrigger("newState");
@@ -37,6 +38,8 @@ public class UIOverlay : MonoBehaviour
 
     private void DecisionState_OnEnterDecisionState(object sender, EventArgs e)
     {
+        if (!TurnSystem.Instance.IsPlayersTurn) return;
+
         if (TurnSystem.Instance.AttackedThisRound)
         {
             overlay.text = attack;

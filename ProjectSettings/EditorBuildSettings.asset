@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Game.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Henry/Programming.unity
+    guid: 9a445bfd89021144497580ae89aea829
+  - enabled: 1
+    path: Assets/Henry/Win.unity
+    guid: 6aa2264b8a9c55b4386fa485b8fbe05b
+  - enabled: 1
+    path: Assets/Henry/Death.unity
+    guid: a312a75df2c11d843946533bf55d0474
   m_configObjects: {}
