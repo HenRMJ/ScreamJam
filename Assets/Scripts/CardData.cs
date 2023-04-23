@@ -29,7 +29,6 @@ public class CardData : MonoBehaviour
     [Header("Card Movement Values")]
     [SerializeField] private float speed;
     [SerializeField] private Vector3 hoverOffset;
-    [SerializeField] private bool belongsToPlayer;
 
     private int bloodCost, defense, attack;
     private string cardName, UIDescription, loreBlurb;
@@ -37,21 +36,22 @@ public class CardData : MonoBehaviour
     private Quaternion rotationalValue;
     private Vector3 targetPoint;
     private Hand hand;
+    bool belongsToPlayer;
 
-
-    private void Awake()
+    private void Start()
     {
-        foreach(Hand hand in FindObjectsOfType<Hand>())
+        foreach (Hand hand in FindObjectsOfType<Hand>())
         {
             if (hand.BelongsToPlayer && belongsToPlayer)
             {
                 this.hand = hand;
-            } else if (!hand.BelongsToPlayer)
+            }
+            else if (!hand.BelongsToPlayer && !belongsToPlayer)
             {
                 this.hand = hand;
             }
         }
-        
+
         // Assinging CardData
         Type = card.GetCardType();
         bloodCost = card.GetBloodCost();
@@ -74,7 +74,8 @@ public class CardData : MonoBehaviour
 
             attackField.text = attack.ToString();
             defenseField.text = defense.ToString();
-        } else
+        }
+        else
         {
             attackField.gameObject.SetActive(false);
             defenseField.gameObject.SetActive(false);
@@ -87,10 +88,7 @@ public class CardData : MonoBehaviour
         InDeck = true;
         InPlay = false;
         CanMove = false;
-    }
 
-    private void Start()
-    {
         StartRoundState.OnStartRound += StartRoundState_OnStartRound;
     }    
 
@@ -204,6 +202,12 @@ public class CardData : MonoBehaviour
     {
         bloodCost = newBloodCost;
     }
+
+    public void SetBelongsToPlayer(bool belongsToPlayer)
+    {
+        this.belongsToPlayer = belongsToPlayer;
+    }
+
     public int GetAttackDamage() => attack;
     public int GetDefenseValue() => defense;
     public bool BelongsToPlayer() => belongsToPlayer;

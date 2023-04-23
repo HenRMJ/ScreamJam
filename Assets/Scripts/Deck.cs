@@ -13,13 +13,19 @@ public class Deck : MonoBehaviour
     [Tooltip("Random rotational value to make the cards look like they're not stack perfectly squared")]
     [SerializeField] private float rotationalOffset;
 
+    [SerializeField] private bool belongsToPlayer;
+
     private List<Transform> instantiatedCardList = new List<Transform>();
+
+    private void Awake()
+    {
+        CreateCards();
+    }
 
     private void Start()
     {
         Destroy(transform.GetChild(0).gameObject);
         ShuffleCards();
-        CreateCards();
     }
 
     private void CreateCards()
@@ -30,6 +36,8 @@ public class Deck : MonoBehaviour
         for (int i = 0; i < deckList.Count; i++)
         {
             Transform deckCard = Instantiate(deckList[i], i == 0 ? transform.position : instatiationPosition + offset, Quaternion.Euler(-90f, Random.Range(-rotationalOffset, rotationalOffset), 0), transform);
+            CardData cardData = deckCard.GetComponent<CardData>();
+            cardData.SetBelongsToPlayer(belongsToPlayer);
             instatiationPosition = deckCard.position;
 
             instantiatedCardList.Add(deckCard);
@@ -47,7 +55,7 @@ public class Deck : MonoBehaviour
         }
     }
 
-    public Transform DealCard()
+    public Transform DealCard(Hand hand)
     {
         if (instantiatedCardList.Count == 0)
         {
@@ -56,6 +64,9 @@ public class Deck : MonoBehaviour
         }
         Transform cardToDeal = instantiatedCardList[0];
         CardData cardData = cardToDeal.GetComponent<CardData>();
+
+        if (hand.BelongsToPlayer && !cardData.BelongsToPlayer()) return null;
+        if (!hand.BelongsToPlayer && cardData.BelongsToPlayer()) return null;
 
         cardToDeal.parent = null;
         cardData.InHand = true;

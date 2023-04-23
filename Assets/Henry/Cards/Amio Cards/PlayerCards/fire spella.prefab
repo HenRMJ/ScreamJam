@@ -149,8 +149,12 @@ GameObject:
   - component: {fileID: 5143073222210246624}
   - component: {fileID: 5143073222210246639}
   - component: {fileID: -5935286169467110996}
+  - component: {fileID: 5843904004679353672}
+  - component: {fileID: 5904969970998503603}
+  - component: {fileID: -3881461308897349512}
+  - component: {fileID: -7448875957476869007}
   m_Layer: 6
-  m_Name: Default Card
+  m_Name: fire spella
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,15 +188,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7194ee3baa6dcb4ea407f055cd14dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: f82c663b12a783c43bbafcf48d741d1b, type: 2}
+  card: {fileID: 11400000, guid: 6fff002821b40d043abecfbf103e193e, type: 2}
   nameField: {fileID: 5143073223490784169}
-  descriptionField: {fileID: 5143073223156389917}
+  loreField: {fileID: 5143073223156389917}
   defenseField: {fileID: 5143073223304526144}
   bloodCostField: {fileID: 5143073221588229380}
   attackField: {fileID: 5143073223387905476}
   cardMeshRenderer: {fileID: 5809160254841068263}
   speed: 5
   hoverOffset: {x: 0, y: 0.04, z: 0.04}
+  belongsToPlayer: 1
 --- !u!65 &-5935286169467110996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -206,6 +211,100 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06422508, y: 0.089654446, z: 0.0019491315}
   m_Center: {x: -0.000057175756, y: 0, z: 0.00011640787}
+--- !u!114 &5843904004679353672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143073222210246625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f919ed76eb7dd40931f83d5b2fb5e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &5904969970998503603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143073222210246625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0160269617453aa47acfec813af12485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: 
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4c353ff54ae6335418e6e3c26892466b,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+  MultiPositionType: 1
+  multiPositionTypeLabel: 0
+  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
+  LargeModePositions: []
+  multiPositionArray: []
+--- !u!114 &-3881461308897349512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143073222210246625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c764e7293a4604c8994c716efee356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 77941d5cddbebb942a8dc515d088ac81,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &-7448875957476869007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143073222210246625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f13c7ae67bab74bbcd112d48c36985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5143073222868699542
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +511,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535

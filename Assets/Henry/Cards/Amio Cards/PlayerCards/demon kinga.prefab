@@ -149,15 +149,15 @@ GameObject:
   - component: {fileID: 5143073222210246624}
   - component: {fileID: 5143073222210246639}
   - component: {fileID: -5935286169467110996}
-  - component: {fileID: 7114079466262785347}
-  - component: {fileID: 9180667713696135898}
-  - component: {fileID: 9142537775997427470}
-  - component: {fileID: 4011403745344218047}
-  - component: {fileID: 2138015431281152061}
-  - component: {fileID: 4424663781698686653}
-  - component: {fileID: 2839639654681408877}
+  - component: {fileID: 6964834536306257361}
+  - component: {fileID: 8284369875394618837}
+  - component: {fileID: 1911968882666685219}
+  - component: {fileID: 1868101710942542790}
+  - component: {fileID: 244171743246370465}
+  - component: {fileID: 5097511217484322837}
+  - component: {fileID: 2678462598296239684}
   m_Layer: 6
-  m_Name: night demon
+  m_Name: demon kinga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7194ee3baa6dcb4ea407f055cd14dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 0bdb83899b388514e884130e386f4587, type: 2}
+  card: {fileID: 11400000, guid: faf178492cb69534fa26d47cbfd04073, type: 2}
   nameField: {fileID: 5143073223490784169}
   loreField: {fileID: 5143073223156389917}
   defenseField: {fileID: 5143073223304526144}
@@ -214,7 +214,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06422508, y: 0.089654446, z: 0.0019491315}
   m_Center: {x: -0.000057175756, y: 0, z: 0.00011640787}
---- !u!114 &7114079466262785347
+--- !u!114 &6964834536306257361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,7 +236,7 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &9180667713696135898
+--- !u!114 &8284369875394618837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,7 +271,7 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &9142537775997427470
+--- !u!114 &1911968882666685219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,7 +306,7 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &4011403745344218047
+--- !u!114 &1868101710942542790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,7 +341,7 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &2138015431281152061
+--- !u!114 &244171743246370465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,7 +366,7 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
---- !u!114 &4424663781698686653
+--- !u!114 &5097511217484322837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   summondSound: 2
---- !u!114 &2839639654681408877
+--- !u!114 &2678462598296239684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -957,8 +957,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5143073223490784171}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000000002910383}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -967,7 +967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.0384}
+  m_AnchoredPosition: {x: 0, y: 0.03840065}
   m_SizeDelta: {x: 5.57584, y: 0.8597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5143073223490784168

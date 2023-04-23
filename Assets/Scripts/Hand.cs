@@ -117,7 +117,7 @@ public class Hand : MonoBehaviour
 
     public void AddCardToHand()
     {
-        Transform cardToAdd = deck.DealCard();
+        Transform cardToAdd = deck.DealCard(this);
 
         if (cardToAdd == null) return;
 

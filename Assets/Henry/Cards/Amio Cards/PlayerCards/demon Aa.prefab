@@ -149,15 +149,15 @@ GameObject:
   - component: {fileID: 5143073222210246624}
   - component: {fileID: 5143073222210246639}
   - component: {fileID: -5935286169467110996}
-  - component: {fileID: 4315554546306880496}
-  - component: {fileID: 5289812470808013884}
-  - component: {fileID: -6425186613008910321}
-  - component: {fileID: 5463363839431588119}
-  - component: {fileID: 1915507159541752279}
-  - component: {fileID: 3198669077354541676}
-  - component: {fileID: -3078529173810264036}
+  - component: {fileID: 6138729565065404080}
+  - component: {fileID: 5567393056571494201}
+  - component: {fileID: -3846297310507330707}
+  - component: {fileID: 5645237377349547662}
+  - component: {fileID: 9213076772470330649}
+  - component: {fileID: -7569072538008842726}
+  - component: {fileID: 4595345395186302325}
   m_Layer: 6
-  m_Name: hell demon
+  m_Name: demon Aa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7194ee3baa6dcb4ea407f055cd14dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: f986f13baa9bbc84d9e7e6d4077fa0b8, type: 2}
+  card: {fileID: 11400000, guid: ecea9296e50fdd14993fc8852518a3c6, type: 2}
   nameField: {fileID: 5143073223490784169}
   loreField: {fileID: 5143073223156389917}
   defenseField: {fileID: 5143073223304526144}
@@ -214,7 +214,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06422508, y: 0.089654446, z: 0.0019491315}
   m_Center: {x: -0.000057175756, y: 0, z: 0.00011640787}
---- !u!114 &4315554546306880496
+--- !u!114 &6138729565065404080
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,7 +236,7 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &5289812470808013884
+--- !u!114 &5567393056571494201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,7 +271,7 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &-6425186613008910321
+--- !u!114 &-3846297310507330707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,7 +306,32 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &5463363839431588119
+--- !u!114 &5645237377349547662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143073222210246625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c764e7293a4604c8994c716efee356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 77941d5cddbebb942a8dc515d088ac81,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &9213076772470330649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,32 +366,7 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &1915507159541752279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143073222210246625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7c764e7293a4604c8994c716efee356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 77941d5cddbebb942a8dc515d088ac81,
-      type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
---- !u!114 &3198669077354541676
+--- !u!114 &-7569072538008842726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -378,8 +378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056172206bb60ab4f851f20576e59c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  summondSound: 1
---- !u!114 &-3078529173810264036
+  summondSound: 0
+--- !u!114 &4595345395186302325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -399,7 +399,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 98ece850e51804f478cc506cc7f64c02,
+    WwiseObjectReference: {fileID: 11400000, guid: 3cafd257c56e09649818d4cdd3347b11,
       type: 2}
   useCallbacks: 0
   Callbacks: []

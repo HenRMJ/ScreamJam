@@ -149,15 +149,15 @@ GameObject:
   - component: {fileID: 5143073222210246624}
   - component: {fileID: 5143073222210246639}
   - component: {fileID: -5935286169467110996}
-  - component: {fileID: 2416770092015578342}
-  - component: {fileID: -4415134102150239760}
-  - component: {fileID: 3689451880946510191}
-  - component: {fileID: -2978828642958485814}
-  - component: {fileID: -5755130851532337224}
-  - component: {fileID: 7323653022713256111}
-  - component: {fileID: 5700923088934200509}
+  - component: {fileID: 6885638936952354032}
+  - component: {fileID: 2805829909639578950}
+  - component: {fileID: 5463922008706374993}
+  - component: {fileID: -8776410314805887505}
+  - component: {fileID: 3148341058002255540}
+  - component: {fileID: -4521114213239481603}
+  - component: {fileID: -5427819471855512550}
   m_Layer: 6
-  m_Name: abyss crawler
+  m_Name: demon Ba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7194ee3baa6dcb4ea407f055cd14dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: e9a76b787354bb34396074a41d71b515, type: 2}
+  card: {fileID: 11400000, guid: b31d8c00df1666e438a3f2b795b8a9f0, type: 2}
   nameField: {fileID: 5143073223490784169}
   loreField: {fileID: 5143073223156389917}
   defenseField: {fileID: 5143073223304526144}
@@ -214,7 +214,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06422508, y: 0.089654446, z: 0.0019491315}
   m_Center: {x: -0.000057175756, y: 0, z: 0.00011640787}
---- !u!114 &2416770092015578342
+--- !u!114 &6885638936952354032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,42 +236,7 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &-4415134102150239760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143073222210246625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0160269617453aa47acfec813af12485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: 
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 98ece850e51804f478cc506cc7f64c02,
-      type: 2}
-  useCallbacks: 0
-  Callbacks: []
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
-  MultiPositionType: 1
-  multiPositionTypeLabel: 0
-  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
-  LargeModePositions: []
-  multiPositionArray: []
---- !u!114 &3689451880946510191
+--- !u!114 &2805829909639578950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,7 +271,7 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &-2978828642958485814
+--- !u!114 &5463922008706374993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,7 +306,7 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &-5755130851532337224
+--- !u!114 &-8776410314805887505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -376,7 +341,7 @@ MonoBehaviour:
   attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
   LargeModePositions: []
   multiPositionArray: []
---- !u!114 &7323653022713256111
+--- !u!114 &3148341058002255540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -401,7 +366,7 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
---- !u!114 &5700923088934200509
+--- !u!114 &-4521114213239481603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -413,7 +378,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056172206bb60ab4f851f20576e59c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  summondSound: 1
+  summondSound: 0
+--- !u!114 &-5427819471855512550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143073222210246625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0160269617453aa47acfec813af12485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: 
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3cafd257c56e09649818d4cdd3347b11,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+  MultiPositionType: 1
+  multiPositionTypeLabel: 0
+  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
+  LargeModePositions: []
+  multiPositionArray: []
 --- !u!1 &5143073222868699542
 GameObject:
   m_ObjectHideFlags: 0
