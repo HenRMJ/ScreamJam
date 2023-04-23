@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../..</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<ProjectRoot>../../</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows/</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
@@ -31,25 +31,61 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3EFA0E78-96DF-E4CC-3A18-A4E3A57BB70F}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{88E44699-8B4C-CBFC-C99B-E5499B76FBB9}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="14299363" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell bass.wav</ShortName>
+					<CachePath>SFX/Turn bell bass_D03D8760.wem</CachePath>
+				</File>
+				<File Id="19963123" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Summon_MedTier.wav</ShortName>
+					<CachePath>SFX/Summon_MedTier_10C4C929.wem</CachePath>
+				</File>
+				<File Id="20927043" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ambience demo.wav</ShortName>
+					<CachePath>SFX/ambience demo_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="36572938" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card pick up 1.wav</ShortName>
 					<CachePath>SFX/Card pick up 1_C293128D.wem</CachePath>
+				</File>
+				<File Id="50960029" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(large BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(large BC)_65E2D963.wem</CachePath>
+				</File>
+				<File Id="57381557" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Curse spell.wav</ShortName>
+					<CachePath>SFX/Curse spell_B6B98C1E.wem</CachePath>
 				</File>
 				<File Id="59545459" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player Actions\SitDown_MoveCam.wav</ShortName>
 					<CachePath>SFX/Player Actions/SitDown_MoveCam_0B888D81.wem</CachePath>
 				</File>
+				<File Id="82506967" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(large BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(large BC)_CBCD01C1.wem</CachePath>
+				</File>
 				<File Id="92613697" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card pick up 2.wav</ShortName>
 					<CachePath>SFX/Card pick up 2_37AC0D93.wem</CachePath>
 				</File>
+				<File Id="107494679" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_6F183CDC.wem</CachePath>
+				</File>
+				<File Id="107999864" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card pick up 1.wav</ShortName>
+					<CachePath>SFX/Card pick up 1_A259CB22.wem</CachePath>
+				</File>
 				<File Id="129977347" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(1).wav</ShortName>
 					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(1)_05BD6B98.wem</CachePath>
+				</File>
+				<File Id="141573872" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(medium BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(medium BC)_9A77E279.wem</CachePath>
 				</File>
 				<File Id="142744935" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card select 2.wav</ShortName>
@@ -59,17 +95,53 @@
 					<ShortName>Monster\Sacrifice Monster\SacrificeMonster.wav</ShortName>
 					<CachePath>SFX/Monster/Sacrifice Monster/SacrificeMonster_0DF3D938.wem</CachePath>
 				</File>
+				<File Id="163134979" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MonsterAttack3.wav</ShortName>
+					<CachePath>SFX/MonsterAttack3_10C4C929.wem</CachePath>
+				</File>
 				<File Id="171967242" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player Actions\StandUp_MoveCam.wav</ShortName>
-					<CachePath>SFX/Player Actions/StandUp_MoveCam_302412BB.wem</CachePath>
+					<CachePath>SFX/Player Actions/StandUp_MoveCam_C2D8164C.wem</CachePath>
+				</File>
+				<File Id="173250745" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_C98D5302.wem</CachePath>
+				</File>
+				<File Id="185593086" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Summon_HighTier.wav</ShortName>
+					<CachePath>SFX/Summon_HighTier_10C4C929.wem</CachePath>
+				</File>
+				<File Id="206149265" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ambience 4 demo.wav</ShortName>
+					<CachePath>SFX/ambience 4 demo_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="209535173" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_9E4D812E.wem</CachePath>
+				</File>
+				<File Id="223789997" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 1.wav</ShortName>
+					<CachePath>SFX/Card select 1_2B79628D.wem</CachePath>
 				</File>
 				<File Id="233008782" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player Actions\SitDown_MoveCam.wav</ShortName>
 					<CachePath>SFX/Player Actions/SitDown_MoveCam_411EDDCF.wem</CachePath>
 				</File>
+				<File Id="251769080" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell second.wav</ShortName>
+					<CachePath>SFX/Turn bell second_AC58AD68.wem</CachePath>
+				</File>
 				<File Id="268972359" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player Actions\StandUp_MoveCam.wav</ShortName>
 					<CachePath>SFX/Player Actions/StandUp_MoveCam_2DEE1A77.wem</CachePath>
+				</File>
+				<File Id="269250330" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SacrificeMonster3.wav</ShortName>
+					<CachePath>SFX/SacrificeMonster3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="270229429" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>StandUp_Cam.wav</ShortName>
+					<CachePath>SFX/StandUp_Cam_10C4C929.wem</CachePath>
 				</File>
 				<File Id="295442611" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card destroyed 2.wav</ShortName>
@@ -79,6 +151,10 @@
 					<ShortName>Card select 2.wav</ShortName>
 					<CachePath>SFX/Card select 2_AF06AC2B.wem</CachePath>
 				</File>
+				<File Id="334076146" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fire spell.wav</ShortName>
+					<CachePath>SFX/Fire spell_3692A87A.wem</CachePath>
+				</File>
 				<File Id="338831760" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Monster Attack\MonsterAttacks.wav</ShortName>
 					<CachePath>SFX/Monster/Monster Attack/MonsterAttacks_86A0DF03.wem</CachePath>
@@ -86,6 +162,30 @@
 				<File Id="378248156" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(1).wav</ShortName>
 					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(1)_A3535CA7.wem</CachePath>
+				</File>
+				<File Id="395909277" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(medium BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(medium BC)_FAA0B230.wem</CachePath>
+				</File>
+				<File Id="417222084" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodSteal.wav</ShortName>
+					<CachePath>SFX/BloodSteal_79F8F3AC.wem</CachePath>
+				</File>
+				<File Id="420094461" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_FEDD05FA.wem</CachePath>
+				</File>
+				<File Id="426651403" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 1.wav</ShortName>
+					<CachePath>SFX/Card select 1_C8ED9563.wem</CachePath>
+				</File>
+				<File Id="438731355" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_194A1E29.wem</CachePath>
+				</File>
+				<File Id="440615912" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell second.wav</ShortName>
+					<CachePath>SFX/Turn bell second_C00A85B3.wem</CachePath>
 				</File>
 				<File Id="451891224" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonHighTier(1).wav</ShortName>
@@ -103,45 +203,141 @@
 					<ShortName>Card destroyed 1.wav</ShortName>
 					<CachePath>SFX/Card destroyed 1_10C4C929.wem</CachePath>
 				</File>
+				<File Id="487892439" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(small BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(small BC)_627E0165.wem</CachePath>
+				</File>
+				<File Id="488383465" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI cursor pointed.wav</ShortName>
+					<CachePath>SFX/UI cursor pointed_10C4C929.wem</CachePath>
+				</File>
+				<File Id="546661643" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodSteal.wav</ShortName>
+					<CachePath>SFX/BloodSteal_7979F4B6.wem</CachePath>
+				</File>
+				<File Id="547420982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(medium BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(medium BC)_75554C95.wem</CachePath>
+				</File>
+				<File Id="592275622" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(small BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(small BC)_1ED7B2A1.wem</CachePath>
+				</File>
 				<File Id="609024853" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(2).wav</ShortName>
 					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(2)_2BA9FD99.wem</CachePath>
 				</File>
+				<File Id="636137770" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Summon_HighTier2.wav</ShortName>
+					<CachePath>SFX/Summon_HighTier2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="638707830" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AmbiencesDungeonRoom.wav</ShortName>
+					<CachePath>SFX/AmbiencesDungeonRoom_6E2E9C31.wem</CachePath>
+				</File>
+				<File Id="646606410" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Curse spell.wav</ShortName>
+					<CachePath>SFX/Curse spell_431057EE.wem</CachePath>
+				</File>
 				<File Id="649903395" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DemocinSouls_Ambience.wav</ShortName>
-					<CachePath>SFX/DemocinSouls_Ambience_D79FB2B7.wem</CachePath>
+					<CachePath>SFX/DemocinSouls_Ambience_5DCE5B2C.wem</CachePath>
+				</File>
+				<File Id="659269567" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_3A25B356.wem</CachePath>
 				</File>
 				<File Id="689212934" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(3).wav</ShortName>
 					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(3)_D16AE548.wem</CachePath>
 				</File>
+				<File Id="690901037" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell bass.wav</ShortName>
+					<CachePath>SFX/Turn bell bass_0D3F9D34.wem</CachePath>
+				</File>
 				<File Id="701180529" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonHighTier(1).wav</ShortName>
 					<CachePath>SFX/Monster/Summon Monster/SummonHighTier(1)_FFCED87F.wem</CachePath>
+				</File>
+				<File Id="725632768" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell main.wav</ShortName>
+					<CachePath>SFX/Turn bell main_FF74F276.wem</CachePath>
+				</File>
+				<File Id="752787549" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell main.wav</ShortName>
+					<CachePath>SFX/Turn bell main_5611EDE2.wem</CachePath>
+				</File>
+				<File Id="754157990" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell second.wav</ShortName>
+					<CachePath>SFX/Turn bell second_A6756F77.wem</CachePath>
+				</File>
+				<File Id="780156358" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card select 2.wav</ShortName>
+					<CachePath>SFX/Card select 2_81EE4A73.wem</CachePath>
 				</File>
 				<File Id="795711129" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Monster Attack\MonsterAttacks.wav</ShortName>
 					<CachePath>SFX/Monster/Monster Attack/MonsterAttacks_62B86AB2.wem</CachePath>
 				</File>
+				<File Id="816831226" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MonsterAttack2.wav</ShortName>
+					<CachePath>SFX/MonsterAttack2_10C4C929.wem</CachePath>
+				</File>
 				<File Id="821937752" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card select 1.wav</ShortName>
 					<CachePath>SFX/Card select 1_BC988D79.wem</CachePath>
 				</File>
+				<File Id="822675777" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ambience 3 demo.wav</ShortName>
+					<CachePath>SFX/ambience 3 demo_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="831698894" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell bass.wav</ShortName>
+					<CachePath>SFX/Turn bell bass_07A2A0C2.wem</CachePath>
+				</File>
+				<File Id="833633477" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(large BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(large BC)_ECDCDDA7.wem</CachePath>
+				</File>
+				<File Id="854793961" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fire spell.wav</ShortName>
+					<CachePath>SFX/Fire spell_923338C3.wem</CachePath>
+				</File>
+				<File Id="867883991" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card pick up 1.wav</ShortName>
+					<CachePath>SFX/Card pick up 1_00344D14.wem</CachePath>
+				</File>
+				<File Id="877915416" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BloodPay(small BC).wav</ShortName>
+					<CachePath>SFX/BloodPay(small BC)_17C89F45.wem</CachePath>
+				</File>
 				<File Id="905863384" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>OldRoom_Ambience.wav</ShortName>
-					<CachePath>SFX/OldRoom_Ambience_10C4C929.wem</CachePath>
+					<CachePath>SFX/OldRoom_Ambience_F96C2085.wem</CachePath>
 				</File>
 				<File Id="941496553" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Sacrifice Monster\SacrificeMonster.wav</ShortName>
 					<CachePath>SFX/Monster/Sacrifice Monster/SacrificeMonster_A6A104D0.wem</CachePath>
 				</File>
+				<File Id="958530293" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Card pick up 2.wav</ShortName>
+					<CachePath>SFX/Card pick up 2_434FE270.wem</CachePath>
+				</File>
 				<File Id="970406506" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LowDark_Ambience.wav</ShortName>
-					<CachePath>SFX/LowDark_Ambience_10C4C929.wem</CachePath>
+					<CachePath>SFX/LowDark_Ambience_311CBE66.wem</CachePath>
 				</File>
 				<File Id="1000506025" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster\Summon Monster\SummonLowTier(2).wav</ShortName>
 					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(2)_BAA02B28.wem</CachePath>
+				</File>
+				<File Id="1004537228" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SitDown_Cam.wav</ShortName>
+					<CachePath>SFX/SitDown_Cam_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1009092928" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI select.wav</ShortName>
+					<CachePath>SFX/UI select_10C4C929.wem</CachePath>
 				</File>
 				<File Id="1014652624" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Card pick up 2.wav</ShortName>
@@ -151,13 +347,58 @@
 					<ShortName>Monster\Summon Monster\SummonLowTier(3).wav</ShortName>
 					<CachePath>SFX/Monster/Summon Monster/SummonLowTier(3)_D0320C5D.wem</CachePath>
 				</File>
+				<File Id="1054497835" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ambience 2 demo.wav</ShortName>
+					<CachePath>SFX/ambience 2 demo_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="1067584382" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Turn bell main.wav</ShortName>
+					<CachePath>SFX/Turn bell main_D082F295.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="3086228169" Name="BringUp_Card" DurationType="OneShot" DurationMin="0.13893262" DurationMax="0.47727004">
+				<Event Id="1989784103" Name="BloodPayHigh" DurationType="OneShot" DurationMin="1.3868675" DurationMax="2.241596">
+					<MediaRefs>
+						<MediaRef Id="50960029"/>
+						<MediaRef Id="82506967"/>
+						<MediaRef Id="833633477"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3045277323" Name="BloodPayMed" DurationType="OneShot" DurationMin="0.7961647" DurationMax="1.2812244">
+					<MediaRefs>
+						<MediaRef Id="141573872"/>
+						<MediaRef Id="395909277"/>
+						<MediaRef Id="547420982"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1182648364" Name="BloodPaySmall" DurationType="OneShot" DurationMin="0.72510076" DurationMax="1.2391979">
+					<MediaRefs>
+						<MediaRef Id="487892439"/>
+						<MediaRef Id="592275622"/>
+						<MediaRef Id="877915416"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2247027028" Name="BloodSteal" DurationType="OneShot" DurationMin="1.6836561" DurationMax="1.9180893">
+					<MediaRefs>
+						<MediaRef Id="417222084"/>
+						<MediaRef Id="546661643"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3086228169" Name="BringUp_Card" DurationType="OneShot" DurationMin="0.08603134" DurationMax="0.47727004">
 					<MediaRefs>
 						<MediaRef Id="142744935"/>
+						<MediaRef Id="223789997"/>
 						<MediaRef Id="308182294"/>
+						<MediaRef Id="426651403"/>
+						<MediaRef Id="438731355"/>
+						<MediaRef Id="659269567"/>
 						<MediaRef Id="821937752"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3748817017" Name="CurseSpell" DurationType="OneShot" DurationMin="2.5960546" DurationMax="4.2462397">
+					<MediaRefs>
+						<MediaRef Id="57381557"/>
+						<MediaRef Id="646606410"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1070976599" Name="DemonicSouls_Amb" DurationType="Infinite">
@@ -172,70 +413,133 @@
 						<MediaRef Id="487488024"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2214540784" Name="LowDark_Amb" DurationType="OneShot" DurationMin="65.48073" DurationMax="65.48073">
+				<Event Id="3046746157" Name="DungeonRoom_Amb" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="638707830"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2480850349" Name="FireSpell" DurationType="OneShot" DurationMin="1.3774911" DurationMax="2.4615557">
+					<MediaRefs>
+						<MediaRef Id="334076146"/>
+						<MediaRef Id="854793961"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2214540784" Name="LowDark_Amb" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="970406506"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2621508965" Name="MonsterAttack" DurationType="OneShot" DurationMin="1.1567562" DurationMax="2.5177355">
 					<MediaRefs>
+						<MediaRef Id="163134979"/>
 						<MediaRef Id="338831760"/>
 						<MediaRef Id="484249041"/>
 						<MediaRef Id="795711129"/>
+						<MediaRef Id="816831226"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="375975348" Name="OldRoom_Amb" DurationType="OneShot" DurationMin="66.99008" DurationMax="66.99008">
+				<Event Id="3991942870" Name="Music" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="20927043"/>
+						<MediaRef Id="206149265"/>
+						<MediaRef Id="822675777"/>
+						<MediaRef Id="1054497835"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="375975348" Name="OldRoom_Amb" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="905863384"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="240574514" Name="SacrificeMonster" DurationType="OneShot" DurationMin="2.5738082" DurationMax="4.2055273">
+				<Event Id="240574514" Name="SacrificeMonster" DurationType="OneShot" DurationMin="2.5738082" DurationMax="4.8988466">
 					<MediaRefs>
 						<MediaRef Id="151984888"/>
+						<MediaRef Id="269250330"/>
 						<MediaRef Id="941496553"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2423923635" Name="SitDown" DurationType="OneShot" DurationMin="1.1341202" DurationMax="1.7297325">
+				<Event Id="661726771" Name="SelectCard" DurationType="OneShot" DurationMin="0.09813881" DurationMax="0.29415935">
+					<MediaRefs>
+						<MediaRef Id="107494679"/>
+						<MediaRef Id="173250745"/>
+						<MediaRef Id="209535173"/>
+						<MediaRef Id="420094461"/>
+						<MediaRef Id="780156358"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2423923635" Name="SitDown" DurationType="OneShot" DurationMin="0.8428505" DurationMax="1.7297325">
 					<MediaRefs>
 						<MediaRef Id="59545459"/>
-						<MediaRef Id="233008782"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="4066104100" Name="StandUp" DurationType="OneShot" DurationMin="0.5494585" DurationMax="1.2980418">
-					<MediaRefs>
 						<MediaRef Id="171967242"/>
-						<MediaRef Id="268972359"/>
+						<MediaRef Id="1004537228"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1239384689" Name="Sum_HighMon" DurationType="OneShot" DurationMin="2.6663744" DurationMax="5.2333717">
+				<Event Id="4066104100" Name="StandUp" DurationType="OneShot" DurationMin="0.790317" DurationMax="1.7309616">
 					<MediaRefs>
-						<MediaRef Id="451891224"/>
+						<MediaRef Id="233008782"/>
+						<MediaRef Id="268972359"/>
+						<MediaRef Id="270229429"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1239384689" Name="Sum_HighMon" DurationType="OneShot" DurationMin="2.1831481" DurationMax="5.2333717">
+					<MediaRefs>
+						<MediaRef Id="185593086"/>
+						<MediaRef Id="636137770"/>
 						<MediaRef Id="701180529"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1342735877" Name="Sum_LowMon" DurationType="OneShot" DurationMin="1.3679957" DurationMax="5.717359">
+				<Event Id="1342735877" Name="Sum_LowMon" DurationType="OneShot" DurationMin="1.3679957" DurationMax="4.958534">
 					<MediaRefs>
 						<MediaRef Id="129977347"/>
 						<MediaRef Id="378248156"/>
-						<MediaRef Id="609024853"/>
-						<MediaRef Id="1000506025"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="3957306573" Name="Sum_MedMon" DurationType="OneShot" DurationMin="3.5410101" DurationMax="3.8125253">
-					<MediaRefs>
 						<MediaRef Id="689212934"/>
 						<MediaRef Id="1034474329"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2532576662" Name="TakeCard" DurationType="OneShot" DurationMin="0.2218538" DurationMax="0.81244785">
+				<Event Id="3957306573" Name="Sum_MedMon" DurationType="OneShot" DurationMin="2.3532708" DurationMax="4.3959723">
+					<MediaRefs>
+						<MediaRef Id="19963123"/>
+						<MediaRef Id="451891224"/>
+						<MediaRef Id="609024853"/>
+						<MediaRef Id="1000506025"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3691628024" Name="TableCam" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2532576662" Name="TakeCard" DurationType="OneShot" DurationMin="0.19344158" DurationMax="0.81244785">
 					<MediaRefs>
 						<MediaRef Id="36572938"/>
 						<MediaRef Id="92613697"/>
+						<MediaRef Id="107999864"/>
+						<MediaRef Id="867883991"/>
+						<MediaRef Id="958530293"/>
 						<MediaRef Id="1014652624"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="756322111" Name="TurnBell" DurationType="OneShot" DurationMin="1.892124" DurationMax="4.32748">
+					<MediaRefs>
+						<MediaRef Id="14299363"/>
+						<MediaRef Id="251769080"/>
+						<MediaRef Id="440615912"/>
+						<MediaRef Id="690901037"/>
+						<MediaRef Id="725632768"/>
+						<MediaRef Id="752787549"/>
+						<MediaRef Id="754157990"/>
+						<MediaRef Id="831698894"/>
+						<MediaRef Id="1067584382"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2882502644" Name="UI_Cursor" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="488383465"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2774129122" Name="UI_Select" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="1009092928"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1BA9F266-4960-F916-7010-8ED8F4A1E360}</FileHash>
+	<FileHash>{31B81012-E7AC-DF93-12BD-BB0C30CB721D}</FileHash>
 </SoundBanksInfo>
