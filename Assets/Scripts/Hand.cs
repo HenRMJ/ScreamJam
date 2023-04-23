@@ -49,9 +49,6 @@ public class Hand : MonoBehaviour
                 }
             }
         }
-
-
-
     }
 
     public void SelectCard()
