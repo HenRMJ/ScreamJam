@@ -3,36 +3,302 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="CardsAction" ID="{0BE50F93-31E2-4301-9FE3-0732B66AD1A6}" ShortID="32167622">
+				<Folder Name="Game" ID="{FB95BF28-F8D4-4682-8972-824AC77216F5}" ShortID="82611015">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="1"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
-						<Event Name="BringUp_Card" ID="{56A21327-6008-40A4-9F66-14FBD7000050}">
+						<Folder Name="CardsAction" ID="{0BE50F93-31E2-4301-9FE3-0732B66AD1A6}" ShortID="32167622">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
-								<Action Name="" ID="{09295C5B-0D1E-4482-8614-A799A7A2DE63}" ShortID="744389002">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="BringUp_Card" ID="{F610DEA4-2043-4704-91F9-31DDBC0F302A}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="BringUp_Card" ID="{56A21327-6008-40A4-9F66-14FBD7000050}">
+									<ChildrenList>
+										<Action Name="" ID="{09295C5B-0D1E-4482-8614-A799A7A2DE63}" ShortID="744389002">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BringUp_Card" ID="{F610DEA4-2043-4704-91F9-31DDBC0F302A}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="TakeCard" ID="{C33E5667-E046-48C1-8F83-AAA6CEF6E9C3}">
+									<ChildrenList>
+										<Action Name="" ID="{00B1B752-B928-427C-83A0-05782FEFC79F}" ShortID="736792521">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="TakeCard" ID="{8D461738-EB55-4CED-9121-E9B4389BE6E4}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="DestroyedCard" ID="{EE254002-8336-4F1D-8630-238A385898B4}">
+									<ChildrenList>
+										<Action Name="" ID="{65E2EAE8-14A0-44F5-BF33-0F7F4BF651AB}" ShortID="811934903">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DestroyedCard" ID="{0D78B163-CB8D-4443-9DAB-BE3D9C53FD7B}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="SelectCard" ID="{B0C89CED-26AD-4B0D-8740-847F970BFA00}">
+									<ChildrenList>
+										<Action Name="" ID="{DB6B71D5-5162-469A-9E47-F0A967A20110}" ShortID="976102736">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SelectCard" ID="{20904727-4B10-4985-82B0-824E1DBD4C51}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
-						<Event Name="TakeCard" ID="{C33E5667-E046-48C1-8F83-AAA6CEF6E9C3}">
+						</Folder>
+						<Folder Name="Monster" ID="{43E75A5A-BBB9-41A5-B269-456D787F8A96}" ShortID="663775176">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="12"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
-								<Action Name="" ID="{00B1B752-B928-427C-83A0-05782FEFC79F}" ShortID="736792521">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="TakeCard" ID="{8D461738-EB55-4CED-9121-E9B4389BE6E4}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="SacrificeMonster" ID="{34CDD051-D38A-4DB4-B77E-9BEA4AE50DC0}">
+									<ChildrenList>
+										<Action Name="" ID="{EEBDD489-6E82-44FF-870E-74A7E0B314C1}" ShortID="85050842">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SacrificeMonster" ID="{8C051CC3-1F50-4F60-BFD3-017B02B28716}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="MonsterAttack" ID="{035E02CF-045A-4A90-8552-BC8F50E23FB2}">
+									<ChildrenList>
+										<Action Name="" ID="{35C6FB97-AECA-460E-8892-2BE8173AC47E}" ShortID="554128203">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Monster Attacks" ID="{61E75210-240C-4EAE-9FF8-127C39D58485}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Sum_HighMon" ID="{4990B579-B639-4E66-9BD7-057B4ED39841}">
+									<ChildrenList>
+										<Action Name="" ID="{164E7B02-2E05-404F-9EE3-F07E3F3FBCDF}" ShortID="285733526">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Sum_HighTier" ID="{1541E71A-8FB2-440C-AEDD-63B3EE1F62DC}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Sum_MedMon" ID="{AC23A0BB-9841-4A03-BCA0-8F655353DE8E}">
+									<ChildrenList>
+										<Action Name="" ID="{C1733025-6D4F-4D78-95FB-34EF6B09A641}" ShortID="271514575">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Sum_MediumTier" ID="{4D573715-CCEC-43A9-9F40-95F763D374CE}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Sum_LowMon" ID="{F5740378-D093-4858-8F95-306E7BEF1670}">
+									<ChildrenList>
+										<Action Name="" ID="{40130CEF-9F0A-4E76-A158-C4D451AA855E}" ShortID="57130922">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Sum_LowTier" ID="{87C25DF4-C70A-43DD-82AC-AFBA019011B9}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
-						<Event Name="DestroyedCard" ID="{EE254002-8336-4F1D-8630-238A385898B4}">
+						</Folder>
+						<Folder Name="PlayerCam" ID="{F27CC66D-3D68-4A61-B843-1DE73712AF6B}" ShortID="755869659">
 							<ChildrenList>
-								<Action Name="" ID="{65E2EAE8-14A0-44F5-BF33-0F7F4BF651AB}" ShortID="811934903">
+								<Event Name="SitDown" ID="{4AF30879-3B86-4E30-9A64-6FB7E23DE860}">
+									<ChildrenList>
+										<Action Name="" ID="{E91D5444-5C4D-4B29-BB6A-9E82157E18FF}" ShortID="113180765">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SitDown_Move" ID="{DC96FC1B-9229-4C28-8578-8857C629B614}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="StandUp" ID="{0826DA2F-532A-4358-B3B3-B57A19A2D24C}">
+									<ChildrenList>
+										<Action Name="" ID="{1F913EFD-8502-4F3E-9142-685DC66DB34A}" ShortID="239375546">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="StandUp_Move" ID="{84CA2C3B-C284-4410-8B15-2492BA585237}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="TableCam" ID="{6BF300F9-C777-4284-9322-70DE09677FB7}">
+									<ChildrenList>
+										<Action Name="" ID="{B96B9E31-5783-4F21-9943-1CAF9B16A276}" ShortID="177840803"/>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Amb" ID="{6FC07CA8-8B92-4838-ACC4-DD35FB08855B}" ShortID="626137439">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Event Name="OldRoom_Amb" ID="{359A3B29-9F6B-4741-B0F7-8E4D9159C606}">
+									<ChildrenList>
+										<Action Name="" ID="{36B24347-C726-4B5D-AD8D-685BF6EEA14D}" ShortID="809601028">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="OldRoom_Ambience" ID="{D0B0DB72-98A7-45AB-B9D4-A8FBDA516F84}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="DemonicSouls_Amb" ID="{8A83C212-26D0-4234-8F55-37A899195502}">
+									<ChildrenList>
+										<Action Name="" ID="{FBAC7B16-4014-4428-9CB4-E49DE09FBC3D}" ShortID="976310256">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DemocinSouls_Ambience" ID="{3656D9B9-74A8-480F-A4B1-853AA5C6F6F0}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="LowDark_Amb" ID="{0E38A94F-C98C-4985-BA33-513961D67107}">
+									<ChildrenList>
+										<Action Name="" ID="{9CEC503A-0858-45B1-A9A6-035784847BF9}" ShortID="236715371">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="LowDark_Ambience" ID="{B5CCA27F-428E-45A0-BF1C-714D9684D2A4}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="DungeonRoom_Amb" ID="{8EE0E22A-4B1F-4832-BA58-31E7F8BEEF7A}">
+									<ChildrenList>
+										<Action Name="" ID="{B5B16D79-7170-4BF5-9B3F-9AADC780F3C4}" ShortID="93978491">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AmbiencesDungeonRoom" ID="{BB9E1DAB-22D2-44B8-AD19-AB5D8CDBFA86}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Blood" ID="{9D53D06A-F934-4D3E-A79E-7DED59BCBA4C}" ShortID="923187210">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Event Name="BloodPayHigh" ID="{5921334B-1ED8-4ABB-AF0A-BDB5EC36539C}">
+									<ChildrenList>
+										<Action Name="" ID="{65A99521-CEE8-4A3A-B607-CDCDC5F82D4D}" ShortID="228141356">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BloodPayLarge_BC" ID="{A0BF5F81-C66B-4FD6-B676-AFA22ECD13AB}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="BloodPayMed" ID="{FED4C53D-373D-40BA-A59D-D14D5E24E4A1}">
+									<ChildrenList>
+										<Action Name="" ID="{38BAC06F-AFD1-411D-A8A7-54C45DF8E601}" ShortID="844598588">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BloodPayMed_BC" ID="{10ECBB72-DD4F-4087-AFC4-F805457C295B}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="BloodPaySmall" ID="{5B8BB3DF-17E8-47FD-BF19-11A052C5E623}">
+									<ChildrenList>
+										<Action Name="" ID="{10BFDC32-725C-42C3-9039-A92EB17482DC}" ShortID="355256176">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BloodPaySmall_BC" ID="{5E2D6FC0-1120-4EF8-A0E2-4E94316460C6}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="BloodSteal" ID="{944AFAB2-82C3-420A-B657-811128BA9A12}">
+									<ChildrenList>
+										<Action Name="" ID="{F39F0E9F-A8EF-4AB9-A58D-DF78DDFEDC19}" ShortID="328074259">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BloodSteal" ID="{05122EB3-3E6A-4058-BD7C-F761145E5DD3}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Spell" ID="{98F778BB-B322-4FB8-89DD-74F43BD08658}" ShortID="120302434">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Event Name="FireSpell" ID="{828D0E73-2C97-4746-9F53-39A93AA7BD51}">
+									<ChildrenList>
+										<Action Name="" ID="{08DF8D96-8301-4A57-8D77-7D49BFC485F2}" ShortID="698193496">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FireSpell" ID="{9FA8B9EB-32AE-4AF4-90B1-406B2857F35D}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="CurseSpell" ID="{2D330A41-B47E-40D1-9946-7934E75C78EB}">
+									<ChildrenList>
+										<Action Name="" ID="{947048E5-17D3-427F-9C84-F763EEBDAD83}" ShortID="793713295">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CurseSpell" ID="{2784F215-EBA7-4ED1-9C55-7BA86FB0FC9F}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Event Name="TurnBell" ID="{5DAE5C94-08B8-4214-A416-2D4AC0AE4554}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{8CE2FCA1-AA32-459D-BA5D-BFC4A8E2618F}" ShortID="438706401">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="DestroyedCard" ID="{0D78B163-CB8D-4443-9DAB-BE3D9C53FD7B}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+											<ObjectRef Name="TurnBell" ID="{5EE991C6-DEC2-4EFA-BB79-AE26EB847A7F}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -40,58 +306,25 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="Monster" ID="{43E75A5A-BBB9-41A5-B269-456D787F8A96}" ShortID="663775176">
+				<Folder Name="UI" ID="{A2EDE7AA-046F-4218-9336-8AEB06811ECD}" ShortID="377154230">
 					<ChildrenList>
-						<Event Name="SacrificeMonster" ID="{34CDD051-D38A-4DB4-B77E-9BEA4AE50DC0}">
+						<Event Name="UI_Select" ID="{1443DE0D-9ACC-40D0-8563-B35CF489696E}">
 							<ChildrenList>
-								<Action Name="" ID="{EEBDD489-6E82-44FF-870E-74A7E0B314C1}" ShortID="85050842">
+								<Action Name="" ID="{3566040C-13EA-405F-B5B1-1D1518B3545B}" ShortID="324868582">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SacrificeMonster" ID="{8C051CC3-1F50-4F60-BFD3-017B02B28716}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+											<ObjectRef Name="UI select" ID="{8611F697-E83D-433F-AE55-EF24262B5FDB}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="MonsterAttack" ID="{035E02CF-045A-4A90-8552-BC8F50E23FB2}">
+						<Event Name="UI_Cursor" ID="{0AB58ECE-CE00-4CBF-AF74-15B22667F8BA}">
 							<ChildrenList>
-								<Action Name="" ID="{35C6FB97-AECA-460E-8892-2BE8173AC47E}" ShortID="554128203">
+								<Action Name="" ID="{6B01D0E9-5AC9-4877-A97D-B188953E42A0}" ShortID="258303852">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Monster Attacks" ID="{61E75210-240C-4EAE-9FF8-127C39D58485}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Sum_HighMon" ID="{4990B579-B639-4E66-9BD7-057B4ED39841}">
-							<ChildrenList>
-								<Action Name="" ID="{164E7B02-2E05-404F-9EE3-F07E3F3FBCDF}" ShortID="285733526">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Sum_HighTier" ID="{1541E71A-8FB2-440C-AEDD-63B3EE1F62DC}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Sum_MedMon" ID="{AC23A0BB-9841-4A03-BCA0-8F655353DE8E}">
-							<ChildrenList>
-								<Action Name="" ID="{C1733025-6D4F-4D78-95FB-34EF6B09A641}" ShortID="271514575">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Sum_MediumTier" ID="{4D573715-CCEC-43A9-9F40-95F763D374CE}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Sum_LowMon" ID="{F5740378-D093-4858-8F95-306E7BEF1670}">
-							<ChildrenList>
-								<Action Name="" ID="{40130CEF-9F0A-4E76-A158-C4D451AA855E}" ShortID="57130922">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Sum_LowTier" ID="{87C25DF4-C70A-43DD-82AC-AFBA019011B9}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
+											<ObjectRef Name="UI cursor pointed" ID="{51454356-A68A-4279-B55C-519FED6E3757}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -99,69 +332,21 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="PlayerCam" ID="{F27CC66D-3D68-4A61-B843-1DE73712AF6B}" ShortID="755869659">
+				<Event Name="Music" ID="{1540C48B-BC59-4475-BF9F-07EBEEF4B720}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="23"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
-						<Event Name="SitDown" ID="{4AF30879-3B86-4E30-9A64-6FB7E23DE860}">
-							<ChildrenList>
-								<Action Name="" ID="{E91D5444-5C4D-4B29-BB6A-9E82157E18FF}" ShortID="113180765">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SitDown_Move" ID="{DC96FC1B-9229-4C28-8578-8857C629B614}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="StandUp" ID="{0826DA2F-532A-4358-B3B3-B57A19A2D24C}">
-							<ChildrenList>
-								<Action Name="" ID="{1F913EFD-8502-4F3E-9142-685DC66DB34A}" ShortID="239375546">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="StandUp_Move" ID="{84CA2C3B-C284-4410-8B15-2492BA585237}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						<Action Name="" ID="{5A71093D-6CD0-4925-AB06-43AF86A12B73}" ShortID="227610149">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{56A164EB-AA53-4B20-BF30-E19A4F7B5E0C}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
-				</Folder>
-				<Folder Name="Amb" ID="{6FC07CA8-8B92-4838-ACC4-DD35FB08855B}" ShortID="626137439">
-					<ChildrenList>
-						<Event Name="OldRoom_Amb" ID="{359A3B29-9F6B-4741-B0F7-8E4D9159C606}">
-							<ChildrenList>
-								<Action Name="" ID="{36B24347-C726-4B5D-AD8D-685BF6EEA14D}" ShortID="809601028">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="OldRoom_Ambience" ID="{D0B0DB72-98A7-45AB-B9D4-A8FBDA516F84}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="DemonicSouls_Amb" ID="{8A83C212-26D0-4234-8F55-37A899195502}">
-							<ChildrenList>
-								<Action Name="" ID="{FBAC7B16-4014-4428-9CB4-E49DE09FBC3D}" ShortID="976310256">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="DemocinSouls_Ambience" ID="{3656D9B9-74A8-480F-A4B1-853AA5C6F6F0}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="LowDark_Amb" ID="{0E38A94F-C98C-4985-BA33-513961D67107}">
-							<ChildrenList>
-								<Action Name="" ID="{9CEC503A-0858-45B1-A9A6-035784847BF9}" ShortID="236715371">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="LowDark_Ambience" ID="{B5CCA27F-428E-45A0-BF1C-714D9684D2A4}" WorkUnitID="{4D9A458A-A885-47A3-9BFE-37102B9EC6BC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-					</ChildrenList>
-				</Folder>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

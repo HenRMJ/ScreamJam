@@ -3,20 +3,33 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{C1CA8A2D-1315-4004-9FD8-1B891AE4F292}">
 			<PropertyList>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Desktop\Ambiences\"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Desktop\ScreamJam_SFX\ANDREI_STUFFS\All audio\Music\"/>
 				<Property Name="Event Action List\{035E02CF-045A-4A90-8552-BC8F50E23FB2}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{0826DA2F-532A-4358-B3B3-B57A19A2D24C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{0AB58ECE-CE00-4CBF-AF74-15B22667F8BA}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{0E38A94F-C98C-4985-BA33-513961D67107}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{1443DE0D-9ACC-40D0-8563-B35CF489696E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{1540C48B-BC59-4475-BF9F-07EBEEF4B720}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{2D330A41-B47E-40D1-9946-7934E75C78EB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{34CDD051-D38A-4DB4-B77E-9BEA4AE50DC0}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{359A3B29-9F6B-4741-B0F7-8E4D9159C606}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{4990B579-B639-4E66-9BD7-057B4ED39841}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{4AF30879-3B86-4E30-9A64-6FB7E23DE860}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{56A21327-6008-40A4-9F66-14FBD7000050}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{5921334B-1ED8-4ABB-AF0A-BDB5EC36539C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{5B8BB3DF-17E8-47FD-BF19-11A052C5E623}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{5DAE5C94-08B8-4214-A416-2D4AC0AE4554}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{6BF300F9-C777-4284-9322-70DE09677FB7}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{828D0E73-2C97-4746-9F53-39A93AA7BD51}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{8A83C212-26D0-4234-8F55-37A899195502}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{8EE0E22A-4B1F-4832-BA58-31E7F8BEEF7A}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{944AFAB2-82C3-420A-B657-811128BA9A12}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{AC23A0BB-9841-4A03-BCA0-8F655353DE8E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{B0C89CED-26AD-4B0D-8740-847F970BFA00}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{C33E5667-E046-48C1-8F83-AAA6CEF6E9C3}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{EE254002-8336-4F1D-8630-238A385898B4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F5740378-D093-4858-8F95-306E7BEF1670}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{FED4C53D-373D-40BA-A59D-D14D5E24E4A1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="25"/>
 				<Property Name="EventView\FilterMode2" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
@@ -52,6 +65,10 @@
 				<Property Name="MonitoringManager\GameObjectFilter\x64_GameObjectFilters" Type="string" Value=""/>
 				<Property Name="ObjectTabPanel\x64_CurrentObjects_{031E1E2C-DC25-4332-80C3-FFCC371AC803}" Type="string" Value="ewA0ADMANgA0AEUAOABDADMALQBDADMAQgA5AC0ANAAwAEEARAAtADkAMQBDADEALQAzAEQANwBCADAAQwAyADgANgA3AEMAOAB9AAAAAAE="/>
 				<Property Name="ObjectTabPanel\x64_CurrentObjects_{D5805147-985E-4C5B-B817-369AF1B7184D}" Type="string" Value="ewBFADUAQQAxADEAMwBCAEMALQA2AEQANAAzAC0ANABFADMARAAtADkAOAA0ADkALQAxADcANgA4ADgANQBEADkANgBCAEEARQB9AAAAAQF7ADIAOABEAEYAMwA2ADcARQAtADUAMQBGADMALQA0ADEAMgAyAC0AQgAwAEIANwAtADAAMgBBAEIANwBDAEIAOABCADcAQQBDAH0AAAABAXsARABDADkANgBGAEMAMQBCAC0AOQAyADIAOQAtADQAQwAyADgALQA4ADUANwA4AC0AOAA4ADUANwBDADYAMgA5AEIANgAxADQAfQAAAAEBewAzADQAQwBEAEQAMAA1ADEALQBEADMAOABBAC0ANABEAEIANAAtAEIANwA3AEUALQA5AEIARQBBADQAQQBFADUAMABEAEMAMAB9AAAAAQF7AEQAMABCADAARABCADcAMgAtADkAOABBADcALQA0ADUAQQBCAC0AQgA5AEQANAAtAEEAOABGAEIARABBADUAMQA2AEYAOAA0AH0AAAAAAQ=="/>
+				<Property Name="OverrideCacheFolder\Active" Type="bool" Value="False"/>
+				<Property Name="OverrideCacheFolder\Path" Type="string" Value=".cache"/>
+				<Property Name="OverrideOriginalFolder\Active" Type="bool" Value="False"/>
+				<Property Name="OverrideOriginalFolder\Path" Type="string" Value="Originals"/>
 				<Property Name="ProjectExplorer\AudioSelectionChannel1\ProjectExplorer2LastScrollState" Type="int32" Value="0"/>
 				<Property Name="ProjectExplorer\AudioSelectionChannel1\x64_ProjectExplorer2LastExpandedState" Type="string" Value="iC8JJ1oiVBFnJcijTz1EguraiCN1l8ZGou3FIio5d1b4u6dewGRQSoghoH6L4h1oZtP+STC1qEKZO5JIc6q3Bw=="/>
 				<Property Name="ProjectExplorer\AudioSelectionChannel2\ProjectExplorer2LastScrollState" Type="int32" Value="0"/>

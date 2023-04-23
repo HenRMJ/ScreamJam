@@ -1,6 +1,377 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" SchemaVersion="110">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Music" ID="{56A164EB-AA53-4B20-BF30-E19A4F7B5E0C}" ShortID="828520694">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="23"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{774375C6-B5E9-469B-882F-CAA7507CEAE3}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="ambience demo" ID="{ED995188-A978-4CAE-BE8A-85645FEC4C74}" ShortID="841816036">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="126857.142857143"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{774375C6-B5E9-469B-882F-CAA7507CEAE3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="ambience demo" ID="{F522CFDD-A23E-430C-BA55-9F7E1BAB077B}" ShortID="376464226">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ambience demo" ID="{54312DBD-8CB4-438D-BA66-9D26A67BFB3C}">
+											<Language>SFX</Language>
+											<AudioFile>ambience demo.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="20927043"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{6C3C6965-E3EF-498F-8E4F-4F5614724C1D}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{84136826-9DA2-4065-ACFA-55B488AD8E0D}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="ambience demo" ID="{9D6948CD-8C86-406D-A48F-F07D3B615D01}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="126857.142857143"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="ambience demo" ID="{54312DBD-8CB4-438D-BA66-9D26A67BFB3C}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{EF693FB9-BFA1-4B6F-9B93-23BE7A13644E}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{8D948817-FE4E-44EF-82E7-B4BF67E13CA3}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="126857.142857143"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+						<MusicSegment Name="ambience 4 demo" ID="{C958A9AE-D52B-4E70-A067-3E5D5E77E74D}" ShortID="541906287">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="78000"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{774375C6-B5E9-469B-882F-CAA7507CEAE3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="ambience 4 demo" ID="{5558D6CD-C1DD-4402-A03B-017C8B5829DB}" ShortID="92242096">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ambience 4 demo" ID="{0BEBCCCB-B1EC-4DFF-A371-BF833B53853B}">
+											<Language>SFX</Language>
+											<AudioFile>ambience 4 demo.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="206149265"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{174E416F-E04E-47CE-9DE2-DE5F8AA07451}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{6A14507B-D012-46A5-A300-7503E6913032}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="ambience 4 demo" ID="{7AB9F745-3555-42CE-B63B-5758E77E1DDE}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="78000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="ambience 4 demo" ID="{0BEBCCCB-B1EC-4DFF-A371-BF833B53853B}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{AAFC0A65-703E-4ED2-B20D-46E38F87AB3D}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{86DF0D22-CA47-4CC3-AE04-124B28AD8A36}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="78000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+						<MusicSegment Name="ambience 3 demo" ID="{7478851C-CC0D-4F1B-9412-BC75BECE5AAD}" ShortID="872196683">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="128000"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{774375C6-B5E9-469B-882F-CAA7507CEAE3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="ambience 3 demo" ID="{2DB60F6F-1FFB-424C-86D7-F3F1D8836F67}" ShortID="838024414">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ambience 3 demo" ID="{0C0A8B0C-4677-4624-9519-F8B159C5D3C2}">
+											<Language>SFX</Language>
+											<AudioFile>ambience 3 demo.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="822675777"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{5A1D1952-CC98-4574-B545-00F980212664}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{6039501C-07E1-4819-82B4-36002E04CC57}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="ambience 3 demo" ID="{9287A4CD-0D30-4052-BC89-5C2B7FCB9E69}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="128000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="ambience 3 demo" ID="{0C0A8B0C-4677-4624-9519-F8B159C5D3C2}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{6DC9D3B3-CA05-4C4B-9104-B28C05203446}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{6244FD0F-687E-4AED-863D-9DA591A3F2B1}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="128000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+						<MusicSegment Name="ambience 2 demo" ID="{78949490-F504-4059-82CC-3FF90599F9A2}" ShortID="1039170879">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="105600"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{774375C6-B5E9-469B-882F-CAA7507CEAE3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="ambience 2 demo" ID="{922ACCDB-E539-48F9-A3B5-6D051BF78FD1}" ShortID="70686481">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ambience 2 demo" ID="{AE917039-3E07-4DF0-9E9F-10512707C8B9}">
+											<Language>SFX</Language>
+											<AudioFile>ambience 2 demo.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1054497835"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{0A28B964-1F15-4B4D-8486-E7BBC309CC2B}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{0AECC4CC-1BED-4593-B015-C7E560FD2FF1}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="ambience 2 demo" ID="{0FCBB10F-152F-49BB-B557-A9296CB71C72}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="105600"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="ambience 2 demo" ID="{AE917039-3E07-4DF0-9E9F-10512707C8B9}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{733512F2-0066-448B-A2D2-44463E6FFBF5}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{C8DDD82D-1625-4330-8698-4560D319E242}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="105600"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{62681A7C-3820-4F94-A38D-9450CBA3408B}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{6CEEFE49-2987-4317-A57F-1157CE78D100}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{813A702E-2D58-4195-9FD3-B19AF2975CB9}" ShortID="592249597"/>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>
