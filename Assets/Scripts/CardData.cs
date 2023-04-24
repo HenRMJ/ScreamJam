@@ -105,7 +105,7 @@ public class CardData : MonoBehaviour
 
         int rowDiedOn = 0;
 
-        foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+        foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
         {
             if (cardSlot.Card == transform)
             {
@@ -124,7 +124,9 @@ public class CardData : MonoBehaviour
             }
         } else
         {
-            if (rowDiedOn == 2 || rowDiedOn == 3)
+            int enemyHomeRow = GridManager.Instance.GetGridDimensions().y;
+
+            if (rowDiedOn == enemyHomeRow || rowDiedOn == enemyHomeRow - 1)
             {
                 Enemy.Instance.Heal(bloodCost);
             } else

@@ -12,7 +12,7 @@ public class GameSetupState : BaseGameState
 
     public override void Enter()
     {
-        Debug.Log("BEGIN GAME SETUP");
+        //Debug.Log("BEGIN GAME SETUP");
         TurnSystem.Instance.IsPlayersTurn = false;
         stateMachine.StartCoroutine(SleepAndStartGame());
         stateMachine.StartCoroutine(DealStartingCards(.5f));
@@ -27,7 +27,7 @@ public class GameSetupState : BaseGameState
 
     public override void Exit()
     {
-        Debug.Log("END GAME SETUP");
+        //Debug.Log("END GAME SETUP");
     }
 
     private IEnumerator DealStartingCards(float seconds)

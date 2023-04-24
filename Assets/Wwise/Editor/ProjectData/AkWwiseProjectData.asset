@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Virtual Acoustics
       ObjectType: 5
@@ -21,13 +21,13 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: b0d7fdc3b67c8e4db3553294ca4989c3
-    ParentPath: Virtual Acoustics/Default Work Unit
+    ParentPath: Virtual Acoustics\Default Work Unit
     guid: b0d7fdc3b67c8e4db3553294ca4989c3
     GuidInternal: 
-    m_lastTime: -8585199371297647200
+    m_lastTime: -8585199597777815164
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Master-Mixer Hierarchy
       ObjectType: 5
@@ -35,10 +35,10 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 57ca28c83b21504ab23053a35af9c8f0
-    ParentPath: Master-Mixer Hierarchy/Default Work Unit
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 57ca28c83b21504ab23053a35af9c8f0
     GuidInternal: 
-    m_lastTime: -8585199371297667674
+    m_lastTime: -8585199597777895187
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -53,9 +53,9 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
-      Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
   BankWwu:
-  - PhysicalPath: SoundBanks/Default Work Unit.wwu
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: SoundBanks
       ObjectType: 5
@@ -63,10 +63,10 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: f2512c02bb718c4891f51f55f1ba7a87
-    ParentPath: SoundBanks/Default Work Unit
+    ParentPath: SoundBanks\Default Work Unit
     guid: f2512c02bb718c4891f51f55f1ba7a87
     GuidInternal: 
-    m_lastTime: -8585193920956233164
+    m_lastTime: -8585193527411265414
     List:
     - name: Main
       guid: c3e86443b9c3ad4091c13d7b0c2867c8
@@ -81,9 +81,9 @@ MonoBehaviour:
       - ElementName: Main
         ObjectType: 7
         guid: c3e86443b9c3ad4091c13d7b0c2867c8
-      Path: SoundBanks/Default Work Unit/Main
+      Path: SoundBanks\Default Work Unit\Main
   EventWwu:
-  - PhysicalPath: Events/Default Work Unit.wwu
+  - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Events
       ObjectType: 5
@@ -91,10 +91,10 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 010016284d7bf54eb506d1c4474fb2cc
-    ParentPath: Events/Default Work Unit
+    ParentPath: Events\Default Work Unit
     guid: 010016284d7bf54eb506d1c4474fb2cc
     GuidInternal: 
-    m_lastTime: -8585193920956226482
+    m_lastTime: -8585193527419009496
     List:
     - name: Amb
       guid: a87cc06f928b3848acc4dd35fb08855b
@@ -106,10 +106,125 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Amb
         ObjectType: 4
         guid: a87cc06f928b3848acc4dd35fb08855b
-      Path: Events/Default Work Unit/Amb
+      Path: Events\Default Work Unit\Game\Amb
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Blood
+      guid: 6ad0539d34f93e4da79e7ded59bcba4c
+      id: 3934470635
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Blood
+        ObjectType: 4
+        guid: 6ad0539d34f93e4da79e7ded59bcba4c
+      Path: Events\Default Work Unit\Game\Blood
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: BloodPayHigh
+      guid: 4b332159d81ebb4aaf0abdb5ec36539c
+      id: 1989784103
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Blood
+        ObjectType: 4
+        guid: 6ad0539d34f93e4da79e7ded59bcba4c
+      - ElementName: BloodPayHigh
+        ObjectType: 3
+        guid: 4b332159d81ebb4aaf0abdb5ec36539c
+      Path: Events\Default Work Unit\Game\Blood\BloodPayHigh
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: BloodPayMed
+      guid: 3dc5d4fe3d37ba40a59dd14d5e24e4a1
+      id: 3045277323
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Blood
+        ObjectType: 4
+        guid: 6ad0539d34f93e4da79e7ded59bcba4c
+      - ElementName: BloodPayMed
+        ObjectType: 3
+        guid: 3dc5d4fe3d37ba40a59dd14d5e24e4a1
+      Path: Events\Default Work Unit\Game\Blood\BloodPayMed
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: BloodPaySmall
+      guid: dfb38b5be817fd47bf1911a052c5e623
+      id: 1182648364
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Blood
+        ObjectType: 4
+        guid: 6ad0539d34f93e4da79e7ded59bcba4c
+      - ElementName: BloodPaySmall
+        ObjectType: 3
+        guid: dfb38b5be817fd47bf1911a052c5e623
+      Path: Events\Default Work Unit\Game\Blood\BloodPaySmall
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: BloodSteal
+      guid: b2fa4a94c3820a42b657811128ba9a12
+      id: 2247027028
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Blood
+        ObjectType: 4
+        guid: 6ad0539d34f93e4da79e7ded59bcba4c
+      - ElementName: BloodSteal
+        ObjectType: 3
+        guid: b2fa4a94c3820a42b657811128ba9a12
+      Path: Events\Default Work Unit\Game\Blood\BloodSteal
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -123,13 +238,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: CardsAction
         ObjectType: 4
         guid: 930fe50be23101439fe30732b66ad1a6
       - ElementName: BringUp_Card
         ObjectType: 3
         guid: 2713a2560860a4409f6614fbd7000050
-      Path: Events/Default Work Unit/CardsAction/BringUp_Card
+      Path: Events\Default Work Unit\Game\CardsAction\BringUp_Card
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -143,10 +261,36 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: CardsAction
         ObjectType: 4
         guid: 930fe50be23101439fe30732b66ad1a6
-      Path: Events/Default Work Unit/CardsAction
+      Path: Events\Default Work Unit\Game\CardsAction
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: CurseSpell
+      guid: 410a332d7eb4d14099467934e75c78eb
+      id: 3748817017
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Spell
+        ObjectType: 4
+        guid: bb78f79822b3b84f89dd74f43bd08658
+      - ElementName: CurseSpell
+        ObjectType: 3
+        guid: 410a332d7eb4d14099467934e75c78eb
+      Path: Events\Default Work Unit\Game\Spell\CurseSpell
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -160,13 +304,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Amb
         ObjectType: 4
         guid: a87cc06f928b3848acc4dd35fb08855b
       - ElementName: DemonicSouls_Amb
         ObjectType: 3
         guid: 12c2838ad02634428f5537a899195502
-      Path: Events/Default Work Unit/Amb/DemonicSouls_Amb
+      Path: Events\Default Work Unit\Game\Amb\DemonicSouls_Amb
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -180,13 +327,79 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: CardsAction
         ObjectType: 4
         guid: 930fe50be23101439fe30732b66ad1a6
       - ElementName: DestroyedCard
         ObjectType: 3
         guid: 024025ee36831d4f8630238a385898b4
-      Path: Events/Default Work Unit/CardsAction/DestroyedCard
+      Path: Events\Default Work Unit\Game\CardsAction\DestroyedCard
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: DungeonRoom_Amb
+      guid: 2ae2e08e1f4b3248ba5831e7f8beef7a
+      id: 3046746157
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Amb
+        ObjectType: 4
+        guid: a87cc06f928b3848acc4dd35fb08855b
+      - ElementName: DungeonRoom_Amb
+        ObjectType: 3
+        guid: 2ae2e08e1f4b3248ba5831e7f8beef7a
+      Path: Events\Default Work Unit\Game\Amb\DungeonRoom_Amb
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: FireSpell
+      guid: 730e8d82972c46479f5339a93aa7bd51
+      id: 2480850349
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Spell
+        ObjectType: 4
+        guid: bb78f79822b3b84f89dd74f43bd08658
+      - ElementName: FireSpell
+        ObjectType: 3
+        guid: 730e8d82972c46479f5339a93aa7bd51
+      Path: Events\Default Work Unit\Game\Spell\FireSpell
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Game
+      guid: 28bf95fbd4f882468972824ac77216f5
+      id: 702482391
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      Path: Events\Default Work Unit\Game
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -200,13 +413,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Amb
         ObjectType: 4
         guid: a87cc06f928b3848acc4dd35fb08855b
       - ElementName: LowDark_Amb
         ObjectType: 3
         guid: 4fa9380e8cc98549ba33513961d67107
-      Path: Events/Default Work Unit/Amb/LowDark_Amb
+      Path: Events\Default Work Unit\Game\Amb\LowDark_Amb
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -220,10 +436,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Monster
         ObjectType: 4
         guid: 5a5ae743b9bba541b269456d787f8a96
-      Path: Events/Default Work Unit/Monster
+      Path: Events\Default Work Unit\Game\Monster
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -237,13 +456,33 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Monster
         ObjectType: 4
         guid: 5a5ae743b9bba541b269456d787f8a96
       - ElementName: MonsterAttack
         ObjectType: 3
         guid: cf025e035a04904a8552bc8f50e23fb2
-      Path: Events/Default Work Unit/Monster/MonsterAttack
+      Path: Events\Default Work Unit\Game\Monster\MonsterAttack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music
+      guid: 8bc4401559bc7544bf9f07ebeef4b720
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Music
+        ObjectType: 3
+        guid: 8bc4401559bc7544bf9f07ebeef4b720
+      Path: Events\Default Work Unit\Music
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -257,13 +496,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Amb
         ObjectType: 4
         guid: a87cc06f928b3848acc4dd35fb08855b
       - ElementName: OldRoom_Amb
         ObjectType: 3
         guid: 293b9a356b9f4147b0f78e4d9159c606
-      Path: Events/Default Work Unit/Amb/OldRoom_Amb
+      Path: Events\Default Work Unit\Game\Amb\OldRoom_Amb
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -277,10 +519,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: PlayerCam
         ObjectType: 4
         guid: 6dc67cf2683d614ab8431de73712af6b
-      Path: Events/Default Work Unit/PlayerCam
+      Path: Events\Default Work Unit\Game\PlayerCam
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -294,13 +539,39 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Monster
         ObjectType: 4
         guid: 5a5ae743b9bba541b269456d787f8a96
       - ElementName: SacrificeMonster
         ObjectType: 3
         guid: 51d0cd348ad3b44db77e9bea4ae50dc0
-      Path: Events/Default Work Unit/Monster/SacrificeMonster
+      Path: Events\Default Work Unit\Game\Monster\SacrificeMonster
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SelectCard
+      guid: ed9cc8b0ad260d4b8740847f970bfa00
+      id: 661726771
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: CardsAction
+        ObjectType: 4
+        guid: 930fe50be23101439fe30732b66ad1a6
+      - ElementName: SelectCard
+        ObjectType: 3
+        guid: ed9cc8b0ad260d4b8740847f970bfa00
+      Path: Events\Default Work Unit\Game\CardsAction\SelectCard
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -314,13 +585,36 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: PlayerCam
         ObjectType: 4
         guid: 6dc67cf2683d614ab8431de73712af6b
       - ElementName: SitDown
         ObjectType: 3
         guid: 7908f34a863b304e9a646fb7e23de860
-      Path: Events/Default Work Unit/PlayerCam/SitDown
+      Path: Events\Default Work Unit\Game\PlayerCam\SitDown
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Spell
+      guid: bb78f79822b3b84f89dd74f43bd08658
+      id: 523506649
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: Spell
+        ObjectType: 4
+        guid: bb78f79822b3b84f89dd74f43bd08658
+      Path: Events\Default Work Unit\Game\Spell
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -334,13 +628,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: PlayerCam
         ObjectType: 4
         guid: 6dc67cf2683d614ab8431de73712af6b
       - ElementName: StandUp
         ObjectType: 3
         guid: 2fda26082a535843b3b3b57a19a2d24c
-      Path: Events/Default Work Unit/PlayerCam/StandUp
+      Path: Events\Default Work Unit\Game\PlayerCam\StandUp
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -354,13 +651,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Monster
         ObjectType: 4
         guid: 5a5ae743b9bba541b269456d787f8a96
       - ElementName: Sum_HighMon
         ObjectType: 3
         guid: 79b5904939b6664e9bd7057b4ed39841
-      Path: Events/Default Work Unit/Monster/Sum_HighMon
+      Path: Events\Default Work Unit\Game\Monster\Sum_HighMon
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -374,13 +674,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Monster
         ObjectType: 4
         guid: 5a5ae743b9bba541b269456d787f8a96
       - ElementName: Sum_LowMon
         ObjectType: 3
         guid: 780374f593d058488f95306e7bef1670
-      Path: Events/Default Work Unit/Monster/Sum_LowMon
+      Path: Events\Default Work Unit\Game\Monster\Sum_LowMon
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -394,13 +697,39 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: Monster
         ObjectType: 4
         guid: 5a5ae743b9bba541b269456d787f8a96
       - ElementName: Sum_MedMon
         ObjectType: 3
         guid: bba023ac4198034abca08f655353de8e
-      Path: Events/Default Work Unit/Monster/Sum_MedMon
+      Path: Events\Default Work Unit\Game\Monster\Sum_MedMon
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: TableCam
+      guid: f900f36b77c78442932270de09677fb7
+      id: 3691628024
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: PlayerCam
+        ObjectType: 4
+        guid: 6dc67cf2683d614ab8431de73712af6b
+      - ElementName: TableCam
+        ObjectType: 3
+        guid: f900f36b77c78442932270de09677fb7
+      Path: Events\Default Work Unit\Game\PlayerCam\TableCam
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -414,18 +743,98 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
       - ElementName: CardsAction
         ObjectType: 4
         guid: 930fe50be23101439fe30732b66ad1a6
       - ElementName: TakeCard
         ObjectType: 3
         guid: 67563ec346e0c1488f83aaa6cef6e9c3
-      Path: Events/Default Work Unit/CardsAction/TakeCard
+      Path: Events\Default Work Unit\Game\CardsAction\TakeCard
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: TurnBell
+      guid: 945cae5db8081442a4162d4ac0ae4554
+      id: 756322111
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Game
+        ObjectType: 4
+        guid: 28bf95fbd4f882468972824ac77216f5
+      - ElementName: TurnBell
+        ObjectType: 3
+        guid: 945cae5db8081442a4162d4ac0ae4554
+      Path: Events\Default Work Unit\Game\TurnBell
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI
+      guid: aae7eda26f04184293368aeb06811ecd
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: UI
+        ObjectType: 4
+        guid: aae7eda26f04184293368aeb06811ecd
+      Path: Events\Default Work Unit\UI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_Cursor
+      guid: ce8eb50a00cebf4caf7415b22667f8ba
+      id: 2882502644
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: UI
+        ObjectType: 4
+        guid: aae7eda26f04184293368aeb06811ecd
+      - ElementName: UI_Cursor
+        ObjectType: 3
+        guid: ce8eb50a00cebf4caf7415b22667f8ba
+      Path: Events\Default Work Unit\UI\UI_Cursor
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_Select
+      guid: 0dde4314cc9ad0408563b35cf489696e
+      id: 2774129122
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: UI
+        ObjectType: 4
+        guid: aae7eda26f04184293368aeb06811ecd
+      - ElementName: UI_Select
+        ObjectType: 3
+        guid: 0dde4314cc9ad0408563b35cf489696e
+      Path: Events\Default Work Unit\UI\UI_Select
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
-  - PhysicalPath: Game Parameters/Default Work Unit.wwu
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Game Parameters
       ObjectType: 5
@@ -433,13 +842,13 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 59fe85e6b45bfd4f965c95ddba384d3e
-    ParentPath: Game Parameters/Default Work Unit
+    ParentPath: Game Parameters\Default Work Unit
     guid: 59fe85e6b45bfd4f965c95ddba384d3e
     GuidInternal: 
-    m_lastTime: -8585199371297695993
+    m_lastTime: -8585199597778005206
     List: []
   StateWwu:
-  - PhysicalPath: States/Default Work Unit.wwu
+  - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: States
       ObjectType: 5
@@ -447,13 +856,13 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 9eddd30160cf524d828f1c000f3a501d
-    ParentPath: States/Default Work Unit
+    ParentPath: States\Default Work Unit
     guid: 9eddd30160cf524d828f1c000f3a501d
     GuidInternal: 
-    m_lastTime: -8585199371297655391
+    m_lastTime: -8585199597777825168
     List: []
   SwitchWwu:
-  - PhysicalPath: Switches/Default Work Unit.wwu
+  - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Switches
       ObjectType: 5
@@ -461,10 +870,10 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 2a888aa657262146b7079d7eb65a00e1
-    ParentPath: Switches/Default Work Unit
+    ParentPath: Switches\Default Work Unit
     guid: 2a888aa657262146b7079d7eb65a00e1
     GuidInternal: 
-    m_lastTime: -8585195878740198914
+    m_lastTime: -8585195620050883847
     List:
     - name: TierMonster
       guid: 71b669453e445f46b778dc996f05cdca
@@ -479,7 +888,7 @@ MonoBehaviour:
       - ElementName: TierMonster
         ObjectType: 11
         guid: 71b669453e445f46b778dc996f05cdca
-      Path: Switches/Default Work Unit/TierMonster
+      Path: Switches\Default Work Unit\TierMonster
       values:
       - name: High
         guid: 6fa7348dca289847bc64ef7baf174916
@@ -533,7 +942,7 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   TriggerWwu:
-  - PhysicalPath: Triggers/Default Work Unit.wwu
+  - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Triggers
       ObjectType: 5
@@ -541,14 +950,14 @@ MonoBehaviour:
     - ElementName: Default Work Unit
       ObjectType: 12
       guid: 09da3210672a2a4bb641aebef10275aa
-    ParentPath: Triggers/Default Work Unit
+    ParentPath: Triggers\Default Work Unit
     guid: 09da3210672a2a4bb641aebef10275aa
     GuidInternal: 
-    m_lastTime: -8585199371297648429
+    m_lastTime: -8585199597777815164
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 060000000700000008000000
+  ExpandedFileSystemItemIds: 020000000300000004000000050000000600000007000000080000000b0000000d0000001400000018000000230000002e0000002f000000
+  ExpandedWaapiItemIds: 020000000300000004000000060000000700000008000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 

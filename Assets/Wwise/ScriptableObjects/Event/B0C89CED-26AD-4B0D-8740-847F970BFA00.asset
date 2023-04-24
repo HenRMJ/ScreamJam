@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: Human
+  m_Script: {fileID: 11500000, guid: 5196a8e04c6df3b4d858a5a468df7d48, type: 3}
+  m_Name: B0C89CED-26AD-4B0D-8740-847F970BFA00
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 2100000, guid: 400b6a95674a862488427fe4907f743d, type: 2}
-  description: I am human!
-  cardType: 0
-  bloodCost: 50
-  attack: 5
-  defense: 5
+  objectName: SelectCard
+  id: 661726771
+  guid: B0C89CED-26AD-4B0D-8740-847F970BFA00

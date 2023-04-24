@@ -7,7 +7,7 @@ public abstract class StateMachine : MonoBehaviour
 
     public void SwitchState(State newState)
     {
-        Debug.Log($"SWITCH STATE FROM {currentState} to {newState}");
+        // Debug.Log($"SWITCH STATE FROM {currentState} to {newState}");
         currentState?.Exit();
         currentState = newState;
         currentState?.Enter();

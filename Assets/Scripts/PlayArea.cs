@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class PlayArea : MonoBehaviour
 {
     public static PlayArea Instance;
+
+    public event EventHandler OnAttackFinished;
 
     [SerializeField] private int avatarMultipilier = 10;
 
@@ -18,11 +21,21 @@ public class PlayArea : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
+    }
+
+    private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
+    {
+        AllCardsAttack(TurnSystem.Instance.IsPlayersTurn);
+    }
+
     public void AllCardsAttack(bool playerAttacking)
     {
         GridManager gridManager = FindObjectOfType<GridManager>();
 
-        foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+        foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
         {
             if (cardSlot.Card == null) continue;
 
@@ -38,8 +51,8 @@ public class PlayArea : MonoBehaviour
 
                         if (attackingPosition == null)
                         {
-                            Enemy enemy = FindObjectOfType<Enemy>();
-                            enemy.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
+                            
+                            Enemy.Instance.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
                             continue;
                         }
 
@@ -51,8 +64,7 @@ public class PlayArea : MonoBehaviour
 
                             if (attackingSecondPosition == null)
                             {
-                                Enemy enemy = FindObjectOfType<Enemy>();
-                                enemy.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
+                                Enemy.Instance.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
                                 continue;
                             }
 
@@ -90,8 +102,7 @@ public class PlayArea : MonoBehaviour
 
                         if (defaultAttackingPosition == null)
                         {
-                            Enemy enemy = FindObjectOfType<Enemy>();
-                            enemy.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
+                            Enemy.Instance.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
                             continue;
                         }
 
@@ -126,8 +137,7 @@ public class PlayArea : MonoBehaviour
 
                         if (attackingPosition == null)
                         {
-                            Player player = FindObjectOfType<Player>();
-                            player.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
+                            Player.Instance.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                             continue;
                         }
 
@@ -139,8 +149,7 @@ public class PlayArea : MonoBehaviour
 
                             if (attackingSecondPosition == null)
                             {
-                                Player player = FindObjectOfType<Player>();
-                                player.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
+                                Player.Instance.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                                 continue;
                             }
 
@@ -178,8 +187,7 @@ public class PlayArea : MonoBehaviour
 
                         if (defaultAttackingPosition == null)
                         {
-                            Player player = FindObjectOfType<Player>();
-                            player.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
+                            Player.Instance.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                             continue;
                         }
 
@@ -200,5 +208,7 @@ public class PlayArea : MonoBehaviour
                 }
             }
         }
+
+        OnAttackFinished?.Invoke(this, EventArgs.Empty);
     }
 }

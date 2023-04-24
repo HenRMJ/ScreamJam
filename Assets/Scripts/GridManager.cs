@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    public static GridManager Instance;
+    
     [SerializeField]
     private Vector2Int _gridDimensions = new Vector2Int(2, 2);
     [SerializeField]
     private float _padding = 0f;
     [SerializeField]
     private GameObject _cardSlotPrefab = null;
+
+    private List<CardSlot> AllCardSlots = new List<CardSlot>();
 
     // _cardSlotDimensions defaults to 0,0 for the first slot, then changes to
     // the _cardSlotPrefab's Collider dimensions for the remaining slots
@@ -17,6 +21,13 @@ public class GridManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Debug.LogError("Another GridManager exists in the scene");
+            return;
+        }
+        Instance = this;
+
         _cardSlots = new GameObject[_gridDimensions.x, _gridDimensions.y];
         Build(_cardSlotPrefab, _gridDimensions, _padding);
     }
@@ -65,6 +76,8 @@ public class GridManager : MonoBehaviour
             {
                 GameObject instantiatedCard = InstantiateOnGrid(cardSlot, new Vector2Int(x, y), Quaternion.identity);
                 _cardSlots[x,y] = instantiatedCard;
+
+                AllCardSlots.Add(instantiatedCard.GetComponent<CardSlot>());
             }
         }
     }
@@ -87,5 +100,6 @@ public class GridManager : MonoBehaviour
         return _cardSlots[coordinates.x, coordinates.y];
     }
 
+    public List<CardSlot> GetAllCardSlots() => AllCardSlots;
     public Vector2Int GetGridDimensions() => _gridDimensions;
 }

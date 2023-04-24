@@ -31,12 +31,17 @@ public class Player : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         playerHand.OnCardSummoned += PlayerHand_OnCardSummoned;
         StartRoundState.OnStartRound += StartRoundState_OnStartRound;
         AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
         startingBlood = blood;
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     private void AttackState_OnAttackStateStarted(object sender, EventArgs e)

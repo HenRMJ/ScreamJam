@@ -35,9 +35,14 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
+        PlayArea.Instance.OnAttackFinished += PlayArea_OnAttackFinished;
         CardSlot.OnCanBePlaced += CardSlot_OnCanBePlaced;
         startingBlood = Blood;
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     private void CardSlot_OnCanBePlaced(object sender, EventArgs e)
@@ -45,11 +50,14 @@ public class Enemy : MonoBehaviour
         possiblePlacements.Add(sender as CardSlot);
     }
 
-    private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
+    private void PlayArea_OnAttackFinished(object sender, EventArgs e)
     {
         if (Blood <= 0)
         {
             OnEnemyDied?.Invoke(this, EventArgs.Empty);
+        } else
+        {
+            StartCoroutine(UpdateBloodLevel());
         }
     }
 
@@ -118,7 +126,7 @@ public class Enemy : MonoBehaviour
     {
         GridManager gridManager = FindObjectOfType<GridManager>();
 
-        foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+        foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
         {
             if (cardSlot.Card == null) continue;
             if (cardSlot.CardBelongsToPlayer()) continue;
@@ -208,6 +216,7 @@ public class Enemy : MonoBehaviour
         Blood += healAmount;
         StartCoroutine(UpdateBloodLevel());
     }
+
     private IEnumerator UpdateBloodLevel()
     {
         float t = 0f;

@@ -14,7 +14,7 @@ public class DrawState : BasePlayerState
     public override void Enter()
     {
         OnEnterDrawState?.Invoke(this, EventArgs.Empty);
-        Debug.Log($"BEGIN DrawState for '{player}'");
+        //Debug.Log($"BEGIN DrawState for '{player}'");
     }
 
     public override void Tick()
@@ -31,7 +31,7 @@ public class DrawState : BasePlayerState
 
     public override void Exit()
     {
-        Debug.Log($"END DrawState for '{player}'");
+        //Debug.Log($"END DrawState for '{player}'");
     }
 
     private bool ClickedDeck()
@@ -39,7 +39,7 @@ public class DrawState : BasePlayerState
         GameObject clicked = Utils.GetCardObjectUnderCursor();
         if (clicked != null)
         {
-            if(clicked.TryGetComponent<CardData>(out CardData cardData))
+            if(clicked.TryGetComponent(out CardData cardData))
             {
                 if (!cardData.BelongsToPlayer()) return false;
 

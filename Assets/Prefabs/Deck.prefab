@@ -48,19 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0dc20d7c29ba1409f9ac3c2b30842e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckList:
-  - {fileID: 5143073222210246624, guid: 749a73f4681587a4dbfd698422caaf75, type: 3}
-  - {fileID: 5143073222210246624, guid: 6cbb5c4ee5ebd0b4a9c6b9f8017f603a, type: 3}
-  - {fileID: 5143073222210246624, guid: fe5f78ab22cb1914c8813ebc6199bb3b, type: 3}
-  - {fileID: 5143073222210246624, guid: bf20f794e27b24c47951c0d53d37e121, type: 3}
-  - {fileID: 5143073222210246624, guid: db2263708b32b1f42a56fa0cfa978f01, type: 3}
-  - {fileID: 5143073222210246624, guid: 5cde0f8f418cb4345873834d42eb509d, type: 3}
-  - {fileID: 5143073222210246624, guid: 43e496efa8992b240a1d9bf3beba41fe, type: 3}
-  - {fileID: 5143073222210246624, guid: 2988dd40cdacd7c41884a453225ba8fb, type: 3}
-  - {fileID: 5143073222210246624, guid: 4aef9860047f1a84dab166089b9343c0, type: 3}
-  - {fileID: 5143073222210246624, guid: 470847a5414c0ab4fb26f4fcb231228a, type: 3}
+  deckList: []
   stackOffset: 0.00035
   rotationalOffset: 10
+  belongsToPlayer: 0
 --- !u!114 &427146311227804113
 MonoBehaviour:
   m_ObjectHideFlags: 0

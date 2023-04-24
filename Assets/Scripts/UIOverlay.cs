@@ -23,6 +23,7 @@ public class UIOverlay : MonoBehaviour
         CardData.OnAnyCardHover += CardData_OnAnyCardHover;
         DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
         DrawState.OnEnterDrawState += DrawState_OnEnterDrawState;
+
         smallOverlay.text = string.Empty;
         overlayOn = true;
         smallOverlay.gameObject.SetActive(overlayOn);

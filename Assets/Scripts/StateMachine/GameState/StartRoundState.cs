@@ -14,7 +14,7 @@ public class StartRoundState : BaseGameState
 
     public override void Enter()
     {
-        Debug.Log("BEGIN StartRoundState");
+        //Debug.Log("BEGIN StartRoundState");
 
         TurnSystem.Instance.AttackedThisRound = false;
 
@@ -55,15 +55,15 @@ public class StartRoundState : BaseGameState
 
         Utils.EnemyDrawACard();
 
-        Debug.Log("Enemy draw, wait for move cards");
+        //Debug.Log("Enemy draw, wait for move cards");
         yield return new WaitForSeconds(.4f);
 
         Enemy.Instance.MoveCardsForward();
-        Debug.Log("Enemy moved, wait for TryToSelect");
+        //Debug.Log("Enemy moved, wait for TryToSelect");
         yield return new WaitForSeconds(1.5f);
 
         Transform selectedCard = Enemy.Instance.TryToSetSelectedCard();
-        Debug.Log("Enemy selected, wait for attack");
+        //Debug.Log("Enemy selected, wait for attack");
         if (selectedCard != null)
         {
             OnEnemySelectedCard?.Invoke(this, selectedCard);
@@ -72,7 +72,7 @@ public class StartRoundState : BaseGameState
 
         yield return new WaitForSeconds(3f);
         PlayArea.Instance.AllCardsAttack(false);
-        Debug.Log("enemey done");
+        //Debug.Log("enemey done");
 
         stateMachine.SwitchState(new StartRoundState(stateMachine));
         playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
@@ -83,7 +83,7 @@ public class StartRoundState : BaseGameState
 
     public override void Exit()
     {
-        Debug.Log("END StartRoundState");
+        //Debug.Log("END StartRoundState");
     }
 }
 

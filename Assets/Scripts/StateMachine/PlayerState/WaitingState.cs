@@ -10,7 +10,7 @@ public class WaitingState : BasePlayerState
 
     public override void Enter()
     {
-        Debug.Log($"BEGIN WaitingState for '{player}'");
+        //Debug.Log($"BEGIN WaitingState for '{player}'");
     }
 
     public override void Tick()
@@ -19,6 +19,6 @@ public class WaitingState : BasePlayerState
 
     public override void Exit()
     {
-        Debug.Log($"END WaitingState for '{player}'");
+        //Debug.Log($"END WaitingState for '{player}'");
     }
 }

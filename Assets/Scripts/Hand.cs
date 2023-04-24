@@ -28,29 +28,6 @@ public class Hand : MonoBehaviour
         cardIsSelected = false;
     }
 
-    private void Update()
-    {
-        UpdateSacrificeVisuals();
-    }
-
-    private void UpdateSacrificeVisuals()
-    {
-        foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
-        {
-            cardSlot.UpdateSacrificeVisual(false);
-
-            foreach (GameObject card in cardsToSacrifice)
-            {
-                if (cardSlot.Card == null) continue;
-
-                if (cardsToSacrifice.Contains(cardSlot.Card.gameObject))
-                {
-                    cardSlot.UpdateSacrificeVisual(true);
-                }
-            }
-        }
-    }
-
     public void SelectCard()
     {
         GameObject cursorCard = Utils.GetCardObjectUnderCursor();
@@ -70,6 +47,8 @@ public class Hand : MonoBehaviour
 
             if (cardData.InDeck) return;
             if (cardData.InPlay) return;
+
+            AkSoundEngine.PostEvent("SelectCard", gameObject);
 
             cardIsSelected = true;
             cardData.InHand = false;
@@ -193,14 +172,14 @@ public class Hand : MonoBehaviour
             // and the updates the player health, and destorys the cards, if not it just returns
             if (player.TrySummonCard(cardData.GetBloodCost() - CalculateSacrificedBlood()))
             {
-                CardSlot[] cardSlots = FindObjectsOfType<CardSlot>();
 
-                foreach (CardSlot cardSlotToUpdate in cardSlots)
+                foreach (CardSlot cardSlotToUpdate in GridManager.Instance.GetAllCardSlots())
                 {
                     if (cardSlotToUpdate.Card == null) continue;
 
                     if (cardsToSacrifice.Contains(cardSlotToUpdate.Card.gameObject))
                     {
+                        cardSlotToUpdate.UpdateSacrificeVisual(false);
                         cardSlotToUpdate.Card = null;
                     }
                 }
@@ -257,14 +236,20 @@ public class Hand : MonoBehaviour
         if (!cardData.InPlay) return;
         if (!cardData.BelongsToPlayer()) return;
 
+        CardSlot cardSlot = Utils.GetTransformUnderCursor().GetComponent<CardSlot>();
+
         if (cardsToSacrifice.Contains(cursorCard))
         {
             cardsToSacrifice.Remove(cursorCard);
+            cardSlot.UpdateSacrificeVisual(false);
         }
         else
         {
             cardsToSacrifice.Add(cursorCard);
+            cardSlot.UpdateSacrificeVisual(true);
         }
+
+        // UpdateCardsToSacrifice();
     }
 
     private int CalculateSacrificedBlood()
@@ -298,7 +283,7 @@ public class Hand : MonoBehaviour
 
     public void SetSelectedCard(Transform card)
     {
-        Debug.Log(card);
+        //Debug.Log(card);
         selectedCard = card;
     }
 

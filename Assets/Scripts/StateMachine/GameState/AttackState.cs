@@ -11,18 +11,16 @@ public class AttackState : BaseGameState
 
     public override void Enter()
     {
-        PlayArea.Instance.AllCardsAttack(TurnSystem.Instance.IsPlayersTurn);
-
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
-        Player player = playerObject.GetComponent<Player>();
-
-        TurnSystem.Instance.AttackedThisRound = true;
-
+        PlayArea.Instance.OnAttackFinished += PlayArea_OnAttackFinished;
         OnAttackStateStarted?.Invoke(this, EventArgs.Empty);
+    }
 
-        playerStateMachine.SwitchState(new DecisionState(playerStateMachine, player));
+    private void PlayArea_OnAttackFinished(object sender, EventArgs e)
+    {
+        //
+        PlayerStateMachine playerStateMachine = Player.Instance.gameObject.GetComponent<PlayerStateMachine>();
 
+        playerStateMachine.SwitchState(new DecisionState(playerStateMachine, Player.Instance));
     }
 
     public override void Tick()
@@ -32,7 +30,7 @@ public class AttackState : BaseGameState
 
     public override void Exit()
     {
-        Debug.Log("Exit attack state");
+        //Debug.Log("Exit attack state");
     }
 
     

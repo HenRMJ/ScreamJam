@@ -11,8 +11,8 @@ public class CardSlot : MonoBehaviour
     public Transform Card { get; set; }
     public bool CanPlace { get; private set; }
     public bool CanMove { get; private set; }
-
-    [SerializeField] private Animator animator;
+    
+    private Animator animator;
 
     private List<GameObject> validMovePositions = new List<GameObject>();
 
@@ -24,6 +24,8 @@ public class CardSlot : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         foreach(Hand hand in FindObjectsOfType<Hand>())
         {
             if (hand.BelongsToPlayer)
@@ -91,6 +93,11 @@ public class CardSlot : MonoBehaviour
         if (!inDecisionState) return;
         ShowValidMovePositions();
         MoveSelectedCardToValidPosition();
+
+        /*foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+        {
+            foreach ()
+        }*/
     }
 
     private void MoveSelectedCardToValidPosition()
@@ -114,7 +121,7 @@ public class CardSlot : MonoBehaviour
 
             validMovePositions.Clear();
             selectedCard = null;
-            foreach (CardSlot cardSlotInScene in FindObjectsOfType<CardSlot>())
+            foreach (CardSlot cardSlotInScene in GridManager.Instance.GetAllCardSlots())
             {
                 cardSlotInScene.UpdateVisuals(true);
             }
@@ -201,7 +208,7 @@ public class CardSlot : MonoBehaviour
                     break;
             }
 
-            foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+            foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
             {
                 cardSlot.UpdateVisuals(false);
                 CanMove = false;

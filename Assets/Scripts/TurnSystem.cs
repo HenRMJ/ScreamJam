@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,12 @@ public class TurnSystem : MonoBehaviour
 
     private void Start()
     {
+        AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
         IsPlayersTurn = true;
+    }
+
+    private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
+    {
+        AttackedThisRound = true;
     }
 }
