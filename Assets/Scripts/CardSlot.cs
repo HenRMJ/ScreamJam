@@ -262,13 +262,19 @@ public class CardSlot : MonoBehaviour
                 case CardGroup.C:
                     if (cardSlotPosition.y == 0)
                     {
-                        CanPlace = true;
+                        if (Card == null)
+                        {
+                            CanPlace = true;
+                        }
                     }
                     break;
                 default:
                     if (cardSlotPosition.y == 0 || cardSlotPosition.y == 1)
                     {
-                        CanPlace = true;
+                        if (Card == null)
+                        {
+                            CanPlace = true;
+                        }
                     }
                     break;
             }
