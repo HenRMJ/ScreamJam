@@ -240,16 +240,16 @@ public class Hand : MonoBehaviour
 
         if (cardsToSacrifice.Contains(cursorCard))
         {
+            cardData.MarkedAsSacrifice = false;
             cardsToSacrifice.Remove(cursorCard);
             cardSlot.UpdateSacrificeVisual(false);
         }
         else
         {
+            cardData.MarkedAsSacrifice = true;
             cardsToSacrifice.Add(cursorCard);
             cardSlot.UpdateSacrificeVisual(true);
         }
-
-        // UpdateCardsToSacrifice();
     }
 
     private int CalculateSacrificedBlood()

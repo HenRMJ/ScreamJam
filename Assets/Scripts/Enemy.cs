@@ -7,17 +7,15 @@ public class Enemy : MonoBehaviour
 {
     public static Enemy Instance;
 
-    public static event EventHandler OnEnemyDied;
-    public static event EventHandler<Transform> OnEnemySummonedCard;
+    public event EventHandler OnEnemyDied;
+    public event EventHandler<Transform> OnEnemySummonedCard;
+    public event EventHandler OnEnemyHealthChanged;
 
     [SerializeField] private int blood;
     [SerializeField] private Hand hand;
 
     private List<CardSlot> possiblePlacements = new List<CardSlot>();
     private Transform selectedCard;
-
-    [SerializeField] private Transform bloodLevel = null;
-    private int startingBlood;
 
     public int Blood { get; set; }
 
@@ -37,7 +35,6 @@ public class Enemy : MonoBehaviour
     {
         PlayArea.Instance.OnAttackFinished += PlayArea_OnAttackFinished;
         CardSlot.OnCanBePlaced += CardSlot_OnCanBePlaced;
-        startingBlood = Blood;
     }
 
     private void OnDisable()
@@ -57,7 +54,7 @@ public class Enemy : MonoBehaviour
             OnEnemyDied?.Invoke(this, EventArgs.Empty);
         } else
         {
-            StartCoroutine(UpdateBloodLevel());
+            OnEnemyHealthChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -111,7 +108,7 @@ public class Enemy : MonoBehaviour
         cardData.CanMove = false;
 
         Blood -= cardData.GetBloodCost();
-        StartCoroutine(UpdateBloodLevel());
+        OnEnemyHealthChanged?.Invoke(this, EventArgs.Empty);
 
         cardData.MoveToPoint(randomCardSlot.transform.position, randomCardSlot.transform.rotation);
         randomCardSlot.Card = selectedCard;
@@ -124,8 +121,6 @@ public class Enemy : MonoBehaviour
 
     public void MoveCardsForward()
     {
-        GridManager gridManager = FindObjectOfType<GridManager>();
-
         foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
         {
             if (cardSlot.Card == null) continue;
@@ -141,7 +136,7 @@ public class Enemy : MonoBehaviour
             switch (cardData.Group)
             {
                 case CardGroup.A:
-                    GameObject leftObject = gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1);
+                    GameObject leftObject = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1);
 
                     if (leftObject != null)
                     {
@@ -153,7 +148,7 @@ public class Enemy : MonoBehaviour
                         }
                     }
 
-                    GameObject centerObject = gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
+                    GameObject centerObject = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
 
                     if (centerObject != null)
                     {
@@ -165,7 +160,7 @@ public class Enemy : MonoBehaviour
                         }
                     }
 
-                    GameObject rightObject = gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1);
+                    GameObject rightObject = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1);
 
                     if (rightObject != null)
                     {
@@ -192,7 +187,7 @@ public class Enemy : MonoBehaviour
                     cardSlot.Card = null;
                     break;
                 default:
-                    GameObject checkSlotObject = gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
+                    GameObject checkSlotObject = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
 
                     if (checkSlotObject == null) continue;
 
@@ -214,26 +209,7 @@ public class Enemy : MonoBehaviour
     public void Heal(int healAmount)
     {
         Blood += healAmount;
-        StartCoroutine(UpdateBloodLevel());
-    }
-
-    private IEnumerator UpdateBloodLevel()
-    {
-        float t = 0f;
-        float speed = 1f;
-
-        Vector3 startingBloodLevel = bloodLevel.localScale;
-        float newBloodPercent = (float)Blood / (float)startingBlood;
-        Vector3 finalBloodLevel = new Vector3(1, newBloodPercent, 1);
-        while (t < 1)
-        {
-            t += Time.deltaTime / speed;
-            if (t > 1) { t = 1; }
-
-            bloodLevel.localScale = Vector3.Lerp(startingBloodLevel, finalBloodLevel, t);
-            yield return new WaitForEndOfFrame();
-        }
-        yield return null;
+        OnEnemyHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public Hand GetHand() => hand;

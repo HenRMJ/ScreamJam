@@ -11,8 +11,8 @@ public class ScheneManager : MonoBehaviour
     {
         if (SceneManager.GetSceneByBuildIndex(0) == SceneManager.GetActiveScene())
         {
-            Enemy.OnEnemyDied += Enemy_OnEnemyDied;
-            Player.OnPlayerDied += Player_OnPlayerDied;
+            Enemy.Instance.OnEnemyDied += Enemy_OnEnemyDied;
+            Player.Instance.OnPlayerDied += Player_OnPlayerDied;
         }
     }
 

@@ -29,7 +29,7 @@ public class PlaySummonSound : MonoBehaviour
         }
         else
         {
-            Enemy.OnEnemySummonedCard += Enemy_OnEnemySummonedCard;
+            Enemy.Instance.OnEnemySummonedCard += Enemy_OnEnemySummonedCard;
         }
         
 
@@ -62,7 +62,7 @@ public class PlaySummonSound : MonoBehaviour
             ownerHand.OnCardSummoned -= OwnerHand_OnCardSummoned;
         } else
         {
-            Enemy.OnEnemySummonedCard -= Enemy_OnEnemySummonedCard;
+            Enemy.Instance.OnEnemySummonedCard -= Enemy_OnEnemySummonedCard;
         }
         
     }
@@ -85,4 +85,6 @@ public class PlaySummonSound : MonoBehaviour
             }
         }
     }
+
+    public SummonSound GetSummonSound() => summondSound;
 }

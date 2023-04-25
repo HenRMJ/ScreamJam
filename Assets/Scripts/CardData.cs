@@ -12,6 +12,7 @@ public class CardData : MonoBehaviour
     public bool InDeck { get; set; }
     public bool InPlay { get; set; }
     public bool CanMove { get; set; }
+    public bool MarkedAsSacrifice { get; set; }
     public int PositionInHand { get; set; }
     public CardType Type { get; private set;}
     public CardGroup Group { get; private set; }
@@ -88,6 +89,7 @@ public class CardData : MonoBehaviour
         InDeck = true;
         InPlay = false;
         CanMove = false;
+        MarkedAsSacrifice = false;
 
         StartRoundState.OnStartRound += StartRoundState_OnStartRound;
     }    
@@ -101,6 +103,7 @@ public class CardData : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (MarkedAsSacrifice) return;
         if (Type == CardType.Spell) return;
 
         int rowDiedOn = 0;
