@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 5904969970998503603}
   - component: {fileID: -3881461308897349512}
   - component: {fileID: -7448875957476869007}
+  - component: {fileID: -4927487406205136239}
   m_Layer: 6
   m_Name: fire spella
   m_TagString: Untagged
@@ -197,7 +198,6 @@ MonoBehaviour:
   cardMeshRenderer: {fileID: 5809160254841068263}
   speed: 5
   hoverOffset: {x: 0, y: 0.04, z: 0.04}
-  belongsToPlayer: 1
 --- !u!65 &-5935286169467110996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -305,6 +305,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f13c7ae67bab74bbcd112d48c36985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4927487406205136239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143073222210246625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0160269617453aa47acfec813af12485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: 958ca0ea
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cf00faf30f0e7354c869d31da33f6ab3,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+  MultiPositionType: 1
+  multiPositionTypeLabel: 0
+  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
+  LargeModePositions: []
+  multiPositionArray: []
 --- !u!1 &5143073222868699542
 GameObject:
   m_ObjectHideFlags: 0
