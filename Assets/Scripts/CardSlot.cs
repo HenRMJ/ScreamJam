@@ -62,11 +62,6 @@ public class CardSlot : MonoBehaviour
         if (!inDecisionState) return;
         ShowValidMovePositions();
         MoveSelectedCardToValidPosition();
-
-        /*foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
-        {
-            foreach ()
-        }*/
     }
 
     private void OnDestroy()
@@ -155,8 +150,12 @@ public class CardSlot : MonoBehaviour
             if (!cardData.CanMove) return;
 
             selectedCard = Card;
-            playerHand.UnselectCard();
 
+            if (playerHand.GetCardIsSelected())
+            {
+                playerHand.UnselectCard();
+            }
+            
             switch (cardData.Group)
             {
                 case CardGroup.A:

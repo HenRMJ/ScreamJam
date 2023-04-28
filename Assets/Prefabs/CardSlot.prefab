@@ -101,7 +101,7 @@ MonoBehaviour:
   cardSlot: {fileID: -6255537859566248485}
   animationSpeed: 0.2
   onColor: {r: 1, g: 1, b: 1, a: 0.30588236}
-  offColor: {r: 1, g: 1, b: 1, a: 0.21568628}
+  offColor: {r: 1, g: 1, b: 1, a: 0.22745098}
   attackColor: {r: 1, g: 0.044025064, b: 0.044025064, a: 0.2901961}
 --- !u!1 &5747284416531982249
 GameObject:

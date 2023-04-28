@@ -287,6 +287,7 @@ public class Hand : MonoBehaviour
         selectedCard = card;
     }
 
+    public bool GetCardIsSelected() => cardIsSelected;
     public List<Transform> GetCardsInHand() => cardsInHand;
     public Vector3 GetPositionInHand(int i) => cardPositions[i];
     public Quaternion GetRotationInHand() => minPosition.rotation;
