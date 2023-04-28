@@ -6,6 +6,8 @@ public class CardSlot : MonoBehaviour
 {
     public static event EventHandler OnCanBePlaced;
 
+    public static event EventHandler<bool> OnCardVisualUpdate;
+
     private static Transform selectedCard;
 
     public Transform Card { get; set; }
@@ -129,10 +131,13 @@ public class CardSlot : MonoBehaviour
 
             validMovePositions.Clear();
             selectedCard = null;
+
             foreach (CardSlot cardSlotInScene in GridManager.Instance.GetAllCardSlots())
             {
-                cardSlotInScene.UpdateVisuals(true);
+                cardSlotInScene.UpdateVisuals(false);
             }
+
+            OnCardVisualUpdate?.Invoke(this, false);
         }
     }
 
@@ -150,6 +155,7 @@ public class CardSlot : MonoBehaviour
             if (!cardData.CanMove) return;
 
             selectedCard = Card;
+            playerHand.UnselectCard();
 
             switch (cardData.Group)
             {
@@ -234,6 +240,7 @@ public class CardSlot : MonoBehaviour
                 {
                     CanMove = true;
                     cardSlot.UpdateVisuals(true);
+                    OnCardVisualUpdate?.Invoke(this, true);
                 } else
                 {
                     invalidMovPositionsAfterCheck.Add(cardSlotObject);
@@ -251,7 +258,8 @@ public class CardSlot : MonoBehaviour
 
     private void PlayerHand_OnCardsUnselected(object sender, EventArgs e)
     {
-        UpdateVisuals(true);
+        UpdateVisuals(false);
+        OnCardVisualUpdate?.Invoke(this, false);
         validMovePositions.Clear();
         selectedCard = null;
     }
@@ -298,6 +306,7 @@ public class CardSlot : MonoBehaviour
         
 
         UpdateVisuals(CanPlace);
+        OnCardVisualUpdate?.Invoke(this, true);
     }
 
     public bool CardBelongsToPlayer()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8404131255955018063}
   - component: {fileID: -6255537859566248485}
   - component: {fileID: 599108126284403096}
+  - component: {fileID: 7429146742591138566}
   m_Layer: 0
   m_Name: CardSlot
   m_TagString: Untagged
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   border: {fileID: 2098715644618161449}
+  mat: {fileID: 0}
 --- !u!95 &599108126284403096
 Animator:
   serializedVersion: 5
@@ -83,6 +85,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7429146742591138566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509322986070951165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb76e5a1b7077f047bfec6691449594d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borderMaterial: {fileID: 2100000, guid: b420f7455435db14ba7182ab2e7fe33c, type: 2}
+  cardSlot: {fileID: -6255537859566248485}
+  animationSpeed: 0.2
+  onColor: {r: 1, g: 1, b: 1, a: 0.30588236}
+  offColor: {r: 1, g: 1, b: 1, a: 0.21568628}
+  attackColor: {r: 1, g: 0.044025064, b: 0.044025064, a: 0.2901961}
 --- !u!1 &5747284416531982249
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,17 +545,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f0a2ad30442a59a44a59f7e3a94f4472,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1149.65
+      value: 1220.8134
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0a2ad30442a59a44a59f7e3a94f4472,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1149.65
+      value: 1220.8134
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0a2ad30442a59a44a59f7e3a94f4472,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1149.65
+      value: 1220.8134
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0a2ad30442a59a44a59f7e3a94f4472,
         type: 3}
