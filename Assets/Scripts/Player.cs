@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     {
         playerHand.OnCardSummoned += PlayerHand_OnCardSummoned;
         StartRoundState.OnStartRound += StartRoundState_OnStartRound;
-        AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
+        PlayArea.Instance.OnAttackFinished += PlayArea_OnAttackFinished;
     }
 
     private void OnDisable()
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         StopAllCoroutines();
     }
 
-    private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
+    private void PlayArea_OnAttackFinished(object sender, EventArgs e)
     {
         if (blood <= 0)
         {
