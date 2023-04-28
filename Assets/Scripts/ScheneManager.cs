@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ScheneManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (SceneManager.GetSceneByBuildIndex(0) == SceneManager.GetActiveScene())
         {
@@ -21,6 +21,15 @@ public class ScheneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Application.Quit();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (SceneManager.GetSceneByBuildIndex(0) == SceneManager.GetActiveScene())
+        {
+            Enemy.Instance.OnEnemyDied -= Enemy_OnEnemyDied;
+            Player.Instance.OnPlayerDied -= Player_OnPlayerDied;
         }
     }
 

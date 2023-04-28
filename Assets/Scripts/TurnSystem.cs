@@ -26,6 +26,11 @@ public class TurnSystem : MonoBehaviour
         IsPlayersTurn = true;
     }
 
+    private void OnDisable()
+    {
+        AttackState.OnAttackStateStarted -= AttackState_OnAttackStateStarted;
+    }
+
     private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
     {
         AttackedThisRound = true;

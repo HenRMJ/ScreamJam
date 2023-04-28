@@ -137,6 +137,8 @@ public class CardData : MonoBehaviour
                 Enemy.Instance.Heal(Mathf.RoundToInt(bloodCost / 2));
             }
         }
+
+        StartRoundState.OnStartRound -= StartRoundState_OnStartRound;
     }
 
     // Might want to move these methods into a different class Move Card and Move To Point

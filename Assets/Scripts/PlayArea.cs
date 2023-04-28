@@ -26,6 +26,11 @@ public class PlayArea : MonoBehaviour
         AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
     }
 
+    private void OnDisable()
+    {
+        AttackState.OnAttackStateStarted -= AttackState_OnAttackStateStarted;
+    }
+
     private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
     {
         AllCardsAttack(TurnSystem.Instance.IsPlayersTurn);

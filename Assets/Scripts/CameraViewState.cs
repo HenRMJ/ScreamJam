@@ -36,6 +36,11 @@ public class CameraViewState : MonoBehaviour
         currentState = State.Board;
     }
 
+    private void OnDisable()
+    {
+        controller.Table.CameraSwitch.started -= OnCameraSwitchStarted;
+    }
+
     private void OnCameraSwitchStarted(InputAction.CallbackContext obj)
     {
         float direction = obj.ReadValue<float>();

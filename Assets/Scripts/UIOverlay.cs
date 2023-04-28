@@ -18,7 +18,7 @@ public class UIOverlay : MonoBehaviour
     private bool overlayOn;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         CardData.OnAnyCardHover += CardData_OnAnyCardHover;
         DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
@@ -27,6 +27,18 @@ public class UIOverlay : MonoBehaviour
         smallOverlay.text = string.Empty;
         overlayOn = true;
         smallOverlay.gameObject.SetActive(overlayOn);
+    }
+
+    private void Update()
+    {
+        UpdateCardUI();
+    }
+
+    private void OnDisable()
+    {
+        CardData.OnAnyCardHover -= CardData_OnAnyCardHover;
+        DecisionState.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
+        DrawState.OnEnterDrawState -= DrawState_OnEnterDrawState;
     }
 
     private void DrawState_OnEnterDrawState(object sender, EventArgs e)
@@ -59,12 +71,6 @@ public class UIOverlay : MonoBehaviour
     {
         CardData cardData = (CardData)sender;
         cardDescription.text = cardData.GetCardUIDescription();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateCardUI();
     }
 
     private void UpdateCardUI()

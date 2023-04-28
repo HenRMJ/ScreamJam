@@ -18,7 +18,6 @@ public class CardSlot : MonoBehaviour
     private Animator animator;
     private List<GameObject> validMovePositions = new List<GameObject>();
     private Hand playerHand;
-    private GridManager gridManager;
     private Vector2Int cardSlotPosition;
     private bool inDecisionState;
 
@@ -34,13 +33,11 @@ public class CardSlot : MonoBehaviour
             }
         }
 
-        gridManager = FindObjectOfType<GridManager>();
-
-        for (int x = 0; x < gridManager.GetGridDimensions().x; x++)
+        for (int x = 0; x < GridManager.Instance.GetGridDimensions().x; x++)
         {
-            for (int y = 0; y < gridManager.GetGridDimensions().y; y++)
+            for (int y = 0; y < GridManager.Instance.GetGridDimensions().y; y++)
             {
-                if (gridManager.CardAt(x, y) == gameObject)
+                if (GridManager.Instance.CardAt(x, y) == gameObject)
                 {
                     cardSlotPosition = new Vector2Int(x, y);
                 }
@@ -54,6 +51,29 @@ public class CardSlot : MonoBehaviour
         playerHand.OnCardUnselected += PlayerHand_OnCardsUnselected;
         DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
         DecisionState.OnExitDecisionState += DecisionState_OnExitDecisionState;
+    }
+
+    
+
+    private void Update()
+    {
+        if (!inDecisionState) return;
+        ShowValidMovePositions();
+        MoveSelectedCardToValidPosition();
+
+        /*foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
+        {
+            foreach ()
+        }*/
+    }
+
+    private void OnDestroy()
+    {
+        StartRoundState.OnEnemySelectedCard -= StartRoundState_OnEnemySelectedCard;
+        playerHand.OnCardSelected -= PlayerHand_OnCardSelected;
+        playerHand.OnCardUnselected -= PlayerHand_OnCardsUnselected;
+        DecisionState.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
+        DecisionState.OnExitDecisionState -= DecisionState_OnExitDecisionState;
     }
 
     private void StartRoundState_OnEnemySelectedCard(object sender, Transform e)
@@ -86,18 +106,6 @@ public class CardSlot : MonoBehaviour
                 }
                 break;
         }
-    }
-
-    private void Update()
-    {
-        if (!inDecisionState) return;
-        ShowValidMovePositions();
-        MoveSelectedCardToValidPosition();
-
-        /*foreach (CardSlot cardSlot in FindObjectsOfType<CardSlot>())
-        {
-            foreach ()
-        }*/
     }
 
     private void MoveSelectedCardToValidPosition()
@@ -146,66 +154,66 @@ public class CardSlot : MonoBehaviour
             switch (cardData.Group)
             {
                 case CardGroup.A:
-                    if (gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y + 1) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y + 1) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y + 1));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y + 1));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y + 1) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y + 1) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y + 1));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y + 1));
                     }
 
                     break;
                 default:
-                    if (gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y + 1));
                     }
 
-                    if (gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1) != null)
+                    if (GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1) != null)
                     {
-                        validMovePositions.Add(gridManager.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1));
+                        validMovePositions.Add(GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1));
                     }
                     break;
             }

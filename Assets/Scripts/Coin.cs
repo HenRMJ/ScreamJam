@@ -10,10 +10,16 @@ public class Coin : MonoBehaviour
     [SerializeField] private Player player;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         StartRoundState.OnStartRound += StartRoundState_OnStartRound;
         playerHand.OnCardSummoned += PlayerHand_OnCardSummoned;
+    }
+
+    private void OnDisable()
+    {
+        StartRoundState.OnStartRound -= StartRoundState_OnStartRound;
+        playerHand.OnCardSummoned -= PlayerHand_OnCardSummoned;
     }
 
     private void PlayerHand_OnCardSummoned(object sender, Transform e)

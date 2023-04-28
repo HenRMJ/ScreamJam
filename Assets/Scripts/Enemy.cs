@@ -39,6 +39,8 @@ public class Enemy : MonoBehaviour
 
     private void OnDisable()
     {
+        PlayArea.Instance.OnAttackFinished -= PlayArea_OnAttackFinished;
+        CardSlot.OnCanBePlaced -= CardSlot_OnCanBePlaced;
         StopAllCoroutines();
     }
 

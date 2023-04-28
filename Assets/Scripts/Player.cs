@@ -39,6 +39,9 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
+        playerHand.OnCardSummoned -= PlayerHand_OnCardSummoned;
+        StartRoundState.OnStartRound -= StartRoundState_OnStartRound;
+        PlayArea.Instance.OnAttackFinished -= PlayArea_OnAttackFinished;
         StopAllCoroutines();
     }
 

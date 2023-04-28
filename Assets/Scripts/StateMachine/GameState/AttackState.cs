@@ -30,6 +30,7 @@ public class AttackState : BaseGameState
 
     public override void Exit()
     {
+        PlayArea.Instance.OnAttackFinished -= PlayArea_OnAttackFinished;
         //Debug.Log("Exit attack state");
     }
 

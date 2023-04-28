@@ -29,6 +29,20 @@ public class BloodVial : MonoBehaviour
         hand.OnCardSummoned += Hand_OnCardSummoned;
     }
 
+    private void OnDisable()
+    {
+        if (!hand.BelongsToPlayer)
+        {
+            Enemy.Instance.OnEnemyHealthChanged -= Enemy_OnEnemyHealthChanged;
+        }
+        else
+        {
+            Player.Instance.OnPlayerHealthChanged -= Player_OnPlayerHealthChanged;
+        }
+
+        hand.OnCardSummoned -= Hand_OnCardSummoned;
+    }
+
     private void Player_OnPlayerHealthChanged(object sender, EventArgs e)
     {
         currentBlood = Player.Instance.GetBlood();
