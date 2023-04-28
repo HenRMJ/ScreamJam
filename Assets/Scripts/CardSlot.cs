@@ -11,14 +11,14 @@ public class CardSlot : MonoBehaviour
     public Transform Card { get; set; }
     public bool CanPlace { get; private set; }
     public bool CanMove { get; private set; }
+
+    [SerializeField] private Transform border;
+    [SerializeField] private Material mat;
     
     private Animator animator;
-
     private List<GameObject> validMovePositions = new List<GameObject>();
-
     private Hand playerHand;
     private GridManager gridManager;
-
     private Vector2Int cardSlotPosition;
     private bool inDecisionState;
 
@@ -131,12 +131,14 @@ public class CardSlot : MonoBehaviour
     private void ShowValidMovePositions()
     {
         if (Card == null) return;
-        if (Utils.GetTransformUnderCursor() != transform) return;
         
         if (Input.GetMouseButtonUp(1))
         {
+            if (Utils.GetTransformUnderCursor() != transform) return;
+
             CardData cardData = Card.GetComponent<CardData>();
 
+            if (!cardData.BelongsToPlayer()) return;
             if (!cardData.CanMove) return;
 
             selectedCard = Card;
@@ -304,7 +306,10 @@ public class CardSlot : MonoBehaviour
     // can replace with meshrenderer with an animation or material swap
     public void UpdateVisuals(bool updateValue)
     {
-        gameObject.GetComponentInChildren<MeshRenderer>().enabled = updateValue;
+        for (int i = 0; i < border.childCount; i++)
+        {
+            border.GetChild(i).GetComponent<MeshRenderer>().enabled = updateValue;
+        }
     }
 
     private void DecisionState_OnEnterDecisionState(object sender, EventArgs e)
@@ -321,5 +326,7 @@ public class CardSlot : MonoBehaviour
     {
         animator.SetBool("isMarked", isMarked);
     }
+
+    
     public Vector2Int GetCardSlotPosition() => cardSlotPosition;
 }

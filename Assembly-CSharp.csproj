@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\StateMachine\GameState\AttackState.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\GridManager.cs" />
+    <Compile Include="Assets\Scripts\BloodVial.cs" />
     <Compile Include="Assets\Scripts\StateMachine\GameState\StartRoundState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\DrawState.cs" />
     <Compile Include="Assets\Scripts\PauseScreen.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="Assets\PlayerControlAsset.cs" />
     <Compile Include="Assets\Scripts\UIOverlay.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
-    <Compile Include="Assets\Scripts\BloodVial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
