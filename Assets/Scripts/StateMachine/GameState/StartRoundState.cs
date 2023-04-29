@@ -15,23 +15,26 @@ public class StartRoundState : BaseGameState
     public override void Enter()
     {
         //Debug.Log("BEGIN StartRoundState");
+        PlayArea.Instance.OnAttackFinished += PlayArea_OnAttackFinished;
 
         TurnSystem.Instance.AttackedThisRound = false;
 
         // Find the player object, set its state to the first state in the game loop
         // TODO finding the player object like this is just a temprorary hack and should be replaced
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
-        Player player = playerObject.GetComponent<Player>();
-        playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
+        PlayerStateMachine playerStateMachine = Player.Instance.GetComponent<PlayerStateMachine>();
+        playerStateMachine.SwitchState(new DrawState(playerStateMachine, Player.Instance));
 
         TurnSystem.Instance.IsPlayersTurn = !TurnSystem.Instance.IsPlayersTurn;
 
         OnStartRound?.Invoke(this, EventArgs.Empty);
     }
 
+    
+
     public override void Tick()
     {
+        if (Player.Instance.GetComponent<PlayerStateMachine>().CurrentState.ToString() == "DrawState") return;
+
         if (TurnSystem.Instance.IsPlayersTurn)
         {
             if (Bell.Instance.CheckIfClickBell())
@@ -49,9 +52,9 @@ public class StartRoundState : BaseGameState
 
     private IEnumerator EnemyActions()
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        /*GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         PlayerStateMachine playerStateMachine = playerObject.GetComponent<PlayerStateMachine>();
-        Player player = playerObject.GetComponent<Player>();
+        Player player = playerObject.GetComponent<Player>();*/
 
         Utils.EnemyDrawACard();
 
@@ -71,19 +74,27 @@ public class StartRoundState : BaseGameState
         }
 
         yield return new WaitForSeconds(3f);
-        PlayArea.Instance.AllCardsAttack(false);
+        PlayArea.Instance.EnemyAttacks();
         //Debug.Log("enemey done");
 
-        stateMachine.SwitchState(new StartRoundState(stateMachine));
-        playerStateMachine.SwitchState(new DrawState(playerStateMachine, player));
-
-        isEnemysTurn = false;
+        
         yield return null;
     }
 
     public override void Exit()
     {
         //Debug.Log("END StartRoundState");
+        PlayArea.Instance.OnAttackFinished -= PlayArea_OnAttackFinished;
+    }
+
+    private void PlayArea_OnAttackFinished(object sender, EventArgs e)
+    {
+        PlayerStateMachine playerStateMachine = Player.Instance.GetComponent<PlayerStateMachine>();
+
+        stateMachine.SwitchState(new StartRoundState(stateMachine));
+        playerStateMachine.SwitchState(new DrawState(playerStateMachine, Player.Instance));
+
+        isEnemysTurn = false;
     }
 }
 

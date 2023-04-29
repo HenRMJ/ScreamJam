@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   borderMaterial: {fileID: 2100000, guid: b420f7455435db14ba7182ab2e7fe33c, type: 2}
   cardSlot: {fileID: -6255537859566248485}
+  animator: {fileID: 599108126284403096}
   animationSpeed: 0.2
   onColor: {r: 1, g: 1, b: 1, a: 0.30588236}
   offColor: {r: 1, g: 1, b: 1, a: 0.23137255}
