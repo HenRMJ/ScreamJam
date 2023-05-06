@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BloodVial : MonoBehaviour
 {
     [SerializeField] private Hand hand;
     [SerializeField] private Transform bloodLevel;
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private TextMeshProUGUI bloodLevelText;
 
     private int startingBlood;
     private int currentBlood;
@@ -27,6 +30,17 @@ public class BloodVial : MonoBehaviour
         }
 
         hand.OnCardSummoned += Hand_OnCardSummoned;
+
+    }
+
+    private void Update()
+    {
+        canvas.SetActive(false);
+
+        if (Utils.GetTransformUnderCursor() != transform) return;
+        
+        canvas.SetActive(true);
+        canvas.transform.forward = Camera.main.transform.forward;
     }
 
     private void OnDisable()
@@ -46,12 +60,14 @@ public class BloodVial : MonoBehaviour
     private void Player_OnPlayerHealthChanged(object sender, EventArgs e)
     {
         currentBlood = Player.Instance.GetBlood();
+        bloodLevelText.text = currentBlood.ToString();
         StartCoroutine(UpdateBloodLevel());
     }
 
     private void Enemy_OnEnemyHealthChanged(object sender, EventArgs e)
     {
         currentBlood = Enemy.Instance.Blood;
+        bloodLevelText.text = currentBlood.ToString();
         StartCoroutine(UpdateBloodLevel());
     }
 
