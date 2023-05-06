@@ -19,13 +19,13 @@ public class Deck : MonoBehaviour
 
     private void Awake()
     {
+        ShuffleCards();
         CreateCards();
     }
 
     private void Start()
     {
         Destroy(transform.GetChild(0).gameObject);
-        ShuffleCards();
     }
 
     private void CreateCards()
@@ -36,14 +36,17 @@ public class Deck : MonoBehaviour
         for (int i = 0; i < deckList.Count; i++)
         {
             Transform deckCard = Instantiate(deckList[i], i == 0 ? transform.position : instatiationPosition + offset, Quaternion.Euler(-90f, Random.Range(-rotationalOffset, rotationalOffset), 0), transform);
+
             CardData cardData = deckCard.GetComponent<CardData>();
             cardData.SetBelongsToPlayer(belongsToPlayer);
+
             if (!belongsToPlayer)
             {
                 Transform flipCard = cardData.transform.GetChild(0).transform;
 
                 flipCard.localRotation = Quaternion.Euler(90, 180, -90);
             }
+
             instatiationPosition = deckCard.position;
 
             instantiatedCardList.Add(deckCard);
