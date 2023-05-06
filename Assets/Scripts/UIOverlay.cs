@@ -99,6 +99,12 @@ public class UIOverlay : MonoBehaviour
             return;
         }
 
+        if (!cardData.BelongsToPlayer() && !cardData.InPlay)
+        {
+            descriptionUI.SetActive(false);
+            return;
+        }
+
         descriptionUI.SetActive(true);
     }
 }

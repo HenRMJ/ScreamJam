@@ -191,6 +191,7 @@ public class CardData : MonoBehaviour
     private void HoverInfo()
     {
         if (InDeck) return;
+        if (!InPlay && !belongsToPlayer) return;
 
         GameObject cursorCard = Utils.GetCardObjectUnderCursor();
 

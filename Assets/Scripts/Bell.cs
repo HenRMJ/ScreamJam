@@ -19,9 +19,9 @@ public class Bell : MonoBehaviour
     public bool CheckIfClickBell()
     {
         if (!TurnSystem.Instance.IsPlayersTurn) return false;
-        if (Utils.GetTransformUnderCursor() != transform) return false;
         if (Input.GetMouseButtonDown(0))
         {
+            if (Utils.GetTransformUnderCursor() != transform) return false;
             // Sound can go here
             AkSoundEngine.PostEvent("TurnBell", gameObject);
             return true;

@@ -30,10 +30,7 @@ public class PlaySummonSound : MonoBehaviour
         else
         {
             Enemy.Instance.OnEnemySummonedCard += Enemy_OnEnemySummonedCard;
-        }
-        
-
-        
+        }        
     }
 
     private void Enemy_OnEnemySummonedCard(object sender, Transform e)
@@ -64,7 +61,6 @@ public class PlaySummonSound : MonoBehaviour
         {
             Enemy.Instance.OnEnemySummonedCard -= Enemy_OnEnemySummonedCard;
         }
-        
     }
 
     private void OwnerHand_OnCardSummoned(object sender, Transform e)

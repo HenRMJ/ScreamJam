@@ -39,7 +39,7 @@ public class DrawState : BasePlayerState
         GameObject clicked = Utils.GetCardObjectUnderCursor();
         if (clicked != null)
         {
-            if(clicked.TryGetComponent(out CardData cardData))
+            if (clicked.TryGetComponent(out CardData cardData))
             {
                 if (!cardData.BelongsToPlayer()) return false;
 
