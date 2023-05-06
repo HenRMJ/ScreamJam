@@ -22,6 +22,7 @@ public class Bell : MonoBehaviour
         if (Utils.GetTransformUnderCursor() != transform) return false;
         if (Input.GetMouseButtonDown(0))
         {
+            // Sound can go here
             AkSoundEngine.PostEvent("TurnBell", gameObject);
             return true;
         }

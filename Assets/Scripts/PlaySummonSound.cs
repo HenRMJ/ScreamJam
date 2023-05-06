@@ -43,13 +43,13 @@ public class PlaySummonSound : MonoBehaviour
             switch (summondSound)
             {
                 case SummonSound.High:
-                    AkSoundEngine.PostEvent("Sum_MedMon", gameObject);
+                    AkSoundEngine.PostEvent("Sum_HighMon", gameObject);
                     break;
                 case SummonSound.Medium:
                     AkSoundEngine.PostEvent("Sum_MedMon", gameObject);
                     break;
                 case SummonSound.Low:
-                    AkSoundEngine.PostEvent("Sum_MedMon", gameObject);
+                    AkSoundEngine.PostEvent("Sum_LowMon", gameObject);
                     break;
             }
         }
@@ -74,13 +74,13 @@ public class PlaySummonSound : MonoBehaviour
             switch (summondSound)
             {
                 case SummonSound.High:
-                    AkSoundEngine.PostEvent("Sum_MedMon", gameObject);
+                    AkSoundEngine.PostEvent("Sum_HighMon", gameObject);
                     break;
                 case SummonSound.Medium:
                     AkSoundEngine.PostEvent("Sum_MedMon", gameObject);
                     break;
                 case SummonSound.Low:
-                    AkSoundEngine.PostEvent("Sum_MedMon", gameObject);
+                    AkSoundEngine.PostEvent("Sum_LowMon", gameObject);
                     break;
             }
         }

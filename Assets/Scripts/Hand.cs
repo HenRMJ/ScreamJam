@@ -169,7 +169,7 @@ public class Hand : MonoBehaviour
             if (!cardSlot.CanPlace) return;
 
             // This checks if we can summon a card with our sacrifices, and if we can it updates the card slots
-            // and the updates the player health, and destorys the cards, if not it just returns
+            // and it updates the player health, and destorys the cards, if not it just doesn't do it
             if (player.TrySummonCard(cardData.GetBloodCost() - CalculateSacrificedBlood()))
             {
 
@@ -189,6 +189,7 @@ public class Hand : MonoBehaviour
                     AkSoundEngine.PostEvent("SacrificeMonster", gameObject);
                     Destroy(card);
                 }
+
                 cardsToSacrifice.Clear();
             } else
             {

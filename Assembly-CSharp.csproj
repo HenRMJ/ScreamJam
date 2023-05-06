@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\StateMachine\State.cs" />
     <Compile Include="Assets\Scripts\FireSpell.cs" />
     <Compile Include="Assets\Scripts\CardSO.cs" />
+    <Compile Include="Assets\Scripts\CardSlotAnimations.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\SpellAction.cs" />
     <Compile Include="Assets\Scripts\CardType.cs" />
@@ -92,7 +93,6 @@
     <Compile Include="Assets\PlayerControlAsset.cs" />
     <Compile Include="Assets\Scripts\UIOverlay.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
-    <Compile Include="Assets\Scripts\CardSlotAnimations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

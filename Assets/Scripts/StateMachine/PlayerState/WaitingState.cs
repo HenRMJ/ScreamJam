@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 /// <summary>
 /// Class <c>WaitingState</c> is occurs when the player is waiting for the opponent to complete their turn.
@@ -6,10 +7,13 @@ using UnityEngine;
 /// </summary>
 public class WaitingState : BasePlayerState
 {
+    public static event EventHandler OnPlayerStartWaiting;
+
     public WaitingState(PlayerStateMachine stateMachine, Player player) : base(stateMachine, player) { }
 
     public override void Enter()
     {
+        OnPlayerStartWaiting?.Invoke(this, EventArgs.Empty);
         //Debug.Log($"BEGIN WaitingState for '{player}'");
     }
 

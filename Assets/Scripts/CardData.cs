@@ -219,5 +219,6 @@ public class CardData : MonoBehaviour
     public int GetDefenseValue() => defense;
     public bool BelongsToPlayer() => belongsToPlayer;
     public string GetCardUIDescription() => UIDescription;
+    public string GetCardName() => cardName;
     public int GetBloodCost() => bloodCost;
 }

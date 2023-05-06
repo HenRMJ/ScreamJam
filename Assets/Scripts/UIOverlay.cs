@@ -6,16 +6,16 @@ using System;
 
 public class UIOverlay : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI cardDescription, overlay, smallOverlay;
-    [SerializeField] private Animator animator;
+    [Header("TMP Card Stat Fields")]
+    [SerializeField] private TextMeshProUGUI nameField;
+    [SerializeField] private TextMeshProUGUI descriptionField;
+    [SerializeField] private TextMeshProUGUI attackField;
+    [SerializeField] private TextMeshProUGUI bloodCostField;
+    [SerializeField] private TextMeshProUGUI defenseField;
 
+    [SerializeField] private Animator animator;
     [SerializeField] private GameObject descriptionUI;
 
-    [SerializeField] private string draw, decision, attack;
-    [SerializeField] [TextArea(3,8)]
-    private string drawS, decisionS, attackS;
-
-    private bool overlayOn;
 
     // Start is called before the first frame update
     private void Start()
@@ -23,10 +23,7 @@ public class UIOverlay : MonoBehaviour
         CardData.OnAnyCardHover += CardData_OnAnyCardHover;
         DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
         DrawState.OnEnterDrawState += DrawState_OnEnterDrawState;
-
-        smallOverlay.text = string.Empty;
-        overlayOn = true;
-        smallOverlay.gameObject.SetActive(overlayOn);
+        WaitingState.OnPlayerStartWaiting += WaitingState_OnPlayerStartWaiting;
     }
 
     private void Update()
@@ -39,14 +36,13 @@ public class UIOverlay : MonoBehaviour
         CardData.OnAnyCardHover -= CardData_OnAnyCardHover;
         DecisionState.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
         DrawState.OnEnterDrawState -= DrawState_OnEnterDrawState;
+        WaitingState.OnPlayerStartWaiting -= WaitingState_OnPlayerStartWaiting;
     }
 
     private void DrawState_OnEnterDrawState(object sender, EventArgs e)
     {
         if (TurnSystem.Instance.IsPlayersTurn) return;
-        overlay.text = draw;
-        smallOverlay.text = drawS;
-        animator.SetTrigger("newState");
+        animator.SetTrigger("drawState");
     }
 
     private void DecisionState_OnEnterDecisionState(object sender, EventArgs e)
@@ -55,22 +51,34 @@ public class UIOverlay : MonoBehaviour
 
         if (TurnSystem.Instance.AttackedThisRound)
         {
-            overlay.text = attack;
-            smallOverlay.text = attackS;
+            animator.SetTrigger("postState");
         }
         else
         {
-            overlay.text = decision;
-            smallOverlay.text = decisionS;
+            animator.SetTrigger("mainState");
         }
+    }
 
-        animator.SetTrigger("newState");
+    private void WaitingState_OnPlayerStartWaiting(object sender, EventArgs e)
+    {
+        if (TurnSystem.Instance.IsPlayersTurn)
+        {
+            animator.SetTrigger("attackState");
+        } else
+        {
+            animator.SetTrigger("enemyState");
+        }
     }
 
     private void CardData_OnAnyCardHover(object sender, EventArgs e)
     {
         CardData cardData = (CardData)sender;
-        cardDescription.text = cardData.GetCardUIDescription();
+
+        nameField.text = cardData.GetCardName();
+        descriptionField.text = cardData.GetCardUIDescription();
+        attackField.text = cardData.GetAttackDamage().ToString();
+        defenseField.text = cardData.GetDefenseValue().ToString();
+        bloodCostField.text = cardData.GetBloodCost().ToString();
     }
 
     private void UpdateCardUI()
@@ -92,11 +100,5 @@ public class UIOverlay : MonoBehaviour
         }
 
         descriptionUI.SetActive(true);
-    }
-
-    public void ToggleText()
-    {
-        overlayOn = !overlayOn;
-        smallOverlay.gameObject.SetActive(overlayOn);
     }
 }
