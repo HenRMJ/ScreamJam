@@ -61,13 +61,11 @@ public class StartRoundState : BaseGameState
         //Debug.Log("Enemy draw, wait for move cards");
         yield return new WaitForSeconds(.4f);
 
-        Enemy.Instance.MoveCardsForward();
+        Enemy.Instance.MoveCards();
         //Debug.Log("Enemy moved, wait for TryToSelect");
         yield return new WaitForSeconds(1.5f);
 
-        Transform selectedCard = Enemy.Instance.TryToSetSelectedCard();
-        //Debug.Log("Enemy selected, wait for attack");
-        if (selectedCard != null)
+        if (Enemy.Instance.TryToSetSelectedCard(out Transform selectedCard))
         {
             OnEnemySelectedCard?.Invoke(this, selectedCard);
             Enemy.Instance.TryPlaceCard();

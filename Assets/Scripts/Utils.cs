@@ -16,7 +16,7 @@ public static class Utils
             )
         )
         {
-            return hitInfo.collider.gameObject; ;
+            return hitInfo.collider.gameObject;
         }
         else
         {

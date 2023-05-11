@@ -209,6 +209,7 @@ public class Hand : MonoBehaviour
                 cardData.CanMove = false;
 
                 cardData.MoveToPoint(cursorTransform.position, cursorTransform.rotation);
+                cardData.currentPosition = cursorTransform.GetComponent<CardSlot>().GetCardSlotPosition();
 
                 cardSlot.Card = selectedCard;
             } else

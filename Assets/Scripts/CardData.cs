@@ -16,6 +16,7 @@ public class CardData : MonoBehaviour
     public int PositionInHand { get; set; }
     public CardType Type { get; private set;}
     public CardGroup Group { get; private set; }
+    public Vector2Int currentPosition { get; set; }
 
     [SerializeField] private CardSO card;
 
@@ -106,15 +107,9 @@ public class CardData : MonoBehaviour
         if (MarkedAsSacrifice) return;
         if (Type == CardType.Spell) return;
 
-        int rowDiedOn = 0;
+        int rowDiedOn = currentPosition.y;
 
-        foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
-        {
-            if (cardSlot.Card == transform)
-            {
-                rowDiedOn = cardSlot.GetCardSlotPosition().y;
-            }
-        }
+        Debug.Log("Card Died on row" + rowDiedOn);
 
         if (belongsToPlayer)
         {
@@ -127,14 +122,14 @@ public class CardData : MonoBehaviour
             }
         } else
         {
-            int enemyHomeRow = GridManager.Instance.GetGridDimensions().y;
+            int enemyHomeRow = GridManager.Instance.GetGridDimensions().y - 1;
 
             if (rowDiedOn == enemyHomeRow || rowDiedOn == enemyHomeRow - 1)
             {
-                Enemy.Instance.Heal(bloodCost);
+                Enemy.Instance.SetBlood(bloodCost);
             } else
             {
-                Enemy.Instance.Heal(Mathf.RoundToInt(bloodCost / 2));
+                Enemy.Instance.SetBlood(Mathf.RoundToInt(bloodCost / 2));
             }
         }
 

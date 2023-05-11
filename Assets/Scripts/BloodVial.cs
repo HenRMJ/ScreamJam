@@ -20,7 +20,7 @@ public class BloodVial : MonoBehaviour
         if (!hand.BelongsToPlayer)
         {
             Enemy.Instance.OnEnemyHealthChanged += Enemy_OnEnemyHealthChanged;
-            startingBlood = Enemy.Instance.Blood;
+            startingBlood = Enemy.Instance.GetBlood();
             currentBlood = startingBlood;
         } else
         {
@@ -66,7 +66,7 @@ public class BloodVial : MonoBehaviour
 
     private void Enemy_OnEnemyHealthChanged(object sender, EventArgs e)
     {
-        currentBlood = Enemy.Instance.Blood;
+        currentBlood = Enemy.Instance.GetBlood();
         bloodLevelText.text = currentBlood.ToString();
         StartCoroutine(UpdateBloodLevel());
     }

@@ -3,86 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Enemy : MonoBehaviour
+public class Enemy : EnemyBase
 {
-    public static Enemy Instance;
-
-    public event EventHandler OnEnemyDied;
-    public event EventHandler<Transform> OnEnemySummonedCard;
-    public event EventHandler OnEnemyHealthChanged;
-
-    [SerializeField] private int blood;
-    [SerializeField] private Hand hand;
-
-    private List<CardSlot> possiblePlacements = new List<CardSlot>();
-    private Transform selectedCard;
-
-    public int Blood { get; set; }
-
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Debug.LogError("You have another enemy in your scene");
-            return;
-        }
-        Instance = this;
-
-        Blood = blood;
-    }
-
-    private void Start()
-    {
-        PlayArea.Instance.OnAttackFinished += PlayArea_OnAttackFinished;
-        CardSlot.OnCanBePlaced += CardSlot_OnCanBePlaced;
-    }
-
-    private void OnDisable()
-    {
-        PlayArea.Instance.OnAttackFinished -= PlayArea_OnAttackFinished;
-        CardSlot.OnCanBePlaced -= CardSlot_OnCanBePlaced;
-        StopAllCoroutines();
-    }
-
-    private void CardSlot_OnCanBePlaced(object sender, EventArgs e)
-    {
-        possiblePlacements.Add(sender as CardSlot);
-    }
-
-    private void PlayArea_OnAttackFinished(object sender, EventArgs e)
-    {
-        if (Blood <= 0)
-        {
-            OnEnemyDied?.Invoke(this, EventArgs.Empty);
-        } else
-        {
-            OnEnemyHealthChanged?.Invoke(this, EventArgs.Empty);
-        }
-    }
-
-    public Transform TryToSetSelectedCard()
+    public override bool TryToSetSelectedCard(out Transform cardToSelect)
     {
         int highestBloodCost = 0;
-        Transform cardToSelect = null;
+        cardToSelect = null;
 
         foreach (Transform card in hand.GetCardsInHand())
         {
             CardData cardData = card.GetComponent<CardData>();
             int cardBloodCost = cardData.GetBloodCost();
 
-            if (cardBloodCost > highestBloodCost && cardBloodCost < Blood)
+            if (cardBloodCost > highestBloodCost && cardBloodCost < blood)
             {
                 cardToSelect = card;
                 highestBloodCost = cardBloodCost;
             }
         }
 
-        if (cardToSelect == null) return null;
+        if (cardToSelect == null) return false;
         selectedCard = cardToSelect;
-        return cardToSelect;
+        return true;
     }
 
-    public void TryPlaceCard()
+    public override void TryPlaceCard()
     {
         if (possiblePlacements.Count == 0)
         {
@@ -100,7 +45,7 @@ public class Enemy : MonoBehaviour
         CardData cardData = cardToSelect.GetComponent<CardData>();
 
         hand.GetCardsInHand().Remove(selectedCard);
-        OnEnemySummonedCard?.Invoke(this, selectedCard);
+        CallEnemySummonedCard();
 
         selectedCard.parent = null;
 
@@ -109,11 +54,12 @@ public class Enemy : MonoBehaviour
         cardData.InPlay = true;
         cardData.CanMove = false;
 
-        Blood -= cardData.GetBloodCost();
-        OnEnemyHealthChanged?.Invoke(this, EventArgs.Empty);
+        blood -= cardData.GetBloodCost();
+        CallEnemyHealthChanged();
 
         cardData.MoveToPoint(randomCardSlot.transform.position, randomCardSlot.transform.rotation);
         randomCardSlot.Card = selectedCard;
+        cardData.currentPosition = randomCardSlot.GetCardSlotPosition();
 
         hand.SetSelectedCard(null);
         hand.SetIsCardSelected(false);
@@ -121,7 +67,7 @@ public class Enemy : MonoBehaviour
         selectedCard = null;
     }
 
-    public void MoveCardsForward()
+    public override void MoveCards()
     {
         foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
         {
@@ -183,6 +129,7 @@ public class Enemy : MonoBehaviour
 
                     cardData.MoveToPoint(movePosition.transform.position, movePosition.transform.rotation);
                     cardData.CanMove = false;
+                    cardData.currentPosition = movePosition.GetCardSlotPosition();
 
                     movePosition.Card = cardSlot.Card;
 
@@ -199,6 +146,7 @@ public class Enemy : MonoBehaviour
 
                     cardData.MoveToPoint(slot.transform.position, slot.transform.rotation);
                     cardData.CanMove = false;
+                    cardData.currentPosition = slot.GetCardSlotPosition();
 
                     slot.Card = cardSlot.Card;
 
@@ -207,12 +155,4 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
-    public void Heal(int healAmount)
-    {
-        Blood += healAmount;
-        OnEnemyHealthChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public Hand GetHand() => hand;
 }

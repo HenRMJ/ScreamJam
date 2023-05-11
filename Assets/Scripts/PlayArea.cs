@@ -63,7 +63,7 @@ public class PlayArea : MonoBehaviour
                         // Enemy gets attacked right here
                         if (attackingPosition == null)
                         {
-                            Enemy.Instance.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
+                            Enemy.Instance.SetBlood(-(cardData.GetAttackDamage() * avatarMultipilier));
                             yield return new WaitForSeconds(1f);
                             continue;
                         }
@@ -80,7 +80,7 @@ public class PlayArea : MonoBehaviour
                             // Enemy gets attacked here
                             if (attackingSecondPosition == null)
                             {
-                                Enemy.Instance.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
+                                Enemy.Instance.SetBlood(-(cardData.GetAttackDamage() * avatarMultipilier));
                                 yield return new WaitForSeconds(1f);
                                 continue;
                             }
@@ -101,9 +101,10 @@ public class PlayArea : MonoBehaviour
                             if (cardData.GetAttackDamage() >= secondDefendingCard.GetDefenseValue())
                             {
                                 OnSlotAttacked?.Invoke(this, secondSlotToAttack.transform);
-                                secondSlotToAttack.Card = null;
+                                
                                 AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                                 Destroy(secondDefendingCard.gameObject);
+                                secondSlotToAttack.Card = null;
                                 yield return new WaitForSeconds(.1f);
                             }
                         }
@@ -121,9 +122,10 @@ public class PlayArea : MonoBehaviour
                         if (cardData.GetAttackDamage() >= defendingCard.GetDefenseValue())
                         {
                             OnSlotAttacked?.Invoke(this, slotToAttack.transform);
-                            slotToAttack.Card = null;
+                            
                             AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                             Destroy(defendingCard.gameObject);
+                            slotToAttack.Card = null;
                             yield return new WaitForSeconds(.1f);
                         }
 
@@ -134,7 +136,7 @@ public class PlayArea : MonoBehaviour
 
                         if (defaultAttackingPosition == null)
                         {
-                            Enemy.Instance.Blood -= cardData.GetAttackDamage() * avatarMultipilier;
+                            Enemy.Instance.SetBlood(-(cardData.GetAttackDamage() * avatarMultipilier));
                             yield return new WaitForSeconds(1f);
                             continue;
                         }
@@ -155,9 +157,10 @@ public class PlayArea : MonoBehaviour
                         if (cardData.GetAttackDamage() >= defaultDefendingCard.GetDefenseValue())
                         {
                             OnSlotAttacked?.Invoke(this, defaultSlotToAttack.transform);
-                            defaultSlotToAttack.Card = null;
+                            
                             AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                             Destroy(defaultDefendingCard.gameObject);
+                            defaultSlotToAttack.Card = null;
                             yield return new WaitForSeconds(.1f);
                         }
 
@@ -214,9 +217,10 @@ public class PlayArea : MonoBehaviour
                             if (cardData.GetAttackDamage() >= secondDefendingCard.GetDefenseValue())
                             {
                                 OnSlotAttacked?.Invoke(this, secondSlotToAttack.transform);
-                                secondSlotToAttack.Card = null;
+                                
                                 AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                                 Destroy(secondDefendingCard.gameObject);
+                                secondSlotToAttack.Card = null;
                                 yield return new WaitForSeconds(.1f);
                             }
                         }
@@ -233,9 +237,10 @@ public class PlayArea : MonoBehaviour
                         if (cardData.GetAttackDamage() >= defendingCard.GetDefenseValue())
                         {
                             OnSlotAttacked?.Invoke(this, slotToAttack.transform);
-                            slotToAttack.Card = null;
+                      
                             AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                             Destroy(defendingCard.gameObject);
+                            slotToAttack.Card = null;
                             yield return new WaitForSeconds(.1f);
                         }
 
@@ -266,9 +271,10 @@ public class PlayArea : MonoBehaviour
                         if (cardData.GetAttackDamage() >= defaultDefendingCard.GetDefenseValue())
                         {
                             OnSlotAttacked?.Invoke(this, defaultSlotToAttack.transform);
-                            defaultSlotToAttack.Card = null;
+                            
                             AkSoundEngine.PostEvent("MonsterAttack", gameObject);
                             Destroy(defaultDefendingCard.gameObject);
+                            defaultSlotToAttack.Card = null;
                             yield return new WaitForSeconds(.1f);
                         }
 

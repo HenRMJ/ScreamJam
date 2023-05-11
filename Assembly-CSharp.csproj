@@ -53,7 +53,7 @@
     <UnityVersion>2021.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\StateMachine\GameState\BaseGameState.cs" />
@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\GridManager.cs" />
     <Compile Include="Assets\Scripts\BloodVial.cs" />
     <Compile Include="Assets\Scripts\StateMachine\GameState\StartRoundState.cs" />
+    <Compile Include="Assets\Scripts\EnemyBase.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\DrawState.cs" />
     <Compile Include="Assets\Scripts\PauseScreen.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
@@ -90,7 +91,7 @@
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\CardSlot.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\BasePlayerState.cs" />
-    <Compile Include="Assets\PlayerControlAsset.cs" />
+    <Compile Include="Assets\Player Input\PlayerControlAsset.cs" />
     <Compile Include="Assets\Scripts\UIOverlay.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
   </ItemGroup>
