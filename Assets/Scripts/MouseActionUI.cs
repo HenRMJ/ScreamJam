@@ -112,7 +112,8 @@ public class MouseActionUI : MonoBehaviour
             }
 
             if (!Player.Instance.CanSummon &&
-                hand.GetCardIsSelected())
+                hand.GetCardIsSelected() &&
+                hand.GetSelectedCard().GetComponent<CardData>().Type == CardType.Monster)
             {
                 UIgameObject.SetActive(false);
                 return;

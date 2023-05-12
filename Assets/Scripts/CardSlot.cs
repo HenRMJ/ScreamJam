@@ -261,7 +261,11 @@ public class CardSlot : MonoBehaviour
         UpdateVisuals(false);
         OnCardVisualUpdate?.Invoke(this, false);
         validMovePositions.Clear();
-        selectedCard = null;
+        foreach(CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
+        {
+            cardSlot.UpdateSacrificeVisual(false);
+        }
+        // selectedCard = null;
     }
 
     private void PlayerHand_OnCardSelected(object hand, EventArgs e)
@@ -337,13 +341,13 @@ public class CardSlot : MonoBehaviour
     private void DecisionState_OnExitDecisionState(object sender, EventArgs e)
     {
         inDecisionState = false;
+        UpdateVisuals(false);
     }
 
     public void UpdateSacrificeVisual(bool isMarked)
     {
         animator.SetBool("isMarked", isMarked);
     }
-
     
     public Vector2Int GetCardSlotPosition() => cardSlotPosition;
 }
