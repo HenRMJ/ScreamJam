@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: Forgotten
+  m_Name: The Forgotten
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 48bf7684d0c986641aaf513708995b23, type: 2}
   loreBlurb: Forever Suffering
-  UIDescription: 'ATK: 3
+  UIDescription: 'Attack Range: 1
 
-    DEF: 3
+    Can move diagonally
 
 
-    The Forgotten Demon is ... '
+    A cursed creature
+    that was abandoned by its own kind. Its body constantly decays and regenerates,
+    causing it to be in a state of eternal suffering. Its thirst for revenge against
+    those who abandoned it fuels its power.'
   cardType: 0
   cardGroup: 0
   bloodCost: 30

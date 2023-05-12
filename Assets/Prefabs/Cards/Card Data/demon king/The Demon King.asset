@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: demon king
+  m_Name: The Demon King
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 51291a60c76fd1947a808475f853c837, type: 2}
   loreBlurb: All hail
-  UIDescription: 'ATK: 12
+  UIDescription: 'Attack Range: 2
 
-    DEF: 11
+    Cannot move diagonally
+
+    Cannot be summoned
+    on the second row
 
 
-    Something about a king idk...'
+    Ruler of the demonic realm, a tyrant of untold power,
+    bringing chaos and destruction to all who stand in their way.'
   cardType: 0
   cardGroup: 2
   bloodCost: 200

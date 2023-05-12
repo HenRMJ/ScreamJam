@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: Screamer
+  m_Name: The Howler
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: f92f7c8fed985824aa2ebd3d965eaf00, type: 2}
   loreBlurb: Siren
-  UIDescription: 'ATK: 8
+  UIDescription: 'Attack Range: 1
 
-    DEF: 7
+    Cannot move diagonally
 
 
-    Screams that will make you go mad'
+    A demon trapped
+    in the pits of hell, screams with such ferocity that it can ignite even the strongest
+    of flames. Its power can be harnessed, but beware the cost of unleashing such
+    a fearsome creature.'
   cardType: 0
   cardGroup: 1
   bloodCost: 100

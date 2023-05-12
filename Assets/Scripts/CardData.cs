@@ -109,7 +109,7 @@ public class CardData : MonoBehaviour
 
         int rowDiedOn = currentPosition.y;
 
-        Debug.Log("Card Died on row" + rowDiedOn);
+        Debug.Log("Card Died on row " + rowDiedOn);
 
         if (belongsToPlayer)
         {
@@ -211,6 +211,8 @@ public class CardData : MonoBehaviour
         this.belongsToPlayer = belongsToPlayer;
     }
 
+
+    public Hand GetHand() => hand;
     public int GetAttackDamage() => attack;
     public int GetDefenseValue() => defense;
     public bool BelongsToPlayer() => belongsToPlayer;

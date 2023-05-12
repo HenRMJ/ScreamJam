@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: Crawler
+  m_Name: The Scavenger
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 24be3390c48da464f9ff3610d4d0c887, type: 2}
   loreBlurb: Hunt to kill
-  UIDescription: 'ATK: 5
+  UIDescription: 'Attack Range: 1
 
-    DEF: 3
+    Cannot move diagonally
 
 
-    On the...'
+    A demon that
+    lurks in the shadows, searching for any scraps of power it can find. It roams
+    the forests, scavenging for the remains of other demon''s rituals, and absorbing
+    any residual energies left behind.'
   cardType: 0
   cardGroup: 1
   bloodCost: 50

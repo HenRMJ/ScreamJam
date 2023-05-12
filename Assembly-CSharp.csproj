@@ -94,6 +94,7 @@
     <Compile Include="Assets\Player Input\PlayerControlAsset.cs" />
     <Compile Include="Assets\Scripts\UIOverlay.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
+    <Compile Include="Assets\Scripts\MouseActionUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -119,7 +120,7 @@
     <None Include="Assets\StreamingAssets\desc.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties_HLSL.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\ProjectInfo.xml" />
   </ItemGroup>

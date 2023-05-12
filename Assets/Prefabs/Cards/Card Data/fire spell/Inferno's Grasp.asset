@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: fire spell
+  m_Name: Inferno's Grasp
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 2bea548b43471614c8d8d0b6cf4e44df, type: 2}
   loreBlurb: Burn them all
-  UIDescription: Instantly destory any enemy on the field without returning blood
-    to its summoner
+  UIDescription: 'Instantly destory any enemy on the field without returning blood
+    to its summoner.
+
+
+    A powerful manifestation of the demon lord''s wrath. When
+    cast, the flames of the inferno reach out and devour all that stands in their
+    way, leaving nothing but ash in their wake.'
   cardType: 1
   cardGroup: 0
   bloodCost: 80

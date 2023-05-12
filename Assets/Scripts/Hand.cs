@@ -143,15 +143,14 @@ public class Hand : MonoBehaviour
     public void PlaceCard()
     {
         if (!cardIsSelected) return;
-
-        Transform cursorTransform = Utils.GetTransformUnderCursor();
-
-        if (cursorTransform == null) return;
-        if (!cursorTransform.TryGetComponent(out CardSlot cardSlot)) return;
-              
         
         if (Input.GetMouseButtonDown(0))
         {
+            Transform cursorTransform = Utils.GetTransformUnderCursor();
+
+            if (cursorTransform == null) return;
+            if (!cursorTransform.TryGetComponent(out CardSlot cardSlot)) return;
+
             CardData cardData = selectedCard.GetComponent<CardData>();
 
             if (cardData.Type == CardType.Monster && !player.CanSummon)
@@ -209,7 +208,7 @@ public class Hand : MonoBehaviour
                 cardData.CanMove = false;
 
                 cardData.MoveToPoint(cursorTransform.position, cursorTransform.rotation);
-                cardData.currentPosition = cursorTransform.GetComponent<CardSlot>().GetCardSlotPosition();
+                cardData.currentPosition = cardSlot.GetCardSlotPosition();
 
                 cardSlot.Card = selectedCard;
             } else

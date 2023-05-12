@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: -4927487406205136239}
   m_Layer: 6
   m_Name: fire spella
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

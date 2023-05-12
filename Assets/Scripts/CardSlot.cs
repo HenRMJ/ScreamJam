@@ -107,16 +107,16 @@ public class CardSlot : MonoBehaviour
 
     private void MoveSelectedCardToValidPosition()
     {
-        if (selectedCard == null) return;
-        if (validMovePositions.Count == 0) return;
-
-        Transform cardSlotTransformToMoveTo = Utils.GetTransformUnderCursor();
-
-        if (!validMovePositions.Contains(cardSlotTransformToMoveTo.gameObject)) return;
-        if (Card != selectedCard) return;
-
         if (Input.GetMouseButtonDown(0))
         {
+            if (selectedCard == null) return;
+            if (validMovePositions.Count == 0) return;
+
+            Transform cardSlotTransformToMoveTo = Utils.GetTransformUnderCursor();
+
+            if (!validMovePositions.Contains(cardSlotTransformToMoveTo.gameObject)) return;
+            if (Card != selectedCard) return;
+
             Card = null;
             CardSlot cardSlot = cardSlotTransformToMoveTo.GetComponent<CardSlot>();
             cardSlot.Card = selectedCard;

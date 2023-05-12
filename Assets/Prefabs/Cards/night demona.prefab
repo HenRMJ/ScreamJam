@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 2839639654681408877}
   m_Layer: 6
   m_Name: night demona
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +200,6 @@ MonoBehaviour:
   cardMeshRenderer: {fileID: 5809160254841068263}
   speed: 5
   hoverOffset: {x: 0, y: 0.04, z: 0.04}
-  belongsToPlayer: 1
 --- !u!65 &-5935286169467110996
 BoxCollider:
   m_ObjectHideFlags: 0

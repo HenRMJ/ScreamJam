@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: f320699a2000ce14cae2df8750c7b163, type: 2}
   loreBlurb: Lurking in the shadows
-  UIDescription: 'ATK: 6
+  UIDescription: 'Attack Range: 1
 
-    DEF: 5
+    Can move diagonally
 
 
-    The Abyss Crawler prays on...'
+    A terrifying demon
+    that lurks in the shadows of the underworld, waiting for its next victim to cross
+    its path. Its razor-sharp claws and insatiable hunger for blood make it a formidable
+    opponent.'
   cardType: 0
   cardGroup: 0
   bloodCost: 75

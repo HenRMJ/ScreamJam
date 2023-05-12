@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 258c5c1190d00ab4cae0a9a4df96f9b6, type: 2}
   loreBlurb: Dragged to hell
-  UIDescription: 'ATK: 4
+  UIDescription: 'Attack Range: 1
 
-    DEF: 4
+    Cannot move diagonally
 
 
-    Pull your enemies to the same low...'
+    Whispers of ancient
+    curses echo through the decaying limbs, as they claw their way out of the earth.
+    Those who fall victim to their grasp are consumed by the despair that festers
+    within them.'
   cardType: 0
   cardGroup: 1
   bloodCost: 75

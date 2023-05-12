@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 324b581823f55894b918023727968130, type: 2}
   loreBlurb: In your dreams
-  UIDescription: 'ATK: 10
+  UIDescription: 'Attack Range: 1
 
-    DEF: 10
+    Can move diagonally
 
 
-    It wasn''t a dream...'
+    A creature that
+    haunts the darkest corners of the mind. It appears in the realm of dreams, unleashing
+    its fiery wrath upon any who dare to disturb its slumber.'
   cardType: 0
   cardGroup: 0
   bloodCost: 150
