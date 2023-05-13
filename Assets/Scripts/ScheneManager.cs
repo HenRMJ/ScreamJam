@@ -6,41 +6,48 @@ using UnityEngine.SceneManagement;
 
 public class ScheneManager : MonoBehaviour
 {
+    [SerializeField] private string[] gameScenes;
+
     // Start is called before the first frame update
     private void Start()
     {
-        if (SceneManager.GetSceneByBuildIndex(0) == SceneManager.GetActiveScene())
+        foreach (string sceneName in gameScenes)
         {
-            Enemy.Instance.OnEnemyDied += Enemy_OnEnemyDied;
-            Player.Instance.OnPlayerDied += Player_OnPlayerDied;
+            if (SceneManager.GetActiveScene().name == sceneName)
+            {
+                Enemy.Instance.OnEnemyDied += Enemy_OnEnemyDied;
+                Player.Instance.OnPlayerDied += Player_OnPlayerDied;
+                break;
+            }
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Application.Quit();
-        }
+        if (Input.GetKeyDown(KeyCode.Q)) Application.Quit();
     }
 
     private void OnDisable()
     {
-        if (SceneManager.GetSceneByBuildIndex(0) == SceneManager.GetActiveScene())
+        foreach (string sceneName in gameScenes)
         {
-            Enemy.Instance.OnEnemyDied -= Enemy_OnEnemyDied;
-            Player.Instance.OnPlayerDied -= Player_OnPlayerDied;
+            if (SceneManager.GetActiveScene().name == sceneName)
+            {
+                Enemy.Instance.OnEnemyDied -= Enemy_OnEnemyDied;
+                Player.Instance.OnPlayerDied -= Player_OnPlayerDied;
+                break;
+            }
         }
     }
 
     private void Enemy_OnEnemyDied(object sender, EventArgs e)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Win");
     }
 
     private void Player_OnPlayerDied(object sender, EventArgs e)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Death");
     }
 
     public void ReturnToGame()

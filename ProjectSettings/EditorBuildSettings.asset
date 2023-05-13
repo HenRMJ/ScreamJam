@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Programming.unity
+    path: Assets/Scenes/Easy.unity
     guid: 9a445bfd89021144497580ae89aea829
   - enabled: 1
     path: Assets/Scenes/Win.unity
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Death.unity
     guid: a312a75df2c11d843946533bf55d0474
+  - enabled: 1
+    path: Assets/Scenes/Passive.unity
+    guid: d0d523f0b2877d748a6959c80b023606
   m_configObjects: {}

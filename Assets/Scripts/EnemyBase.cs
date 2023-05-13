@@ -16,6 +16,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected List<CardSlot> possiblePlacements = new List<CardSlot>();
     protected Transform selectedCard;
+    protected List<CardData> playerCardsInPlay = new List<CardData>();
 
     protected void Awake()
     {
@@ -77,6 +78,35 @@ public abstract class EnemyBase : MonoBehaviour
         blood += amountToChange;
         OnEnemyHealthChanged?.Invoke(this, EventArgs.Empty);
     }
+
+    protected void GetPlayerCards()
+    {
+        playerCardsInPlay.Clear();
+
+        foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
+        {
+            if (cardSlot.Card == null) continue;
+            if (!cardSlot.CardBelongsToPlayer()) continue;
+
+            CardData playerCardData = cardSlot.Card.GetComponent<CardData>();
+
+            playerCardsInPlay.Add(playerCardData);
+        }
+    }
+
+    protected void CheckIfSlotIsValid(GameObject slot, List<CardSlot> possibleSlots)
+    {
+        if (slot != null)
+        {
+            CardSlot cardSlot = slot.GetComponent<CardSlot>();
+
+            if (cardSlot.Card == null)
+            {
+                possibleSlots.Add(cardSlot);
+            }
+        }
+    }
+
     public int GetBlood() => blood;
     public Hand GetHand() => hand;
 }

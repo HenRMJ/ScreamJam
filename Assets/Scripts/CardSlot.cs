@@ -123,7 +123,7 @@ public class CardSlot : MonoBehaviour
             CardData cardData = cardSlot.Card.GetComponent<CardData>();
             cardData.CanMove = false;
             cardData.MoveToPoint(cardSlotTransformToMoveTo.position, cardSlotTransformToMoveTo.rotation);
-            cardData.currentPosition = cardSlotPosition;
+            cardData.currentPosition = cardSlot.cardSlotPosition;
 
             validMovePositions.Clear();
             selectedCard = null;
