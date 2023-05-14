@@ -93,6 +93,5 @@ public class Player : MonoBehaviour
     }
 
     public int GetBlood() => blood;
-
-    
+    public Hand GetPlayerHand() => playerHand;
 }

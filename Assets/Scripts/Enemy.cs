@@ -22,7 +22,20 @@ public class Enemy : EnemyBase
             }
         }
 
-        if (cardToSelect == null) return false;
+        Hand playerHand = Player.Instance.GetPlayerHand();
+
+        if (cardToSelect == null)
+        {
+            if (!playerHand.CanSummonAMonster() &&
+                !playerHand.CanCastASpell() &&
+                playerHand.GetDeck().GetNumberOfCardsInDeck() <= 0 &&
+                !GridManager.Instance.ThereAreCardsInPlay())
+            {
+                DeclareStalemate();
+            }
+
+            return false; 
+        }
         selectedCard = cardToSelect;
         return true;
     }
@@ -84,41 +97,13 @@ public class Enemy : EnemyBase
             switch (cardData.Group)
             {
                 case CardGroup.A:
-                    GameObject leftObject = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1);
+                    CardSlot leftSlot = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1);
+                    CardSlot centerSlot = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
+                    CardSlot rightSlot = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1);
 
-                    if (leftObject != null)
-                    {
-                        CardSlot leftSlot = leftObject.GetComponent<CardSlot>();
-
-                        if (leftSlot.Card == null)
-                        {
-                            possiblePositions.Add(leftSlot);
-                        }
-                    }
-
-                    GameObject centerObject = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
-
-                    if (centerObject != null)
-                    {
-                        CardSlot centerSlot = centerObject.GetComponent<CardSlot>();
-
-                        if (centerSlot.Card == null)
-                        {
-                            possiblePositions.Add(centerSlot);
-                        }
-                    }
-
-                    GameObject rightObject = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1);
-
-                    if (rightObject != null)
-                    {
-                        CardSlot rightSlot = rightObject.GetComponent<CardSlot>();
-
-                        if (rightSlot.Card == null)
-                        {
-                            possiblePositions.Add(rightSlot);
-                        }
-                    }
+                    CheckIfSlotIsValid(leftSlot, possiblePositions);
+                    CheckIfSlotIsValid(centerSlot, possiblePositions);
+                    CheckIfSlotIsValid(rightSlot, possiblePositions);
 
                     if (possiblePositions.Count == 0) continue;
 
@@ -136,12 +121,9 @@ public class Enemy : EnemyBase
                     cardSlot.Card = null;
                     break;
                 default:
-                    GameObject checkSlotObject = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
+                    CardSlot slot = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
 
-                    if (checkSlotObject == null) continue;
-
-                    CardSlot slot = checkSlotObject.GetComponent<CardSlot>();
-
+                    if (slot == null) continue;
                     if (slot.Card != null) continue;
 
                     cardData.MoveToPoint(slot.transform.position, slot.transform.rotation);

@@ -47,6 +47,7 @@ public class Hand : MonoBehaviour
 
             if (cardData.InDeck) return;
             if (cardData.InPlay) return;
+            if (!cardData.BelongsToPlayer()) return;
 
             AkSoundEngine.PostEvent("SelectCard", gameObject);
 
@@ -269,7 +270,7 @@ public class Hand : MonoBehaviour
     {
         if (!cardIsSelected)
         {
-            Debug.LogWarning("There is no card selected");
+            // Debug.LogWarning("There is no card selected");
             return null;
         }
 
@@ -288,6 +289,47 @@ public class Hand : MonoBehaviour
         selectedCard = card;
     }
 
+    public bool CanSummonAMonster()
+    {
+        bool canSummon = false;
+
+        foreach (Transform card in cardsInHand)
+        {
+            CardData cardData = card.GetComponent<CardData>();
+
+            if (cardData.Type != CardType.Monster) continue;
+
+            if (cardData.GetBloodCost() < Player.Instance.GetBlood())
+            {
+                canSummon = true;
+                break;
+            }
+        }
+
+        return canSummon;
+    }
+
+    public bool CanCastASpell()
+    {
+        bool canSummon = false;
+
+        foreach (Transform card in cardsInHand)
+        {
+            CardData cardData = card.GetComponent<CardData>();
+
+            if (cardData.Type != CardType.Spell) continue;
+
+            if (cardData.GetBloodCost() < Player.Instance.GetBlood())
+            {
+                canSummon = true; 
+                break;
+            }
+        }
+
+        return canSummon;
+    }
+
+    public Deck GetDeck() => deck;
     public bool GetCardIsSelected() => cardIsSelected;
     public List<Transform> GetCardsInHand() => cardsInHand;
     public Vector3 GetPositionInHand(int i) => cardPositions[i];

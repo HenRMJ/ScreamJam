@@ -17,7 +17,6 @@ public class AttackState : BaseGameState
 
     private void PlayArea_OnAttackFinished(object sender, EventArgs e)
     {
-        //
         PlayerStateMachine playerStateMachine = Player.Instance.gameObject.GetComponent<PlayerStateMachine>();
 
         playerStateMachine.SwitchState(new DecisionState(playerStateMachine, Player.Instance));

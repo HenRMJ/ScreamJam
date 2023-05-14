@@ -82,12 +82,12 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public GameObject CardAt(int x, int y)
+    public CardSlot CardAt(int x, int y)
     {
         return CardAt(new Vector2Int(x,y));
     }
 
-    public GameObject CardAt(Vector2Int coordinates)
+    public CardSlot CardAt(Vector2Int coordinates)
     {
         if ((coordinates.x < 0 || coordinates.x >= _gridDimensions.x)
             || (coordinates.x < 0 || coordinates.x >= _gridDimensions.x))
@@ -97,7 +97,23 @@ public class GridManager : MonoBehaviour
             || (coordinates.y < 0 || coordinates.y >= _gridDimensions.y))
             return null;
 
-        return _cardSlots[coordinates.x, coordinates.y];
+        return _cardSlots[coordinates.x, coordinates.y].GetComponent<CardSlot>();
+    }
+
+    public bool ThereAreCardsInPlay()
+    {
+        bool cardsInPlay = false;
+
+        foreach(CardSlot cardSlot in AllCardSlots)
+        {
+            if (cardSlot.Card != null)
+            {
+                cardsInPlay = true;
+                break;
+            }
+        }
+
+        return cardsInPlay;
     }
 
     public List<CardSlot> GetAllCardSlots() => AllCardSlots;

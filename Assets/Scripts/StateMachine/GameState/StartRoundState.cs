@@ -11,7 +11,6 @@ public class StartRoundState : BaseGameState
 
     private bool isEnemysTurn = false;
 
-
     public override void Enter()
     {
         //Debug.Log("BEGIN StartRoundState");

@@ -11,6 +11,8 @@ public class DrawState : BasePlayerState
 
     public DrawState(PlayerStateMachine stateMachine, Player player) : base(stateMachine, player) { }
 
+    private bool switchedStatesBecauseOfCard = false;
+
     public override void Enter()
     {
         OnEnterDrawState?.Invoke(this, EventArgs.Empty);
@@ -19,6 +21,8 @@ public class DrawState : BasePlayerState
 
     public override void Tick()
     {
+        int numberOfCardsInDeck = Player.Instance.GetPlayerHand().GetDeck().GetNumberOfCardsInDeck();
+
         if (Input.GetMouseButtonDown(0))
         {
             if (ClickedDeck())
@@ -26,6 +30,10 @@ public class DrawState : BasePlayerState
                 Utils.PlayerDrawACard();
                 stateMachine.SwitchState(new DecisionState(stateMachine, player));
             }
+        } else if (numberOfCardsInDeck <= 0 && !switchedStatesBecauseOfCard)
+        {
+            stateMachine.SwitchState(new DecisionState(stateMachine, player));
+            switchedStatesBecauseOfCard = true;
         }
     }
 

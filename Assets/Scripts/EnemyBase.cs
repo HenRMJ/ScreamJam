@@ -10,6 +10,7 @@ public abstract class EnemyBase : MonoBehaviour
     public event EventHandler OnEnemyHealthChanged;
     public event EventHandler OnEnemyDied;
     public event EventHandler<Transform> OnEnemySummonedCard;
+    public event EventHandler OnStalemate;
 
     [SerializeField] protected int blood;
     [SerializeField] protected Hand hand;
@@ -73,6 +74,11 @@ public abstract class EnemyBase : MonoBehaviour
         OnEnemySummonedCard?.Invoke(this, selectedCard);
     }
 
+    protected void DeclareStalemate()
+    {
+        OnStalemate?.Invoke(this, EventArgs.Empty);
+    }
+
     public void SetBlood(int amountToChange)
     {
         blood += amountToChange;
@@ -94,15 +100,13 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    protected void CheckIfSlotIsValid(GameObject slot, List<CardSlot> possibleSlots)
+    protected void CheckIfSlotIsValid(CardSlot slot, List<CardSlot> possibleSlots)
     {
         if (slot != null)
         {
-            CardSlot cardSlot = slot.GetComponent<CardSlot>();
-
-            if (cardSlot.Card == null)
+            if (slot.Card == null)
             {
-                possibleSlots.Add(cardSlot);
+                possibleSlots.Add(slot);
             }
         }
     }

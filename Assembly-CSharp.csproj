@@ -76,11 +76,13 @@
     <Compile Include="Assets\Scripts\BloodVial.cs" />
     <Compile Include="Assets\Scripts\StateMachine\GameState\StartRoundState.cs" />
     <Compile Include="Assets\Scripts\EnemyBase.cs" />
+    <Compile Include="Assets\Scripts\EnemyPassive.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\DrawState.cs" />
     <Compile Include="Assets\Scripts\PauseScreen.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\DecisionState.cs" />
+    <Compile Include="Assets\Scripts\MouseActionUI.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\WaitingState.cs" />
     <Compile Include="Assets\Scripts\CameraViewState.cs" />
     <Compile Include="Assets\Scripts\Deck.cs" />
@@ -94,8 +96,7 @@
     <Compile Include="Assets\Player Input\PlayerControlAsset.cs" />
     <Compile Include="Assets\Scripts\UIOverlay.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
-    <Compile Include="Assets\Scripts\MouseActionUI.cs" />
-    <Compile Include="Assets\Scripts\EnemyPassive.cs" />
+    <Compile Include="Assets\Scripts\EnemySmart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -58,34 +58,30 @@ public class PlayArea : MonoBehaviour
                 {
                     case CardGroup.C:
                         Vector2Int currentPosition = cardSlot.GetCardSlotPosition();
-                        GameObject attackingPosition = gridManager.CardAt(currentPosition.x, currentPosition.y + 1);
+                        CardSlot slotToAttack = gridManager.CardAt(currentPosition.x, currentPosition.y + 1);
 
                         // Enemy gets attacked right here
-                        if (attackingPosition == null)
+                        if (slotToAttack == null)
                         {
                             Enemy.Instance.SetBlood(-(cardData.GetAttackDamage() * avatarMultipilier));
                             yield return new WaitForSeconds(1f);
                             continue;
                         }
 
-                        CardSlot slotToAttack = attackingPosition.GetComponent<CardSlot>();
-
                         // first attack slot is empty skips to the new attack slot
                         if (slotToAttack.Card == null)
                         {
                             OnSlotAttacked?.Invoke(this, slotToAttack.transform);
-                            GameObject attackingSecondPosition = gridManager.CardAt(currentPosition.x, currentPosition.y + 2);
+                            CardSlot secondSlotToAttack = gridManager.CardAt(currentPosition.x, currentPosition.y + 2);
                             yield return new WaitForSeconds(.1f);
 
                             // Enemy gets attacked here
-                            if (attackingSecondPosition == null)
+                            if (secondSlotToAttack == null)
                             {
                                 Enemy.Instance.SetBlood(-(cardData.GetAttackDamage() * avatarMultipilier));
                                 yield return new WaitForSeconds(1f);
                                 continue;
                             }
-
-                            CardSlot secondSlotToAttack = attackingSecondPosition.GetComponent<CardSlot>();
                             
                             // Second Card slot was empty
                             if (secondSlotToAttack.Card == null)
@@ -132,16 +128,14 @@ public class PlayArea : MonoBehaviour
                         break;
                     default:
                         Vector2Int defaultCurrentPosition = cardSlot.GetCardSlotPosition();
-                        GameObject defaultAttackingPosition = gridManager.CardAt(defaultCurrentPosition.x, defaultCurrentPosition.y + 1);
+                        CardSlot defaultSlotToAttack = gridManager.CardAt(defaultCurrentPosition.x, defaultCurrentPosition.y + 1);
 
-                        if (defaultAttackingPosition == null)
+                        if (defaultSlotToAttack == null)
                         {
                             Enemy.Instance.SetBlood(-(cardData.GetAttackDamage() * avatarMultipilier));
                             yield return new WaitForSeconds(1f);
                             continue;
                         }
-
-                        CardSlot defaultSlotToAttack = defaultAttackingPosition.GetComponent<CardSlot>();
 
                         // Slot was empty
                         if (defaultSlotToAttack.Card == null)
@@ -176,33 +170,29 @@ public class PlayArea : MonoBehaviour
                 {
                     case CardGroup.C:
                         Vector2Int currentPosition = cardSlot.GetCardSlotPosition();
-                        GameObject attackingPosition = gridManager.CardAt(currentPosition.x, currentPosition.y - 1);
+                        CardSlot slotToAttack = gridManager.CardAt(currentPosition.x, currentPosition.y - 1);
 
                         // Attacking Player
-                        if (attackingPosition == null)
+                        if (slotToAttack == null)
                         {
                             Player.Instance.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                             yield return new WaitForSeconds(1f);
                             continue;
                         }
 
-                        CardSlot slotToAttack = attackingPosition.GetComponent<CardSlot>();
-
                         if (slotToAttack.Card == null)
                         {
                             OnSlotAttacked?.Invoke(this, slotToAttack.transform);
-                            GameObject attackingSecondPosition = gridManager.CardAt(currentPosition.x, currentPosition.y - 2);
+                            CardSlot secondSlotToAttack = gridManager.CardAt(currentPosition.x, currentPosition.y - 2);
                             yield return new WaitForSeconds(.1f);
 
                             // Attacking Player
-                            if (attackingSecondPosition == null)
+                            if (secondSlotToAttack == null)
                             {
                                 Player.Instance.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                                 yield return new WaitForSeconds(1f);
                                 continue;
                             }
-
-                            CardSlot secondSlotToAttack = attackingSecondPosition.GetComponent<CardSlot>();
 
                             if (secondSlotToAttack.Card == null)
                             {
@@ -247,17 +237,15 @@ public class PlayArea : MonoBehaviour
                         break;
                     default:
                         Vector2Int defaultCurrentPosition = cardSlot.GetCardSlotPosition();
-                        GameObject defaultAttackingPosition = gridManager.CardAt(defaultCurrentPosition.x, defaultCurrentPosition.y - 1);
+                        CardSlot defaultSlotToAttack = gridManager.CardAt(defaultCurrentPosition.x, defaultCurrentPosition.y - 1);
 
                         // Attacking Player
-                        if (defaultAttackingPosition == null)
+                        if (defaultSlotToAttack == null)
                         {
                             Player.Instance.DealDamage(cardData.GetAttackDamage() * avatarMultipilier);
                             yield return new WaitForSeconds(1f);
                             continue;
                         }
-
-                        CardSlot defaultSlotToAttack = defaultAttackingPosition.GetComponent<CardSlot>();
 
                         if (defaultSlotToAttack.Card == null) 
                         {

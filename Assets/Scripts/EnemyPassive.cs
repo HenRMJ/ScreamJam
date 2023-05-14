@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class EnemyPassive : EnemyBase
 {
@@ -21,7 +20,6 @@ public class EnemyPassive : EnemyBase
         {
             if (cardData.GetDefenseValue() < weakestDefense)
             {
-                Debug.Log($"{cardData.name} on {cardData.currentPosition}");
                 if (cardData.currentPosition.y == GridManager.Instance.GetGridDimensions().y - 1) continue;
                 weakestDefense = cardData.GetDefenseValue();
                 weakestPlayerCard = cardData;
@@ -43,7 +41,21 @@ public class EnemyPassive : EnemyBase
             }
         }
 
-        if (cardToSelect == null) return false;
+        Hand playerHand = Player.Instance.GetPlayerHand();
+
+        if (cardToSelect == null)
+        {
+            if (!playerHand.CanSummonAMonster() &&
+                !playerHand.CanCastASpell() &&
+                playerHand.GetDeck().GetNumberOfCardsInDeck() <= 0 &&
+                !GridManager.Instance.ThereAreCardsInPlay())
+            {
+                DeclareStalemate();
+            }
+
+            return false;
+        }
+            
         selectedCard = cardToSelect;
         return true;
     }
@@ -136,11 +148,11 @@ public class EnemyPassive : EnemyBase
             switch (cardData.Group)
             {
                 case CardGroup.A:
-                    GameObject upperLeftObject = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1);
-                    GameObject upperCenterObject = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
-                    GameObject upperRightObject = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1);
-                    GameObject rightObject = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y);
-                    GameObject leftObject = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y);
+                    CardSlot upperLeftObject = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y - 1);
+                    CardSlot upperCenterObject = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
+                    CardSlot upperRightObject = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y - 1);
+                    CardSlot rightObject = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y);
+                    CardSlot leftObject = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y);
 
                     CheckIfSlotIsValid(upperLeftObject, possiblePositions);
                     CheckIfSlotIsValid(upperCenterObject, possiblePositions);
@@ -163,9 +175,9 @@ public class EnemyPassive : EnemyBase
                     cardSlot.Card = null;
                     break;
                 default:
-                    GameObject checkUpperSlotObject = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
-                    GameObject checkLeftSlotObject = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y);
-                    GameObject checkRightSlotObject = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y);
+                    CardSlot checkUpperSlotObject = GridManager.Instance.CardAt(cardSlotPosition.x, cardSlotPosition.y - 1);
+                    CardSlot checkLeftSlotObject = GridManager.Instance.CardAt(cardSlotPosition.x + 1, cardSlotPosition.y);
+                    CardSlot checkRightSlotObject = GridManager.Instance.CardAt(cardSlotPosition.x - 1, cardSlotPosition.y);
 
                     CheckIfSlotIsValid(checkRightSlotObject, possiblePositions);
                     CheckIfSlotIsValid(checkLeftSlotObject, possiblePositions);
@@ -193,12 +205,10 @@ public class EnemyPassive : EnemyBase
     {
         foreach (CardSlot cSlot in possiblePositions)
         {
-            GameObject slotObject = GridManager.Instance.CardAt(cSlot.GetCardSlotPosition().x, cSlot.GetCardSlotPosition().y - 1);
+            CardSlot slotToCheck = GridManager.Instance.CardAt(cSlot.GetCardSlotPosition().x, cSlot.GetCardSlotPosition().y - 1);
 
-            if (slotObject != null)
+            if (slotToCheck != null)
             {
-                CardSlot slotToCheck = slotObject.GetComponent<CardSlot>();
-
                 if (slotToCheck.Card == null) continue;
                 if (!slotToCheck.CardBelongsToPlayer()) continue;
 

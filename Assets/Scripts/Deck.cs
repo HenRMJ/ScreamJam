@@ -85,4 +85,6 @@ public class Deck : MonoBehaviour
         AkSoundEngine.PostEvent("TakeCard", gameObject);
         return cardToDeal;
     }
+
+    public int GetNumberOfCardsInDeck() => instantiatedCardList.Count;
 }

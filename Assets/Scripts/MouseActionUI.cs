@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Device;
 using UnityEngine.UI;
 
 public class MouseActionUI : MonoBehaviour
@@ -21,7 +22,8 @@ public class MouseActionUI : MonoBehaviour
     }
 
     [SerializeField] private Image UI;
-    [SerializeField] private Vector3 offset;
+    [Range(-.1f, .1f)]
+    [SerializeField] private float xOffset, yOffset;
     [SerializeField] private List<MouseState> states;
     
     private Dictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
@@ -54,7 +56,8 @@ public class MouseActionUI : MonoBehaviour
 
     private void LateUpdate()
     {
-        UI.rectTransform.position = Input.mousePosition + offset;
+        Vector3 scaledOffset = new Vector3(UnityEngine.Screen.width * xOffset, UnityEngine.Screen.height * yOffset);
+        UI.rectTransform.position = Input.mousePosition + scaledOffset;
 
         switch (state)
         {
