@@ -97,6 +97,9 @@
     <Compile Include="Assets\Scripts\UIOverlay.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
     <Compile Include="Assets\Scripts\EnemySmart.cs" />
+    <Compile Include="Assets\Scripts\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\GameAttempt.cs" />
+    <Compile Include="Assets\Scripts\ResultsUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

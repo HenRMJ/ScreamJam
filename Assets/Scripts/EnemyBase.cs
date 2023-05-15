@@ -12,6 +12,8 @@ public abstract class EnemyBase : MonoBehaviour
     public event EventHandler<Transform> OnEnemySummonedCard;
     public event EventHandler OnStalemate;
 
+    public int CardsSummoned { get; private set; }
+
     [SerializeField] protected int blood;
     [SerializeField] protected Hand hand;
 
@@ -26,7 +28,9 @@ public abstract class EnemyBase : MonoBehaviour
             Debug.LogError("You have another enemy in your scene: " + transform);
             return;
         }
+
         Instance = this;
+        CardsSummoned = 0;
     }
 
     // Start is called before the first frame update
@@ -71,6 +75,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected void CallEnemySummonedCard()
     {
+        CardsSummoned++;
         OnEnemySummonedCard?.Invoke(this, selectedCard);
     }
 

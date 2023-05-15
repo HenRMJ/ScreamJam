@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Passive.unity
     guid: d0d523f0b2877d748a6959c80b023606
+  - enabled: 1
+    path: Assets/Scenes/Results.unity
+    guid: 217a395d9ad4e5f489aeaba42d003ea6
   m_configObjects: {}

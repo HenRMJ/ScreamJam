@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public event EventHandler OnPlayerHealthChanged;
 
     public bool CanSummon { get; private set; }
+    public int CardsSummoned { get; private set; }
 
     [SerializeField] private int blood;
     [SerializeField] private Hand playerHand;
@@ -26,7 +27,9 @@ public class Player : MonoBehaviour
             Debug.LogError("A player already exists in the scene");
             return;
         }
+
         Instance = this;
+        CardsSummoned = 0;
     }
 
     // Start is called before the first frame update
@@ -60,6 +63,8 @@ public class Player : MonoBehaviour
 
     private void PlayerHand_OnCardSummoned(object sender, Transform e)
     {
+        CardsSummoned++;
+
         bool canSummon = true;
 
         if (e.GetComponent<CardData>().Type == CardType.Monster)
