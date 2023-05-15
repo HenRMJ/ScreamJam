@@ -71,6 +71,7 @@ public class Deck : MonoBehaviour
             Debug.Log("No more cards to deal");
             return null;
         }
+
         Transform cardToDeal = instantiatedCardList[0];
         CardData cardData = cardToDeal.GetComponent<CardData>();
 

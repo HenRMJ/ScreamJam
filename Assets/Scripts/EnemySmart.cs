@@ -22,6 +22,38 @@ public class EnemySmart : EnemyBase
         CardData lowestCostCard = null;
         CardData strongestCard = null;
 
+        // Finding our strongest and lowest cost card
+        foreach (Transform card in hand.GetCardsInHand())
+        {
+            CardData ourCardData = card.GetComponent<CardData>();
+
+            // Finding the lowest cost monster card and highest damage monster card
+            if (ourCardData.Type == CardType.Monster &&
+                ourCardData.GetBloodCost() < blood)
+            {
+                if (lowestCostCard == null)
+                {
+                    lowestCostCard = ourCardData;
+                }
+
+                if (strongestCard == null)
+                {
+                    strongestCard = ourCardData;
+                }
+
+                if (strongestCard.GetAttackDamage() <= ourCardData.GetAttackDamage())
+                {
+                    strongestCard = ourCardData;
+                }
+
+                if (lowestCostCard.GetBloodCost() >= ourCardData.GetBloodCost())
+                {
+                    lowestCostCard = ourCardData;
+                }
+
+            }
+        }
+
         GetPlayerCards();
 
         playerCardsInPlay.Sort((CardData a, CardData b) =>
@@ -68,32 +100,6 @@ public class EnemySmart : EnemyBase
             {
                 CardData ourCardData = card.GetComponent<CardData>();
 
-                // Finding the lowest cost monster card and highest damage monster card
-                if (ourCardData.Type == CardType.Monster &&
-                    ourCardData.GetBloodCost() < blood)
-                {
-                    if (lowestCostCard == null)
-                    {
-                        lowestCostCard = ourCardData;
-                    }
-                    
-                    if (strongestCard == null)
-                    {
-                        strongestCard = ourCardData;
-                    }
-
-                    if (strongestCard.GetAttackDamage() <= ourCardData.GetAttackDamage())
-                    {
-                        strongestCard = ourCardData;
-                    }
-
-                    if (lowestCostCard.GetBloodCost() >= ourCardData.GetBloodCost())
-                    {
-                        lowestCostCard = ourCardData;
-                    }
-
-                }
-
                 // if we want to use a firespell and can afford it, we select the fire spell
                 if (useFireSpell &&
                     ourCardData.Type == CardType.Spell &&
@@ -130,16 +136,24 @@ public class EnemySmart : EnemyBase
             {
                 // if the player can't cast a spell we summon our strongest card
                 if (!playerHand.CanSummonAMonster() &&
-                !playerHand.CanCastASpell())
+                !playerHand.CanCastASpell() &&
+                !GridManager.Instance.ThereAreCardsInPlay())
                 {
-                    cardToSelect = strongestCard.transform;
+                    if (strongestCard != null)
+                    {
+                        cardToSelect = strongestCard.transform;
+                    }
+                    
                 }
 
                 // if the player can cast a spell we summon lowest cost card
                 if (!playerHand.CanSummonAMonster() &&
                     playerHand.CanCastASpell())
                 {
-                    cardToSelect = lowestCostCard.transform;
+                    if (lowestCostCard != null)
+                    {
+                        cardToSelect = lowestCostCard.transform;
+                    }
                 }
             } 
         }

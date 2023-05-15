@@ -76,6 +76,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected void DeclareStalemate()
     {
+        Debug.Log("Stalemate");
         OnStalemate?.Invoke(this, EventArgs.Empty);
     }
 

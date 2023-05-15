@@ -355,6 +355,17 @@ public class CardSlot : MonoBehaviour
             }
         }
     }
+
+    public void UpdateSacrificeVisual(bool isMarked, bool isSacrificed)
+    {
+        if (!isSacrificed)
+        {
+            UpdateSacrificeVisual(isMarked);
+        } else
+        {
+            animator.SetBool("isMarked", isMarked);
+        }
+    }
     
     public Vector2Int GetCardSlotPosition() => cardSlotPosition;
 }

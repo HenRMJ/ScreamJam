@@ -6,19 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class ScheneManager : MonoBehaviour
 {
-    [SerializeField] private string[] gameScenes;
+    [SerializeField] private bool isGameScene;
 
     // Start is called before the first frame update
     private void Start()
     {
-        foreach (string sceneName in gameScenes)
+
+        if (isGameScene)
         {
-            if (SceneManager.GetActiveScene().name == sceneName)
-            {
-                Enemy.Instance.OnEnemyDied += Enemy_OnEnemyDied;
-                Player.Instance.OnPlayerDied += Player_OnPlayerDied;
-                break;
-            }
+            Enemy.Instance.OnEnemyDied += Enemy_OnEnemyDied;
+            Player.Instance.OnPlayerDied += Player_OnPlayerDied;
         }
     }
 
@@ -29,14 +26,10 @@ public class ScheneManager : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (string sceneName in gameScenes)
+        if (isGameScene)
         {
-            if (SceneManager.GetActiveScene().name == sceneName)
-            {
-                Enemy.Instance.OnEnemyDied -= Enemy_OnEnemyDied;
-                Player.Instance.OnPlayerDied -= Player_OnPlayerDied;
-                break;
-            }
+            Enemy.Instance.OnEnemyDied -= Enemy_OnEnemyDied;
+            Player.Instance.OnPlayerDied -= Player_OnPlayerDied;
         }
     }
 

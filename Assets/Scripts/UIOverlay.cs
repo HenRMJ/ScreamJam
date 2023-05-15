@@ -13,6 +13,7 @@ public class UIOverlay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bloodCostField;
     [SerializeField] private TextMeshProUGUI defenseField;
     [SerializeField] private TextMeshProUGUI largeDisplayField;
+    [SerializeField] private TextMeshProUGUI cardToolTip;
 
     [Header("Other Fields")]
     [SerializeField] private Animator animator;
@@ -25,7 +26,10 @@ public class UIOverlay : MonoBehaviour
         DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
         DrawState.OnEnterDrawState += DrawState_OnEnterDrawState;
         WaitingState.OnPlayerStartWaiting += WaitingState_OnPlayerStartWaiting;
+        Player.Instance.GetPlayerHand().OnCardNotSummoned += PlayerHand_OnCardNotSummoned;
     }
+
+    
 
     private void Update()
     {
@@ -97,6 +101,12 @@ public class UIOverlay : MonoBehaviour
         attackField.text = cardData.GetAttackDamage().ToString();
         defenseField.text = cardData.GetDefenseValue().ToString();
         bloodCostField.text = cardData.GetBloodCost().ToString();
+    }
+
+    private void PlayerHand_OnCardNotSummoned(object sender, string e)
+    {
+        cardToolTip.text = e;
+        animator.SetTrigger("tooltip");
     }
 
     private void UpdateCardUI()

@@ -7,6 +7,7 @@ public class Hand : MonoBehaviour
     public event EventHandler OnCardSelected;
     public event EventHandler OnCardUnselected;
     public event EventHandler<Transform> OnCardSummoned;
+    public event EventHandler<string> OnCardNotSummoned;
 
     [SerializeField] private Transform minPosition, maxPosition;
     [SerializeField] private bool belongsToPlayer;
@@ -157,6 +158,7 @@ public class Hand : MonoBehaviour
             if (cardData.Type == CardType.Monster && !player.CanSummon)
             {
                 Debug.Log("You already summoned a monster this turn");
+                OnCardNotSummoned?.Invoke(this, "You already summoned a monster this turn");
                 return;
             }
 
@@ -179,7 +181,7 @@ public class Hand : MonoBehaviour
 
                     if (cardsToSacrifice.Contains(cardSlotToUpdate.Card.gameObject))
                     {
-                        cardSlotToUpdate.UpdateSacrificeVisual(false);
+                        cardSlotToUpdate.UpdateSacrificeVisual(false, true);
                         cardSlotToUpdate.Card = null;
                     }
                 }
@@ -194,6 +196,7 @@ public class Hand : MonoBehaviour
             } else
             {
                 Debug.Log("Not enough blood to summon card");
+                OnCardNotSummoned?.Invoke(this, "Not enough blood to summon card");
                 return;
             }
 

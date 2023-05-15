@@ -23,6 +23,7 @@ public class DecisionState : BasePlayerState
         playerHand.ClickToUnselectCard();
         playerHand.SelectCard();
         playerHand.PlaceCard();
+
         if (Bell.Instance.CheckIfClickBell())
         {
             if (TurnSystem.Instance.AttackedThisRound)

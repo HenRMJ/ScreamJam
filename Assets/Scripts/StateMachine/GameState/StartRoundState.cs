@@ -13,7 +13,7 @@ public class StartRoundState : BaseGameState
 
     public override void Enter()
     {
-        //Debug.Log("BEGIN StartRoundState");
+        Debug.Log("BEGIN StartRoundState");
         PlayArea.Instance.OnAttackFinished += PlayArea_OnAttackFinished;
 
         TurnSystem.Instance.AttackedThisRound = false;
