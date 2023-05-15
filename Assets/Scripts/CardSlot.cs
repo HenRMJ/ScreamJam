@@ -345,6 +345,14 @@ public class CardSlot : MonoBehaviour
     public void UpdateSacrificeVisual(bool isMarked)
     {
         animator.SetBool("isMarked", isMarked);
+
+        if (!isMarked)
+        {
+            if (Card != null )
+            {
+                Card.GetComponent<CardData>().MarkedAsSacrifice = false;
+            }
+        }
     }
     
     public Vector2Int GetCardSlotPosition() => cardSlotPosition;

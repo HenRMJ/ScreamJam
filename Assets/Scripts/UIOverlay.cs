@@ -12,7 +12,9 @@ public class UIOverlay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI attackField;
     [SerializeField] private TextMeshProUGUI bloodCostField;
     [SerializeField] private TextMeshProUGUI defenseField;
+    [SerializeField] private TextMeshProUGUI largeDisplayField;
 
+    [Header("Other Fields")]
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject descriptionUI;
 
@@ -42,6 +44,9 @@ public class UIOverlay : MonoBehaviour
     private void DrawState_OnEnterDrawState(object sender, EventArgs e)
     {
         if (TurnSystem.Instance.IsPlayersTurn) return;
+        if (Player.Instance.GetPlayerHand().GetDeck().GetNumberOfCardsInDeck() <= 0) return;
+        largeDisplayField.text = "Draw a Card";
+        animator.SetTrigger("largeDisplay");
         animator.SetTrigger("drawState");
     }
 
@@ -51,11 +56,15 @@ public class UIOverlay : MonoBehaviour
 
         if (TurnSystem.Instance.AttackedThisRound)
         {
+            largeDisplayField.text = "Ring Bell to End Turn";
             animator.SetTrigger("postState");
+            animator.SetTrigger("largeDisplay");
         }
         else
         {
+            largeDisplayField.text = "Ring Bell to Attack";
             animator.SetTrigger("mainState");
+            animator.SetTrigger("largeDisplay");
         }
     }
 
@@ -72,7 +81,16 @@ public class UIOverlay : MonoBehaviour
 
     private void CardData_OnAnyCardHover(object sender, EventArgs e)
     {
+        attackField.transform.parent.gameObject.SetActive(true);
+        defenseField.transform.parent.gameObject.SetActive(true);
+
         CardData cardData = (CardData)sender;
+
+        if (cardData.Type == CardType.Spell)
+        {
+            attackField.transform.parent.gameObject.SetActive(false);
+            defenseField.transform.parent.gameObject.SetActive(false);
+        }
 
         nameField.text = cardData.GetCardName();
         descriptionField.text = cardData.GetCardUIDescription();
