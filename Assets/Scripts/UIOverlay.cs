@@ -18,7 +18,6 @@ public class UIOverlay : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject descriptionUI;
 
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -45,6 +44,7 @@ public class UIOverlay : MonoBehaviour
     {
         if (TurnSystem.Instance.IsPlayersTurn) return;
         if (Player.Instance.GetPlayerHand().GetDeck().GetNumberOfCardsInDeck() <= 0) return;
+
         largeDisplayField.text = "Draw a Card";
         animator.SetTrigger("largeDisplay");
         animator.SetTrigger("drawState");
@@ -105,7 +105,7 @@ public class UIOverlay : MonoBehaviour
 
         if (card == null)
         {
-            descriptionUI.SetActive(false);
+            descriptionUI.SetActive(false);   
             return;
         }
 

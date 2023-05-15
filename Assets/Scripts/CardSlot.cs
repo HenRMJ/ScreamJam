@@ -340,6 +340,7 @@ public class CardSlot : MonoBehaviour
     {
         inDecisionState = false;
         UpdateVisuals(false);
+        UpdateSacrificeVisual(false);
     }
 
     public void UpdateSacrificeVisual(bool isMarked)
