@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
 	<RootPaths>
-		<ProjectRoot>../../</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Mac/</SourceFilesRoot>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{76E14A63-51CC-64CC-9C00-F570645EDD7D}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{E7854C73-7406-7431-DCF7-1A431AA25420}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,8 +19,15 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="393239870" Name="SFX"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="988953028" Name="SFXVolume"/>
+				<GameParameter Id="2346531308" Name="MusicVolume"/>
+				<GameParameter Id="2918011349" Name="MasterVolume"/>
+			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="3639415501" Name="TierMonster">
 					<Switches>
@@ -31,7 +38,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{9816FB22-C7D3-C873-BDCA-0B1EDD470C42}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F09C14D0-B676-C8A5-36C6-EC915310F383}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -451,6 +458,26 @@
 						<MediaRef Id="905863384"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="896893477" Name="Play_ambience_2_demo" DurationType="OneShot" DurationMin="105.6" DurationMax="105.6">
+					<MediaRefs>
+						<MediaRef Id="1054497835"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3029866678" Name="Play_ambience_3_demo" DurationType="OneShot" DurationMin="128" DurationMax="128">
+					<MediaRefs>
+						<MediaRef Id="822675777"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2281868479" Name="Play_ambience_4_demo" DurationType="OneShot" DurationMin="78" DurationMax="78">
+					<MediaRefs>
+						<MediaRef Id="206149265"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2219458556" Name="Play_ambience_demo" DurationType="OneShot" DurationMin="136.05757" DurationMax="136.05757">
+					<MediaRefs>
+						<MediaRef Id="20927043"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="240574514" Name="SacrificeMonster" DurationType="OneShot" DurationMin="2.5738082" DurationMax="4.8988466">
 					<MediaRefs>
 						<MediaRef Id="151984888"/>
@@ -465,6 +492,11 @@
 						<MediaRef Id="209535173"/>
 						<MediaRef Id="420094461"/>
 						<MediaRef Id="780156358"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2728439515" Name="Set_Voice_Volume_ambience_2_demo" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="1054497835"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2423923635" Name="SitDown" DurationType="OneShot" DurationMin="0.8428505" DurationMax="1.7297325">
@@ -541,5 +573,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{660208F2-6265-CDD7-5AB3-ABCA22DA712A}</FileHash>
+	<FileHash>{F9DC1B29-102C-0F76-1C2C-E72C56918864}</FileHash>
 </SoundBanksInfo>

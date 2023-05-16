@@ -21,4 +21,9 @@ public class LoadGame : MonoBehaviour
             sceneManager.LevelSelect();
         });
     }
+
+    public void PlayHoverSound()
+    {
+        AkSoundEngine.PostEvent("UI_Cursor", gameObject);
+    }
 }

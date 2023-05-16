@@ -62,7 +62,8 @@ public class FilePersister : MonoBehaviour
         {
             SaveManager.Instance.NameSaveFile(fileName);
         }
-        
+
+        AkSoundEngine.StopAll();
     }
 
     public string[] GetSaveFileNames()

@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 57ca28c83b21504ab23053a35af9c8f0
     GuidInternal: 
-    m_lastTime: -8585199597777895187
+    m_lastTime: -8585173831288218229
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -54,6 +54,40 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: dc72787b80ebb642ac087dc42a3f7704
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57ca28c83b21504ab23053a35af9c8f0
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: dc72787b80ebb642ac087dc42a3f7704
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: SFX
+      guid: ad60610367175e43866e121b619afc11
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 57ca28c83b21504ab23053a35af9c8f0
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SFX
+        ObjectType: 2
+        guid: ad60610367175e43866e121b619afc11
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -66,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f2512c02bb718c4891f51f55f1ba7a87
     GuidInternal: 
-    m_lastTime: -8585182501402902317
+    m_lastTime: -8585173821145762210
     List:
     - name: Main
       guid: c3e86443b9c3ad4091c13d7b0c2867c8
@@ -94,7 +128,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 010016284d7bf54eb506d1c4474fb2cc
     GuidInternal: 
-    m_lastTime: -8585182501412770126
+    m_lastTime: -8585173816238950137
     List:
     - name: Amb
       guid: a87cc06f928b3848acc4dd35fb08855b
@@ -509,6 +543,74 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_ambience_2_demo
+      guid: 978a58328c288341a4d95c6c59c8a217
+      id: 896893477
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Play_ambience_2_demo
+        ObjectType: 3
+        guid: 978a58328c288341a4d95c6c59c8a217
+      Path: Events\Default Work Unit\Play_ambience_2_demo
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_ambience_3_demo
+      guid: ddcff46af14c1b44a46a6fceca68c301
+      id: 3029866678
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Play_ambience_3_demo
+        ObjectType: 3
+        guid: ddcff46af14c1b44a46a6fceca68c301
+      Path: Events\Default Work Unit\Play_ambience_3_demo
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_ambience_4_demo
+      guid: 73a7292f01b534469418809656f1a5b2
+      id: 2281868479
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Play_ambience_4_demo
+        ObjectType: 3
+        guid: 73a7292f01b534469418809656f1a5b2
+      Path: Events\Default Work Unit\Play_ambience_4_demo
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_ambience_demo
+      guid: ff2c3eda252b7643b22ca23b42cb68f9
+      id: 2219458556
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Play_ambience_demo
+        ObjectType: 3
+        guid: ff2c3eda252b7643b22ca23b42cb68f9
+      Path: Events\Default Work Unit\Play_ambience_demo
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlayerCam
       guid: 6dc67cf2683d614ab8431de73712af6b
       id: 3832821567
@@ -572,6 +674,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: ed9cc8b0ad260d4b8740847f970bfa00
       Path: Events\Default Work Unit\Game\CardsAction\SelectCard
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Set_Voice_Volume_ambience_2_demo
+      guid: ce7528a4eacc7c459e5143a2267bb4d1
+      id: 2728439515
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 010016284d7bf54eb506d1c4474fb2cc
+      - ElementName: Set_Voice_Volume_ambience_2_demo
+        ObjectType: 3
+        guid: ce7528a4eacc7c459e5143a2267bb4d1
+      Path: Events\Default Work Unit\Set_Voice_Volume_ambience_2_demo
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -845,8 +964,50 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 59fe85e6b45bfd4f965c95ddba384d3e
     GuidInternal: 
-    m_lastTime: -8585199597778005206
-    List: []
+    m_lastTime: -8585173834855307601
+    List:
+    - name: MasterVolume
+      guid: 466a3e804bebc94195425d6337c051e8
+      id: 2918011349
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 59fe85e6b45bfd4f965c95ddba384d3e
+      - ElementName: MasterVolume
+        ObjectType: 13
+        guid: 466a3e804bebc94195425d6337c051e8
+      Path: Game Parameters\Default Work Unit\MasterVolume
+    - name: MusicVolume
+      guid: 7c8951b74660d1498e3f24ca656805b4
+      id: 2346531308
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 59fe85e6b45bfd4f965c95ddba384d3e
+      - ElementName: MusicVolume
+        ObjectType: 13
+        guid: 7c8951b74660d1498e3f24ca656805b4
+      Path: Game Parameters\Default Work Unit\MusicVolume
+    - name: SFXVolume
+      guid: f8eb5542fbb53c459b84a812ff6d7769
+      id: 988953028
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 59fe85e6b45bfd4f965c95ddba384d3e
+      - ElementName: SFXVolume
+        ObjectType: 13
+        guid: f8eb5542fbb53c459b84a812ff6d7769
+      Path: Game Parameters\Default Work Unit\SFXVolume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -955,8 +1116,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585199597777815164
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedFileSystemItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000d0000000e00000012000000130000001400000015000000160000001a0000002600000027000000280000002b0000002c0000002e0000002f00000031000000320000003300000034000000360000003b000000
+  ExpandedWaapiItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000d0000001100000012000000130000001400000015000000160000001a00000020000000220000002600000027000000280000002b0000002c0000002e0000002f00000031000000320000003300000034000000360000003b000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

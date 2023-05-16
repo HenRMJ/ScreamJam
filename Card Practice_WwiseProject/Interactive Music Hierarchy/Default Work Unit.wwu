@@ -13,13 +13,13 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{774375C6-B5E9-469B-882F-CAA7507CEAE3}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
+							<ObjectRef Name="Music" ID="{7B7872DC-EB80-42B6-AC08-7DC42A3F7704}" WorkUnitID="{C828CA57-213B-4A50-B230-53A35AF9C8F0}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<MusicSegment Name="ambience demo" ID="{ED995188-A978-4CAE-BE8A-85645FEC4C74}" ShortID="841816036">
 							<PropertyList>
-								<Property Name="EndPosition" Type="Real64" Value="126857.142857143"/>
+								<Property Name="EndPosition" Type="Real64" Value="136057.571581687"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -64,11 +64,72 @@
 																	<Local>
 																		<MusicClip Name="ambience demo" ID="{9D6948CD-8C86-406D-A48F-F07D3B615D01}">
 																			<PropertyList>
-																				<Property Name="EndTrimOffset" Type="Real64" Value="126857.142857143"/>
+																				<Property Name="BeginTrimOffset" Type="Real64" Value="1.22213350550737E-12"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="136057.571581687"/>
 																				<Property Name="FadeInMode" Type="int16" Value="0"/>
 																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="-1.02318153949454E-12"/>
 																			</PropertyList>
 																			<AudioSourceRef Name="ambience demo" ID="{54312DBD-8CB4-438D-BA66-9D26A67BFB3C}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{1C398664-04CA-49F5-B08D-28F0A36F50C6}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>136.05757</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{A9875E76-7293-43C1-9AD3-54C9B8F75631}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>136.05757</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{C37AD8B4-BDD5-4ED2-BF25-FBBCCDAC215F}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>136.05757</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
 																		</MusicClip>
 																	</Local>
 																</Reference>

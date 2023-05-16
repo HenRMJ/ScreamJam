@@ -347,6 +347,64 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_ambience_2_demo" ID="{32588A97-288C-4183-A4D9-5C6C59C8A217}">
+					<ChildrenList>
+						<Action Name="" ID="{A149285E-C529-4BD4-98D5-B93FF8F0F866}" ShortID="421873910">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ambience 2 demo" ID="{78949490-F504-4059-82CC-3FF90599F9A2}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ambience_3_demo" ID="{6AF4CFDD-4CF1-441B-A46A-6FCECA68C301}">
+					<ChildrenList>
+						<Action Name="" ID="{11719EA6-CC0B-44FE-8ECF-8C85A114A629}" ShortID="855535626">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ambience 3 demo" ID="{7478851C-CC0D-4F1B-9412-BC75BECE5AAD}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ambience_4_demo" ID="{2F29A773-B501-4634-9418-809656F1A5B2}">
+					<ChildrenList>
+						<Action Name="" ID="{7063F3C6-1B23-4DA0-A5F9-ABE45A4D2F4C}" ShortID="772159352">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ambience 4 demo" ID="{C958A9AE-D52B-4E70-A067-3E5D5E77E74D}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ambience_demo" ID="{DA3E2CFF-2B25-4376-B22C-A23B42CB68F9}">
+					<ChildrenList>
+						<Action Name="" ID="{905BDED2-D3FE-4B2B-A5CC-DDCFF89C6CFD}" ShortID="55005765">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ambience demo" ID="{ED995188-A978-4CAE-BE8A-85645FEC4C74}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_Voice_Volume_ambience_2_demo" ID="{A42875CE-CCEA-457C-9E51-43A2267BB4D1}">
+					<ChildrenList>
+						<Action Name="" ID="{D4875B15-85F8-4F47-986F-8E25657B285B}" ShortID="461887583">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ambience 2 demo" ID="{922ACCDB-E539-48F9-A3B5-6D051BF78FD1}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

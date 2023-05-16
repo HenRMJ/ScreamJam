@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{4364E8C3-C3B9-40AD-91C1-3D7B0C2867C8}">
 					<ObjectInclusionList>
+						<ObjectRef Name="ambience 2 demo" ID="{78949490-F504-4059-82CC-3FF90599F9A2}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="BringUp_Card" ID="{56A21327-6008-40A4-9F66-14FBD7000050}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="BloodPayMed" ID="{FED4C53D-373D-40BA-A59D-D14D5E24E4A1}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Select" ID="{1443DE0D-9ACC-40D0-8563-B35CF489696E}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
@@ -15,6 +16,7 @@
 						<ObjectRef Name="TableCam" ID="{6BF300F9-C777-4284-9322-70DE09677FB7}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StandUp" ID="{0826DA2F-532A-4358-B3B3-B57A19A2D24C}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music" ID="{1540C48B-BC59-4475-BF9F-07EBEEF4B720}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="OldRoom_Amb" ID="{359A3B29-9F6B-4741-B0F7-8E4D9159C606}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="FireSpell" ID="{828D0E73-2C97-4746-9F53-39A93AA7BD51}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="BloodPaySmall" ID="{5B8BB3DF-17E8-47FD-BF19-11A052C5E623}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
@@ -26,10 +28,14 @@
 						<ObjectRef Name="MonsterAttack" ID="{035E02CF-045A-4A90-8552-BC8F50E23FB2}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="BloodPayHigh" ID="{5921334B-1ED8-4ABB-AF0A-BDB5EC36539C}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SelectCard" ID="{B0C89CED-26AD-4B0D-8740-847F970BFA00}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music" ID="{56A164EB-AA53-4B20-BF30-E19A4F7B5E0C}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ambience demo" ID="{ED995188-A978-4CAE-BE8A-85645FEC4C74}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI_Cursor" ID="{0AB58ECE-CE00-4CBF-AF74-15B22667F8BA}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SacrificeMonster" ID="{34CDD051-D38A-4DB4-B77E-9BEA4AE50DC0}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SitDown" ID="{4AF30879-3B86-4E30-9A64-6FB7E23DE860}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Sum_HighMon" ID="{4990B579-B639-4E66-9BD7-057B4ED39841}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ambience 4 demo" ID="{C958A9AE-D52B-4E70-A067-3E5D5E77E74D}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ambience 3 demo" ID="{7478851C-CC0D-4F1B-9412-BC75BECE5AAD}" WorkUnitID="{DE2DE20E-3C0D-4487-94D5-569597EF47DA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="DestroyedCard" ID="{EE254002-8336-4F1D-8630-238A385898B4}" WorkUnitID="{28160001-7B4D-4EF5-B506-D1C4474FB2CC}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

@@ -4,6 +4,7 @@ using System.IO.Enumeration;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
@@ -13,6 +14,7 @@ public class StartMenu : MonoBehaviour
 
     [SerializeField] private Button gameLoadPrefab;
     [SerializeField] private RectTransform gameLoadParent;
+    [SerializeField] private EventSystem eventSystem;
 
     private bool filesExist;
 
@@ -24,6 +26,12 @@ public class StartMenu : MonoBehaviour
         loadButton.interactable = filesExist;
 
         CreateLoadFiles();
+        AddSelectButtonSound(transform);
+    }
+
+    public void PlayHoverSound()
+    {
+        AkSoundEngine.PostEvent("UI_CUrsor", gameObject);
     }
 
     private void CreateLoadFiles()
@@ -55,5 +63,21 @@ public class StartMenu : MonoBehaviour
 
         FilePersister.Instance.SetFile(firstFile);
         ScheneManager.Instance.LevelSelect();
+    }
+
+    private void AddSelectButtonSound(Transform root)
+    {
+        foreach (Transform child in root)
+        {
+            if (child.TryGetComponent(out Button button))
+            {
+                button.onClick.AddListener(() =>
+                {
+                    AkSoundEngine.PostEvent("UI_Select", button.gameObject);
+                });
+            }
+
+            AddSelectButtonSound(child);
+        }
     }
 }
