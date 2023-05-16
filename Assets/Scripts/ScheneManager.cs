@@ -15,12 +15,25 @@ public class ScheneManager : MonoBehaviour
         Hard
     }
 
+    public static ScheneManager Instance { get; private set; }
+
     [SerializeField] private bool isGameScene;
     [SerializeField] private SaveManager saveManager;
     [SerializeField] private Difficulty difficulty;
 
     private string difficultyText;
     private float gameDuration;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -90,6 +103,16 @@ public class ScheneManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void PickLevel(string level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
     }
 
     private void HandleGameResult(bool isWin, bool isDraw)

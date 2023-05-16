@@ -56,9 +56,9 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Wwise\Timeline\Editor\AkEventPlayableInspector.cs" />
     <Compile Include="Assets\Wwise\Timeline\Editor\AkRTPCPlayableInspector.cs" />
     <Compile Include="Assets\Wwise\Timeline\Editor\AkRTPCTrackInspector.cs" />
+    <Compile Include="Assets\Wwise\Timeline\Editor\AkEventPlayableInspector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Wwise\Timeline\Editor\AK.Wwise.Unity.Timeline.Editor.asmdef" />

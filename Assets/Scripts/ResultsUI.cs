@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class ResultsUI : MonoBehaviour
 {
@@ -83,5 +84,30 @@ public class ResultsUI : MonoBehaviour
         string runTime = minute.ToString() + ":" + secondsAsString.Replace(".", ":");
 
         return runTime;
+    }
+
+    public void TryAgainButtion()
+    {
+        string difficulty = lastAttempt.difficulty;
+        string levelLoad = null;
+
+        switch (difficulty)
+        {
+            case "easy":
+                levelLoad = "Easy";
+                break;
+            case "medium":
+                levelLoad = "Passive";
+                break;
+            case "hard":
+                levelLoad = "Smart";
+                break;
+            default:
+                Debug.Log("There is an issue with ResultsUI, loading easy level by default");
+                levelLoad = "Easy";
+                break;
+        }
+
+        ScheneManager.Instance.PickLevel(levelLoad);
     }
 }
