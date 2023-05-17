@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 57ca28c83b21504ab23053a35af9c8f0
     GuidInternal: 
-    m_lastTime: -8585173831288218229
+    m_lastTime: -8585173686574166805
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -100,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f2512c02bb718c4891f51f55f1ba7a87
     GuidInternal: 
-    m_lastTime: -8585173821145762210
+    m_lastTime: -8585173686574166805
     List:
     - name: Main
       guid: c3e86443b9c3ad4091c13d7b0c2867c8
@@ -128,7 +128,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 010016284d7bf54eb506d1c4474fb2cc
     GuidInternal: 
-    m_lastTime: -8585173816238950137
+    m_lastTime: -8585173686580816464
     List:
     - name: Amb
       guid: a87cc06f928b3848acc4dd35fb08855b
@@ -964,7 +964,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 59fe85e6b45bfd4f965c95ddba384d3e
     GuidInternal: 
-    m_lastTime: -8585173834855307601
+    m_lastTime: -8585173686580816464
     List:
     - name: MasterVolume
       guid: 466a3e804bebc94195425d6337c051e8
@@ -1116,8 +1116,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585199597777815164
     List: []
-  ExpandedFileSystemItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000d0000000e00000012000000130000001400000015000000160000001a0000002600000027000000280000002b0000002c0000002e0000002f00000031000000320000003300000034000000360000003b000000
-  ExpandedWaapiItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000d0000001100000012000000130000001400000015000000160000001a00000020000000220000002600000027000000280000002b0000002c0000002e0000002f00000031000000320000003300000034000000360000003b000000
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
