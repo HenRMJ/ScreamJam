@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\StateMachine\GameState\GameSetupState.cs" />
     <Compile Include="Assets\Scripts\PlayArea.cs" />
     <Compile Include="Assets\Scripts\StateMachine\GameState\GameStateMachine.cs" />
+    <Compile Include="Assets\Scripts\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\StateMachine\State.cs" />
     <Compile Include="Assets\Scripts\CardSlotAnimations.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -103,7 +104,6 @@
     <Compile Include="Assets\Scripts\CardData.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\CardSlot.cs" />
-    <Compile Include="Assets\Scripts\SettingsMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -906,6 +906,10 @@
     <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.csproj">
       <Project>{C152BB9A-4FB0-F853-4825-86BE1085B2A7}</Project>
       <Name>AK.Wwise.Unity.MonoBehaviour</Name>
+    </ProjectReference>
+    <ProjectReference Include="FullscreenEditor.csproj">
+      <Project>{872ECD4E-AAC0-0A51-42D3-5770C0E744A8}</Project>
+      <Name>FullscreenEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
