@@ -29,8 +29,9 @@ public class StartMenu : MonoBehaviour
         AddSelectButtonSound(transform);
     }
 
-    public void PlayHoverSound()
+    public void PlayHoverSound(Button button)
     {
+        if (!button.interactable) return;
         AkSoundEngine.PostEvent("UI_CUrsor", gameObject);
     }
 

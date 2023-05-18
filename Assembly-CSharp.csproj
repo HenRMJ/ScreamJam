@@ -879,17 +879,21 @@
       <Project>{A199402D-E15A-D069-6789-5D62E5E25A2E}</Project>
       <Name>AK.Wwise.Unity.MonoBehaviour.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="FullscreenEditor.csproj">
+      <Project>{872ECD4E-AAC0-0A51-42D3-5770C0E744A8}</Project>
+      <Name>FullscreenEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.API.Editor.csproj">
       <Project>{D2FF0275-74D1-151D-C327-9C3E9FC595D6}</Project>
       <Name>AK.Wwise.Unity.API.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Ak.Wwise.Api.WAAPI.csproj">
-      <Project>{FFE5D026-F9BE-D9C0-8BB0-D29079797F6C}</Project>
-      <Name>Ak.Wwise.Api.WAAPI</Name>
-    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.API.WwiseTypes.csproj">
       <Project>{0898DA03-0120-CF8F-9E11-75FEAC13E8F1}</Project>
       <Name>AK.Wwise.Unity.API.WwiseTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="Ak.Wwise.Api.WAAPI.csproj">
+      <Project>{FFE5D026-F9BE-D9C0-8BB0-D29079797F6C}</Project>
+      <Name>Ak.Wwise.Api.WAAPI</Name>
     </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.Timeline.Editor.csproj">
       <Project>{41BD4086-F7E7-59A6-001F-B8E06C836486}</Project>
@@ -906,10 +910,6 @@
     <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.csproj">
       <Project>{C152BB9A-4FB0-F853-4825-86BE1085B2A7}</Project>
       <Name>AK.Wwise.Unity.MonoBehaviour</Name>
-    </ProjectReference>
-    <ProjectReference Include="FullscreenEditor.csproj">
-      <Project>{872ECD4E-AAC0-0A51-42D3-5770C0E744A8}</Project>
-      <Name>FullscreenEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

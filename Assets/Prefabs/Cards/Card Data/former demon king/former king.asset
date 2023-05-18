@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c47b139406cb534ebc0bfa7d6a96883, type: 3}
-  m_Name: former king
+  m_Name: Former King
   m_EditorClassIdentifier: 
   cardImage: {fileID: 2100000, guid: 72842f2008c9a904e9c12a1691edff78, type: 2}
   loreBlurb: Fall from grace
