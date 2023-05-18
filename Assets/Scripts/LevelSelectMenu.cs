@@ -29,6 +29,7 @@ public class LevelSelectMenu : MonoBehaviour
 
         CheckProgression();
         SetLevelText();
+        AddSelectSoundToButtons(transform);
     }
 
     private void CheckProgression()
@@ -74,5 +75,27 @@ public class LevelSelectMenu : MonoBehaviour
             studyLore.text = "Escape from the cabin to unlock this level";
             studyButton.interactable = false;
         }
+    }
+
+    private void AddSelectSoundToButtons(Transform root)
+    {
+        foreach (Transform child in root)
+        {
+            if (child.TryGetComponent(out Button button))
+            {
+                button.onClick.AddListener(() =>
+                {
+                    AkSoundEngine.PostEvent("UI_Select", child.gameObject);
+                });
+            }
+
+            AddSelectSoundToButtons(child);
+        }
+    }
+
+    public void PlayHoverSound(Button button)
+    {
+        if (!button.interactable) return;
+        AkSoundEngine.PostEvent("UI_Cursor", gameObject);
     }
 }
