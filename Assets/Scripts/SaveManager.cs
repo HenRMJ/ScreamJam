@@ -27,6 +27,10 @@ public class SaveManager : MonoBehaviour
     private void Start()
     {
         LoadGame();
+        foreach (GameAttempt attempt in attempts)
+        {
+            Debug.Log(attempt.difficulty);
+        }
     }
 
     private void OnDestroy()
@@ -53,7 +57,6 @@ public class SaveManager : MonoBehaviour
 
     private void LoadGame()
     {
-        Debug.Log(fileName);
         ES3Settings ES3Settings = new ES3Settings(ES3.EncryptionType.AES, "239fhj91llas10hdn01;aeql");
 
         saveFileExists = ES3.FileExists($"saves/{fileName}.es3", ES3Settings);
@@ -68,7 +71,7 @@ public class SaveManager : MonoBehaviour
     public void NameSaveFile(string nameOfFile)
     {
         fileName = nameOfFile;
-        Debug.Log(fileName);
+        LoadGame();
     }
     public List<GameAttempt> GetGameAttempts() => attempts;
 }

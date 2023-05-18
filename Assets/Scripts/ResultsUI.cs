@@ -32,8 +32,7 @@ public class ResultsUI : MonoBehaviour
 
         UpdateResultsText();
         UpdateWinResult();
-
-        difficulty.text = lastAttempt.difficulty;
+        UpdateLevelText();
     }
 
     private void UpdateWinResult()
@@ -51,6 +50,26 @@ public class ResultsUI : MonoBehaviour
         }
 
         gameResultImage.sprite = winSprite;
+    }
+
+    private void UpdateLevelText()
+    {
+        string level = String.Empty;
+
+        switch (lastAttempt.difficulty)
+        {
+            case "easy":
+                level = "Dungeon";
+                break;
+            case "medium":
+                level = "Cabin";
+                break;
+            case "hard":
+                level = "Study";
+                break;
+        }
+
+        difficulty.text = level;
     }
 
     private void UpdateResultsText()

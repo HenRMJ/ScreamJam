@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class PauseScreen : MonoBehaviour
 {
-    [SerializeField] private GameObject canvas;
-
-    private void Start()
+    public void PauseTime()
     {
-        canvas.SetActive(false);
-    }
-
-    public void Rules()
-    {
-        canvas.SetActive(true);
         Time.timeScale = 0;
     }
 
-    public void ResumeGame()
+    public void ResumeTime()
     {
-        canvas.SetActive(false);
         Time.timeScale = 1;
     }
 }
