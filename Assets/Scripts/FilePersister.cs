@@ -84,5 +84,6 @@ public class FilePersister : MonoBehaviour
         SaveManager.Instance.NameSaveFile(fileName);
     }
 
+    public string GetFileName() => fileName;
     public bool SaveFileExists() => saveFileExists;
 }

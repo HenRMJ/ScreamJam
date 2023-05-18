@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\CardData.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\CardSlot.cs" />
+    <Compile Include="Assets\Scripts\LevelSelectMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
