@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\GameAttempt.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\WaitingState.cs" />
     <Compile Include="Assets\Scripts\CameraViewState.cs" />
+    <Compile Include="Assets\Scripts\LevelSelectMenu.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerState\BasePlayerState.cs" />
     <Compile Include="Assets\Player Input\PlayerControlAsset.cs" />
     <Compile Include="Assets\Scripts\UIOverlay.cs" />
@@ -104,7 +105,6 @@
     <Compile Include="Assets\Scripts\CardData.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\CardSlot.cs" />
-    <Compile Include="Assets\Scripts\LevelSelectMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -129,6 +129,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\StreamingAssets\desc.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Models\Textures\thatch_with_opacity\info.txt" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties_HLSL.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />

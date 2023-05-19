@@ -3,7 +3,27 @@ guid: f0db4ef21ac5cda4bbd1e41d7694889d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nightshade_diffuse
+    second: {fileID: 2800000, guid: 70446ce866a8b6d409827a082d15855b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nightshade_glow
+    second: {fileID: 2800000, guid: a7d216d3e5c1c2d4e82e0af9d8b3ef76, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nightshade_normal
+    second: {fileID: 2800000, guid: 6904699149fc0714e9d42f309be67553, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nightshade_specular
+    second: {fileID: 2800000, guid: db0ffe38e6ab5744389c0abbc438ab0b, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
