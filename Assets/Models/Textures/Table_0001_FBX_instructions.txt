@@ -1,0 +1,9 @@
+TEXTURES
+Wood_dark.png and Wood_less_dark.png are used as the main surface texture. The relative materials are already assigned to the portions of the mesh. 
+Wood_spec.png and Wood_bump.png are used in conjunction with these two main textures.
+Wood_lightRotated.png, Wood_specRotated.png and Wood_bumpRotated.png are used together for the decorations.
+
+The decoration textures are already mapped with dedicated uv maps.
+And consist of a main decoration texture, which alpha is the space that has to be covered with the light wood. There is a decoration border that has to be represented black, and a border bump to be mixed with the wood bump.
+
+The material represented in the preview images is intended as coated glossy.
