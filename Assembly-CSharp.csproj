@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\LoadGame.cs" />
     <Compile Include="Assets\Scripts\SaveManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine\GameState\AttackState.cs" />
+    <Compile Include="Assets\Scripts\RandomLightAnimation.cs" />
     <Compile Include="Assets\Scripts\ResultsUI.cs" />
     <Compile Include="Assets\Scripts\BloodVial.cs" />
     <Compile Include="Assets\Scripts\FilePersister.cs" />
@@ -105,7 +106,6 @@
     <Compile Include="Assets\Scripts\CardData.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\CardSlot.cs" />
-    <Compile Include="Assets\Scripts\RandomLightAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
