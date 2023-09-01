@@ -36,14 +36,14 @@ public class Player : MonoBehaviour
     private void Start()
     {
         playerHand.OnCardSummoned += PlayerHand_OnCardSummoned;
-        StartRoundState.OnStartRound += StartRoundState_OnStartRound;
+        DrawPhase.OnEnterDrawState += StartRoundState_OnStartRound;
         PlayArea.Instance.OnAttackFinished += PlayArea_OnAttackFinished;
     }
 
     private void OnDisable()
     {
         playerHand.OnCardSummoned -= PlayerHand_OnCardSummoned;
-        StartRoundState.OnStartRound -= StartRoundState_OnStartRound;
+        DrawPhase.OnEnterDrawState -= StartRoundState_OnStartRound;
         PlayArea.Instance.OnAttackFinished -= PlayArea_OnAttackFinished;
         StopAllCoroutines();
     }

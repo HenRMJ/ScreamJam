@@ -48,17 +48,23 @@ public class MouseActionUI : MonoBehaviour
         currentCursor = waitCursor;
 
         CardData.OnAnyCardHover += CardData_OnAnyCardHover;
-        DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
-        DrawState.OnEnterDrawState += DrawState_OnEnterDrawState;
-        WaitingState.OnPlayerStartWaiting += WaitingState_OnPlayerStartWaiting;
+
+        MainPhase.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
+        PostPhase.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
+        DrawPhase.OnEnterDrawState += DrawState_OnEnterDrawState;
+        AttackPhase.OnAttackStateStarted += WaitingState_OnPlayerStartWaiting;
+        EnemyPhase.OnEnterEnemyState += WaitingState_OnPlayerStartWaiting;
     }
 
     private void OnDestroy()
     {
         CardData.OnAnyCardHover -= CardData_OnAnyCardHover;
-        DecisionState.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
-        DrawState.OnEnterDrawState -= DrawState_OnEnterDrawState;
-        WaitingState.OnPlayerStartWaiting -= WaitingState_OnPlayerStartWaiting;
+
+        MainPhase.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
+        PostPhase.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
+        DrawPhase.OnEnterDrawState -= DrawState_OnEnterDrawState;
+        AttackPhase.OnAttackStateStarted -= WaitingState_OnPlayerStartWaiting;
+        EnemyPhase.OnEnterEnemyState -= WaitingState_OnPlayerStartWaiting;
     }
 
     private void LateUpdate()
@@ -177,14 +183,12 @@ public class MouseActionUI : MonoBehaviour
 
     private void DrawState_OnEnterDrawState(object sender, EventArgs e)
     {
-        if (TurnSystem.Instance.IsPlayersTurn) return;
         state = State.draw;
         currentCursor = defaultCursor;
     }
 
     private void DecisionState_OnEnterDecisionState(object sender, EventArgs e)
     {
-        if (!TurnSystem.Instance.IsPlayersTurn) return;
         state = State.decision;
         currentCursor = defaultCursor;
     }

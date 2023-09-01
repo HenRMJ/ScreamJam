@@ -92,7 +92,7 @@ public class CardData : MonoBehaviour
         CanMove = false;
         MarkedAsSacrifice = false;
 
-        StartRoundState.OnStartRound += StartRoundState_OnStartRound;
+        DrawPhase.OnEnterDrawState += StartRoundState_OnStartRound;
     }    
 
     private void Update()
@@ -133,7 +133,7 @@ public class CardData : MonoBehaviour
             }
         }
 
-        StartRoundState.OnStartRound -= StartRoundState_OnStartRound;
+        DrawPhase.OnEnterDrawState -= StartRoundState_OnStartRound;
     }
 
     // Might want to move these methods into a different class Move Card and Move To Point

@@ -48,11 +48,13 @@ public class CardSlot : MonoBehaviour
 
         inDecisionState = false;
 
-        StartRoundState.OnEnemySelectedCard += StartRoundState_OnEnemySelectedCard;
+        EnemyPhase.OnEnemySelectedCard += StartRoundState_OnEnemySelectedCard;
         playerHand.OnCardSelected += PlayerHand_OnCardSelected;
         playerHand.OnCardUnselected += PlayerHand_OnCardsUnselected;
-        DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
-        DecisionState.OnExitDecisionState += DecisionState_OnExitDecisionState;
+        MainPhase.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
+        MainPhase.OnExitDecisionState += DecisionState_OnExitDecisionState;
+        PostPhase.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
+        PostPhase.OnExitDecisionState += DecisionState_OnExitDecisionState;
     }
 
     private void Update()
@@ -64,11 +66,13 @@ public class CardSlot : MonoBehaviour
 
     private void OnDestroy()
     {
-        StartRoundState.OnEnemySelectedCard -= StartRoundState_OnEnemySelectedCard;
+        EnemyPhase.OnEnemySelectedCard -= StartRoundState_OnEnemySelectedCard;
         playerHand.OnCardSelected -= PlayerHand_OnCardSelected;
         playerHand.OnCardUnselected -= PlayerHand_OnCardsUnselected;
-        DecisionState.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
-        DecisionState.OnExitDecisionState -= DecisionState_OnExitDecisionState;
+        MainPhase.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
+        MainPhase.OnExitDecisionState -= DecisionState_OnExitDecisionState;
+        PostPhase.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
+        PostPhase.OnExitDecisionState -= DecisionState_OnExitDecisionState;
     }
 
     private void StartRoundState_OnEnemySelectedCard(object sender, Transform e)

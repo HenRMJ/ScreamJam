@@ -7,6 +7,12 @@ public class Enemy : EnemyBase
 {
     public override bool TryToSetSelectedCard(out Transform cardToSelect)
     {
+        if (TurnSystem.Instance.IsPlayersTurn)
+        {
+            cardToSelect = null;
+            return false;
+        }
+
         int highestBloodCost = 0;
         cardToSelect = null;
 
@@ -42,6 +48,8 @@ public class Enemy : EnemyBase
 
     public override void TryPlaceCard()
     {
+        if (TurnSystem.Instance.IsPlayersTurn) return;
+
         if (possiblePlacements.Count == 0)
         {
             hand.UnselectCard();
@@ -82,6 +90,8 @@ public class Enemy : EnemyBase
 
     public override void MoveCards()
     {
+        if (TurnSystem.Instance.IsPlayersTurn) return;
+
         foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
         {
             if (cardSlot.Card == null) continue;

@@ -218,7 +218,11 @@
     <Compile Include="Assets\Plugins\Easy Save 3\Scripts\Types\ES3ObjectType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugins\QFSW\Quantum Console\Source\Third-Party Notices.txt" />
     <None Include="Assets\Plugins\Easy Save 3\Change Log\Change Log.txt" />
+    <None Include="Assets\Plugins\QFSW\Quantum Console\Source\changelog.txt" />
+    <None Include="Assets\Plugins\QFSW\Quantum Console\Source\Fonts\LICENSE.txt" />
+    <None Include="Assets\Plugins\QFSW\Quantum Console\Source\Shaders\Blur.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -469,6 +473,9 @@
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="mcs">
+      <HintPath>Assets\Plugins\QFSW\Quantum Console\Source\Extras\exec\CSharpCompiler\Plugins\mcs.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
@@ -958,9 +965,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="QFSW.QC.QGUI.csproj">
+      <Project>{03C2E86F-4FDC-CE07-EF9B-44A7AA5BA33F}</Project>
+      <Name>QFSW.QC.QGUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.Serializers.csproj">
+      <Project>{BA6E6ED6-4854-9FB9-14A3-315F24848809}</Project>
+      <Name>QFSW.QC.Serializers</Name>
+    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.Editor.csproj">
       <Project>{A199402D-E15A-D069-6789-5D62E5E25A2E}</Project>
       <Name>AK.Wwise.Unity.MonoBehaviour.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.csproj">
+      <Project>{4626F7B1-286F-340A-790E-DF86AA893098}</Project>
+      <Name>QFSW.QC</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.UI.csproj">
+      <Project>{EA89E9E3-9569-6FF6-4543-9F600F0CB771}</Project>
+      <Name>QFSW.QC.UI</Name>
     </ProjectReference>
     <ProjectReference Include="FullscreenEditor.csproj">
       <Project>{872ECD4E-AAC0-0A51-42D3-5770C0E744A8}</Project>
@@ -969,6 +992,22 @@
     <ProjectReference Include="AK.Wwise.Unity.API.Editor.csproj">
       <Project>{D2FF0275-74D1-151D-C327-9C3E9FC595D6}</Project>
       <Name>AK.Wwise.Unity.API.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.Parsers.csproj">
+      <Project>{C4FCA15A-E646-ABED-4172-EBAA2F784A69}</Project>
+      <Name>QFSW.QC.Parsers</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.Grammar.csproj">
+      <Project>{3AA0C933-7D48-CE3B-2FF7-1ACB6B5554A1}</Project>
+      <Name>QFSW.QC.Grammar</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.ScanRules.csproj">
+      <Project>{9ED7FA16-0778-F350-BCD3-6FE0FDB0B53F}</Project>
+      <Name>QFSW.QC.ScanRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.Editor.csproj">
+      <Project>{264C2563-002D-B78A-12A6-575F44A68845}</Project>
+      <Name>QFSW.QC.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.API.WwiseTypes.csproj">
       <Project>{0898DA03-0120-CF8F-9E11-75FEAC13E8F1}</Project>
@@ -982,13 +1021,29 @@
       <Project>{41BD4086-F7E7-59A6-001F-B8E06C836486}</Project>
       <Name>AK.Wwise.Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="QFSW.QC.Editor.Tools.csproj">
+      <Project>{AD85B01F-C24D-9815-DB94-B5077D17C8CB}</Project>
+      <Name>QFSW.QC.Editor.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.Demo.csproj">
+      <Project>{E5EACEBF-3D62-36D1-78E2-B0161D0F103F}</Project>
+      <Name>QFSW.QC.Demo</Name>
+    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.Timeline.csproj">
       <Project>{E44FFDA8-CED8-06D6-D35C-50B4AAA92902}</Project>
       <Name>AK.Wwise.Unity.Timeline</Name>
     </ProjectReference>
+    <ProjectReference Include="QFSW.QC.Extras.csproj">
+      <Project>{07DBE1EB-668E-1975-7DA1-62325172A16E}</Project>
+      <Name>QFSW.QC.Extras</Name>
+    </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.API.csproj">
       <Project>{9ECFF2E6-FB62-F93C-C257-23603D156953}</Project>
       <Name>AK.Wwise.Unity.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFSW.QC.Suggestors.csproj">
+      <Project>{F6F57E85-372E-6F8C-D0A8-D0367289553B}</Project>
+      <Name>QFSW.QC.Suggestors</Name>
     </ProjectReference>
     <ProjectReference Include="AK.Wwise.Unity.MonoBehaviour.csproj">
       <Project>{C152BB9A-4FB0-F853-4825-86BE1085B2A7}</Project>

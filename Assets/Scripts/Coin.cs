@@ -12,13 +12,13 @@ public class Coin : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        StartRoundState.OnStartRound += StartRoundState_OnStartRound;
+        DrawPhase.OnEnterDrawState += StartRoundState_OnStartRound;
         playerHand.OnCardSummoned += PlayerHand_OnCardSummoned;
     }
 
     private void OnDisable()
     {
-        StartRoundState.OnStartRound -= StartRoundState_OnStartRound;
+        DrawPhase.OnEnterDrawState -= StartRoundState_OnStartRound;
         playerHand.OnCardSummoned -= PlayerHand_OnCardSummoned;
     }
 

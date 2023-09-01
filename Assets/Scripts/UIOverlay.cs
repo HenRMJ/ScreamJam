@@ -23,13 +23,15 @@ public class UIOverlay : MonoBehaviour
     private void Start()
     {
         CardData.OnAnyCardHover += CardData_OnAnyCardHover;
-        DecisionState.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
-        DrawState.OnEnterDrawState += DrawState_OnEnterDrawState;
-        WaitingState.OnPlayerStartWaiting += WaitingState_OnPlayerStartWaiting;
+
+        DrawPhase.OnEnterDrawState += DrawState_OnEnterDrawState;
+        MainPhase.OnEnterDecisionState += DecisionState_OnEnterDecisionState;
+        AttackPhase.OnAttackStateStarted += AttackPhase_OnAttackStarted;
+        PostPhase.OnEnterDecisionState += PostPhase_OnEnterDecisionState;
+        EnemyPhase.OnEnterEnemyState += WaitingState_OnPlayerStartWaiting;
+
         Player.Instance.GetPlayerHand().OnCardNotSummoned += PlayerHand_OnCardNotSummoned;
     }
-
-    
 
     private void Update()
     {
@@ -39,14 +41,16 @@ public class UIOverlay : MonoBehaviour
     private void OnDisable()
     {
         CardData.OnAnyCardHover -= CardData_OnAnyCardHover;
-        DecisionState.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
-        DrawState.OnEnterDrawState -= DrawState_OnEnterDrawState;
-        WaitingState.OnPlayerStartWaiting -= WaitingState_OnPlayerStartWaiting;
+
+        DrawPhase.OnEnterDrawState -= DrawState_OnEnterDrawState;
+        MainPhase.OnEnterDecisionState -= DecisionState_OnEnterDecisionState;
+        AttackPhase.OnAttackStateStarted -= AttackPhase_OnAttackStarted;
+        PostPhase.OnEnterDecisionState -= PostPhase_OnEnterDecisionState;
+        EnemyPhase.OnEnterEnemyState -= WaitingState_OnPlayerStartWaiting;
     }
 
     private void DrawState_OnEnterDrawState(object sender, EventArgs e)
     {
-        if (TurnSystem.Instance.IsPlayersTurn) return;
         if (Player.Instance.GetPlayerHand().GetDeck().GetNumberOfCardsInDeck() <= 0) return;
 
         largeDisplayField.text = "Draw a Card";
@@ -54,33 +58,28 @@ public class UIOverlay : MonoBehaviour
         animator.SetTrigger("drawState");
     }
 
+    private void PostPhase_OnEnterDecisionState(object sender, EventArgs e)
+    {
+        largeDisplayField.text = "Ring Bell to End Turn";
+        animator.SetTrigger("postState");
+        animator.SetTrigger("largeDisplay");
+    }
+
     private void DecisionState_OnEnterDecisionState(object sender, EventArgs e)
     {
-        if (!TurnSystem.Instance.IsPlayersTurn) return;
-
-        if (TurnSystem.Instance.AttackedThisRound)
-        {
-            largeDisplayField.text = "Ring Bell to End Turn";
-            animator.SetTrigger("postState");
-            animator.SetTrigger("largeDisplay");
-        }
-        else
-        {
-            largeDisplayField.text = "Ring Bell to Attack";
-            animator.SetTrigger("mainState");
-            animator.SetTrigger("largeDisplay");
-        }
+        largeDisplayField.text = "Ring Bell to Attack";
+        animator.SetTrigger("mainState");
+        animator.SetTrigger("largeDisplay");
     }
 
     private void WaitingState_OnPlayerStartWaiting(object sender, EventArgs e)
     {
-        if (TurnSystem.Instance.IsPlayersTurn)
-        {
-            animator.SetTrigger("attackState");
-        } else
-        {
-            animator.SetTrigger("enemyState");
-        }
+        animator.SetTrigger("enemyState");
+    }
+
+    private void AttackPhase_OnAttackStarted(object sender, EventArgs e)
+    {
+        animator.SetTrigger("attackState");
     }
 
     private void CardData_OnAnyCardHover(object sender, EventArgs e)

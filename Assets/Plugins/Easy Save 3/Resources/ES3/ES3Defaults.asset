@@ -38,6 +38,15 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - Cinemachine
+    - QFSW.QC
+    - QFSW.QC.Demo
+    - QFSW.QC.Extras
+    - QFSW.QC.Grammar
+    - QFSW.QC.Parsers
+    - QFSW.QC.ScanRules
+    - QFSW.QC.Serializers
+    - QFSW.QC.Suggestors
+    - QFSW.QC.UI
     showAdvancedSettings: 1
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

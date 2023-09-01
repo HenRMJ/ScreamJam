@@ -8,6 +8,12 @@ public class EnemyPassive : EnemyBase
 
     public override bool TryToSetSelectedCard(out Transform cardToSelect)
     {
+        if (TurnSystem.Instance.IsPlayersTurn) 
+        { 
+            cardToSelect = null;
+            return false; 
+        }
+
         int lowestBloodCost = int.MaxValue;
         int weakestDefense = int.MaxValue;
 
@@ -62,6 +68,8 @@ public class EnemyPassive : EnemyBase
 
     public override void TryPlaceCard()
     {
+        if (TurnSystem.Instance.IsPlayersTurn) return;
+
         Vector2Int positionToAttack = new Vector2Int();
         CardSlot slotToPlace = null;
 
@@ -133,6 +141,8 @@ public class EnemyPassive : EnemyBase
 
     public override void MoveCards()
     {
+        if (TurnSystem.Instance.IsPlayersTurn) return;
+
         foreach (CardSlot cardSlot in GridManager.Instance.GetAllCardSlots())
         {
             if (cardSlot.Card == null) continue;

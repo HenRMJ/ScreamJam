@@ -22,13 +22,13 @@ public class TurnSystem : MonoBehaviour
 
     private void Start()
     {
-        AttackState.OnAttackStateStarted += AttackState_OnAttackStateStarted;
+        AttackPhase.OnAttackStateStarted += AttackState_OnAttackStateStarted;
         IsPlayersTurn = true;
     }
 
     private void OnDisable()
     {
-        AttackState.OnAttackStateStarted -= AttackState_OnAttackStateStarted;
+        AttackPhase.OnAttackStateStarted -= AttackState_OnAttackStateStarted;
     }
 
     private void AttackState_OnAttackStateStarted(object sender, EventArgs e)
